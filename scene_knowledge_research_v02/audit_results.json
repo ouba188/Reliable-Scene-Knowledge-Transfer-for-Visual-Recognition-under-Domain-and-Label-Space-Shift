@@ -1,0 +1,120 @@
+{
+  "status": "Seven analytical unit-test situations and a finite-sample toy; no SAR training.",
+  "seed": 20260919,
+  "results": {
+    "stable_relation_disambiguates": {
+      "feasible": [
+        1
+      ],
+      "returned": [
+        1
+      ],
+      "mechanism_conflict": false,
+      "excess_by_hypothesis": [
+        0.7000000000000001,
+        -0.1
+      ]
+    },
+    "missing_knowledge_preserves_bank": {
+      "feasible": [
+        0,
+        1
+      ],
+      "returned": [
+        0,
+        1
+      ],
+      "mechanism_conflict": false,
+      "excess_by_hypothesis": [
+        0.0,
+        0.0
+      ]
+    },
+    "marginal_prior_does_not_disambiguate": {
+      "feasible": [
+        0,
+        1
+      ],
+      "returned": [
+        0,
+        1
+      ],
+      "mechanism_conflict": false,
+      "excess_by_hypothesis": [
+        -0.1,
+        -0.1
+      ]
+    },
+    "unexplained_relation_is_conflict_not_unknown": {
+      "feasible": [],
+      "returned": [
+        0,
+        1
+      ],
+      "mechanism_conflict": true,
+      "excess_by_hypothesis": [
+        0.30000000000000004,
+        0.30000000000000004
+      ]
+    },
+    "mechanism_uncertainty_restores_ambiguity": {
+      "feasible": [
+        0,
+        1
+      ],
+      "returned": [
+        0,
+        1
+      ],
+      "mechanism_conflict": false,
+      "excess_by_hypothesis": [
+        -0.09999999999999998,
+        -0.1
+      ]
+    },
+    "one_mechanism_must_fit_all_groups": {
+      "feasible": [],
+      "returned": [
+        0,
+        1
+      ],
+      "mechanism_conflict": true,
+      "excess_by_hypothesis": [
+        0.75,
+        0.75
+      ]
+    },
+    "declared_failure_hidden_relation_flip": {
+      "feasible": [
+        0
+      ],
+      "returned": [
+        0
+      ],
+      "mechanism_conflict": false,
+      "excess_by_hypothesis": [
+        -0.1,
+        0.7000000000000001
+      ],
+      "true_label_rule": "Y=1-X",
+      "selected_label_rule": "Y=X",
+      "selected_accuracy_in_this_toy": 0.0,
+      "interpretation": "Misspecified relation support can yield confident wrong selection."
+    },
+    "finite_sample_sanity_check": {
+      "repetitions": 500,
+      "independent_observations_per_group": 100,
+      "fixed_tolerance": 0.2,
+      "unique_correct_hypothesis_runs": 500,
+      "conflict_runs": 0,
+      "scope": "Prespecified simulated source law, not calibration on real ports."
+    }
+  },
+  "not_established": [
+    "Global novelty",
+    "Prediction correctness without relation assumptions",
+    "Novel-vs-low-quality identifiability",
+    "Real cross-port improvement",
+    "Probability calibration or universal safety"
+  ]
+}

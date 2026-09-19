@@ -1,0 +1,78 @@
+{
+  "scope": "Algebra checks and counterexamples only; no SAR model training.",
+  "seed": 20260919,
+  "telescoping_max_absolute_log_error": 6.661338147750939e-16,
+  "nonidentifiable_closure_examples": [
+    {
+      "known_mass": 0.0,
+      "residual": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "known_mass": 0.2,
+      "residual": [
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "known_mass": 0.5,
+      "residual": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "known_mass": 0.8,
+      "residual": [
+        0.19999999999999996,
+        0.19999999999999996
+      ]
+    },
+    {
+      "known_mass": 1.0,
+      "residual": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "nonzero_knowledge_increment_without_class_discrimination": {
+    "increment_for_each_class": [
+      1.3862943611198906,
+      1.3862943611198906,
+      1.3862943611198906
+    ],
+    "before": [
+      0.55,
+      0.3,
+      0.15
+    ],
+    "after": [
+      0.55,
+      0.3,
+      0.15
+    ],
+    "max_difference": 0.0,
+    "scope": "Fixed mixture weights; this proves no pointwise class information, not invariance of every jointly refitted procedure."
+  },
+  "penalty_selected_unknown_with_all_known_data": {
+    "exact_ratio": 1.0,
+    "true_known_fraction_in_constructed_world": 1.0,
+    "lambda_unknown": 0.1,
+    "eta": 1.0,
+    "optimizer_known_mass": 0.1,
+    "optimizer_residual": 0.8090909090909091,
+    "normalized_unknown_score": 0.89,
+    "objective": 0.09031017980432486,
+    "interpretation": "Unique convex optimization solution is not statistical identification of unknown class mass."
+  },
+  "not_established": [
+    "A new algorithm with three independent innovations.",
+    "Novel-class posterior calibration.",
+    "Performance on the new AIS-free full-scene task.",
+    "Impossibility of useful port knowledge or of a revised algorithm."
+  ]
+}

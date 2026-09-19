@@ -1,0 +1,16 @@
+{
+  "status": "Proposed research protocol, not preregistered or trained",
+  "core_task": "Scene knowledge constrains ambiguous domain mappings",
+  "first_stage": "fixed proposals and frozen visual embeddings",
+  "excluded_initially": ["diffusion generation", "VLM unknown naming", "new detection backbone", "unconstrained unknown-mixture residual"],
+  "target_labels_inaccessible_to": ["candidate generation", "relation fitting", "threshold selection", "adaptation", "checkpoint selection"],
+  "target_instance_AIS": "not permitted as model input",
+  "prototype_hypothesis_budget": [8, 16],
+  "number_of_relation_moments": "small, prespecified and deployment-observable",
+  "calibration": "source-held-out mechanisms; separate from all gradient and selection data; domain coverage assumptions explicit",
+  "required_baselines": ["visual_only", "visual_metadata", "concat_same_knowledge", "FiLM_attention", "relation_GNN", "class_prior_only", "single_best_visual_hypothesis", "uniform_hypothesis_ensemble", "unconditional_relation_moment_test", "conditional_relation_moment_test", "retain_all_compatible_hypotheses"],
+  "required_adversarial_cases": ["missing_knowledge", "equal_knowledge", "shuffled_correspondence", "low_quality_known", "target_private_class", "false_detection", "no_true_hypothesis", "hidden_relation_flip"],
+  "second_task_candidate": "Argoverse 2 Sensor + Maps; new custom protocol, not official UDA benchmark",
+  "report": ["classwise_BA_and_recall", "risk_coverage", "false_novelty_on_known", "unknown_recall_at_matched_known_recall", "wrong_hypothesis_elimination", "equal_port_results", "cluster_uncertainty", "wall_time_and_memory"],
+  "current_validation_scope": "analytical finite toy and NumPy implementation only"
+}
