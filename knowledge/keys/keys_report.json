@@ -1,0 +1,48 @@
+{
+ "products_in_coverage": 841,
+ "products_in_inventory": 841,
+ "products_in_bundle": 841,
+ "missing_from_inventory": [],
+ "missing_from_bundle": [],
+ "ports": 24,
+ "port_aliases": {
+  "Jebel_Ali": 14,
+  "Port_ Klang": 14,
+  "Richards_ Bay": 3,
+  "Port_Said": 7,
+  "NewYork": 9,
+  "Sydney_Botany": 16,
+  "Port_Hedland": 6
+ },
+ "products_per_port": {
+  "Antwerp-Bruges": 23,
+  "Busan": 16,
+  "Callao": 36,
+  "Fujairah": 36,
+  "Hamburg": 47,
+  "Houston": 41,
+  "Jebel Ali": 52,
+  "Los Angeles": 51,
+  "Melbourne": 25,
+  "Mombasa": 34,
+  "New York": 56,
+  "Newcastle": 32,
+  "Ningbo-Zhoushan": 31,
+  "Port Hedland": 32,
+  "Port Klang": 43,
+  "Port Said": 45,
+  "Qingdao": 25,
+  "Richards Bay": 36,
+  "Rotterdam": 11,
+  "Santos": 43,
+  "Shanghai": 29,
+  "Singapore": 38,
+  "Sydney Botany": 37,
+  "Tanger Med": 22
+ },
+ "key_columns": [
+  "product_id",
+  "port"
+ ],
+ "key_notes": "product_id is the Sentinel-1 product name (primary key); port is the canonical 24-port name; track is auxiliary only"
+}

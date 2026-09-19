@@ -1,0 +1,1768 @@
+{
+ "52": {
+  "final_class": "tug_towing",
+  "purity": 0.9122,
+  "support": 5136,
+  "distribution": {
+   "tug_towing": 4685,
+   "offshore_supply": 400,
+   "fishing_vessel": 14,
+   "product_chemical_tanker": 8,
+   "pleasure_craft": 7,
+   "pilot_port_tender": 4
+  }
+ },
+ "30": {
+  "final_class": "fishing_vessel",
+  "purity": 0.9565,
+  "support": 14084,
+  "distribution": {
+   "fishing_vessel": 13471,
+   "offshore_supply": 349,
+   "tug_towing": 152,
+   "pleasure_craft": 50,
+   "sailing_vessel": 11,
+   "general_cargo": 11
+  }
+ },
+ "37": {
+  "final_class": "pleasure_craft",
+  "purity": 0.8607,
+  "support": 12230,
+  "distribution": {
+   "pleasure_craft": 10526,
+   "fishing_vessel": 957,
+   "tug_towing": 296,
+   "offshore_supply": 233,
+   "sailing_vessel": 45,
+   "pilot_port_tender": 34
+  }
+ },
+ "70": {
+  "final_class": "bulk_carrier",
+  "purity": 0.4426,
+  "support": 13987,
+  "distribution": {
+   "bulk_carrier": 6191,
+   "general_cargo": 3244,
+   "container_ship": 1790,
+   "tug_towing": 1147,
+   "ro_ro_vehicle_carrier": 739,
+   "offshore_supply": 455
+  }
+ },
+ "99": {
+  "final_class": "offshore_supply",
+  "purity": 0.587,
+  "support": 339,
+  "distribution": {
+   "offshore_supply": 199,
+   "tug_towing": 61,
+   "fishing_vessel": 19,
+   "passenger_ship": 14,
+   "pleasure_craft": 8,
+   "dredger": 8
+  }
+ },
+ "60": {
+  "final_class": "passenger_ship",
+  "purity": 0.9168,
+  "support": 1455,
+  "distribution": {
+   "passenger_ship": 1334,
+   "offshore_supply": 53,
+   "tug_towing": 38,
+   "pleasure_craft": 14,
+   "fishing_vessel": 3,
+   "product_chemical_tanker": 3
+  }
+ },
+ "90": {
+  "final_class": "offshore_supply",
+  "purity": 0.5174,
+  "support": 862,
+  "distribution": {
+   "offshore_supply": 446,
+   "tug_towing": 142,
+   "fishing_vessel": 42,
+   "dredger": 36,
+   "bulk_carrier": 27,
+   "pilot_port_tender": 26
+  }
+ },
+ "69": {
+  "final_class": "passenger_ship",
+  "purity": 0.945,
+  "support": 1272,
+  "distribution": {
+   "passenger_ship": 1202,
+   "offshore_supply": 44,
+   "pleasure_craft": 10,
+   "tug_towing": 7,
+   "product_chemical_tanker": 2,
+   "dredger": 2
+  }
+ },
+ "65": {
+  "final_class": "passenger_ship",
+  "purity": 0.75,
+  "support": 28,
+  "distribution": {
+   "passenger_ship": 21,
+   "offshore_supply": 3,
+   "dredger": 1,
+   "fishing_vessel": 1,
+   "bulk_carrier": 1,
+   "tug_towing": 1
+  }
+ },
+ "34": {
+  "final_class": "offshore_supply",
+  "purity": 0.7812,
+  "support": 32,
+  "distribution": {
+   "offshore_supply": 25,
+   "tug_towing": 4,
+   "pleasure_craft": 2,
+   "dredger": 1
+  }
+ },
+ "136": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "137": {
+  "final_class": "offshore_supply",
+  "purity": 0.4,
+  "support": 5,
+  "distribution": {
+   "offshore_supply": 2,
+   "general_cargo": 2,
+   "bulk_carrier": 1
+  }
+ },
+ "40": {
+  "final_class": "offshore_supply",
+  "purity": 0.6989,
+  "support": 186,
+  "distribution": {
+   "offshore_supply": 130,
+   "passenger_ship": 40,
+   "tug_towing": 8,
+   "product_chemical_tanker": 3,
+   "pleasure_craft": 2,
+   "fishing_vessel": 1
+  }
+ },
+ "50": {
+  "final_class": "pilot_port_tender",
+  "purity": 0.9035,
+  "support": 373,
+  "distribution": {
+   "pilot_port_tender": 337,
+   "tug_towing": 20,
+   "offshore_supply": 7,
+   "fishing_vessel": 4,
+   "general_cargo": 2,
+   "passenger_ship": 2
+  }
+ },
+ "72": {
+  "final_class": "container_ship",
+  "purity": 0.8561,
+  "support": 264,
+  "distribution": {
+   "container_ship": 226,
+   "tug_towing": 13,
+   "general_cargo": 11,
+   "ro_ro_vehicle_carrier": 7,
+   "bulk_carrier": 3,
+   "offshore_supply": 2
+  }
+ },
+ "89": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.6183,
+  "support": 1501,
+  "distribution": {
+   "product_chemical_tanker": 928,
+   "crude_oil_tanker": 359,
+   "lpg_lng_tanker": 130,
+   "tug_towing": 44,
+   "offshore_supply": 34,
+   "bulk_carrier": 3
+  }
+ },
+ "80": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.5278,
+  "support": 6694,
+  "distribution": {
+   "product_chemical_tanker": 3533,
+   "crude_oil_tanker": 1884,
+   "lpg_lng_tanker": 747,
+   "tug_towing": 334,
+   "offshore_supply": 145,
+   "general_cargo": 17
+  }
+ },
+ "1": {
+  "final_class": "fishing_vessel",
+  "purity": 0.3878,
+  "support": 49,
+  "distribution": {
+   "fishing_vessel": 19,
+   "container_ship": 7,
+   "tug_towing": 5,
+   "offshore_supply": 5,
+   "general_cargo": 4,
+   "product_chemical_tanker": 3
+  }
+ },
+ "140": {
+  "final_class": "product_chemical_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "product_chemical_tanker": 1
+  }
+ },
+ "49": {
+  "final_class": "offshore_supply",
+  "purity": 0.54,
+  "support": 50,
+  "distribution": {
+   "offshore_supply": 27,
+   "passenger_ship": 15,
+   "tug_towing": 3,
+   "dredger": 1,
+   "fishing_vessel": 1,
+   "general_cargo": 1
+  }
+ },
+ "53": {
+  "final_class": "pilot_port_tender",
+  "purity": 0.8792,
+  "support": 447,
+  "distribution": {
+   "pilot_port_tender": 393,
+   "offshore_supply": 19,
+   "tug_towing": 12,
+   "pleasure_craft": 8,
+   "fishing_vessel": 5,
+   "dredger": 3
+  }
+ },
+ "95": {
+  "final_class": "offshore_supply",
+  "purity": 0.5882,
+  "support": 34,
+  "distribution": {
+   "offshore_supply": 20,
+   "tug_towing": 8,
+   "fishing_vessel": 3,
+   "dredger": 1,
+   "heavy_load_carrier": 1,
+   "general_cargo": 1
+  }
+ },
+ "9": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.2063,
+  "support": 63,
+  "distribution": {
+   "product_chemical_tanker": 13,
+   "container_ship": 10,
+   "general_cargo": 9,
+   "tug_towing": 7,
+   "offshore_supply": 6,
+   "bulk_carrier": 6
+  }
+ },
+ "33": {
+  "final_class": "dredger",
+  "purity": 0.9232,
+  "support": 1029,
+  "distribution": {
+   "dredger": 950,
+   "offshore_supply": 28,
+   "tug_towing": 22,
+   "fishing_vessel": 7,
+   "general_cargo": 6,
+   "pilot_port_tender": 5
+  }
+ },
+ "0": {
+  "final_class": "tug_towing",
+  "purity": 0.3602,
+  "support": 3629,
+  "distribution": {
+   "tug_towing": 1307,
+   "fishing_vessel": 503,
+   "offshore_supply": 457,
+   "pleasure_craft": 339,
+   "product_chemical_tanker": 208,
+   "crude_oil_tanker": 193
+  }
+ },
+ "81": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.534,
+  "support": 382,
+  "distribution": {
+   "product_chemical_tanker": 204,
+   "lpg_lng_tanker": 92,
+   "crude_oil_tanker": 49,
+   "tug_towing": 24,
+   "offshore_supply": 10,
+   "bulk_carrier": 1
+  }
+ },
+ "238": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "84": {
+  "final_class": "lpg_lng_tanker",
+  "purity": 0.5501,
+  "support": 369,
+  "distribution": {
+   "lpg_lng_tanker": 203,
+   "product_chemical_tanker": 126,
+   "tug_towing": 18,
+   "crude_oil_tanker": 13,
+   "offshore_supply": 7,
+   "fishing_vessel": 1
+  }
+ },
+ "31": {
+  "final_class": "tug_towing",
+  "purity": 0.9056,
+  "support": 763,
+  "distribution": {
+   "tug_towing": 691,
+   "offshore_supply": 42,
+   "fishing_vessel": 9,
+   "general_cargo": 6,
+   "sailing_vessel": 3,
+   "product_chemical_tanker": 2
+  }
+ },
+ "55": {
+  "final_class": "offshore_supply",
+  "purity": 0.4375,
+  "support": 48,
+  "distribution": {
+   "offshore_supply": 21,
+   "tug_towing": 11,
+   "fishing_vessel": 8,
+   "pleasure_craft": 4,
+   "passenger_ship": 2,
+   "pilot_port_tender": 1
+  }
+ },
+ "82": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.9041,
+  "support": 845,
+  "distribution": {
+   "product_chemical_tanker": 764,
+   "lpg_lng_tanker": 30,
+   "tug_towing": 26,
+   "offshore_supply": 15,
+   "crude_oil_tanker": 6,
+   "bulk_carrier": 3
+  }
+ },
+ "36": {
+  "final_class": "sailing_vessel",
+  "purity": 0.9706,
+  "support": 6671,
+  "distribution": {
+   "sailing_vessel": 6475,
+   "offshore_supply": 65,
+   "pleasure_craft": 54,
+   "tug_towing": 36,
+   "passenger_ship": 22,
+   "container_ship": 5
+  }
+ },
+ "54": {
+  "final_class": "offshore_supply",
+  "purity": 0.5833,
+  "support": 24,
+  "distribution": {
+   "offshore_supply": 14,
+   "fishing_vessel": 3,
+   "tug_towing": 3,
+   "dredger": 1,
+   "container_ship": 1,
+   "bulk_carrier": 1
+  }
+ },
+ "5": {
+  "final_class": "fishing_vessel",
+  "purity": 0.2963,
+  "support": 27,
+  "distribution": {
+   "fishing_vessel": 8,
+   "tug_towing": 6,
+   "offshore_supply": 3,
+   "passenger_ship": 2,
+   "crude_oil_tanker": 2,
+   "general_cargo": 2
+  }
+ },
+ "64": {
+  "final_class": "passenger_ship",
+  "purity": 0.3529,
+  "support": 17,
+  "distribution": {
+   "passenger_ship": 6,
+   "offshore_supply": 4,
+   "tug_towing": 3,
+   "fishing_vessel": 2,
+   "product_chemical_tanker": 1,
+   "general_cargo": 1
+  }
+ },
+ "38": {
+  "final_class": "offshore_supply",
+  "purity": 0.4333,
+  "support": 30,
+  "distribution": {
+   "offshore_supply": 13,
+   "tug_towing": 11,
+   "product_chemical_tanker": 2,
+   "dredger": 2,
+   "general_cargo": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "83": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.7699,
+  "support": 226,
+  "distribution": {
+   "product_chemical_tanker": 174,
+   "lpg_lng_tanker": 29,
+   "crude_oil_tanker": 9,
+   "tug_towing": 9,
+   "offshore_supply": 3,
+   "fishing_vessel": 1
+  }
+ },
+ "57": {
+  "final_class": "tug_towing",
+  "purity": 0.9811,
+  "support": 317,
+  "distribution": {
+   "tug_towing": 311,
+   "offshore_supply": 2,
+   "sailing_vessel": 1,
+   "pilot_port_tender": 1,
+   "fishing_vessel": 1,
+   "passenger_ship": 1
+  }
+ },
+ "192": {
+  "final_class": "tug_towing",
+  "purity": 0.1667,
+  "support": 12,
+  "distribution": {
+   "tug_towing": 2,
+   "offshore_supply": 2,
+   "product_chemical_tanker": 2,
+   "container_ship": 2,
+   "pleasure_craft": 1,
+   "crude_oil_tanker": 1
+  }
+ },
+ "66": {
+  "final_class": "passenger_ship",
+  "purity": 0.9286,
+  "support": 14,
+  "distribution": {
+   "passenger_ship": 13,
+   "offshore_supply": 1
+  }
+ },
+ "79": {
+  "final_class": "general_cargo",
+  "purity": 0.3228,
+  "support": 1905,
+  "distribution": {
+   "general_cargo": 615,
+   "bulk_carrier": 540,
+   "container_ship": 413,
+   "ro_ro_vehicle_carrier": 111,
+   "tug_towing": 105,
+   "offshore_supply": 61
+  }
+ },
+ "32": {
+  "final_class": "tug_towing",
+  "purity": 0.8175,
+  "support": 126,
+  "distribution": {
+   "tug_towing": 103,
+   "offshore_supply": 14,
+   "product_chemical_tanker": 2,
+   "crude_oil_tanker": 2,
+   "dredger": 1,
+   "sailing_vessel": 1
+  }
+ },
+ "71": {
+  "final_class": "container_ship",
+  "purity": 0.8908,
+  "support": 2106,
+  "distribution": {
+   "container_ship": 1876,
+   "tug_towing": 79,
+   "general_cargo": 76,
+   "ro_ro_vehicle_carrier": 34,
+   "offshore_supply": 18,
+   "bulk_carrier": 12
+  }
+ },
+ "100": {
+  "final_class": "container_ship",
+  "purity": 0.9293,
+  "support": 919,
+  "distribution": {
+   "container_ship": 854,
+   "tug_towing": 42,
+   "offshore_supply": 9,
+   "general_cargo": 5,
+   "fishing_vessel": 3,
+   "dredger": 2
+  }
+ },
+ "114": {
+  "final_class": "product_chemical_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "product_chemical_tanker": 1
+  }
+ },
+ "45": {
+  "final_class": "offshore_supply",
+  "purity": 0.4286,
+  "support": 7,
+  "distribution": {
+   "offshore_supply": 3,
+   "passenger_ship": 2,
+   "crude_oil_tanker": 1,
+   "tug_towing": 1
+  }
+ },
+ "128": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 12,
+  "distribution": {
+   "tug_towing": 6,
+   "offshore_supply": 2,
+   "product_chemical_tanker": 1,
+   "passenger_ship": 1,
+   "fishing_vessel": 1,
+   "container_ship": 1
+  }
+ },
+ "255": {
+  "final_class": "tug_towing",
+  "purity": 0.2812,
+  "support": 64,
+  "distribution": {
+   "tug_towing": 18,
+   "offshore_supply": 10,
+   "bulk_carrier": 8,
+   "general_cargo": 6,
+   "ro_ro_vehicle_carrier": 4,
+   "crude_oil_tanker": 4
+  }
+ },
+ "56": {
+  "final_class": "tug_towing",
+  "purity": 0.4,
+  "support": 20,
+  "distribution": {
+   "tug_towing": 8,
+   "offshore_supply": 6,
+   "passenger_ship": 2,
+   "product_chemical_tanker": 1,
+   "crude_oil_tanker": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "75": {
+  "final_class": "fishing_vessel",
+  "purity": 0.2842,
+  "support": 95,
+  "distribution": {
+   "fishing_vessel": 27,
+   "general_cargo": 26,
+   "container_ship": 19,
+   "bulk_carrier": 13,
+   "offshore_supply": 4,
+   "ro_ro_vehicle_carrier": 2
+  }
+ },
+ "39": {
+  "final_class": "offshore_supply",
+  "purity": 0.4828,
+  "support": 29,
+  "distribution": {
+   "offshore_supply": 14,
+   "tug_towing": 8,
+   "general_cargo": 3,
+   "fishing_vessel": 3,
+   "bulk_carrier": 1
+  }
+ },
+ "13": {
+  "final_class": "pleasure_craft",
+  "purity": 0.25,
+  "support": 4,
+  "distribution": {
+   "pleasure_craft": 1,
+   "offshore_supply": 1,
+   "general_cargo": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "93": {
+  "final_class": "offshore_supply",
+  "purity": 0.6667,
+  "support": 3,
+  "distribution": {
+   "offshore_supply": 2,
+   "tug_towing": 1
+  }
+ },
+ "4": {
+  "final_class": "fishing_vessel",
+  "purity": 0.7624,
+  "support": 101,
+  "distribution": {
+   "fishing_vessel": 77,
+   "offshore_supply": 10,
+   "container_ship": 6,
+   "tug_towing": 3,
+   "lpg_lng_tanker": 2,
+   "product_chemical_tanker": 1
+  }
+ },
+ "8": {
+  "final_class": "tug_towing",
+  "purity": 0.2667,
+  "support": 15,
+  "distribution": {
+   "tug_towing": 4,
+   "dredger": 3,
+   "offshore_supply": 3,
+   "bulk_carrier": 3,
+   "product_chemical_tanker": 2
+  }
+ },
+ "68": {
+  "final_class": "passenger_ship",
+  "purity": 0.7647,
+  "support": 17,
+  "distribution": {
+   "passenger_ship": 13,
+   "fishing_vessel": 2,
+   "offshore_supply": 1,
+   "tug_towing": 1
+  }
+ },
+ "24": {
+  "final_class": "tug_towing",
+  "purity": 0.6111,
+  "support": 18,
+  "distribution": {
+   "tug_towing": 11,
+   "offshore_supply": 6,
+   "fishing_vessel": 1
+  }
+ },
+ "67": {
+  "final_class": "passenger_ship",
+  "purity": 0.8,
+  "support": 15,
+  "distribution": {
+   "passenger_ship": 12,
+   "offshore_supply": 1,
+   "fishing_vessel": 1,
+   "general_cargo": 1
+  }
+ },
+ "10": {
+  "final_class": "tug_towing",
+  "purity": 0.5385,
+  "support": 26,
+  "distribution": {
+   "tug_towing": 14,
+   "offshore_supply": 6,
+   "general_cargo": 5,
+   "reefer_cargo": 1
+  }
+ },
+ "7": {
+  "final_class": "tug_towing",
+  "purity": 0.4,
+  "support": 5,
+  "distribution": {
+   "tug_towing": 2,
+   "product_chemical_tanker": 1,
+   "offshore_supply": 1,
+   "bulk_carrier": 1
+  }
+ },
+ "251": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "25": {
+  "final_class": "offshore_supply",
+  "purity": 0.5,
+  "support": 6,
+  "distribution": {
+   "offshore_supply": 3,
+   "fishing_vessel": 1,
+   "sailing_vessel": 1,
+   "tug_towing": 1
+  }
+ },
+ "97": {
+  "final_class": "offshore_supply",
+  "purity": 0.375,
+  "support": 16,
+  "distribution": {
+   "offshore_supply": 6,
+   "tug_towing": 4,
+   "pleasure_craft": 3,
+   "general_cargo": 1,
+   "fishing_vessel": 1,
+   "dredger": 1
+  }
+ },
+ "46": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "tug_towing": 1,
+   "offshore_supply": 1
+  }
+ },
+ "87": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.6875,
+  "support": 16,
+  "distribution": {
+   "product_chemical_tanker": 11,
+   "crude_oil_tanker": 3,
+   "lpg_lng_tanker": 1,
+   "tug_towing": 1
+  }
+ },
+ "98": {
+  "final_class": "tug_towing",
+  "purity": 0.4,
+  "support": 10,
+  "distribution": {
+   "tug_towing": 4,
+   "offshore_supply": 4,
+   "dredger": 1,
+   "general_cargo": 1
+  }
+ },
+ "88": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.5526,
+  "support": 38,
+  "distribution": {
+   "product_chemical_tanker": 21,
+   "crude_oil_tanker": 8,
+   "lpg_lng_tanker": 2,
+   "offshore_supply": 2,
+   "tug_towing": 2,
+   "container_ship": 1
+  }
+ },
+ "51": {
+  "final_class": "offshore_supply",
+  "purity": 0.6389,
+  "support": 36,
+  "distribution": {
+   "offshore_supply": 23,
+   "tug_towing": 7,
+   "fishing_vessel": 2,
+   "passenger_ship": 1,
+   "general_cargo": 1,
+   "ro_ro_vehicle_carrier": 1
+  }
+ },
+ "86": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.381,
+  "support": 21,
+  "distribution": {
+   "product_chemical_tanker": 8,
+   "crude_oil_tanker": 5,
+   "tug_towing": 5,
+   "fishing_vessel": 2,
+   "offshore_supply": 1
+  }
+ },
+ "96": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 8,
+  "distribution": {
+   "tug_towing": 4,
+   "dredger": 1,
+   "fishing_vessel": 1,
+   "heavy_load_carrier": 1,
+   "offshore_supply": 1
+  }
+ },
+ "112": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 4,
+  "distribution": {
+   "tug_towing": 2,
+   "passenger_ship": 1,
+   "ro_ro_vehicle_carrier": 1
+  }
+ },
+ "29": {
+  "final_class": "tug_towing",
+  "purity": 0.6667,
+  "support": 3,
+  "distribution": {
+   "tug_towing": 2,
+   "fishing_vessel": 1
+  }
+ },
+ "61": {
+  "final_class": "passenger_ship",
+  "purity": 0.8571,
+  "support": 14,
+  "distribution": {
+   "passenger_ship": 12,
+   "tug_towing": 1,
+   "offshore_supply": 1
+  }
+ },
+ "42": {
+  "final_class": "offshore_supply",
+  "purity": 0.75,
+  "support": 4,
+  "distribution": {
+   "offshore_supply": 3,
+   "fishing_vessel": 1
+  }
+ },
+ "59": {
+  "final_class": "tug_towing",
+  "purity": 0.5263,
+  "support": 19,
+  "distribution": {
+   "tug_towing": 10,
+   "offshore_supply": 8,
+   "fishing_vessel": 1
+  }
+ },
+ "103": {
+  "final_class": "passenger_ship",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "passenger_ship": 1
+  }
+ },
+ "232": {
+  "final_class": "passenger_ship",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "passenger_ship": 1
+  }
+ },
+ "204": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.25,
+  "support": 4,
+  "distribution": {
+   "product_chemical_tanker": 1,
+   "dredger": 1,
+   "bulk_carrier": 1,
+   "tug_towing": 1
+  }
+ },
+ "20": {
+  "final_class": "offshore_supply",
+  "purity": 0.7143,
+  "support": 42,
+  "distribution": {
+   "offshore_supply": 30,
+   "tug_towing": 3,
+   "product_chemical_tanker": 2,
+   "general_cargo": 2,
+   "bulk_carrier": 2,
+   "dredger": 1
+  }
+ },
+ "158": {
+  "final_class": "ro_ro_vehicle_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "ro_ro_vehicle_carrier": 1
+  }
+ },
+ "159": {
+  "final_class": "ro_ro_vehicle_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "ro_ro_vehicle_carrier": 1
+  }
+ },
+ "58": {
+  "final_class": "pleasure_craft",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "pleasure_craft": 1,
+   "offshore_supply": 1
+  }
+ },
+ "85": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.6364,
+  "support": 66,
+  "distribution": {
+   "product_chemical_tanker": 42,
+   "tug_towing": 8,
+   "crude_oil_tanker": 8,
+   "lpg_lng_tanker": 4,
+   "offshore_supply": 3,
+   "fishing_vessel": 1
+  }
+ },
+ "200": {
+  "final_class": "fishing_vessel",
+  "purity": 0.375,
+  "support": 8,
+  "distribution": {
+   "fishing_vessel": 3,
+   "passenger_ship": 2,
+   "general_cargo": 1,
+   "tug_towing": 1,
+   "offshore_supply": 1
+  }
+ },
+ "48": {
+  "final_class": "fishing_vessel",
+  "purity": 0.3333,
+  "support": 6,
+  "distribution": {
+   "fishing_vessel": 2,
+   "tug_towing": 2,
+   "passenger_ship": 1,
+   "pilot_port_tender": 1
+  }
+ },
+ "11": {
+  "final_class": "dredger",
+  "purity": 0.25,
+  "support": 4,
+  "distribution": {
+   "dredger": 1,
+   "fishing_vessel": 1,
+   "general_cargo": 1,
+   "lpg_lng_tanker": 1
+  }
+ },
+ "207": {
+  "final_class": "offshore_supply",
+  "purity": 0.3333,
+  "support": 3,
+  "distribution": {
+   "offshore_supply": 1,
+   "passenger_ship": 1,
+   "tug_towing": 1
+  }
+ },
+ "22": {
+  "final_class": "tug_towing",
+  "purity": 0.75,
+  "support": 8,
+  "distribution": {
+   "tug_towing": 6,
+   "offshore_supply": 1,
+   "bulk_carrier": 1
+  }
+ },
+ "3": {
+  "final_class": "container_ship",
+  "purity": 0.375,
+  "support": 8,
+  "distribution": {
+   "container_ship": 3,
+   "pleasure_craft": 2,
+   "tug_towing": 2,
+   "fishing_vessel": 1
+  }
+ },
+ "117": {
+  "final_class": "pleasure_craft",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "pleasure_craft": 1
+  }
+ },
+ "217": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.3333,
+  "support": 3,
+  "distribution": {
+   "product_chemical_tanker": 1,
+   "tug_towing": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "12": {
+  "final_class": "tug_towing",
+  "purity": 0.3333,
+  "support": 9,
+  "distribution": {
+   "tug_towing": 3,
+   "pleasure_craft": 2,
+   "offshore_supply": 2,
+   "fishing_vessel": 1,
+   "container_ship": 1
+  }
+ },
+ "208": {
+  "final_class": "dredger",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "dredger": 1,
+   "tug_towing": 1
+  }
+ },
+ "144": {
+  "final_class": "pilot_port_tender",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "pilot_port_tender": 1
+  }
+ },
+ "78": {
+  "final_class": "general_cargo",
+  "purity": 0.2941,
+  "support": 34,
+  "distribution": {
+   "general_cargo": 10,
+   "bulk_carrier": 8,
+   "container_ship": 7,
+   "tug_towing": 3,
+   "offshore_supply": 2,
+   "ro_ro_vehicle_carrier": 2
+  }
+ },
+ "17": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "tug_towing": 1,
+   "pleasure_craft": 1
+  }
+ },
+ "28": {
+  "final_class": "tug_towing",
+  "purity": 0.5385,
+  "support": 13,
+  "distribution": {
+   "tug_towing": 7,
+   "offshore_supply": 4,
+   "fishing_vessel": 2
+  }
+ },
+ "2": {
+  "final_class": "passenger_ship",
+  "purity": 0.1667,
+  "support": 24,
+  "distribution": {
+   "passenger_ship": 4,
+   "tug_towing": 4,
+   "pleasure_craft": 3,
+   "offshore_supply": 3,
+   "fishing_vessel": 3,
+   "product_chemical_tanker": 3
+  }
+ },
+ "91": {
+  "final_class": "offshore_supply",
+  "purity": 0.3529,
+  "support": 17,
+  "distribution": {
+   "offshore_supply": 6,
+   "container_ship": 5,
+   "pleasure_craft": 1,
+   "ro_ro_vehicle_carrier": 1,
+   "product_chemical_tanker": 1,
+   "lpg_lng_tanker": 1
+  }
+ },
+ "73": {
+  "final_class": "container_ship",
+  "purity": 0.8524,
+  "support": 210,
+  "distribution": {
+   "container_ship": 179,
+   "tug_towing": 11,
+   "general_cargo": 10,
+   "bulk_carrier": 6,
+   "ro_ro_vehicle_carrier": 3,
+   "offshore_supply": 1
+  }
+ },
+ "148": {
+  "final_class": "offshore_supply",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "offshore_supply": 1,
+   "product_chemical_tanker": 1
+  }
+ },
+ "15": {
+  "final_class": "general_cargo",
+  "purity": 0.5,
+  "support": 6,
+  "distribution": {
+   "general_cargo": 3,
+   "fishing_vessel": 2,
+   "tug_towing": 1
+  }
+ },
+ "62": {
+  "final_class": "passenger_ship",
+  "purity": 0.8333,
+  "support": 6,
+  "distribution": {
+   "passenger_ship": 5,
+   "general_cargo": 1
+  }
+ },
+ "193": {
+  "final_class": "pleasure_craft",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "pleasure_craft": 1
+  }
+ },
+ "74": {
+  "final_class": "container_ship",
+  "purity": 0.8491,
+  "support": 762,
+  "distribution": {
+   "container_ship": 647,
+   "tug_towing": 53,
+   "general_cargo": 34,
+   "bulk_carrier": 11,
+   "offshore_supply": 7,
+   "ro_ro_vehicle_carrier": 6
+  }
+ },
+ "63": {
+  "final_class": "passenger_ship",
+  "purity": 1.0,
+  "support": 5,
+  "distribution": {
+   "passenger_ship": 5
+  }
+ },
+ "253": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 4,
+  "distribution": {
+   "tug_towing": 2,
+   "product_chemical_tanker": 1,
+   "offshore_supply": 1
+  }
+ },
+ "244": {
+  "final_class": "product_chemical_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "product_chemical_tanker": 1
+  }
+ },
+ "16": {
+  "final_class": "tug_towing",
+  "purity": 0.5455,
+  "support": 11,
+  "distribution": {
+   "tug_towing": 6,
+   "offshore_supply": 3,
+   "bulk_carrier": 1,
+   "general_cargo": 1
+  }
+ },
+ "19": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 4,
+  "distribution": {
+   "tug_towing": 2,
+   "offshore_supply": 1,
+   "product_chemical_tanker": 1
+  }
+ },
+ "160": {
+  "final_class": "offshore_supply",
+  "purity": 0.5,
+  "support": 6,
+  "distribution": {
+   "offshore_supply": 3,
+   "container_ship": 1,
+   "general_cargo": 1,
+   "pleasure_craft": 1
+  }
+ },
+ "170": {
+  "final_class": "offshore_supply",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "offshore_supply": 1,
+   "general_cargo": 1
+  }
+ },
+ "41": {
+  "final_class": "passenger_ship",
+  "purity": 0.25,
+  "support": 4,
+  "distribution": {
+   "passenger_ship": 1,
+   "fishing_vessel": 1,
+   "tug_towing": 1,
+   "sailing_vessel": 1
+  }
+ },
+ "94": {
+  "final_class": "tug_towing",
+  "purity": 0.3,
+  "support": 10,
+  "distribution": {
+   "tug_towing": 3,
+   "offshore_supply": 2,
+   "crude_oil_tanker": 2,
+   "heavy_load_carrier": 1,
+   "fishing_vessel": 1,
+   "container_ship": 1
+  }
+ },
+ "26": {
+  "final_class": "offshore_supply",
+  "purity": 0.6,
+  "support": 5,
+  "distribution": {
+   "offshore_supply": 3,
+   "tug_towing": 2
+  }
+ },
+ "6": {
+  "final_class": "offshore_supply",
+  "purity": 0.3636,
+  "support": 11,
+  "distribution": {
+   "offshore_supply": 4,
+   "passenger_ship": 2,
+   "pilot_port_tender": 1,
+   "general_cargo": 1,
+   "bulk_carrier": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "21": {
+  "final_class": "fishing_vessel",
+  "purity": 0.4,
+  "support": 10,
+  "distribution": {
+   "fishing_vessel": 4,
+   "offshore_supply": 4,
+   "pilot_port_tender": 1,
+   "pleasure_craft": 1
+  }
+ },
+ "35": {
+  "final_class": "offshore_supply",
+  "purity": 0.3571,
+  "support": 28,
+  "distribution": {
+   "offshore_supply": 10,
+   "tug_towing": 7,
+   "sailing_vessel": 3,
+   "ro_ro_vehicle_carrier": 2,
+   "fishing_vessel": 2,
+   "pleasure_craft": 1
+  }
+ },
+ "161": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "143": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "169": {
+  "final_class": "product_chemical_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "product_chemical_tanker": 1
+  }
+ },
+ "120": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "76": {
+  "final_class": "bulk_carrier",
+  "purity": 0.4706,
+  "support": 17,
+  "distribution": {
+   "bulk_carrier": 8,
+   "general_cargo": 3,
+   "fishing_vessel": 2,
+   "container_ship": 2,
+   "lpg_lng_tanker": 1,
+   "tug_towing": 1
+  }
+ },
+ "133": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "179": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "77": {
+  "final_class": "bulk_carrier",
+  "purity": 0.4,
+  "support": 30,
+  "distribution": {
+   "bulk_carrier": 12,
+   "general_cargo": 10,
+   "container_ship": 4,
+   "pilot_port_tender": 1,
+   "offshore_supply": 1,
+   "tug_towing": 1
+  }
+ },
+ "152": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.3333,
+  "support": 3,
+  "distribution": {
+   "product_chemical_tanker": 1,
+   "tug_towing": 1,
+   "crude_oil_tanker": 1
+  }
+ },
+ "150": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "108": {
+  "final_class": "container_ship",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "container_ship": 1,
+   "general_cargo": 1
+  }
+ },
+ "124": {
+  "final_class": "bulk_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "bulk_carrier": 1
+  }
+ },
+ "123": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "223": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "tug_towing": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "199": {
+  "final_class": "general_cargo",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "general_cargo": 1
+  }
+ },
+ "92": {
+  "final_class": "container_ship",
+  "purity": 0.5,
+  "support": 4,
+  "distribution": {
+   "container_ship": 2,
+   "product_chemical_tanker": 1,
+   "tug_towing": 1
+  }
+ },
+ "147": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "248": {
+  "final_class": "bulk_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "bulk_carrier": 1
+  }
+ },
+ "47": {
+  "final_class": "passenger_ship",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "passenger_ship": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "121": {
+  "final_class": "bulk_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "bulk_carrier": 1
+  }
+ },
+ "240": {
+  "final_class": "product_chemical_tanker",
+  "purity": 0.25,
+  "support": 4,
+  "distribution": {
+   "product_chemical_tanker": 1,
+   "general_cargo": 1,
+   "offshore_supply": 1,
+   "lpg_lng_tanker": 1
+  }
+ },
+ "157": {
+  "final_class": "crude_oil_tanker",
+  "purity": 0.3333,
+  "support": 3,
+  "distribution": {
+   "crude_oil_tanker": 1,
+   "general_cargo": 1,
+   "offshore_supply": 1
+  }
+ },
+ "252": {
+  "final_class": "passenger_ship",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "passenger_ship": 1
+  }
+ },
+ "127": {
+  "final_class": "bulk_carrier",
+  "purity": 0.3333,
+  "support": 3,
+  "distribution": {
+   "bulk_carrier": 1,
+   "tug_towing": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "146": {
+  "final_class": "lpg_lng_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "lpg_lng_tanker": 1
+  }
+ },
+ "18": {
+  "final_class": "tug_towing",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "tug_towing": 1,
+   "bulk_carrier": 1
+  }
+ },
+ "154": {
+  "final_class": "general_cargo",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "general_cargo": 1
+  }
+ },
+ "101": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "141": {
+  "final_class": "bulk_carrier",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "bulk_carrier": 1
+  }
+ },
+ "44": {
+  "final_class": "passenger_ship",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "passenger_ship": 1,
+   "fishing_vessel": 1
+  }
+ },
+ "151": {
+  "final_class": "general_cargo",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "general_cargo": 1
+  }
+ },
+ "118": {
+  "final_class": "general_cargo",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "general_cargo": 1
+  }
+ },
+ "175": {
+  "final_class": "general_cargo",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "general_cargo": 1
+  }
+ },
+ "116": {
+  "final_class": "product_chemical_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "product_chemical_tanker": 1
+  }
+ },
+ "231": {
+  "final_class": "lpg_lng_tanker",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "lpg_lng_tanker": 1
+  }
+ },
+ "236": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "14": {
+  "final_class": "fishing_vessel",
+  "purity": 0.6667,
+  "support": 3,
+  "distribution": {
+   "fishing_vessel": 2,
+   "tug_towing": 1
+  }
+ },
+ "129": {
+  "final_class": "bulk_carrier",
+  "purity": 0.5,
+  "support": 2,
+  "distribution": {
+   "bulk_carrier": 1,
+   "offshore_supply": 1
+  }
+ },
+ "130": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "222": {
+  "final_class": "fishing_vessel",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "fishing_vessel": 1
+  }
+ },
+ "186": {
+  "final_class": "fishing_vessel",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "fishing_vessel": 1
+  }
+ },
+ "229": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "202": {
+  "final_class": "fishing_vessel",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "fishing_vessel": 1
+  }
+ },
+ "131": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "209": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "111": {
+  "final_class": "offshore_supply",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "offshore_supply": 1
+  }
+ },
+ "219": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "113": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ },
+ "43": {
+  "final_class": "fishing_vessel",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "fishing_vessel": 1
+  }
+ },
+ "205": {
+  "final_class": "tug_towing",
+  "purity": 1.0,
+  "support": 1,
+  "distribution": {
+   "tug_towing": 1
+  }
+ }
+}

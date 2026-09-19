@@ -1,0 +1,4 @@
+*.tif
+*.tiff
+*.SAFE/
+*.osm.pbf

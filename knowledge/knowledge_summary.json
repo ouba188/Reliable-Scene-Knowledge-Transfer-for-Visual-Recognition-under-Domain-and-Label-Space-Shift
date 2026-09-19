@@ -1,0 +1,69 @@
+{
+ "built_at": "2026-09-19T21:50:26+0800",
+ "products": 841,
+ "layer_prechecks": {
+  "sentinel1_xml": 841,
+  "ais_files": 841,
+  "ais_rows": 841,
+  "fine_class_all_resolved": 6,
+  "worldcover_complete": 589,
+  "worldcover_gap_only_esa_unpublished": 252,
+  "osm_facility_map": 0,
+  "raster_local_complete": 311,
+  "raster_remote_only": 165,
+  "raster_missing_both": 365,
+  "fully_ready": 0
+ },
+ "ais": {
+  "rows": 31176385,
+  "unique_mmsi": 202266,
+  "bad_field_rows": 0,
+  "bad_mmsi_rows": 121620
+ },
+ "fine_class": {
+  "resolved_pairs": 768724,
+  "resolved_from_fill_pairs": 128423,
+  "coarse_only_pairs": 320539,
+  "missing_pairs": 285012,
+  "conflict_pairs": 8731,
+  "unknown_pairs": 0,
+  "distinct_unresolved_mmsi": 64465
+ },
+ "worldcover": {
+  "present_tiles": 92,
+  "missing_tiles": [
+   "ESA_WorldCover_10m_2021_v200_N27E123_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_N30W123_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_N36W072_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_N54E000_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S15W081_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S27W045_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S30E033_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S33E033_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S36E153_Map.tif"
+  ],
+  "products_affected": 252
+ },
+ "fine_classes_seen": {
+  "bulk_carrier": 836,
+  "cargo_coarse": 829,
+  "container_ship": 830,
+  "crude_oil_tanker": 776,
+  "dredger": 657,
+  "fishing_vessel": 785,
+  "general_cargo": 801,
+  "heavy_load_carrier": 366,
+  "lpg_lng_tanker": 576,
+  "offshore_supply": 761,
+  "passenger_ship": 780,
+  "pilot_port_tender": 737,
+  "pleasure_craft": 759,
+  "product_chemical_tanker": 831,
+  "reefer_cargo": 191,
+  "ro_ro_vehicle_carrier": 677,
+  "sailing_vessel": 700,
+  "tanker_coarse": 744,
+  "tug_towing": 841
+ },
+ "elapsed_s": 150.4
+}

@@ -1,0 +1,31 @@
+{
+ "products": 841,
+ "needed_tiles": 101,
+ "local_tiles": 92,
+ "missing_tiles": 9,
+ "missing": [
+  "ESA_WorldCover_10m_2021_v200_N27E123_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N30W123_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N36W072_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N54E000_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S15W081_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S27W045_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S30E033_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S33E033_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S36E153_Map.tif"
+ ],
+ "missing_fetchable": [],
+ "unavailable_in_bucket": [
+  "ESA_WorldCover_10m_2021_v200_N27E123_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N30W123_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N36W072_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_N54E000_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S15W081_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S27W045_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S30E033_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S33E033_Map.tif",
+  "ESA_WorldCover_10m_2021_v200_S36E153_Map.tif"
+ ],
+ "products_with_gaps": 252,
+ "bucket_index_tiles": 2651
+}
