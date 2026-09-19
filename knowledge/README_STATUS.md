@@ -100,20 +100,19 @@ python E:/Hermes/scripts/build_knowledge_841.py
 
 ## 七、MyShipTracking 抓取实测（用于判断要不要长跑）
 
-已跑样本 830 条（成功率 96%，约 1.0 条/秒/4 线程），644 条有标签，标签构成：
+最终跑完 2,771 条查询（成功率 94%），2,246 条有标签，标签构成：
 
 | 标签 | 数量 | 映射结果 |
 |---|---:|---|
-| Cargo | 254 | `cargo_coarse`（粗类） |
-| Tanker | 91 | `tanker_coarse`（粗类） |
-| Other Type / Not available / Law Enforcement / Reserved | 159 | 不可用 |
-| Passenger | 43 | `passenger_ship`（细类） |
-| Tug | 19 | `tug_towing`（细类） |
-| High speed craft / Tanker B / Pilot Vessel / Diving ops | 28 | 部分可用（细类） |
+| Cargo | 990 | `cargo_coarse`（粗类） |
+| Tanker | 303 | `tanker_coarse`（粗类） |
+| Other Type / Not available / Law Enforcement / 助航标志等 | 649 | 不可用 |
+| Passenger | 68 | `passenger_ship`（细类） |
+| Tug | 62 | `tug_towing`（细类） |
+| High speed craft / Tanker B / Diving ops 等 | 174 | 部分可用（细类） |
 
-结论：**标签里有细类价值的只占约 10%，粗类约 55%，无效约 35%。** 所以对剩下 64,465 个未判定
-MMSI 做长时抓取，性价比很低——它们需要 IMO/船舶注册级数据源，而不是继续抓网页。已跑的标签仍会
-并入（粗类也有知识价值），抓取进程可随时中断、可续跑。
+结论（2,246 标签样本）：**细类价值约 8%（Passenger/Tug/Pilot Vessel 等 200 余条），粗类约 58%，无效约 34%，粗类约 55%，无效约 35%。** 所以对剩下 64,465 个未判定
+MMSI 做长时抓取，性价比很低——它们需要 IMO/船舶注册级数据源，而不是继续抓网页。已跑的标签已并入：新增 1,527 个 MMSI 判定，覆盖 4,616,512 条 AIS 行（是纯类型码版的 2.8 倍）。
 
 ## 八、建议的下一步（按性价比排序）
 

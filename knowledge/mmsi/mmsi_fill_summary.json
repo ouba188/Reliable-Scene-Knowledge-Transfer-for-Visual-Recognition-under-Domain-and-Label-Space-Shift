@@ -1,14 +1,14 @@
 {
  "stats": {
   "filled_bundle_ais_type_code": 17645,
-  "needs_manual": 108906,
+  "needs_manual": 107393,
   "already_resolved": 75660,
   "filled_sarais_backend_type_code": 41,
-  "filled_myshiptracking_label": 14
+  "filled_myshiptracking_label": 1527
  },
- "new_classes": 6,
- "ais_rows_newly_resolved": 1749774,
- "ais_rows_still_unresolved": 14312952,
+ "new_classes": 14,
+ "ais_rows_newly_resolved": 4616512,
+ "ais_rows_still_unresolved": 11446214,
  "purity_min": 0.95,
- "generated": "2026-09-19T21:40:27+0800"
+ "generated": "2026-09-19T22:25:34+0800"
 }
