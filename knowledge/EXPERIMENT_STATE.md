@@ -4,7 +4,7 @@
 > 约定：**谁完成一轮工作，就更新本文件里自己的那一行 + 时间戳，并推仓库**（仓库镜像 `knowledge/EXPERIMENT_STATE.md`）。
 > 数字必须来自本次实读，不得沿用旧汇总；不确定的写「未知」而不是猜。
 
-最后更新：**2026-09-20 19:45**（by 20260920_101220_372993）
+最后更新：**2026-09-20 20:30**（by 20260919_143043_19c027 · Phase 0 收口）
 
 ---
 
@@ -19,7 +19,7 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 
 | 会话 | 负责 | 关键产物（实读） |
 |---|---|---|
-| **19c027** | 本机检测+标注（`E:/safe841_local_20260918`，658 影像）、MMSI 类别层、服务器标注/实例运维 | `mmsi_class_final.csv` 126,606 MMSI（fine 22,615 / coarse 45,409 / non_ship 18,043 / untyped 146 / unknown 40,393）；本机 labels_scene.json 汇总 |
+| **19c027** | 本机检测+标注（`E:/safe841_local_20260918`，658 影像）、MMSI 类别层、**Phase 0 数据管线**、服务器标注/实例运维 | `mmsi_class_final.csv` 126,606 MMSI（fine 22,615 / coarse 45,409 / non_ship 18,043 / untyped 146 / unknown 40,393）；本机 labels_scene.json 汇总；**`knowledge/phase0/`**（splits / masks_index / geo_index / support_by_port_class / README / STATUS） |
 | **372993**（本会话） | 栅格恢复与 841 覆盖对账、服务器并机（westd 为主）、**夸克网盘归档**、标注执行计划 | 服务器大图 **1,921 张**；`标注执行计划_20260920.md`；**841 标注收口（841/841，19:45 实读）**；**夸克上传通道打通 + 归档进行中**（`quark_upload.py`/`quark_archive.py`；协议沉淀为 skill `quark-netdisk-upload`） |
 | **d0b3b3** | **知识集**：对象表 $k_i$、设施几何+逐要素定年、$d_p$、AIS 经验航道方向场、派生岸线；GitHub 实时同步 | `objects_final.csv.gz`（2,897,382 对象 × 64 列）、`port_knowledge.csv`（24×67）、`traffic/*.csv`（24 港）、`osm_way_dates.csv`、`facilities/*.geojson`（97 MB） |
 
@@ -30,6 +30,8 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | **服务器 westd** `/root/autodl-tmp/`（1.1T，剩 110G） | `knowledge_841_20260920/` 303 MB（知识集）· `safe841_batch/` 标注台（**completed 841**，含 442 原有 + 218 本机传输 + 181 服务器新跑 + 2 补跑）· 大图 1,921 张 · 活动任务：`quark_archive.py`（12 uploaders / 4 converters，跳过 PNG 阶段） |
 | **本机 E:/临时会话/knowledge_set_841/** | 知识集全量（对象表 195 MB、设施几何、方向场、定年、类别层、`NEXT_STEP_BRIEF.md`） |
 | **本机 E:/safe841_local_20260918/** | 本机检测输出（658 影像 / 109,118 块），19c027 负责 |
+| **服务器 westd** `/root/autodl-tmp/phase0/`（755 文件 / 418 MB，20:20 实读回读核对） | Phase 0 全量：splits · geo（24 港 GeoJSON，217 MB）· masks（658 景 PNG，56 MB）· mmsi · ports · facilities · support_by_port_class.csv |
+| **本机 E:/临时会话/knowledge_set_841/{splits,geo,masks}** | Phase 0 本地产物（geo 217 MB / masks 56 MB / splits 136 KB），与服务器同源 |
 | **GitHub** `ouba188/Reliable-Scene-Knowledge-Transfer-…` | 文本/脚本/汇总（commit `6c721bf`）：`knowledge/`、`scripts_v2/`；**大文件不入库**（对象表/几何只在服务器+本机） |
 | **夸克网盘** | SAR_8bit 1.58T + 0915增量 271.7G 归档；**841 数据集归档目录 `SAR_AIS_T_841_20260920/{tif,png,labels}`**（服务器侧上传中） |
 | **服务器脚本** | `/root/quark_upload.py`（夸克 web 上传协议实现，cookie 在 `/root/quark_cookie.txt` 0600）· `/root/quark_archive.py`（841 归档流水线，state 断点续传）· `/root/run_quark_archive.sh`（tmux 内守护） |
@@ -54,9 +56,11 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | 知识集（$k_i$/设施/定年/$d_p$/方向场） | ✅ 已收口并上传服务器 + 入库 GitHub |
 | **夸克归档** | 🔄 进行中（19:40 实读：**580/3067 文件 / 83.4 GB / 17.8 MB/s / 0 失败**）；已定：**先传原格式 tif + 标注 JSON**，PNG 后补；ETA ≈ 明早 7–8 点（账号带宽上限 ~25MB/s 已实测） |
 | 0917 机制实验（B0→Full） | **未开始**——输入层已就绪 |
+| **Phase 0 数据管线**（19c027） | ✅ **20:30 收口**：大景框标注 658 景 / 448,080 框 · 地理回写 24 港 GeoJSON · offshore mask 658 景（离岸 45.4% / 近岸 1.4% / 陆 27.1%）· 采集级 split 24 折 LOPO（全为 partial-set）· 每港每类支撑 79,059 个带类对象；**仅 native-res COG 瓦片未做** |
 
 ## 6. 下一步（待用户与 ChatGPT 讨论后定）
 
+0. **Phase 0 已闭合 → Phase 1 可直接开跑**：划分、掩膜、地理回写、类别支撑都在 `knowledge/phase0/`（服务器 `phase0/` 同源）；source-only class-aware / class-agnostic 基线直接用 `splits/port_acquisition_split.csv` 的 adapt/eval。注意 **target_private 天然为 0**，I3 需 episodic 模拟造目标私有类。
 1. 用对象表跑 0917 设计的四组小规模实验（visual-only / metadata / 旧 scene graph / 条件关系矩筛选）。
 2. 确定 $\Delta$ 的可操作定义与 K 的三档消融映射（见 `NEXT_STEP_BRIEF.md` 第 7 节）。
 3. 若实验需要扩展 $k_i$（到堆场/铁路/储罐/船厂距离、对象↔设施二部图），服务器已有 97 MB 原始几何可直接算。
