@@ -1,0 +1,34 @@
+{
+ "Sydney Botany": {
+  "products": 11,
+  "instances": 2382,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 8
+  }
+ },
+ "Qingdao": {
+  "products": 12,
+  "instances": 24919,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 8
+  }
+ },
+ "Antwerp-Bruges": {
+  "products": 8,
+  "instances": 30902,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 8
+  }
+ },
+ "Hamburg": {
+  "products": 8,
+  "instances": 12113,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 8
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "target": "Rotterdam",
+  "fit_ports": [
+    "Busan",
+    "Fujairah",
+    "Houston",
+    "Jebel Ali",
+    "Los Angeles",
+    "Melbourne",
+    "Mombasa",
+    "New York",
+    "Ningbo-Zhoushan",
+    "Port Hedland",
+    "Port Klang",
+    "Richards Bay",
+    "Santos",
+    "Shanghai",
+    "Singapore",
+    "Tanger Med"
+  ],
+  "fit_objects": 26750,
+  "B": 4,
+  "input_feature_dim": 512,
+  "target_fit": false
+}

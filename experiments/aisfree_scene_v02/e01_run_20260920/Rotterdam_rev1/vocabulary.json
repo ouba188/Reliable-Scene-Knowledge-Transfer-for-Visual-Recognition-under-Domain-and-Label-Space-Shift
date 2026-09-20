@@ -1,0 +1,75 @@
+{
+ "vocabulary": {
+  "container_ship": {
+   "Singapore": 17,
+   "Mombasa": 3,
+   "Santos": 1,
+   "Jebel Ali": 3,
+   "Shanghai": 895,
+   "Ningbo-Zhoushan": 31,
+   "Busan": 2,
+   "Port Klang": 2
+  },
+  "dredger": {
+   "Jebel Ali": 44,
+   "Houston": 1,
+   "Singapore": 141,
+   "New York": 1,
+   "Port Klang": 1,
+   "Shanghai": 225,
+   "Ningbo-Zhoushan": 2,
+   "Fujairah": 1
+  },
+  "fishing_vessel": {
+   "Singapore": 24,
+   "New York": 1,
+   "Jebel Ali": 4,
+   "Houston": 13,
+   "Shanghai": 472,
+   "Ningbo-Zhoushan": 48,
+   "Busan": 14,
+   "Fujairah": 2,
+   "Port Klang": 1,
+   "Santos": 2
+  },
+  "product_chemical_tanker": {
+   "Singapore": 29,
+   "Fujairah": 2,
+   "Jebel Ali": 30,
+   "Shanghai": 222,
+   "Ningbo-Zhoushan": 13,
+   "Busan": 1,
+   "Santos": 2
+  },
+  "tug_towing": {
+   "Jebel Ali": 268,
+   "Houston": 69,
+   "Singapore": 50,
+   "Fujairah": 9,
+   "New York": 4,
+   "Shanghai": 259,
+   "Ningbo-Zhoushan": 1,
+   "Port Klang": 7,
+   "Busan": 1
+  }
+ },
+ "valid_gate": 0.95,
+ "source_fit_ports": [
+  "Busan",
+  "Fujairah",
+  "Houston",
+  "Jebel Ali",
+  "Los Angeles",
+  "Melbourne",
+  "Mombasa",
+  "New York",
+  "Ningbo-Zhoushan",
+  "Port Hedland",
+  "Port Klang",
+  "Richards Bay",
+  "Santos",
+  "Shanghai",
+  "Singapore",
+  "Tanger Med"
+ ]
+}
