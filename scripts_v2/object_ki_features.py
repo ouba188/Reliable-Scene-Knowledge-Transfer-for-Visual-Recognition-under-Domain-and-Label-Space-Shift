@@ -17,6 +17,7 @@ Distances use shapely 2 vectorized STRtree queries (dwithin), so cost is ~O(n lo
 import math
 
 import numpy as np
+import shapely
 from shapely.geometry import Point
 from shapely.strtree import STRtree
 
@@ -26,23 +27,27 @@ WORLDCOVER_WATER = 80
 
 
 def nearest_within(tree, geoms, points, radius=RADIUS):
-    """Return (distance array, index array) for the nearest geometry to each point (cap if none)."""
+    """Return (distance array, index array) for the nearest geometry to each point (cap if none).
+
+    Vectorised: the per-pair Python loop this started as dominated the whole object-table build once
+    dense ports (100k+ extracted geometries) met 20k-object scenes, because a 2 km dwithin query can
+    return millions of pairs. shapely 2 distances are array-wise, so the loop is gone.
+    """
     n = len(points)
     dist = np.full(n, radius, dtype=float)
     idx = np.full(n, -1, dtype=int)
     if tree is None or not len(geoms):
         return dist, idx
     hits = tree.query(points, predicate='dwithin', distance=radius)
-    obj_idx, geom_idx = hits[0], hits[1]
+    obj_idx, geom_idx = np.asarray(hits[0]), np.asarray(hits[1])
     if len(obj_idx):
-        uniq = {}
-        for o, g in zip(obj_idx, geom_idx):
-            d = points[o].distance(geoms[g])
-            if d < dist[o]:
-                dist[o] = d
-                uniq[o] = g
-        for o, g in uniq.items():
-            idx[o] = g
+        arr = np.asarray(points)
+        garr = np.array(list(geoms), dtype=object)
+        d = np.asarray(shapely.distance(arr[obj_idx], garr[geom_idx]), dtype=float)
+        better = d < dist[obj_idx]
+        if better.any():
+            np.minimum.at(dist, obj_idx[better], d[better])
+            idx[obj_idx[better]] = geom_idx[better]
     return dist, idx
 
 

@@ -21,7 +21,7 @@ FACILITIES = KS / 'facilities'
 DOCMS = Path(r'E:/Docms/Port')
 RUNWIDE = Path(r'E:/Install_packs/port_osm_run/port_osm_output/run_wide/ports')
 OUT = FACILITIES / 'osm_way_dates.csv'
-API = 'https://api.openstreetmap.org/api/0.6/way/%d.json'
+API = 'https://api.openstreetmap.org/api/0.6/%s/%d.json'
 UA = {'User-Agent': 'hermes-research-facility-dating/1.0 (offline SAR-AIS study; contact: local)'}
 WORKERS = 10
 SCREEN_KINDS = ('quay', 'pier', 'breakwater', 'groyne', 'jetty', 'dock', 'terminal', 'storage_tank',
@@ -31,10 +31,37 @@ done = set()
 
 
 def load_done():
-    if OUT.is_file():
-        with OUT.open('r', encoding='utf-8-sig', newline='') as f:
-            for r in csv.DictReader(f):
+    """Keys already in the CSV, as 'element:id'. Legacy rows predate the element column (= ways)."""
+    if not OUT.is_file():
+        return
+    with OUT.open('r', encoding='utf-8-sig', newline='') as f:
+        reader = csv.DictReader(f)
+        legacy = 'element' not in (reader.fieldnames or [])
+        for r in reader:
+            if legacy:
+                done.add('way:' + r['osm_id'])
                 done.add(r['osm_id'])
+            else:
+                done.add((r.get('element') or 'way') + ':' + r['osm_id'])
+
+
+def migrate_legacy_file():
+    """One-off: give an old 5-column CSV the element column so appends stay aligned."""
+    if not OUT.is_file():
+        return
+    with OUT.open('r', encoding='utf-8-sig', newline='') as f:
+        rows = list(csv.DictReader(f))
+        fields = list(rows[0].keys()) if rows else []
+    if 'element' in fields:
+        return
+    tmp = OUT.with_suffix('.migrating.csv')
+    with tmp.open('w', encoding='utf-8-sig', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=['osm_id', 'element', 'version', 'timestamp', 'fetched_at', 'status'])
+        w.writeheader()
+        for r in rows:
+            w.writerow(dict(r, element='way'))
+    tmp.replace(OUT)
+    print('已迁移旧 CSV 到 element 列（%d 行）' % len(rows), flush=True)
 
 
 def norm_id(v):
@@ -66,7 +93,7 @@ def screening_osm_ids():
         for oid in wanted['osm_id'].dropna().unique():
             key = norm_id(oid)
             if key:
-                ids[key] = 'pbf_' + gj.stem
+                ids['way:' + key] = 'pbf_' + gj.stem
     for root in (DOCMS, RUNWIDE):
         for base in sorted(root.glob('*')):
             gpkgs = sorted(base.rglob('layers*.gpkg')) if base.is_dir() else []
@@ -74,59 +101,86 @@ def screening_osm_ids():
                 continue
             for layer in ('infra_quay_pier_breakwater', 'seamark_anchorages', 'seamark_berth',
                           'infra_oil_tanks', 'infra_silos_conveyors', 'harbour_cat_tanker',
-                          'harbour_cat_container', 'harbour_cat_bulk'):
+                          'harbour_cat_container', 'harbour_cat_bulk', 'osm_all', 'water_context',
+                          'infra_cranes', 'seamark_harbour', 'coastline'):
                 try:
                     frame = gpd.read_file(gpkgs[0], layer=layer, columns=['element', 'id'])
                 except Exception:
                     continue
                 if not len(frame) or 'id' not in frame.columns:
                     continue
-                ways = frame[frame['element'].astype(str).str.lower().eq('way')]
-                for oid in ways['id'].dropna().unique():
+                elems = (frame['element'].astype(str).str.lower() if 'element' in frame.columns
+                         else pd.Series('way', index=frame.index))
+                for elem, oid in zip(elems, frame['id']):
+                    if elem not in ('way', 'node', 'relation'):
+                        continue
                     key = norm_id(oid)
                     if key:
-                        ids.setdefault(key, 'gpkg_' + base.name)
+                        ids.setdefault(elem + ':' + key, 'gpkg_' + base.name)
     return ids
 
 
-def fetch(oid):
+def fetch(key):
     import urllib.request
+    elem, _, oid = key.partition(':')
+    url = API % (elem, int(oid))
     for attempt in range(5):
         try:
-            req = urllib.request.Request(API % int(oid), headers=UA)
+            req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=30) as resp:
                 el = json.load(resp)['elements'][0]
-            return dict(osm_id=oid, version=el.get('version', ''), timestamp=el.get('timestamp', ''),
+            return dict(osm_id=oid, element=elem, version=el.get('version', ''), timestamp=el.get('timestamp', ''),
                         fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'), status='ok')
         except urllib.error.HTTPError as exc:
             if exc.code == 404:
-                return dict(osm_id=oid, version='', timestamp='', fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
-                            status='deleted_or_missing')
+                return dict(osm_id=oid, element=elem, version='', timestamp='',
+                            fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'), status='deleted_or_missing')
             if exc.code in (429, 500, 502, 503, 504):
                 time.sleep(2 ** attempt)
                 continue
-            return dict(osm_id=oid, version='', timestamp='', fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
-                        status='http_%d' % exc.code)
-        except Exception as exc:
+            return dict(osm_id=oid, element=elem, version='', timestamp='',
+                        fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'), status='http_%d' % exc.code)
+        except Exception:
             time.sleep(2 ** attempt)
-            last = repr(exc)[:60]
-    return dict(osm_id=oid, version='', timestamp='', fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
-                status='error')
+    return dict(osm_id=oid, element=elem, version='', timestamp='',
+                fetched_at=time.strftime('%Y-%m-%dT%H:%M:%S%z'), status='error')
 
 
 def main():
     only = sys.argv[1:]
     load_done()
-    ids = screening_osm_ids()
+    ids_file = None
+    if '--ids-file' in only:
+        i = only.index('--ids-file')
+        ids_file = Path(only[i + 1])
+        only = only[:i] + only[i + 2:]
+    if ids_file:
+        # priority queue: the features the object table actually hits (usually ~10x smaller than the
+        # full screening set), so the temporal column is complete long before the wide sweep ends.
+        # Lines are 'element:id' or a bare id (a way).
+        ids = {}
+        for line in ids_file.read_text(encoding='utf-8').split('\n'):
+            line = line.strip()
+            if not line:
+                continue
+            elem, sep, oid = line.partition(':')
+            if not sep:
+                elem, oid = 'way', line
+            key = norm_id(oid)
+            if key:
+                ids[elem + ':' + key] = 'object_hits'
+    else:
+        ids = screening_osm_ids()
     if only:
         ids = {k: v for k, v in ids.items() if any(t in v for t in only)}
     todo = [oid for oid in ids if oid not in done]
     print('候选 %d 条，已完成 %d，本次 %d 条' % (len(ids), len(ids) - len(todo), len(todo)), flush=True)
     if not todo:
         return
+    migrate_legacy_file()
     new_file = not OUT.is_file()
     with OUT.open('a', encoding='utf-8-sig', newline='') as f:
-        w = csv.DictWriter(f, fieldnames=['osm_id', 'version', 'timestamp', 'fetched_at', 'status'])
+        w = csv.DictWriter(f, fieldnames=['osm_id', 'element', 'version', 'timestamp', 'fetched_at', 'status'])
         if new_file:
             w.writeheader()
         n = 0

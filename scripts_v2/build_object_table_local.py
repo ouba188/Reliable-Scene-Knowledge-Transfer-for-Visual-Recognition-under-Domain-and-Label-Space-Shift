@@ -52,16 +52,31 @@ SIGNALS = ['ais_unique_match', 'fine_class_resolved', 'valid_area_ok', 'coast_kn
 
 
 def load_classes():
+    """mmsi -> (final_class, class_level, confidence, source).
+
+    Prefers the 19c027 MMSI class layer (mmsi_class_final.csv: fine/coarse/non_ship/untyped/unknown),
+    which supersedes the older filled table; the mapping/fill pair stays as a fallback so the script
+    still works if only the previous artifacts exist.
+    """
     table = {}
+    final = KS / 'mmsi' / 'mmsi_class_final.csv'
+    if final.is_file():
+        with final.open('r', encoding='utf-8-sig', newline='') as f:
+            for r in csv.DictReader(f):
+                if r.get('final_class'):
+                    table[r['mmsi']] = (r['final_class'], r.get('class_level', ''), r.get('confidence', ''),
+                                        r.get('source', ''))
+    if table:
+        return table
     with MAPPING.open('r', encoding='utf-8-sig', newline='') as f:
         for r in csv.DictReader(f):
             if (r.get('mapping_status') or '') == 'fine_class_mapped' and r.get('final_class'):
-                table[r['mmsi']] = (r['final_class'], 'curated_mapping_layer')
+                table[r['mmsi']] = (r['final_class'], 'fine', '', 'curated_mapping_layer')
     if FILL.is_file():
         with FILL.open('r', encoding='utf-8-sig', newline='') as f:
             for r in csv.DictReader(f):
                 if r['final_class'] and r['mmsi'] not in table:
-                    table[r['mmsi']] = (r['final_class'], r['source'])
+                    table[r['mmsi']] = (r['final_class'], 'fine', '', r['source'])
     return table
 
 
@@ -85,13 +100,16 @@ def load_port_geometry(port):
         for name in gpd.list_layers(gpkgs[0])['name'].tolist():
             if name == 'ships':
                 continue
+            print('  [geo] %s <- %s :: %s' % (port, gpkgs[0].parent.name + '/' + gpkgs[0].name, name),
+                  flush=True)
             frame = gpd.read_file(gpkgs[0], layer=name)
             if len(frame):
                 part = frame[['geometry']].copy()
                 if 'id' in frame.columns:                  # local layers carry element+id
                     elem = (frame['element'].astype(str).str.lower() if 'element' in frame.columns
                             else pd.Series('way', index=frame.index))
-                    part['osm_id'] = frame['id'].where(elem.eq('way'))
+                    part['osm_id'] = frame['id'].where(elem.isin(['way', 'node', 'relation']))
+                    part['osm_element'] = elem.where(elem.isin(['way', 'node', 'relation']), 'way')
                 part['facility_kind'] = name
                 parts.append(part)
     gj = FACILITIES / (port + '.geojson')
@@ -100,7 +118,10 @@ def load_port_geometry(port):
         if len(frame):
             if 'facility_kind' not in frame.columns:      # older extracts predate the kind column
                 frame = frame.assign(facility_kind=frame.apply(fpf.kind_of, axis=1))
-            parts.append(frame[['geometry', 'facility_kind']])
+            keep = ['geometry', 'facility_kind'] + [c for c in ('osm_id', 'osm_element') if c in frame.columns]
+            if 'osm_element' not in frame.columns and 'osm_id' in frame.columns:
+                frame = frame.assign(osm_element='way')   # pyogrio gives way/relation ids alike
+            parts.append(frame[keep])
     derived = FACILITIES / (port + '.coastline.geojson')   # WorldCover-derived, for ports without OSM coast
     if derived.is_file():
         frame = gpd.read_file(derived)
@@ -112,9 +133,13 @@ def load_port_geometry(port):
     fac = fac[fac.geometry.notna() & ~fac.geometry.is_empty].reset_index(drop=True)
     if 'osm_id' not in fac.columns:
         fac['osm_id'] = ''
+    if 'osm_element' not in fac.columns:
+        fac['osm_element'] = 'way'
+    fac['osm_element'] = fac['osm_element'].fillna('way').astype(str)
     # ponytail: ids stay as strings end to end; gpkg stores them as floats ('558793732.0')
     fac['osm_id'] = ['' if (v is None or (isinstance(v, float) and math.isnan(v))) else str(int(float(v)))
                      if str(v).replace('.', '').isdigit() else '' for v in fac['osm_id']]
+    fac.loc[fac['osm_id'] == '', 'osm_element'] = ''
     return fac
 
 
@@ -172,14 +197,24 @@ def traffic_angle(points, obb_long_deg, field, max_dist=2000.0, min_aniso=1.5):
 
 
 def load_way_dates():
-    """osm_id -> last-edit timestamp, from the OSM-API dating pass (empty when that pass has not run)."""
+    """Feature time evidence from the OSM-API dating pass, keyed 'element:id'.
+
+    A legacy CSV without an element column (pre-node support) is all ways; a bare-id fallback is only
+    offered in that case, otherwise way 123 and node 123 would be confused with each other.
+    """
     path = FACILITIES / 'osm_way_dates.csv'
     dates = {}
     if path.is_file():
         with path.open('r', encoding='utf-8-sig', newline='') as f:
-            for r in csv.DictReader(f):
-                if r.get('status') == 'ok' and r.get('timestamp'):
-                    dates[r['osm_id']] = r['timestamp']
+            reader = csv.DictReader(f)
+            legacy = 'element' not in (reader.fieldnames or [])
+            for r in reader:
+                if r.get('status') != 'ok' or not r.get('timestamp'):
+                    continue
+                elem = 'way' if legacy else (r.get('element') or 'way')
+                dates[elem + ':' + r['osm_id']] = r['timestamp']
+                if legacy:
+                    dates.setdefault(r['osm_id'], r['timestamp'])
     return dates
 
 
@@ -288,7 +323,8 @@ def main():
                         geoms = list(v.geometry)
                         kinds = list(v['facility_kind'].astype(str))
                         ids = list(v['osm_id'].astype(str))
-                        port_cache[cache_key][k] = dict(geoms=geoms, kinds=kinds, ids=ids,
+                        elems = list(v['osm_element'].astype(str))
+                        port_cache[cache_key][k] = dict(geoms=geoms, kinds=kinds, ids=ids, elems=elems,
                                                         tree=STRtree(geoms) if geoms else None)
             geo = port_cache[cache_key]
             if geo is None:
@@ -348,23 +384,25 @@ def main():
                                - scene_pts[(j + 1) % len(scene_pts)][0] * scene_pts[j][1]
                                for j in range(len(scene_pts)))) / 2.0
                 sides = [math.dist(scene_pts[j], scene_pts[(j + 1) % len(scene_pts)]) for j in range(len(scene_pts))]
-                kind, fdist, fid = '', '', ''
+                kind, fdist, fid, felem = '', '', '', ''
                 if geo and geo['facility']['tree'] is not None:
-                    geoms_f, kinds_f, ids_f = geo['facility']['geoms'], geo['facility']['kinds'], geo['facility']['ids']
+                    geoms_f, kinds_f = geo['facility']['geoms'], geo['facility']['kinds']
+                    ids_f, elems_f = geo['facility']['ids'], geo['facility']['elems']
                     hit = geo['facility']['tree'].query(fac_pts[i].buffer(FACILITY_BUFFER_M))
                     if len(hit):
                         d = [fac_pts[i].distance(geoms_f[j]) for j in hit]
                         j = hit[int(min(range(len(hit)), key=lambda t: d[t]))]
                         kind = kinds_f[j]
                         fid = ids_f[j]
+                        felem = elems_f[j]
                         fdist = round(fac_pts[i].distance(geoms_f[j]), 1)
-                fac_ts = way_dates.get(fid, '')
+                fac_ts = way_dates.get((felem or 'way') + ':' + fid, way_dates.get(fid, '')) if fid else ''
                 scene_day = (key.get('start_utc') or '')[:10]
                 mmsi = (obj.get('matched_mmsi') or obj.get('candidate_mmsi') or '')
-                fine, fine_src = classes.get(str(mmsi), ('', ''))
+                fine, fine_level, fine_conf, fine_src = classes.get(str(mmsi), ('', '', '', ''))
                 signals = dict(
                     ais_unique_match=obj.get('match_status') == 'unique_spatial_candidate',
-                    fine_class_resolved=bool(fine),
+                    fine_class_resolved=(fine_level == 'fine' and not fine.endswith('_coarse')),
                     valid_area_ok=(obj.get('pixel_status') or '') not in ('', 'zero_only', 'invalid'),
                     coast_known=(obj.get('coast_status') or '') not in ('', 'unavailable', 'missing'),
                     facility_context=bool(kind),
@@ -381,11 +419,14 @@ def main():
                     screen_status=obj.get('screen_status', ''), match_status=obj.get('match_status', ''),
                     candidate_mmsi=obj.get('candidate_mmsi', ''), candidate_distance_m=obj.get('candidate_distance_m', ''),
                     matched_mmsi=mmsi, prelabel_class=obj.get('prelabel_class', ''),
+                    ais_final_class=fine, ais_class_level=fine_level, ais_class_confidence=fine_conf,
+                    ais_class_source=fine_src,
                     fine_class=fine, fine_class_source=fine_src,
                     pixel_status=obj.get('pixel_status', ''), valid_fraction=obj.get('valid_fraction', ''),
                     zero_fraction=obj.get('zero_fraction', ''), coast_status=obj.get('coast_status', ''),
                     coast_exclusion_m=obj.get('coast_exclusion_m', ''),
                     facility_kind=kind, facility_distance_m=fdist, facility_osm_id=fid,
+                    facility_osm_element=felem,
                     facility_edit_ts=fac_ts,
                     facility_temporal_valid=('' if not fac_ts else int(fac_ts[:10] <= scene_day)),
                     d_coast_m=round(float(min(dist['coast'][i], dist['coast_derived'][i])), 1), d_quay_m=round(float(dist['quay'][i]), 1),

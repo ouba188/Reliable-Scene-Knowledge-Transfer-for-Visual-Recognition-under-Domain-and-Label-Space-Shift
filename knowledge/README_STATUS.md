@@ -131,10 +131,13 @@ MMSI 做长时抓取，性价比很低——它们需要 IMO/船舶注册级数�
 - **$d_p$ 港口知识向量** `ports/port_knowledge.csv`（24 港 × 67 列）：meta（场景日期跨度/轨道/成像时刻）、
   facility（各类型要素计数）、function（油品/集装箱/散货/渡轮/船厂/铁路代理指标）、
   scene（AIS 船类占比、平均船长宽、AIS 空间范围）。
-- **对象级 $k_i$ 表** `objects/objects.csv.gz`：逐对象给岸线/泊位/锚地/航道距离、`on_fairway`、
+- **对象级 $k_i$ 表** `objects/objects_final.csv.gz`：逐对象给岸线/泊位/锚地/航道距离、`on_fairway`、
   航道夹角（含来源）、500 m/1 km 密度、最近邻距离、航向一致性、WorldCover 语义海域、
-  设施类型/距离/`osm_id`/编辑时间，以及 `support_i`（6 信号）与 `support_missing`。
+  设施类型/距离/`osm_id`/`element`（way|node）/编辑时间、AIS 类别四列
+  （`ais_final_class / ais_class_level / ais_class_confidence / ais_class_source`，取自 19c027 的
+  `mmsi/mmsi_class_final.csv`），以及 `support_i`（6 信号）与 `support_missing`。
   `d_coast_m` 的来源用 `distance_source` 列区分：`osm_coastline` / `worldcover_derived` / `pipeline_worldcover`。
+  构建按 3 分片并行（`objects_part*.csv.gz`）再合并，309 秒→约 1/3 时间。
 - 关键修正：对象表同时合并**两套本机港口图层**（`port_osm_output/run_wide` 的通用层 +
   `E:/Docms/Port` 的细分类层），否则设施类型会退化成单一 `osm_all`。
 
