@@ -1,4 +1,4 @@
-# 实验状态 · 单一事实来源（三会话共享）
+﻿# 实验状态 · 单一事实来源（三会话共享）
 
 > 本文件是**唯一权威状态**：`20260919_143043_19c027`、`20260920_101220_372993`、`20260919_204838_d0b3b3` 三个会话都在为同一个实验服务。
 > 约定：**谁完成一轮工作，就更新本文件里自己的那一行 + 时间戳，并推仓库**（仓库镜像 `knowledge/EXPERIMENT_STATE.md`）。
@@ -75,3 +75,14 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 - 每次收口一轮：更新「最后更新」行 + 自己那一行 + 第 5 节对应里程碑。
 - 同步动作：本机 `E:/Docms/无监督域适应/translated/0917/EXPERIMENT_STATE.md` ← 权威；副本推仓库 `knowledge/EXPERIMENT_STATE.md` + `E:/临时会话/knowledge_set_841/`。
 - 三个会话的系统提示里都记了本路径（memory），会话启动时先读本文件。
+
+## E01 第一轮（rev1）执行结果 — 2026-09-21 03:45（by d0b3b3）
+
+- **E01 第一批执行包已按网页 GPT 交付执行完毕**：四折 Rotterdam / Shanghai / Port Klang / Fujairah
+  全部跑通（冻结实现 sha256：chips=b4c5964178f2 features=ff926d1685d3 glue=e72fa557f276 core=cd207624d7f1）。
+- 服务器产物：`/root/autodl-tmp/e01_chips_rev1/`（329 分片，408,981 实例，valid_joint 全 1.000）、
+  `/root/autodl-tmp/e01_runs/<折>_rev1/`（features/groups/heads/relations/校准/筛选/指标）。
+- 主要结论：四折 retained 全 8/8 ⇒ Full≡B1；可评价标签支撑 7–430 是主瓶颈（非图像问题：0 个对象因 I/O 被排除）。
+- 仓库：`experiments/aisfree_scene_v02/e01_run_20260920/`（总汇总见 RESULT_ALL_FOLDS_rev1.md）；
+  rev0 因 crop 行列写反（ds.index 返回 row,col）保留为 pilot，不作方法对照。
+- 待办：P1 关系误差分解 / P3 归因（Static/Group/Full）；标签支撑方案待网页 GPT 裁定。
