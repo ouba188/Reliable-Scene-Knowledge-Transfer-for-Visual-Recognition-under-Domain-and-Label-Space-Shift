@@ -1,0 +1,41 @@
+{
+ "n_eval_labelled_in_vocab": 46,
+ "n_eval_total": 13200,
+ "B0": 3,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "vocabulary": [
+  "container_ship",
+  "dredger",
+  "fishing_vessel",
+  "product_chemical_tanker",
+  "tug_towing"
+ ],
+ "per": {
+  "B0": {
+   "acc": 0.1956521739130435,
+   "equal_port_acc": 0.1956521739130435,
+   "n": 46
+  },
+  "B1": {
+   "acc": 0.2608695652173913,
+   "equal_port_acc": 0.2608695652173913,
+   "n": 46
+  },
+  "Full": {
+   "acc": 0.2608695652173913,
+   "equal_port_acc": 0.2608695652173913,
+   "n": 46
+  }
+ },
+ "rescue_vs_B1": 0,
+ "harm_vs_B1": 0
+}

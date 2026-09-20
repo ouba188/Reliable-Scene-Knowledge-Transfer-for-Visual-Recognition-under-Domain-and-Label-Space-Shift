@@ -1,0 +1,27 @@
+{
+ "vocabulary": {
+  "container_ship": 954,
+  "dredger": 416,
+  "fishing_vessel": 581,
+  "product_chemical_tanker": 299,
+  "tug_towing": 668
+ },
+ "source_fit_ports": [
+  "Busan",
+  "Fujairah",
+  "Houston",
+  "Jebel Ali",
+  "Los Angeles",
+  "Melbourne",
+  "Mombasa",
+  "New York",
+  "Ningbo-Zhoushan",
+  "Port Hedland",
+  "Port Klang",
+  "Richards Bay",
+  "Santos",
+  "Shanghai",
+  "Singapore",
+  "Tanger Med"
+ ]
+}

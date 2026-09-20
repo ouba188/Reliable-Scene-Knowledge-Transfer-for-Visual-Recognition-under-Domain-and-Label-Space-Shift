@@ -1,0 +1,9 @@
+{
+ "fold": "Rotterdam",
+ "instances": 408981,
+ "source_fit_labelled": 2918,
+ "classes": 5,
+ "epochs": 30,
+ "amp_bf16": true,
+ "seconds": 1197.4
+}

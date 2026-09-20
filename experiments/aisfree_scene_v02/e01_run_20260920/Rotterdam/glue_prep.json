@@ -1,0 +1,7 @@
+{
+ "target_eval_instances": 13200,
+ "target_adapt_instances": 13949,
+ "B0": 3,
+ "H": 8,
+ "C": 5
+}
