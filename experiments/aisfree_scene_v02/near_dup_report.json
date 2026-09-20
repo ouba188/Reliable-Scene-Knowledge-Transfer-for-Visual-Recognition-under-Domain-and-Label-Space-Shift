@@ -1,0 +1,19 @@
+{
+ "table": "E:\\临时会话\\knowledge_set_841\\objects\\objects_final.csv.gz",
+ "rows": 2897382,
+ "products": 329,
+ "tolerance_m": 10.0,
+ "pairs_within_tolerance": 1740826,
+ "products_with_duplicates": 329,
+ "duplicate_share_of_rows": 1.2017,
+ "breakdown": {
+  "cross_pol": 614013,
+  "same_pol_cross_tile": 1126813,
+  "same_pol_same_tile": 0
+ },
+ "interpretation": [
+  "cross_pol pairs are the VV/VH double detections; dedupe before computing density, nearest-neighbour distance and heading statistics",
+  "same_pol_same_tile pairs are detector double-fires inside one tile",
+  "same_pol_cross_tile pairs come from overlapping windows"
+ ]
+}

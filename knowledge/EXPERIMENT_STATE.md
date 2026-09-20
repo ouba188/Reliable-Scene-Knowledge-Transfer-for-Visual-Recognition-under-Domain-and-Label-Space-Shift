@@ -4,8 +4,9 @@
 > 约定：**谁完成一轮工作，就更新本文件里自己的那一行 + 时间戳，并推仓库**（仓库镜像 `knowledge/EXPERIMENT_STATE.md`）。
 > 数字必须来自本次实读，不得沿用旧汇总；不确定的写「未知」而不是猜。
 
-最后更新：**2026-09-20 20:45**（by 20260919_204838_d0b3b3）
-> ✅ 20:45 复核（d0b3b3）：标注 **841/841 实打实**（此前 5 个缺口已重标修复，见 §5）；E00 审计件已产出（`next_experiment_v03/e00/`，含 feature_permissions.yaml / id 碰撞 207 万行 / 距离截断统计）。
+最后更新：**2026-09-20 20:55**（by 20260919_204838_d0b3b3）
+> ✅ 20:45 复核（d0b3b3）：标注 **841/841 实打实**（此前 5 个缺口已重标修复，见 §5）；E00 审计件已产出（`next_experiment_v03/e00/`，含 feature_permissions.yaml / id 碰撞 207 万行 / 距离截断 / 近重复 174 万对）。
+> ✅ 20:52 清理（用户批准）：复核 jpg 106.5 GB + 重复 bundle 4.3 GB + 历史 tgz 1.9 GB + 多余 run 目录 + md5 相同的重复大图 → **回收 ≈115 GB，磁盘 106G→221G 空闲**。
 
 ---
 
@@ -59,6 +60,7 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | **夸克归档** | 🔄 进行中（19:51 实读：**660/3067 文件 / 98.4 GB / 17.9 MB/s / 0 失败**）；已定：**先传原格式 tif + 标注 JSON**，PNG 后补；ETA ≈ 明早 7–8 点（账号带宽上限 ~25MB/s 已实测）。工具链与协议见  |
 | 0917 机制实验（B0→Full） | **未开始**——输入层已就绪（Phase 0 产物 + 知识集 + 841 标注均已完成） |
 | **Phase 0 数据管线**（19c027） | ✅ **20:30 收口**：大景框标注 658 景 / 448,080 框 · 地理回写 24 港 GeoJSON · offshore mask 658 景（离岸 45.4% / 近岸 1.4% / 陆 27.1%）· 采集级 split 24 折 LOPO（全为 partial-set）· 每港每类支撑 79,059 个带类对象；**仅 native-res COG 瓦片未做** |
+| **磁盘 / 清理**（d0b3b3） | ✅ 20:52 执行（用户批准）：复核 jpg **3,845,486 个 / 106.5 GB**（删后剩 0）· 重复 `safe841_batch_s3/annotation_bundle_s3` 4.27 GB · 4 个历史标注包 tgz 1.92 GB · 4 个多余 run 目录 · 同名大图副本按 **md5 相同才删**（保留序：annotation_output > parallel_* > fdrive_import > asf_download_v2_* > sar_download_v1 > safe841_batch_s3；内容不同不删）。**`/root/autodl-tmp` 现 830G 用 / 221G 空**；删除清单 `/root/cleanup_manifest.json`、`cleanup_jpgs.txt`，日志 `E:/Hermes/scripts/out/cleanup_execute.log` |
 
 ## 6. 下一步（待用户与 ChatGPT 讨论后定）
 
