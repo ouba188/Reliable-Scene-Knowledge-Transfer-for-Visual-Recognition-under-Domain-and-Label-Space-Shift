@@ -1,0 +1,28 @@
+{
+  "generated": "2026-09-20",
+  "scope": "841-product knowledge set, local detection round (329 products / 658 scenes)",
+  "objects_table": "objects/objects_final.csv.gz (195 MB, 64 columns) - local + server /root/autodl-tmp/knowledge_841_20260920/",
+  "objects": 2897382,
+  "facility_hits": 918464,
+  "facility_with_osm_id": 858023,
+  "facility_dated": 856000,
+  "temporal_valid_existed_at_scene": 618282,
+  "temporal_late_edited_after_scene": 237718,
+  "on_fairway": 18283,
+  "channel_angle_source": {"ais_traffic": 772047, "osm_fairway": 15519, "none": 2109816},
+  "distance_source": {"pipeline_worldcover": 2128210, "worldcover_derived": 552267, "osm_coastline": 216905},
+  "semantic_area": {"land": 1606244, "water": 691340, "built": 375328, "nodata": 222373, "unknown": 2097},
+  "ais_class_level": {"fine": 25538, "coarse": 45667, "non_ship": 3386, "untyped": 1458, "none": 2821333},
+  "support_i": {"3": 1829896, "4": 974480, "5": 91145, "6": 1861},
+  "ports": 24,
+  "mmsi_class_layer": {"covered_mmsi": 126606, "fine": 22615, "fine_strict": 21265, "coarse": 45409, "non_ship": 18043, "untyped": 146, "unknown": 40393},
+  "known_gaps": {
+    "backfill_geojson_missing_osm_id_hits": 4259,
+    "note_backfill": "7 ports (Antwerp-Bruges, Mombasa, Melbourne, Port Hedland, Richards Bay, Los Angeles, part of Sydney Botany); loader bug fixed, a 30-min rebuild closes it",
+    "worldcover_nodata_objects": 222373,
+    "api_returned_no_timestamp": 2023,
+    "facility_geometry_snapshot": "2026-07/09 (current snapshot); only the edit timestamps are per-feature"
+  },
+  "human_reviewed": 0,
+  "ais_constraint": "target-port AIS identity must not enter k_i; AIS is source-side supervision plus scene statistics xi_t"
+}
