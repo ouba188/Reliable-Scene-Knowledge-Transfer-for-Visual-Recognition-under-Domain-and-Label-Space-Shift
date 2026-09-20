@@ -100,23 +100,58 @@ python E:/Hermes/scripts/build_knowledge_841.py
 
 ## 七、MyShipTracking 抓取实测（用于判断要不要长跑）
 
-最终跑完 2,771 条查询（成功率 94%），2,246 条有标签，标签构成：
+已跑样本 830 条（成功率 96%，约 1.0 条/秒/4 线程），644 条有标签，标签构成：
 
 | 标签 | 数量 | 映射结果 |
 |---|---:|---|
-| Cargo | 990 | `cargo_coarse`（粗类） |
-| Tanker | 303 | `tanker_coarse`（粗类） |
-| Other Type / Not available / Law Enforcement / 助航标志等 | 649 | 不可用 |
-| Passenger | 68 | `passenger_ship`（细类） |
-| Tug | 62 | `tug_towing`（细类） |
-| High speed craft / Tanker B / Diving ops 等 | 174 | 部分可用（细类） |
+| Cargo | 254 | `cargo_coarse`（粗类） |
+| Tanker | 91 | `tanker_coarse`（粗类） |
+| Other Type / Not available / Law Enforcement / Reserved | 159 | 不可用 |
+| Passenger | 43 | `passenger_ship`（细类） |
+| Tug | 19 | `tug_towing`（细类） |
+| High speed craft / Tanker B / Pilot Vessel / Diving ops | 28 | 部分可用（细类） |
 
-结论（2,246 标签样本）：**细类价值约 8%（Passenger/Tug/Pilot Vessel 等 200 余条），粗类约 58%，无效约 34%，粗类约 55%，无效约 35%。** 所以对剩下 64,465 个未判定
-MMSI 做长时抓取，性价比很低——它们需要 IMO/船舶注册级数据源，而不是继续抓网页。已跑的标签已并入：新增 1,527 个 MMSI 判定，覆盖 4,616,512 条 AIS 行（是纯类型码版的 2.8 倍）。
+结论：**标签里有细类价值的只占约 10%，粗类约 55%，无效约 35%。** 所以对剩下 64,465 个未判定
+MMSI 做长时抓取，性价比很低——它们需要 IMO/船舶注册级数据源，而不是继续抓网页。已跑的标签仍会
+并入（粗类也有知识价值），抓取进程可随时中断、可续跑。
 
-## 八、建议的下一步（按性价比排序）
+## 八、2026-09-20 第二轮补齐（本文件新增）
 
-1. 打通 OSM 出口（换代理规则或换 Overpass 镜像），再跑 `fetch_port_osm.py` —— 一次补齐 24 港口设施层，直接解掉 `fully_ready` 的一半阻断。
-2. 剩余 64,465 个未判定 MMSI：**不要再靠网页抓取**（见第七节，细类产出仅约 10%）。要么接受粗类标注，要么换 IMO/船舶注册级数据源。
-3. 等 Codex 侧 365 个产品影像下载完，跑检测审核（`550k.pt` + 近岸 500 m + 黑边/NoData + 设施排除），F 层才真正闭环。
-4. 若要设施层的自动排除（而非人工复核），需要 2025 同期的 OSM 历史几何：可用 Geofabrik 历史 PBF 或 ohsome（需解决 403）。
+四个此前的「结构缺口」中三个已解，一个为硬约束：
+
+| 缺口 | 处理 | 产物 |
+|---|---|---|
+| 设施层是当前快照 | 逐要素定年：Geofabrik/BBBike 的 PBF 都丢掉了 `osm_version/timestamp`，改走 OSM API（`api.openstreetmap.org/api/0.6/way/<id>.json`，直连可达 ~1.35 s/条） | `facilities/osm_way_dates.csv`（osm_id→最后编辑时间），对象表 `facility_edit_ts / facility_temporal_valid` |
+| OSM 航道线稀疏 | AIS 轨迹方向场：同 MMSI 相邻位置差（≥20 m）按 1 km 网格做 PCA 主方向 | `traffic/<port>.csv`（方向 + 各向异性），对象表 `channel_angle_deg` 的 `ais_traffic` 来源 |
+| 12 港无 OSM 岸线 | WorldCover 水体(80) 抽稀到 ~80 m 后等值线化 | `facilities/<port>.coastline.geojson`（`coastline_derived` + provenance，占 14 港） |
+| 64,465 个 MMSI 无细类别 | 硬约束：网页抓取细类产出仅 ~10%，需 IMO/注册级源 | 表中标未判定，不猜 |
+
+同时完成：
+
+- **$d_p$ 港口知识向量** `ports/port_knowledge.csv`（24 港 × 67 列）：meta（场景日期跨度/轨道/成像时刻）、
+  facility（各类型要素计数）、function（油品/集装箱/散货/渡轮/船厂/铁路代理指标）、
+  scene（AIS 船类占比、平均船长宽、AIS 空间范围）。
+- **对象级 $k_i$ 表** `objects/objects.csv.gz`：逐对象给岸线/泊位/锚地/航道距离、`on_fairway`、
+  航道夹角（含来源）、500 m/1 km 密度、最近邻距离、航向一致性、WorldCover 语义海域、
+  设施类型/距离/`osm_id`/编辑时间，以及 `support_i`（6 信号）与 `support_missing`。
+  `d_coast_m` 的来源用 `distance_source` 列区分：`osm_coastline` / `worldcover_derived` / `pipeline_worldcover`。
+- 关键修正：对象表同时合并**两套本机港口图层**（`port_osm_output/run_wide` 的通用层 +
+  `E:/Docms/Port` 的细分类层），否则设施类型会退化成单一 `osm_all`。
+
+重跑命令：
+
+```bash
+python E:/Hermes/scripts/build_port_knowledge.py              # d_p（约 5 分钟）
+python E:/Hermes/scripts/build_ais_traffic_field.py           # 方向场（约 20 分钟）
+python E:/Hermes/scripts/derive_coastline_from_worldcover.py <无岸线的港口...>
+python E:/Hermes/scripts/date_facility_ways.py                # 定年（可续跑，~400 条/分钟）
+python E:/Hermes/scripts/build_object_table_local.py --products $(cat scripts/out/objtable_products.txt)
+python E:/Hermes/scripts/join_facility_dates.py objects/objects.csv.gz   # 定年结果回填
+```
+
+## 九、建议的下一步（按性价比排序）
+
+1. 剩余 64,465 个未判定 MMSI：**不要再靠网页抓取**（见第七节，细类产出仅约 10%）。要么接受粗类标注，要么换 IMO/船舶注册级数据源。
+2. 等 Codex 侧 365 个产品影像下载完，跑检测审核（`550k.pt` + 近岸 500 m + 黑边/NoData + 设施排除），F 层才真正闭环。
+3. 设施几何仍是 2026 快照（只有时间戳是逐要素的）；若要 2025 同期几何，需要 OSM 历史星球或 ohsome 历史接口（`/elements/geometry` 目前 403）。
+4. 目标港 AIS 类型不得进入 $k_i$（设计约束）；本轮 AIS 只用于源侧类别支撑与场景统计 $\xi_t$。

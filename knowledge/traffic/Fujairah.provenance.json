@@ -1,0 +1,9 @@
+{
+ "port": "Fujairah",
+ "source": "AIS positions from the 841-product bundle (extraction window per scene)",
+ "method": "successive same-MMSI steps >= 20 m, PCA per 1000 m cell, >= 8 steps",
+ "semantics": "empirical traffic direction (fairway proxy); axial 0-180 degrees",
+ "ais_rows_in_bbox": 642985,
+ "cells": 4408,
+ "generated": "2026-09-20T12:47:18+0800"
+}
