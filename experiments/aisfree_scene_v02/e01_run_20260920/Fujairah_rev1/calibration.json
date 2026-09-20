@@ -1,0 +1,13 @@
+{
+  "mode": "empirical_source_port_max",
+  "scores": [
+    0.3241601837498326,
+    0.1320537278908702,
+    0.2630973913553121,
+    0.35009810106124156
+  ],
+  "n_valid_ports": 4,
+  "coverage_guarantee": false,
+  "status": "ready",
+  "tau": 0.3700981010612416
+}

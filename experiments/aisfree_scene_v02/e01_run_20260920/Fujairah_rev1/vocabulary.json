@@ -1,0 +1,78 @@
+{
+ "vocabulary": {
+  "container_ship": {
+   "Singapore": 17,
+   "Rotterdam": 6,
+   "Antwerp-Bruges": 3,
+   "Mombasa": 3,
+   "Qingdao": 142,
+   "Santos": 1,
+   "Ningbo-Zhoushan": 31,
+   "Busan": 2,
+   "Port Said": 1,
+   "Hamburg": 1
+  },
+  "dredger": {
+   "Singapore": 141,
+   "Rotterdam": 18,
+   "Qingdao": 64,
+   "New York": 1,
+   "Ningbo-Zhoushan": 2,
+   "Antwerp-Bruges": 6,
+   "Port Said": 1,
+   "Hamburg": 3
+  },
+  "fishing_vessel": {
+   "Singapore": 24,
+   "Antwerp-Bruges": 18,
+   "Qingdao": 2235,
+   "New York": 1,
+   "Rotterdam": 11,
+   "Ningbo-Zhoushan": 48,
+   "Busan": 14,
+   "Hamburg": 28,
+   "Santos": 2
+  },
+  "product_chemical_tanker": {
+   "Singapore": 29,
+   "Rotterdam": 15,
+   "Qingdao": 38,
+   "Antwerp-Bruges": 7,
+   "Port Said": 1,
+   "Ningbo-Zhoushan": 13,
+   "Busan": 1,
+   "Santos": 2
+  },
+  "tug_towing": {
+   "Singapore": 50,
+   "Rotterdam": 38,
+   "Antwerp-Bruges": 42,
+   "New York": 4,
+   "Qingdao": 35,
+   "Ningbo-Zhoushan": 1,
+   "Busan": 1,
+   "Port Said": 2,
+   "Callao": 4,
+   "Hamburg": 24
+  }
+ },
+ "valid_gate": 0.95,
+ "source_fit_ports": [
+  "Antwerp-Bruges",
+  "Busan",
+  "Callao",
+  "Hamburg",
+  "Los Angeles",
+  "Melbourne",
+  "Mombasa",
+  "New York",
+  "Ningbo-Zhoushan",
+  "Port Hedland",
+  "Port Said",
+  "Qingdao",
+  "Rotterdam",
+  "Santos",
+  "Singapore",
+  "Tanger Med"
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "Houston": {
+  "products": 3,
+  "instances": 238,
+  "active_cells": 9,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 3
+  }
+ },
+ "Jebel Ali": {
+  "products": 22,
+  "instances": 35877,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 4
+  }
+ },
+ "Newcastle": {
+  "products": 6,
+  "instances": 499,
+  "active_cells": 6,
+  "cell_reasons": {
+   "too_few_available_objects": 6,
+   "disabled_by_source_support": 4
+  }
+ },
+ "Richards Bay": {
+  "products": 6,
+  "instances": 457,
+  "active_cells": 6,
+  "cell_reasons": {
+   "too_few_available_objects": 6,
+   "disabled_by_source_support": 4
+  }
+ }
+}
