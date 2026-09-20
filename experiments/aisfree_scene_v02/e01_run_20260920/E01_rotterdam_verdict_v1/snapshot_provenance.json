@@ -1,0 +1,12 @@
+{
+  "repository": "ouba188/Reliable-Scene-Knowledge-Transfer-for-Visual-Recognition-under-Domain-and-Label-Space-Shift",
+  "commit": "58654191eed5678959470437046f3cd640ef3e6e",
+  "source_file": "experiments/aisfree_scene_v02/e01_run_20260920/Rotterdam/adapt_filter_retention.json",
+  "scope": "subset of published scalar fields, not raw predictions",
+  "calibration_ports_in_order": [
+    "Sydney Botany",
+    "Qingdao",
+    "Antwerp-Bruges",
+    "Hamburg"
+  ]
+}

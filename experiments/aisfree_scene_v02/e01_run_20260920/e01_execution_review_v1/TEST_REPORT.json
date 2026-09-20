@@ -1,0 +1,20 @@
+{
+  "audited_repository_commit": "7b4a46bc452c3978ec64dec7adf3c82140442787",
+  "local_unit_tests": 12,
+  "local_unit_tests_passed": 12,
+  "test_kind": "synthetic helpers and in-memory raster; no server data or SAR training",
+  "read_only_cli": "checks metadata arrays only; target labels not loaded",
+  "not_done": [
+    "server runtime SHA comparison",
+    "inspection of produced SAR chip bytes",
+    "complete data audit",
+    "production training integration",
+    "GitHub push"
+  ],
+  "facts_from_local_calculation": {
+    "example_product_characters": 67,
+    "example_U64_distinct_inputs": 2,
+    "example_U64_unique_outputs": 1,
+    "2918_two_channel_128_uint8_MiB": 91.1875
+  }
+}

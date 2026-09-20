@@ -1,0 +1,17 @@
+test_augmentation_sync_and_epoch (test_checks.TestChecks.test_augmentation_sync_and_epoch) ... ok
+test_ba_not_accuracy (test_checks.TestChecks.test_ba_not_accuracy) ... ok
+test_calibration_mapping (test_checks.TestChecks.test_calibration_mapping) ... ok
+test_dynamic_unicode_roundtrip (test_checks.TestChecks.test_dynamic_unicode_roundtrip) ... ok
+test_epoch_draw (test_checks.TestChecks.test_epoch_draw) ... ok
+test_equal_port_balanced_accuracy (test_checks.TestChecks.test_equal_port_balanced_accuracy) ... ok
+test_fixed_u64_reproduces_collision (test_checks.TestChecks.test_fixed_u64_reproduces_collision) ... ok
+test_mask_intersection_counterexample (test_checks.TestChecks.test_mask_intersection_counterexample) ... ok
+test_no_empty_metric (test_checks.TestChecks.test_no_empty_metric) ... ok
+test_raster_window_order (test_checks.TestChecks.test_raster_window_order) ... ok
+test_sampling_mass (test_checks.TestChecks.test_sampling_mass) ... ok
+test_strict_duplicate_join (test_checks.TestChecks.test_strict_duplicate_join) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.240s
+
+OK

@@ -1,0 +1,43 @@
+{
+  "scope": "Arithmetic diagnostics of saved scores; not validation of images/labels/moments.",
+  "H": 8,
+  "retained_count": 8,
+  "all_heads_retained": true,
+  "score_min": 0.11472447180812001,
+  "score_max": 0.12177587411883822,
+  "score_spread": 0.007051402310718213,
+  "tau": 0.42120768115704377,
+  "margin_above_max_head_score": 0.29943180703820554,
+  "minimum_calibration_score": 0.12947636653395708,
+  "minimum_possible_tau_from_bounded_quantile_plus_same_margin": 0.14947636653395707,
+  "every_quantile_between_cal_min_max_plus_same_margin_keeps_all": true,
+  "leave_one_cal_port_out_diagnostics": [
+    {
+      "omitted_calibration_index": 0,
+      "diagnostic_tau": 0.42120768115704377,
+      "feasible_heads": 8
+    },
+    {
+      "omitted_calibration_index": 1,
+      "diagnostic_tau": 0.17780984278321338,
+      "feasible_heads": 8
+    },
+    {
+      "omitted_calibration_index": 2,
+      "diagnostic_tau": 0.42120768115704377,
+      "feasible_heads": 8
+    },
+    {
+      "omitted_calibration_index": 3,
+      "diagnostic_tau": 0.42120768115704377,
+      "feasible_heads": 8
+    }
+  ],
+  "do_not_deploy_diagnostic_thresholds": true,
+  "do_not_use_target_accuracy_to_select_tau": true,
+  "pruning_intervals": {
+    "tau_below_min_score": "none feasible, then original rule falls back to all H",
+    "tau_between_min_and_max": "some heads may survive; endpoints follow <= and ties",
+    "tau_at_or_above_max_score": "all H survive"
+  }
+}

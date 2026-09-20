@@ -1,0 +1,11 @@
+--- a/tools/e01_core.py
++++ b/tools/e01_core.py
+@@ -45,7 +45,7 @@
+             if not en[d]:reasons[b,d]='disabled_by_source_support';continue
+             if n<min_cell:reasons[b,d]='too_few_available_objects';continue
+             if nb[b,d]<min_blocks:reasons[b,d]='too_few_spatial_blocks';continue
+-            qq=q[:,use,:,d]
++            qq=q[:,use][:,:,:,d]  # keep [J,n,C]; mixed advanced indexing reorders axes
+             if np.any(~np.isfinite(qq)) or np.any((qq<0)|(qq>1)):
+                 reasons[b,d]='relation_model_unavailable';continue
+             obs[b,d]=phi[use,d].mean()

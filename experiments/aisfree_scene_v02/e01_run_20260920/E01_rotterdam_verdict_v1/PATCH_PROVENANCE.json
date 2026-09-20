@@ -1,0 +1,6 @@
+{
+  "basis": "E01_first_batch_v1.zip / tools/e01_core.py",
+  "base_sha256": "5162bfdfb930a6561550ca02ca603970b22f1eb055ff2127260b3edbaf339fcd",
+  "fixed_sha256": "cf231de34f83a45041900f34ccdd40961fce5e76bdc8debfd51da3fc4d0a3d96",
+  "changes": "Only aggregate q indexing is split; calibration and hypothesis policies unchanged. Merge against actual runtime; do not overwrite other fixes."
+}

@@ -1,0 +1,10 @@
+{
+  "core": "/mnt/data/E01_rotterdam_verdict_v1/e01_core_axisfix.py",
+  "numpy": "2.3.5",
+  "tests_run": 7,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "log": "test_all_unavailable (__main__.suite_for.<locals>.Tests.test_all_unavailable) ... ok\ntest_disabled_dimension (__main__.suite_for.<locals>.Tests.test_disabled_dimension) ... ok\ntest_many_groups_variable_masks (__main__.suite_for.<locals>.Tests.test_many_groups_variable_masks) ... ok\ntest_numpy_shape_mechanism (__main__.suite_for.<locals>.Tests.test_numpy_shape_mechanism) ... ok\ntest_selected_N_different_from_J (__main__.suite_for.<locals>.Tests.test_selected_N_different_from_J) ... ok\ntest_selected_N_equal_J_silent_axis_swap (__main__.suite_for.<locals>.Tests.test_selected_N_equal_J_silent_axis_swap) ... ok\ntest_unavailable_values_not_in_moments (__main__.suite_for.<locals>.Tests.test_unavailable_values_not_in_moments) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.015s\n\nOK\n",
+  "scope": "Synthetic axis/value regressions only; no SAR training or server artifact validation."
+}
