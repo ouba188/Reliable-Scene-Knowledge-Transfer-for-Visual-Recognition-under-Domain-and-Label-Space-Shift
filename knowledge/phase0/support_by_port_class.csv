@@ -1,0 +1,340 @@
+﻿port,class,objects,share_of_port,objects_with_matched_mmsi
+Antwerp-Bruges,bulk_carrier,422,0.0096,422
+Antwerp-Bruges,container_ship,663,0.0151,663
+Antwerp-Bruges,crude_oil_tanker,299,0.0068,299
+Antwerp-Bruges,dredger,185,0.0042,185
+Antwerp-Bruges,fishing_vessel,358,0.0081,358
+Antwerp-Bruges,general_cargo,1027,0.0234,1027
+Antwerp-Bruges,heavy_load_carrier,22,0.0005,22
+Antwerp-Bruges,lpg_lng_tanker,460,0.0105,460
+Antwerp-Bruges,offshore_supply,194,0.0044,194
+Antwerp-Bruges,passenger_ship,39,0.0009,39
+Antwerp-Bruges,pilot_port_tender,89,0.002,89
+Antwerp-Bruges,pleasure_craft,9,0.0002,9
+Antwerp-Bruges,product_chemical_tanker,1675,0.0381,1675
+Antwerp-Bruges,reefer_cargo,12,0.0003,12
+Antwerp-Bruges,ro_ro_vehicle_carrier,138,0.0031,138
+Antwerp-Bruges,sailing_vessel,10,0.0002,10
+Antwerp-Bruges,ship_untyped,38306,0.8713,1326
+Antwerp-Bruges,tug_towing,58,0.0013,58
+Busan,bulk_carrier,31,0.0169,31
+Busan,container_ship,25,0.0136,25
+Busan,fishing_vessel,59,0.0322,59
+Busan,general_cargo,25,0.0136,25
+Busan,heavy_load_carrier,4,0.0022,4
+Busan,lpg_lng_tanker,8,0.0044,8
+Busan,offshore_supply,3,0.0016,3
+Busan,pilot_port_tender,2,0.0011,2
+Busan,pleasure_craft,2,0.0011,2
+Busan,product_chemical_tanker,52,0.0284,52
+Busan,reefer_cargo,2,0.0011,2
+Busan,ro_ro_vehicle_carrier,10,0.0055,10
+Busan,ship_untyped,1598,0.8713,132
+Busan,tug_towing,13,0.0071,13
+Callao,bulk_carrier,12,0.0044,12
+Callao,container_ship,5,0.0018,5
+Callao,crude_oil_tanker,6,0.0022,6
+Callao,fishing_vessel,25,0.0092,25
+Callao,general_cargo,2,0.0007,2
+Callao,lpg_lng_tanker,2,0.0007,2
+Callao,passenger_ship,2,0.0007,2
+Callao,pilot_port_tender,2,0.0007,2
+Callao,pleasure_craft,1,0.0004,1
+Callao,product_chemical_tanker,7,0.0026,7
+Callao,ship_untyped,2647,0.9703,26
+Callao,tug_towing,17,0.0062,17
+Fujairah,bulk_carrier,371,0.038,371
+Fujairah,container_ship,118,0.0121,118
+Fujairah,crude_oil_tanker,757,0.0775,757
+Fujairah,dredger,4,0.0004,4
+Fujairah,fishing_vessel,7,0.0007,7
+Fujairah,general_cargo,95,0.0097,95
+Fujairah,heavy_load_carrier,2,0.0002,2
+Fujairah,lpg_lng_tanker,229,0.0235,229
+Fujairah,offshore_supply,116,0.0119,116
+Fujairah,passenger_ship,6,0.0006,6
+Fujairah,pilot_port_tender,11,0.0011,11
+Fujairah,pleasure_craft,16,0.0016,16
+Fujairah,product_chemical_tanker,1923,0.197,1923
+Fujairah,ro_ro_vehicle_carrier,21,0.0022,21
+Fujairah,sailing_vessel,6,0.0006,6
+Fujairah,ship_untyped,5991,0.6136,509
+Fujairah,tug_towing,90,0.0092,90
+Hamburg,bulk_carrier,139,0.0048,139
+Hamburg,container_ship,301,0.0104,301
+Hamburg,crude_oil_tanker,27,0.0009,27
+Hamburg,dredger,139,0.0048,139
+Hamburg,fishing_vessel,367,0.0127,367
+Hamburg,general_cargo,390,0.0135,390
+Hamburg,heavy_load_carrier,13,0.0004,13
+Hamburg,lpg_lng_tanker,63,0.0022,63
+Hamburg,offshore_supply,188,0.0065,188
+Hamburg,passenger_ship,121,0.0042,121
+Hamburg,pilot_port_tender,94,0.0032,94
+Hamburg,pleasure_craft,13,0.0004,13
+Hamburg,product_chemical_tanker,163,0.0056,163
+Hamburg,reefer_cargo,2,0.0001,2
+Hamburg,ro_ro_vehicle_carrier,55,0.0019,55
+Hamburg,sailing_vessel,8,0.0003,8
+Hamburg,ship_untyped,26798,0.9264,578
+Hamburg,tug_towing,47,0.0016,47
+Houston,bulk_carrier,7,0.0034,7
+Houston,container_ship,6,0.0029,6
+Houston,crude_oil_tanker,24,0.0118,24
+Houston,dredger,8,0.0039,8
+Houston,fishing_vessel,48,0.0236,48
+Houston,general_cargo,2,0.001,2
+Houston,lpg_lng_tanker,30,0.0147,30
+Houston,offshore_supply,5,0.0025,5
+Houston,passenger_ship,5,0.0025,5
+Houston,product_chemical_tanker,77,0.0378,77
+Houston,ro_ro_vehicle_carrier,1,0.0005,1
+Houston,sailing_vessel,2,0.001,2
+Houston,ship_untyped,1721,0.8457,171
+Houston,tug_towing,99,0.0486,99
+Jebel Ali,bulk_carrier,1340,0.0155,1340
+Jebel Ali,container_ship,1471,0.0171,1471
+Jebel Ali,crude_oil_tanker,520,0.006,520
+Jebel Ali,dredger,674,0.0078,674
+Jebel Ali,fishing_vessel,69,0.0008,69
+Jebel Ali,general_cargo,1726,0.02,1726
+Jebel Ali,heavy_load_carrier,158,0.0018,158
+Jebel Ali,lpg_lng_tanker,621,0.0072,621
+Jebel Ali,offshore_supply,2646,0.0307,2646
+Jebel Ali,passenger_ship,114,0.0013,114
+Jebel Ali,pilot_port_tender,18,0.0002,18
+Jebel Ali,pleasure_craft,193,0.0022,193
+Jebel Ali,product_chemical_tanker,4260,0.0494,4260
+Jebel Ali,ro_ro_vehicle_carrier,341,0.004,341
+Jebel Ali,sailing_vessel,66,0.0008,66
+Jebel Ali,ship_untyped,69216,0.8023,4122
+Jebel Ali,tug_towing,2838,0.0329,2838
+Los Angeles,bulk_carrier,8,0.0237,8
+Los Angeles,crude_oil_tanker,20,0.0592,20
+Los Angeles,general_cargo,6,0.0178,6
+Los Angeles,offshore_supply,4,0.0118,4
+Los Angeles,passenger_ship,2,0.0059,2
+Los Angeles,pilot_port_tender,2,0.0059,2
+Los Angeles,product_chemical_tanker,6,0.0178,6
+Los Angeles,ship_untyped,284,0.8402,6
+Los Angeles,tug_towing,6,0.0178,6
+Melbourne,bulk_carrier,8,0.0053,8
+Melbourne,container_ship,6,0.004,6
+Melbourne,crude_oil_tanker,6,0.004,6
+Melbourne,general_cargo,2,0.0013,2
+Melbourne,offshore_supply,2,0.0013,2
+Melbourne,passenger_ship,2,0.0013,2
+Melbourne,product_chemical_tanker,15,0.01,15
+Melbourne,ro_ro_vehicle_carrier,2,0.0013,2
+Melbourne,ship_untyped,1452,0.9706,23
+Melbourne,tug_towing,1,0.0007,1
+Mombasa,bulk_carrier,126,0.0737,126
+Mombasa,container_ship,376,0.2199,376
+Mombasa,crude_oil_tanker,6,0.0035,6
+Mombasa,general_cargo,54,0.0316,54
+Mombasa,lpg_lng_tanker,8,0.0047,8
+Mombasa,offshore_supply,10,0.0058,10
+Mombasa,product_chemical_tanker,40,0.0234,40
+Mombasa,ro_ro_vehicle_carrier,6,0.0035,6
+Mombasa,ship_untyped,1074,0.6281,52
+Mombasa,tug_towing,10,0.0058,10
+New York,container_ship,12,0.0098,12
+New York,crude_oil_tanker,2,0.0016,2
+New York,dredger,2,0.0016,2
+New York,fishing_vessel,8,0.0065,8
+New York,general_cargo,2,0.0016,2
+New York,passenger_ship,9,0.0073,9
+New York,pilot_port_tender,2,0.0016,2
+New York,product_chemical_tanker,4,0.0033,4
+New York,ro_ro_vehicle_carrier,2,0.0016,2
+New York,ship_untyped,1164,0.9471,15
+New York,tug_towing,22,0.0179,22
+Newcastle,bulk_carrier,148,0.0935,148
+Newcastle,container_ship,9,0.0057,9
+Newcastle,crude_oil_tanker,2,0.0013,2
+Newcastle,general_cargo,11,0.0069,11
+Newcastle,lpg_lng_tanker,2,0.0013,2
+Newcastle,offshore_supply,10,0.0063,10
+Newcastle,passenger_ship,4,0.0025,4
+Newcastle,product_chemical_tanker,11,0.0069,11
+Newcastle,reefer_cargo,1,0.0006,1
+Newcastle,ro_ro_vehicle_carrier,4,0.0025,4
+Newcastle,sailing_vessel,4,0.0025,4
+Newcastle,ship_untyped,1344,0.849,150
+Newcastle,tug_towing,33,0.0208,33
+Ningbo-Zhoushan,bulk_carrier,106,0.0229,106
+Ningbo-Zhoushan,container_ship,133,0.0287,133
+Ningbo-Zhoushan,crude_oil_tanker,45,0.0097,45
+Ningbo-Zhoushan,dredger,27,0.0058,27
+Ningbo-Zhoushan,fishing_vessel,59,0.0127,59
+Ningbo-Zhoushan,general_cargo,36,0.0078,36
+Ningbo-Zhoushan,heavy_load_carrier,4,0.0009,4
+Ningbo-Zhoushan,lpg_lng_tanker,16,0.0035,16
+Ningbo-Zhoushan,offshore_supply,43,0.0093,43
+Ningbo-Zhoushan,passenger_ship,11,0.0024,11
+Ningbo-Zhoushan,pilot_port_tender,15,0.0032,15
+Ningbo-Zhoushan,pleasure_craft,6,0.0013,6
+Ningbo-Zhoushan,product_chemical_tanker,64,0.0138,64
+Ningbo-Zhoushan,ro_ro_vehicle_carrier,10,0.0022,10
+Ningbo-Zhoushan,ship_untyped,4006,0.865,1131
+Ningbo-Zhoushan,tug_towing,50,0.0108,50
+Port Hedland,bulk_carrier,408,0.2787,408
+Port Hedland,general_cargo,8,0.0055,8
+Port Hedland,offshore_supply,10,0.0068,10
+Port Hedland,pilot_port_tender,4,0.0027,4
+Port Hedland,product_chemical_tanker,8,0.0055,8
+Port Hedland,ship_untyped,992,0.6776,68
+Port Hedland,tug_towing,34,0.0232,34
+Port Klang,bulk_carrier,212,0.0269,212
+Port Klang,container_ship,482,0.0611,482
+Port Klang,crude_oil_tanker,68,0.0086,68
+Port Klang,dredger,58,0.0074,58
+Port Klang,fishing_vessel,5,0.0006,5
+Port Klang,general_cargo,162,0.0205,162
+Port Klang,heavy_load_carrier,3,0.0004,3
+Port Klang,lpg_lng_tanker,131,0.0166,131
+Port Klang,offshore_supply,62,0.0079,62
+Port Klang,passenger_ship,12,0.0015,12
+Port Klang,pleasure_craft,3,0.0004,3
+Port Klang,product_chemical_tanker,573,0.0726,573
+Port Klang,ro_ro_vehicle_carrier,18,0.0023,18
+Port Klang,ship_untyped,5719,0.725,326
+Port Klang,tug_towing,380,0.0482,380
+Port Said,bulk_carrier,590,0.043,590
+Port Said,container_ship,242,0.0176,242
+Port Said,crude_oil_tanker,998,0.0727,998
+Port Said,dredger,42,0.0031,42
+Port Said,fishing_vessel,5,0.0004,5
+Port Said,general_cargo,502,0.0366,502
+Port Said,heavy_load_carrier,9,0.0007,9
+Port Said,lpg_lng_tanker,59,0.0043,59
+Port Said,offshore_supply,303,0.0221,303
+Port Said,passenger_ship,19,0.0014,19
+Port Said,pleasure_craft,3,0.0002,3
+Port Said,product_chemical_tanker,1622,0.1182,1622
+Port Said,reefer_cargo,4,0.0003,4
+Port Said,ro_ro_vehicle_carrier,14,0.001,14
+Port Said,sailing_vessel,2,0.0001,2
+Port Said,ship_untyped,9186,0.6694,576
+Port Said,tug_towing,123,0.009,123
+Qingdao,bulk_carrier,1210,0.021,1210
+Qingdao,container_ship,1135,0.0197,1135
+Qingdao,crude_oil_tanker,349,0.0061,349
+Qingdao,dredger,167,0.0029,167
+Qingdao,fishing_vessel,1368,0.0237,1368
+Qingdao,general_cargo,443,0.0077,443
+Qingdao,heavy_load_carrier,64,0.0011,64
+Qingdao,lpg_lng_tanker,85,0.0015,85
+Qingdao,offshore_supply,337,0.0058,337
+Qingdao,passenger_ship,22,0.0004,22
+Qingdao,pilot_port_tender,13,0.0002,13
+Qingdao,pleasure_craft,11,0.0002,11
+Qingdao,product_chemical_tanker,310,0.0054,310
+Qingdao,reefer_cargo,4,0.0001,4
+Qingdao,ro_ro_vehicle_carrier,30,0.0005,30
+Qingdao,ship_untyped,51723,0.8971,9057
+Qingdao,tug_towing,383,0.0066,383
+Richards Bay,bulk_carrier,245,0.1588,245
+Richards Bay,container_ship,54,0.035,54
+Richards Bay,crude_oil_tanker,2,0.0013,2
+Richards Bay,fishing_vessel,4,0.0026,4
+Richards Bay,general_cargo,22,0.0143,22
+Richards Bay,heavy_load_carrier,4,0.0026,4
+Richards Bay,lpg_lng_tanker,10,0.0065,10
+Richards Bay,offshore_supply,11,0.0071,11
+Richards Bay,product_chemical_tanker,59,0.0382,59
+Richards Bay,reefer_cargo,2,0.0013,2
+Richards Bay,ro_ro_vehicle_carrier,13,0.0084,13
+Richards Bay,ship_untyped,1087,0.7045,60
+Richards Bay,tug_towing,30,0.0194,30
+Rotterdam,bulk_carrier,372,0.0115,372
+Rotterdam,container_ship,559,0.0172,559
+Rotterdam,crude_oil_tanker,239,0.0074,239
+Rotterdam,dredger,108,0.0033,108
+Rotterdam,fishing_vessel,288,0.0089,288
+Rotterdam,general_cargo,688,0.0212,688
+Rotterdam,heavy_load_carrier,27,0.0008,27
+Rotterdam,lpg_lng_tanker,259,0.008,259
+Rotterdam,offshore_supply,145,0.0045,145
+Rotterdam,passenger_ship,33,0.001,33
+Rotterdam,pilot_port_tender,52,0.0016,52
+Rotterdam,pleasure_craft,5,0.0002,5
+Rotterdam,product_chemical_tanker,1391,0.0429,1391
+Rotterdam,reefer_cargo,15,0.0005,15
+Rotterdam,ro_ro_vehicle_carrier,92,0.0028,92
+Rotterdam,sailing_vessel,10,0.0003,10
+Rotterdam,ship_untyped,28097,0.8665,1068
+Rotterdam,tug_towing,45,0.0014,45
+Santos,bulk_carrier,209,0.0408,209
+Santos,container_ship,76,0.0149,76
+Santos,crude_oil_tanker,19,0.0037,19
+Santos,fishing_vessel,26,0.0051,26
+Santos,general_cargo,15,0.0029,15
+Santos,lpg_lng_tanker,1,0.0002,1
+Santos,offshore_supply,10,0.002,10
+Santos,passenger_ship,2,0.0004,2
+Santos,pleasure_craft,1,0.0002,1
+Santos,product_chemical_tanker,30,0.0059,30
+Santos,ro_ro_vehicle_carrier,5,0.001,5
+Santos,ship_untyped,4655,0.9097,167
+Santos,tug_towing,68,0.0133,68
+Shanghai,bulk_carrier,1126,0.0147,1126
+Shanghai,container_ship,1405,0.0184,1405
+Shanghai,crude_oil_tanker,72,0.0009,72
+Shanghai,dredger,528,0.0069,528
+Shanghai,fishing_vessel,731,0.0096,731
+Shanghai,general_cargo,651,0.0085,651
+Shanghai,heavy_load_carrier,69,0.0009,69
+Shanghai,lpg_lng_tanker,393,0.0051,393
+Shanghai,offshore_supply,571,0.0075,571
+Shanghai,passenger_ship,27,0.0004,27
+Shanghai,pilot_port_tender,223,0.0029,223
+Shanghai,pleasure_craft,19,0.0002,19
+Shanghai,product_chemical_tanker,992,0.013,992
+Shanghai,reefer_cargo,8,0.0001,8
+Shanghai,ro_ro_vehicle_carrier,169,0.0022,169
+Shanghai,sailing_vessel,2,0.0,2
+Shanghai,ship_untyped,68655,0.8975,25489
+Shanghai,tug_towing,851,0.0111,851
+Singapore,bulk_carrier,1946,0.032,1946
+Singapore,container_ship,1406,0.0231,1406
+Singapore,crude_oil_tanker,2700,0.0444,2700
+Singapore,dredger,135,0.0022,135
+Singapore,fishing_vessel,116,0.0019,116
+Singapore,general_cargo,810,0.0133,810
+Singapore,heavy_load_carrier,62,0.001,62
+Singapore,lpg_lng_tanker,798,0.0131,798
+Singapore,offshore_supply,1942,0.032,1942
+Singapore,passenger_ship,199,0.0033,199
+Singapore,pilot_port_tender,15,0.0002,15
+Singapore,pleasure_craft,90,0.0015,90
+Singapore,product_chemical_tanker,8286,0.1364,8286
+Singapore,reefer_cargo,8,0.0001,8
+Singapore,ro_ro_vehicle_carrier,132,0.0022,132
+Singapore,sailing_vessel,16,0.0003,16
+Singapore,ship_untyped,39322,0.6471,4022
+Singapore,tug_towing,2782,0.0458,2782
+Sydney Botany,bulk_carrier,157,0.0391,157
+Sydney Botany,container_ship,96,0.0239,96
+Sydney Botany,crude_oil_tanker,36,0.009,36
+Sydney Botany,fishing_vessel,13,0.0032,13
+Sydney Botany,general_cargo,9,0.0022,9
+Sydney Botany,heavy_load_carrier,1,0.0002,1
+Sydney Botany,lpg_lng_tanker,2,0.0005,2
+Sydney Botany,pleasure_craft,4,0.001,4
+Sydney Botany,product_chemical_tanker,24,0.006,24
+Sydney Botany,ro_ro_vehicle_carrier,34,0.0085,34
+Sydney Botany,sailing_vessel,3,0.0007,3
+Sydney Botany,ship_untyped,3594,0.8947,151
+Sydney Botany,tug_towing,44,0.011,44
+Tanger Med,bulk_carrier,12,0.025,12
+Tanger Med,container_ship,14,0.0292,14
+Tanger Med,crude_oil_tanker,2,0.0042,2
+Tanger Med,general_cargo,6,0.0125,6
+Tanger Med,heavy_load_carrier,2,0.0042,2
+Tanger Med,lpg_lng_tanker,4,0.0083,4
+Tanger Med,offshore_supply,2,0.0042,2
+Tanger Med,passenger_ship,4,0.0083,4
+Tanger Med,product_chemical_tanker,43,0.0896,43
+Tanger Med,ship_untyped,390,0.8125,26
+Tanger Med,tug_towing,1,0.0021,1

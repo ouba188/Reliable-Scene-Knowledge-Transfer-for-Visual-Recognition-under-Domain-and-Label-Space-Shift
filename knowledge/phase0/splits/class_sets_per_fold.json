@@ -1,0 +1,601 @@
+{
+ "Antwerp-Bruges": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Busan": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "fishing_vessel",
+   "general_cargo",
+   "product_chemical_tanker"
+  ],
+  "source_private": [
+   "crude_oil_tanker",
+   "dredger",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Callao": {
+  "shared": [
+   "fishing_vessel"
+  ],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Fujairah": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "general_cargo",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "dredger",
+   "fishing_vessel",
+   "heavy_load_carrier",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Hamburg": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "heavy_load_carrier",
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Houston": {
+  "shared": [
+   "crude_oil_tanker",
+   "fishing_vessel",
+   "lpg_lng_tanker",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "dredger",
+   "general_cargo",
+   "heavy_load_carrier",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Jebel Ali": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pilot_port_tender",
+   "reefer_cargo"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Los Angeles": {
+  "shared": [
+   "crude_oil_tanker"
+  ],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Melbourne": {
+  "shared": [],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Mombasa": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "general_cargo",
+   "product_chemical_tanker"
+  ],
+  "source_private": [
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "New York": {
+  "shared": [
+   "tug_towing"
+  ],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Newcastle": {
+  "shared": [
+   "bulk_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Ningbo-Zhoushan": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "offshore_supply",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Port Hedland": {
+  "shared": [
+   "bulk_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Port Klang": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "general_cargo",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "fishing_vessel",
+   "heavy_load_carrier",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Port Said": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "general_cargo",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "fishing_vessel",
+   "heavy_load_carrier",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Qingdao": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Richards Bay": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "general_cargo",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Rotterdam": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Santos": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "fishing_vessel",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
+  "source_private": [
+   "crude_oil_tanker",
+   "dredger",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Shanghai": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Singapore": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pleasure_craft",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "pilot_port_tender",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Sydney Botany": {
+  "shared": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "product_chemical_tanker",
+   "ro_ro_vehicle_carrier",
+   "tug_towing"
+  ],
+  "source_private": [
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "sailing_vessel"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ },
+ "Tanger Med": {
+  "shared": [
+   "product_chemical_tanker"
+  ],
+  "source_private": [
+   "bulk_carrier",
+   "container_ship",
+   "crude_oil_tanker",
+   "dredger",
+   "fishing_vessel",
+   "general_cargo",
+   "heavy_load_carrier",
+   "lpg_lng_tanker",
+   "offshore_supply",
+   "passenger_ship",
+   "pilot_port_tender",
+   "pleasure_craft",
+   "reefer_cargo",
+   "ro_ro_vehicle_carrier",
+   "sailing_vessel",
+   "tug_towing"
+  ],
+  "target_private": [],
+  "setting": "partial"
+ }
+}
