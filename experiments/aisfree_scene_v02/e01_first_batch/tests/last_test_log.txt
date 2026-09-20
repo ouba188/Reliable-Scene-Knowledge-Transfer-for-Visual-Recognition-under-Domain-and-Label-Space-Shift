@@ -1,0 +1,26 @@
+test_329_unique (test_e01.ManifestTests.test_329_unique) ... ok
+test_config_dimensions (test_e01.ManifestTests.test_config_dimensions) ... ok
+test_counts (test_e01.ManifestTests.test_counts) ... ok
+test_folds_disjoint (test_e01.ManifestTests.test_folds_disjoint) ... ok
+test_local_csv_verifier (test_e01.ManifestTests.test_local_csv_verifier) ... ok
+test_single_capture (test_e01.ManifestTests.test_single_capture) ... ok
+test_temporal_order (test_e01.ManifestTests.test_temporal_order) ... ok
+test_shapes (test_e01.ModelTests.test_shapes) ... ok
+test_calibration_four_ports (test_e01.MomentTests.test_calibration_four_ports) ... ok
+test_calibration_insufficient (test_e01.MomentTests.test_calibration_insufficient) ... ok
+test_conflict_not_unknown (test_e01.MomentTests.test_conflict_not_unknown) ... ok
+test_equivalent_mechanisms_preserve_ambiguity (test_e01.MomentTests.test_equivalent_mechanisms_preserve_ambiguity) ... ok
+test_geometry_not_iid_claim (test_e01.MomentTests.test_geometry_not_iid_claim) ... ok
+test_identity_selection (test_e01.MomentTests.test_identity_selection) ... ok
+test_invalid_probabilities (test_e01.MomentTests.test_invalid_probabilities) ... ok
+test_missing (test_e01.MomentTests.test_missing) ... ok
+test_one_mechanism_global (test_e01.MomentTests.test_one_mechanism_global) ... ok
+test_predictions_fallback (test_e01.MomentTests.test_predictions_fallback) ... ok
+test_same_mask (test_e01.MomentTests.test_same_mask) ... ok
+test_small_cell_inactive (test_e01.MomentTests.test_small_cell_inactive) ... ok
+test_uninformative_calibration (test_e01.MomentTests.test_uninformative_calibration) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.174s
+
+OK

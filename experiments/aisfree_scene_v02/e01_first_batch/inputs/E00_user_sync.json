@@ -1,0 +1,20 @@
+{
+  "provenance": "user current message; raw tables not independently loaded",
+  "products_completed": 841,
+  "legacy_rows": 2897382,
+  "legacy_unique_ids": 827100,
+  "new_id_collisions": 0,
+  "near_duplicate_pairs": 1740826,
+  "cross_pol_pairs": 614013,
+  "cross_tile_same_pol_pairs": 1126813,
+  "dedup_rows": 1787454,
+  "offshore_rows": 408981,
+  "land_rows": 1259253,
+  "nearshore_rows": 118753,
+  "unclassified_rows": 467,
+  "features_recomputed": [
+    "density",
+    "nearest-neighbor",
+    "axis-consistency"
+  ]
+}

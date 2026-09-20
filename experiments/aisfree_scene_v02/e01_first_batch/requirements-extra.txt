@@ -1,0 +1,5 @@
+# Keep the already installed PyTorch/CUDA stack; no torch pin here.
+numpy
+pandas
+scikit-learn
+# rasterio needed by the experiment-side image loader, not the moment-filter core.

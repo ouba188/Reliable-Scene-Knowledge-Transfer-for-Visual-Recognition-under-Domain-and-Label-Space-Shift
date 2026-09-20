@@ -1,0 +1,94 @@
+{
+  "B": {
+    "feature": "z512 only; no K, AIS, port, world_xy, Y, density or support",
+    "projection": "source-fit StandardScaler -> PCA(16, whiten=False)",
+    "clustering": "KMeans(n_clusters=4,n_init=20,random_state=20260920)",
+    "fit_pool": "source-fit P0 image-valid objects, labelled and unlabelled; cap 2000/port by sample_id hash",
+    "source_cal_target_action": "transform and nearest frozen centroid only",
+    "scope": "T: each product scene; G: aggregate target adapt only, freeze retained bank for target eval"
+  },
+  "D": {
+    "columns": [
+      "coast_proximity",
+      "anchorage_proximity",
+      "fairway_proximity",
+      "sar_crowding_1km"
+    ],
+    "transforms": [
+      "clip((2000-d_coast_m)/1500,0,1)",
+      "clip(1-d_anchorage_m/2000,0,1)",
+      "clip(1-d_fairway_m/2000,0,1)",
+      "log1p(min(local_ships_1km,64))/log(65)"
+    ],
+    "required_external_availability": [
+      "coast_layer_observed",
+      "anchorage_layer_observed",
+      "fairway_layer_observed"
+    ],
+    "cap_is_valid_if_layer_known": true,
+    "missing_is_never_zero": true,
+    "density_provenance": "E00 dedup/offshore leave-one-out counts; if counts were calculated before offshore filtering, recompute this column only",
+    "exclude_first_batch": [
+      "d_quay_m",
+      "facility_kind",
+      "channel_angle_deg",
+      "on_fairway",
+      "heading_consistency_deg",
+      "AIS-derived port statistics",
+      "facility_temporal_valid as truth"
+    ],
+    "D_static_ablation": [
+      0,
+      1,
+      2
+    ],
+    "D_group_ablation": [
+      3
+    ]
+  },
+  "J": {
+    "J_definition": [
+      "J0: uniform-port-class source-fit",
+      "J1: same data; hash halfA port weight x3, others x1",
+      "J2: same data; hash halfB port weight x3, others x1"
+    ],
+    "model": "conditional moment regressor, not target label posterior",
+    "input": "PCA16(z) + m4 + onehot(source_class)",
+    "network": "Linear -> SiLU(64) -> Linear(D=4) -> sigmoid",
+    "epochs": 35,
+    "batch_size": 512,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "loss": "masked fractional BCE; uniform_port_class weights",
+    "minimum_valid_per_class_dimension": 30,
+    "minimum_supporting_ports_per_class_dimension": 2,
+    "unestimable_cell_policy": "disable that D globally across J unless a separately declared pooled shrinkage model is used; do not fill zero"
+  },
+  "validity": {
+    "min_objects_per_visual_group": 64,
+    "min_available_objects_per_cell": 64,
+    "min_spatial_blocks_per_cell": 4,
+    "spatial_block_m": 1000,
+    "min_source_fit_valid_fraction": 0.1,
+    "min_source_fit_variance": 0.0001,
+    "observed_and_predicted_use_identical_mask": true,
+    "too_few_cells_policy": "B1 fallback with reason",
+    "minimum_active_dimensions": 1,
+    "clipping_all_equal_policy": "disable as uninformative; report"
+  },
+  "calibration": {
+    "mode": "required_source_only",
+    "tau_fixed_smoke": 0.15,
+    "tau_fixed_smoke_may_be_reported_as_main": false,
+    "anchor": "B0 selected only on source-meta-query",
+    "calibration_input": "calibration-port adapt products, label-blind P0 pool and same masks",
+    "score": "per_port min_J max_active_BD abs(observed-pred_anchor)",
+    "tau_rule": "max(0.05,max(valid_calibration_port_scores)+0.02)",
+    "min_valid_calibration_ports": 4,
+    "uninformative_tau_at_or_above": 0.5,
+    "unavailable_policy": "do not tune target; B1 + calibration_unavailable",
+    "uncertainty_claim": "empirical held-out-port tolerance, not 90/95% distribution-free coverage",
+    "relation_mechanism_shared_scope": "one J for all active groups within the decision scope"
+  }
+}

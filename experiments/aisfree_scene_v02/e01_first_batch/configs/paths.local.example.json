@@ -1,0 +1,12 @@
+{
+  "repo_root": "SET_LOCAL_GIT_CHECKOUT",
+  "objects_dedup_csv": "SET_E00_DEDUP_TABLE",
+  "phase0_mask_join": "SET_E00_MASK_JOIN",
+  "layer_coverage_csv": "SET_PER_PRODUCT_LAYER_COVERAGE",
+  "scene_raster_index": "SET_PRODUCT_TO_VV_VH_PATH_CSV",
+  "chip_index": "SET_GENERATED_CHIP_INDEX",
+  "source_fit_labels": "SET_OUTER_FOLD_SOURCE_FIT_LABELS_ONLY",
+  "source_meta_labels": "SET_OUTER_FOLD_SOURCE_META_LABELS_ONLY",
+  "output_root": "SET_E01_OUTPUT_DIR",
+  "note": "Explicit local bindings; no server paths or data hashes were invented."
+}

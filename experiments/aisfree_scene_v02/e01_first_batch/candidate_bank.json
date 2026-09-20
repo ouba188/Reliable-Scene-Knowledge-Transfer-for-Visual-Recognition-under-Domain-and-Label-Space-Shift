@@ -1,0 +1,58 @@
+[
+  {
+    "head_id": "h0",
+    "architecture": "linear",
+    "sampling": "uniform_port",
+    "seed": 20260920,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h1",
+    "architecture": "linear",
+    "sampling": "uniform_port",
+    "seed": 20261929,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h2",
+    "architecture": "mlp128",
+    "sampling": "uniform_port",
+    "seed": 20260920,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h3",
+    "architecture": "mlp128",
+    "sampling": "uniform_port",
+    "seed": 20261929,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h4",
+    "architecture": "linear",
+    "sampling": "uniform_port_class",
+    "seed": 20260920,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h5",
+    "architecture": "linear",
+    "sampling": "uniform_port_class",
+    "seed": 20261929,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h6",
+    "architecture": "mlp128",
+    "sampling": "uniform_port_class",
+    "seed": 20260920,
+    "same_frozen_encoder": true
+  },
+  {
+    "head_id": "h7",
+    "architecture": "mlp128",
+    "sampling": "uniform_port_class",
+    "seed": 20261929,
+    "same_frozen_encoder": true
+  }
+]

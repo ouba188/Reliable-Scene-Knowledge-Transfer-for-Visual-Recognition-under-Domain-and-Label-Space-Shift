@@ -1,0 +1,87 @@
+{
+  "based_on": {
+    "path": "experiments/aisfree_scene_v02/feature_permissions.yaml",
+    "commit": "435fa4b38e77d494c45ff6d91a6f0ed08f41c6ef",
+    "git_blob_sha": "786b0f8d9323bddf552f70292ce65cb6a741abba"
+  },
+  "status": "E01-specific restrictive overlay; does not modify repository original",
+  "identifier_join_only": [
+    "object_id",
+    "product_id",
+    "port",
+    "detection_id",
+    "roi_origin",
+    "facility_osm_id",
+    "facility_osm_element"
+  ],
+  "crop_lookup_only": [
+    "centroid_x",
+    "centroid_y",
+    "world_x",
+    "world_y",
+    "polarization"
+  ],
+  "split_only": [
+    "start_utc",
+    "port",
+    "product_id"
+  ],
+  "candidate_m_feature_allowlist": [
+    "obb_long_px",
+    "obb_short_px",
+    "valid_fraction"
+  ],
+  "relation_value_allowlist": [
+    "d_coast_m",
+    "d_anchorage_m",
+    "d_fairway_m",
+    "local_ships_1km"
+  ],
+  "relation_mask_required_additions": [
+    "coast_layer_observed",
+    "anchorage_layer_observed",
+    "fairway_layer_observed",
+    "density_p0_recomputed"
+  ],
+  "not_network_features": [
+    "dedup_cluster_size",
+    "dedup_pols",
+    "dedup_tiles",
+    "dedup_kind",
+    "distance_source",
+    "facility_edit_ts",
+    "facility_temporal_valid",
+    "channel_angle_source",
+    "support_i",
+    "support_missing"
+  ],
+  "forbidden_target_input_and_sampling": [
+    "matched_mmsi",
+    "candidate_mmsi",
+    "candidate_distance_m",
+    "match_status",
+    "prelabel_class",
+    "ais_final_class",
+    "ais_class_level",
+    "ais_class_confidence",
+    "ais_class_source",
+    "fine_class",
+    "fine_class_source",
+    "ais_unique_match",
+    "fine_class_resolved",
+    "support_i",
+    "support_missing",
+    "human_reviewed",
+    "final_dataset_eligible"
+  ],
+  "target_aggregates_forbidden": [
+    "AIS-derived traffic field",
+    "AIS type proportions",
+    "AIS mean vessel dimensions",
+    "AIS spatial bounds"
+  ],
+  "future_extension_condition": "channel_angle only OSM-derived and pixel-to-world axes checked; not active in E01.1",
+  "E00_update": "post-dedup counts are accepted as user-reported completed; stale before_dedup notes must point to new table hash. No request to redo full E00.",
+  "geometry_time": "last edit metadata is provenance, not construction time or correctness truth",
+  "required_permutation_test": "changing every evaluator-only field must not change deployment features, target sampling, group assignments, retention or predictions"
+}

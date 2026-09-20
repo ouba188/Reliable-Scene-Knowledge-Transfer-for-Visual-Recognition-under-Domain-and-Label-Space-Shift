@@ -1,0 +1,25 @@
+port,products,adapt,eval,G_temporal_eligible
+Antwerp-Bruges,17,8,9,True
+Busan,1,1,0,False
+Callao,14,7,7,True
+Fujairah,12,6,6,True
+Hamburg,17,8,9,True
+Houston,7,3,4,True
+Jebel Ali,44,22,22,True
+Los Angeles,2,1,1,True
+Melbourne,4,2,2,True
+Mombasa,23,11,12,True
+New York,2,1,1,True
+Newcastle,12,6,6,True
+Ningbo-Zhoushan,2,1,1,True
+Port Hedland,8,4,4,True
+Port Klang,11,5,6,True
+Port Said,22,11,11,True
+Qingdao,25,12,13,True
+Richards Bay,12,6,6,True
+Rotterdam,11,5,6,True
+Santos,15,7,8,True
+Shanghai,20,10,10,True
+Singapore,24,12,12,True
+Sydney Botany,23,11,12,True
+Tanger Med,1,1,0,False

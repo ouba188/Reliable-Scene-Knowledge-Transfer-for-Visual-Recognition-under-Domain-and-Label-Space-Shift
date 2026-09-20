@@ -1,0 +1,315 @@
+{
+  "schema_version": "E01.1",
+  "status": "first_batch_prespecified_settings_not_tuned_or_calibrated",
+  "repository_commit": "435fa4b38e77d494c45ff6d91a6f0ed08f41c6ef",
+  "task": "P0 AIS-free fixed-proposal scene-knowledge disambiguation",
+  "algorithm": "v0.2 conditional moments; no KIRC ratio closure",
+  "H": 8,
+  "J": 3,
+  "B": 4,
+  "D": 4,
+  "first_batch_targets": [
+    "Rotterdam",
+    "Shanghai",
+    "Port Klang",
+    "Fujairah"
+  ],
+  "seeds": {
+    "split": 20260920,
+    "first_run": 20260920,
+    "repeat_runs": [
+      20260920,
+      20260921,
+      20260922
+    ],
+    "head_offsets": [
+      0,
+      1009
+    ],
+    "kmeans": 20260920,
+    "relation": [
+      3301,
+      3302,
+      3303
+    ],
+    "bootstrap": 20260923
+  },
+  "data": {
+    "freeze_manifest": "split_manifest.json",
+    "task_mask_value": 3,
+    "offshore_boundary_m": 500,
+    "expected_frozen_products": 329,
+    "expected_polarization_rows": 658,
+    "expected_offshore_rows_before_io_gates": 408981,
+    "filters": {
+      "uses_target_AIS": false,
+      "uses_support_i": false,
+      "uses_final_dataset_eligible": false,
+      "minimum_valid_fraction": 0.95,
+      "new_detector_conf_threshold": null,
+      "new_object_size_filter": null
+    },
+    "missing_image_policy": "fail inventory and list missing; never silently replace with one polarization or change 329 list",
+    "dedup_representative": "E00 fixed source-free representative; never pick by AIS match/class/confidence",
+    "label_vocabulary": "source-fit fine classes only; >=100 deduplicated labelled instances and >=3 source-fit ports; freeze. Otherwise report insufficient support; do not trim target pool by Y.",
+    "unlabelled_or_outside_vocabulary": "score all; evaluator reports unresolved truth and target-outside-vocab separately. Not automatically unknown truth."
+  },
+  "chips": {
+    "channels": [
+      "VV",
+      "VH"
+    ],
+    "shape": [
+      2,
+      128,
+      128
+    ],
+    "crop": "fixed native-resolution axis-aligned square centered on dedup object centroid; same geospatial window in both polarizations",
+    "resize": null,
+    "align_tolerance_pixels": 0.25,
+    "expected_pixel_spacing_m": [
+      10.0,
+      10.0
+    ],
+    "spacing_tolerance_fraction": 0.1,
+    "input_representation": "existing uint8 display raster; not calibrated dB; record original display mapping",
+    "scale": "uint8 / 255 then source-fit-only per-channel mean/std",
+    "reject_dtypes": [
+      "int8",
+      "complex64",
+      "complex128"
+    ],
+    "float_or_uint16_policy": "requires explicit frozen radiometry decoder; never auto minmax",
+    "padding": "outside=0 after normalization + validity mask; apply 0.95 gate",
+    "storage": "source-normalized or uint8 NPY shards with index; no millions of individual PNG required"
+  },
+  "encoder": {
+    "name": "SARResNet18GN",
+    "pretrained": false,
+    "external_checkpoint_policy": "only use if provenance excludes every fold target/meta/cal; otherwise train from scratch",
+    "input_channels": 2,
+    "stem_kernel": 3,
+    "stem_stride": 1,
+    "maxpool": false,
+    "blocks": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "channels": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "norm": "GroupNorm(32)",
+    "pool": "global_average",
+    "embedding_dim": 512,
+    "epochs": 30,
+    "checkpoint": "last_epoch_30",
+    "batch_size": 64,
+    "grad_accumulation": 2,
+    "optimizer": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "schedule": "cosine",
+    "warmup_epochs": 3,
+    "min_lr": 3e-06,
+    "gradient_clip_norm": 5.0,
+    "AMP": "bf16 if hardware supports, else fp32; record",
+    "sampling": "uniform_port_class among source-fit labelled instances",
+    "steps_per_epoch": "ceil(number_of_unique_source_fit_labelled_instances / 128)",
+    "freeze_after_training": true
+  },
+  "augmentation": {
+    "applies_to": "source encoder training only; same transform VV/VH",
+    "rotation_180_probability": 0.5,
+    "translation_max_pixels": 4,
+    "translation_padding": "reflect",
+    "random_resized_crop": false,
+    "horizontal_vertical_flips": false,
+    "rotation_90": false,
+    "color_or_intensity_jitter": false,
+    "mixup_cutmix": false,
+    "synthetic_speckle": false,
+    "target_feature_extraction": "no stochastic augmentation",
+    "relation_training": "uses cached unaugmented features/relations"
+  },
+  "candidate_bank": {
+    "input": "frozen z512 plus m4 standardized on source-fit",
+    "m_columns": [
+      "log1p(obb_long_m)",
+      "log1p(obb_short_m)",
+      "log(obb_long_m/obb_short_m)",
+      "valid_fraction"
+    ],
+    "sampling_rules": [
+      "uniform_port",
+      "uniform_port_class"
+    ],
+    "architectures": [
+      "linear",
+      "mlp128"
+    ],
+    "seeds_per_combination": 2,
+    "dropout_mlp": 0.1,
+    "epochs": 40,
+    "batch_size": 256,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "label_smoothing": 0.0,
+    "checkpoint": "last_epoch_40",
+    "temperature": 1.0,
+    "target_gradient_steps": 0,
+    "B0_selection": "maximum equal-port BA on source-meta-query; deterministic lowest head_id on tie",
+    "no_target_label_or_relation_based_bank_generation": true,
+    "collapse_diagnostic": "pairwise prediction disagreement and source-meta oracle upper-bound; do not modify bank after target eval"
+  },
+  "grouping": {
+    "feature": "z512 only; no K, AIS, port, world_xy, Y, density or support",
+    "projection": "source-fit StandardScaler -> PCA(16, whiten=False)",
+    "clustering": "KMeans(n_clusters=4,n_init=20,random_state=20260920)",
+    "fit_pool": "source-fit P0 image-valid objects, labelled and unlabelled; cap 2000/port by sample_id hash",
+    "source_cal_target_action": "transform and nearest frozen centroid only",
+    "scope": "T: each product scene; G: aggregate target adapt only, freeze retained bank for target eval"
+  },
+  "relations": {
+    "columns": [
+      "coast_proximity",
+      "anchorage_proximity",
+      "fairway_proximity",
+      "sar_crowding_1km"
+    ],
+    "transforms": [
+      "clip((2000-d_coast_m)/1500,0,1)",
+      "clip(1-d_anchorage_m/2000,0,1)",
+      "clip(1-d_fairway_m/2000,0,1)",
+      "log1p(min(local_ships_1km,64))/log(65)"
+    ],
+    "required_external_availability": [
+      "coast_layer_observed",
+      "anchorage_layer_observed",
+      "fairway_layer_observed"
+    ],
+    "cap_is_valid_if_layer_known": true,
+    "missing_is_never_zero": true,
+    "density_provenance": "E00 dedup/offshore leave-one-out counts; if counts were calculated before offshore filtering, recompute this column only",
+    "exclude_first_batch": [
+      "d_quay_m",
+      "facility_kind",
+      "channel_angle_deg",
+      "on_fairway",
+      "heading_consistency_deg",
+      "AIS-derived port statistics",
+      "facility_temporal_valid as truth"
+    ],
+    "D_static_ablation": [
+      0,
+      1,
+      2
+    ],
+    "D_group_ablation": [
+      3
+    ]
+  },
+  "relation_models": {
+    "J_definition": [
+      "J0: uniform-port-class source-fit",
+      "J1: same data; hash halfA port weight x3, others x1",
+      "J2: same data; hash halfB port weight x3, others x1"
+    ],
+    "model": "conditional moment regressor, not target label posterior",
+    "input": "PCA16(z) + m4 + onehot(source_class)",
+    "network": "Linear -> SiLU(64) -> Linear(D=4) -> sigmoid",
+    "epochs": 35,
+    "batch_size": 512,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "loss": "masked fractional BCE; uniform_port_class weights",
+    "minimum_valid_per_class_dimension": 30,
+    "minimum_supporting_ports_per_class_dimension": 2,
+    "unestimable_cell_policy": "disable that D globally across J unless a separately declared pooled shrinkage model is used; do not fill zero"
+  },
+  "moment_validity": {
+    "min_objects_per_visual_group": 64,
+    "min_available_objects_per_cell": 64,
+    "min_spatial_blocks_per_cell": 4,
+    "spatial_block_m": 1000,
+    "min_source_fit_valid_fraction": 0.1,
+    "min_source_fit_variance": 0.0001,
+    "observed_and_predicted_use_identical_mask": true,
+    "too_few_cells_policy": "B1 fallback with reason",
+    "minimum_active_dimensions": 1,
+    "clipping_all_equal_policy": "disable as uninformative; report"
+  },
+  "calibration": {
+    "mode": "required_source_only",
+    "tau_fixed_smoke": 0.15,
+    "tau_fixed_smoke_may_be_reported_as_main": false,
+    "anchor": "B0 selected only on source-meta-query",
+    "calibration_input": "calibration-port adapt products, label-blind P0 pool and same masks",
+    "score": "per_port min_J max_active_BD abs(observed-pred_anchor)",
+    "tau_rule": "max(0.05,max(valid_calibration_port_scores)+0.02)",
+    "min_valid_calibration_ports": 4,
+    "uninformative_tau_at_or_above": 0.5,
+    "unavailable_policy": "do not tune target; B1 + calibration_unavailable",
+    "uncertainty_claim": "empirical held-out-port tolerance, not 90/95% distribution-free coverage",
+    "relation_mechanism_shared_scope": "one J for all active groups within the decision scope"
+  },
+  "decision": {
+    "Full": "equal average of retained hypotheses",
+    "B1": "equal average all H",
+    "all_missing": "all H; no conflict",
+    "all_conflict": "all H; conflict=true",
+    "unknown_posterior": false,
+    "selective_optional": {
+      "unanimous_argmax": true,
+      "minimum_probability_lower": 0.8,
+      "always_report_coverage": true
+    }
+  },
+  "runs": [
+    "B0",
+    "B1",
+    "B3_unconditional_moments",
+    "B4_single_best",
+    "B5_per_group_mechanism",
+    "Full",
+    "Full_static_D0_D1_D2",
+    "Full_group_D3",
+    "Full_relation_permutation",
+    "Full_missing",
+    "B2_concat_same_K"
+  ],
+  "report": {
+    "delta": "Full minus B1 on identical evaluator objects",
+    "metrics": [
+      "accuracy",
+      "balanced_accuracy",
+      "classwise_recall",
+      "rescue",
+      "harm",
+      "risk_coverage",
+      "retained_bank_size",
+      "conflict_rate",
+      "inactive_cell_reasons"
+    ],
+    "bootstrap_repetitions": 2000,
+    "bootstrap_unit": "acquisition clusters; report per-port effects; repeated seeds are not domains",
+    "complete_population": "408981 prespecified P0 records retained in registry even when I/O/validity prevents an image prediction; report attrition",
+    "label_missing": "do not count as ground-truth unknown",
+    "new_class_discovery": "not a first-batch claim"
+  },
+  "runtime": {
+    "num_workers": 4,
+    "cpu_threads": 8,
+    "persistent_workers": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "overwrite_outputs": false,
+    "torch_version": "use installed runtime and record; do not reinstall CUDA/PyTorch based on this config"
+  }
+}

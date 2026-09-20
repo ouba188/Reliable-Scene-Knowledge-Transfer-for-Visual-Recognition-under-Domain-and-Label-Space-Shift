@@ -1,0 +1,39 @@
+{
+  "status": "local_unit_and_synthetic_smoke_tests_passed",
+  "date": "2026-09-20",
+  "unit_tests": 21,
+  "synthetic_smoke": {
+    "objects": 600,
+    "classes": 2,
+    "source_ports": 3,
+    "grouping": "PCA16 + KMeans4 passed",
+    "candidate_heads": 8,
+    "head_epochs": 1,
+    "relation_models": 3,
+    "relation_epochs": 1,
+    "D": 4,
+    "device": "cpu"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5"
+  },
+  "not_performed": [
+    "SAR encoder training",
+    "real-data q_j training",
+    "server CUDA validation",
+    "real target performance evaluation",
+    "remote repository push",
+    "bytewise reproduction of original split CSV"
+  ],
+  "split_verification": {
+    "read_all_port_product_lists": true,
+    "products": 329,
+    "adapt": 161,
+    "eval": 168,
+    "polarizations_expected": 658,
+    "unique_and_temporal_checks_passed": true,
+    "requires_local_csv_comparison": true
+  }
+}
