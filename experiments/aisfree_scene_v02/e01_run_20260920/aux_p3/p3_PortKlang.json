@@ -1,0 +1,579 @@
+{
+ "fold": "Port Klang",
+ "run": "/root/autodl-tmp/e01_runs/Port Klang_rev1",
+ "tau": 0.40101507111546003,
+ "calibration_status": "ready",
+ "B0": 7,
+ "enabled_dimensions": [
+  true,
+  false,
+  true,
+  true
+ ],
+ "variants": [
+  {
+   "variant": "Static_D0-D2",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.0969,
+    0.0964,
+    0.0974,
+    0.0956,
+    0.0985,
+    0.0987,
+    0.0961,
+    0.0975
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  },
+  {
+   "variant": "Group_D3",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.0587,
+    0.058,
+    0.0585,
+    0.0578,
+    0.0594,
+    0.0602,
+    0.0581,
+    0.0592
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  },
+  {
+   "variant": "Full",
+   "active_cells": 8,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.0969,
+    0.0964,
+    0.0974,
+    0.0956,
+    0.0985,
+    0.0987,
+    0.0961,
+    0.0975
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  },
+  {
+   "variant": "B3_unconditional_relation",
+   "active_cells": 2,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.0491,
+    0.0498,
+    0.0492,
+    0.0497,
+    0.0509,
+    0.0491,
+    0.0494,
+    0.0493
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  },
+  {
+   "variant": "B4_single_best_interpretation",
+   "active_cells": 8,
+   "status": "single_head",
+   "retained": [
+    3
+   ],
+   "per_head_score": [
+    0.0968738985813827,
+    0.09644097949158068,
+    0.09744908151689732,
+    0.09564480905016084,
+    0.09847299535796933,
+    0.09870558288483325,
+    0.09607899307956261,
+    0.09752638462056779
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  },
+  {
+   "variant": "B5_per_group_mechanism",
+   "active_cells": 8,
+   "status": "per_group_mechanism",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "group_mechanism": [
+    1,
+    1,
+    0,
+    2
+   ],
+   "per_head_score": [
+    0.0968738985813827,
+    0.09644097949158068,
+    0.09744908151689732,
+    0.09564480905016084,
+    0.09847299535796933,
+    0.09870558288483325,
+    0.09607899307956261,
+    0.09752638462056779
+   ],
+   "eval": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 9,
+    "acc": 0.1111111111111111,
+    "ba": 0.041666666666666664,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "passenger_ship": {
+      "n": 1,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 6,
+      "recall": 0.16666666666666666
+     }
+    }
+   }
+  }
+ ],
+ "note": "attribution only; no training and no rule changes"
+}

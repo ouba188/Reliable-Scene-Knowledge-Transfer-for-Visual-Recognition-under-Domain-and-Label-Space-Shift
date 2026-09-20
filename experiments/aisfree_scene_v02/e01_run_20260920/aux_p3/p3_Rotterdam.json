@@ -1,0 +1,651 @@
+{
+ "fold": "Rotterdam",
+ "run": "/root/autodl-tmp/e01_runs/Rotterdam_rev1",
+ "tau": 0.24409400624237662,
+ "calibration_status": "ready",
+ "B0": 0,
+ "enabled_dimensions": [
+  true,
+  false,
+  false,
+  true
+ ],
+ "variants": [
+  {
+   "variant": "Static_D0-D2",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1865,
+    0.1874,
+    0.1862,
+    0.1863,
+    0.185,
+    0.185,
+    0.1849,
+    0.1858
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  },
+  {
+   "variant": "Group_D3",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.0222,
+    0.0228,
+    0.0228,
+    0.023,
+    0.0235,
+    0.0234,
+    0.0232,
+    0.0232
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  },
+  {
+   "variant": "Full",
+   "active_cells": 8,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1865,
+    0.1874,
+    0.1862,
+    0.1863,
+    0.185,
+    0.185,
+    0.1849,
+    0.1858
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  },
+  {
+   "variant": "B3_unconditional_relation",
+   "active_cells": 2,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1218,
+    0.1223,
+    0.1218,
+    0.1216,
+    0.1209,
+    0.1209,
+    0.121,
+    0.1214
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  },
+  {
+   "variant": "B4_single_best_interpretation",
+   "active_cells": 8,
+   "status": "single_head",
+   "retained": [
+    6
+   ],
+   "per_head_score": [
+    0.18647145249769248,
+    0.18741409651549135,
+    0.18622916943015844,
+    0.1863061454753943,
+    0.18497127265722796,
+    0.1849628422589033,
+    0.18489916894002956,
+    0.18575209845933865
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.45652173913043476,
+    "ba": 0.4873291925465838,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5652173913043478
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  },
+  {
+   "variant": "B5_per_group_mechanism",
+   "active_cells": 8,
+   "status": "per_group_mechanism",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "group_mechanism": [
+    1,
+    0,
+    1,
+    2
+   ],
+   "per_head_score": [
+    0.18647145249769248,
+    0.18741409651549135,
+    0.18622916943015844,
+    0.1863061454753943,
+    0.18497127265722796,
+    0.1849628422589033,
+    0.18489916894002956,
+    0.18575209845933865
+   ],
+   "eval": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 46,
+    "acc": 0.4782608695652174,
+    "ba": 0.4960248447204969,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.6086956521739131
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 46,
+    "acc": 0.43478260869565216,
+    "ba": 0.4786335403726708,
+    "per_class": {
+     "container_ship": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "dredger": {
+      "n": 5,
+      "recall": 0.0
+     },
+     "fishing_vessel": {
+      "n": 7,
+      "recall": 0.5714285714285714
+     },
+     "product_chemical_tanker": {
+      "n": 10,
+      "recall": 0.3
+     },
+     "tug_towing": {
+      "n": 23,
+      "recall": 0.5217391304347826
+     }
+    }
+   }
+  }
+ ],
+ "note": "attribution only; no training and no rule changes"
+}

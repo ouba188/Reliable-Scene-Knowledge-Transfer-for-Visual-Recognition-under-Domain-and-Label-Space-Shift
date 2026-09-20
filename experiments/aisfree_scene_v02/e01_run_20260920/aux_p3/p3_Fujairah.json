@@ -1,0 +1,507 @@
+{
+ "fold": "Fujairah",
+ "run": "/root/autodl-tmp/e01_runs/Fujairah_rev1",
+ "tau": 0.3700981010612416,
+ "calibration_status": "ready",
+ "B0": 2,
+ "enabled_dimensions": [
+  true,
+  false,
+  true,
+  true
+ ],
+ "variants": [
+  {
+   "variant": "Static_D0-D2",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1735,
+    0.1729,
+    0.175,
+    0.1749,
+    0.172,
+    0.1699,
+    0.1723,
+    0.173
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  },
+  {
+   "variant": "Group_D3",
+   "active_cells": 4,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.042,
+    0.0417,
+    0.0407,
+    0.0405,
+    0.0417,
+    0.0419,
+    0.0404,
+    0.0411
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  },
+  {
+   "variant": "Full",
+   "active_cells": 8,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1735,
+    0.1729,
+    0.175,
+    0.1749,
+    0.172,
+    0.1699,
+    0.1723,
+    0.173
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  },
+  {
+   "variant": "B3_unconditional_relation",
+   "active_cells": 2,
+   "status": "compatible",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "per_head_score": [
+    0.1173,
+    0.1171,
+    0.1179,
+    0.1179,
+    0.1167,
+    0.116,
+    0.1171,
+    0.1175
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  },
+  {
+   "variant": "B4_single_best_interpretation",
+   "active_cells": 8,
+   "status": "single_head",
+   "retained": [
+    5
+   ],
+   "per_head_score": [
+    0.17352973114019893,
+    0.1729057440070152,
+    0.17500811774413427,
+    0.17491859042877894,
+    0.17198649056108,
+    0.1698527006006284,
+    0.17228400329520654,
+    0.17295176502531406
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.2857142857142857,
+    "ba": 0.4166666666666667,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.25
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  },
+  {
+   "variant": "B5_per_group_mechanism",
+   "active_cells": 8,
+   "status": "per_group_mechanism",
+   "retained": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "group_mechanism": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "per_head_score": [
+    0.17352973114019893,
+    0.1729057440070152,
+    0.17500811774413427,
+    0.17491859042877894,
+    0.17198649056108,
+    0.1698527006006284,
+    0.17228400329520654,
+    0.17295176502531406
+   ],
+   "eval": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B0": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   },
+   "eval_B1": {
+    "n": 7,
+    "acc": 0.14285714285714285,
+    "ba": 0.3333333333333333,
+    "per_class": {
+     "dredger": {
+      "n": 1,
+      "recall": 1.0
+     },
+     "fishing_vessel": {
+      "n": 2,
+      "recall": 0.0
+     },
+     "tug_towing": {
+      "n": 4,
+      "recall": 0.0
+     }
+    }
+   }
+  }
+ ],
+ "note": "attribution only; no training and no rule changes"
+}
