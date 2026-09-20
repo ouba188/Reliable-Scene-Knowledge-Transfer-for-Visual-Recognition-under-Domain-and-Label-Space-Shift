@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "products": 329,
+  "polarization_rows": 658,
+  "adapt": 161,
+  "eval": 168,
+  "csv_git_blob_sha": "833428022446beb3a30894b7f5e8613c76281c1b",
+  "blob_matches_pinned": true,
+  "note": "Exact product/role equality checked; different newline bytes may change blob hash."
+}
