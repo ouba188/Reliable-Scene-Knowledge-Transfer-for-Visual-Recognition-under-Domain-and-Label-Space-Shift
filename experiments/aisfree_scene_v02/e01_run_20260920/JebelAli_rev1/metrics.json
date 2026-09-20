@@ -1,0 +1,99 @@
+{
+ "n_eval_instances_used": 37400,
+ "B0": 2,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "vocabulary": [
+  "container_ship",
+  "fishing_vessel",
+  "tug_towing"
+ ],
+ "support": {
+  "p0_offshore_total": 408981,
+  "eval_valid_instances": 37400,
+  "eval_in_vocab_labeled": 147,
+  "eval_out_of_vocab_labeled": 930,
+  "eval_unlabeled": 36323,
+  "note": "IO/coverage-missing objects stay registered on the P0 side and are excluded from this evaluable subset"
+ },
+ "evaluable_instances": 147,
+ "coverage_fixed_denominator": {
+  "target_eval_all_instances": 37400,
+  "target_eval_usable": 37400,
+  "target_eval_excluded_io": 0,
+  "target_adapt_all_instances": 35877,
+  "target_adapt_usable": 35877,
+  "target_adapt_excluded_io": 0,
+  "note": "usable = rev1 chip joint validity >= 0.95; excluded objects stay registered on the P0 side (io_coverage_missing) and are never silently dropped"
+ },
+ "per": {
+  "B0": {
+   "acc": 0.5170068027210885,
+   "ba": 0.8356481481481483,
+   "n": 147,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 144,
+     "recall": 0.5069444444444444
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.54421768707483,
+   "ba": 0.8449074074074074,
+   "n": 147,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 144,
+     "recall": 0.5347222222222222
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.54421768707483,
+   "ba": 0.8449074074074074,
+   "n": 147,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 144,
+     "recall": 0.5347222222222222
+    }
+   }
+  }
+ },
+ "rescue_vs_B1": 0,
+ "harm_vs_B1": 0,
+ "delta_acc_vs_B1": 0.0
+}
