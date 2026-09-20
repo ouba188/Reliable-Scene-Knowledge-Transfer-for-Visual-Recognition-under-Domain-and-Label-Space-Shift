@@ -1,0 +1,11 @@
+{
+ "target_eval_usable": 5756,
+ "target_adapt_usable": 6208,
+ "target_eval_all_instances": 5756,
+ "target_adapt_all_instances": 6208,
+ "eval_excluded_io": 0,
+ "adapt_excluded_io": 0,
+ "B0": 0,
+ "H": 8,
+ "C": 5
+}

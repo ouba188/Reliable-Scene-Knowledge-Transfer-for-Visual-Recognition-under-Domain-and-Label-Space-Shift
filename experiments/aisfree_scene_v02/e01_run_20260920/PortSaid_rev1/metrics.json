@@ -1,0 +1,125 @@
+{
+ "n_eval_instances_used": 5756,
+ "B0": 0,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "vocabulary": [
+  "container_ship",
+  "dredger",
+  "fishing_vessel",
+  "product_chemical_tanker",
+  "tug_towing"
+ ],
+ "support": {
+  "p0_offshore_total": 408981,
+  "eval_valid_instances": 5756,
+  "eval_in_vocab_labeled": 4,
+  "eval_out_of_vocab_labeled": 142,
+  "eval_unlabeled": 5610,
+  "note": "IO/coverage-missing objects stay registered on the P0 side and are excluded from this evaluable subset"
+ },
+ "evaluable_instances": 4,
+ "coverage_fixed_denominator": {
+  "target_eval_all_instances": 5756,
+  "target_eval_usable": 5756,
+  "target_eval_excluded_io": 0,
+  "target_adapt_all_instances": 6208,
+  "target_adapt_usable": 6208,
+  "target_adapt_excluded_io": 0,
+  "note": "usable = rev1 chip joint validity >= 0.95; excluded objects stay registered on the P0 side (io_coverage_missing) and are never silently dropped"
+ },
+ "per": {
+  "B0": {
+   "acc": 0.25,
+   "ba": 0.16666666666666666,
+   "n": 4,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 0,
+     "recall": null
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.25,
+   "ba": 0.16666666666666666,
+   "n": 4,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 0,
+     "recall": null
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.25,
+   "ba": 0.16666666666666666,
+   "n": 4,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 0,
+     "recall": null
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  }
+ },
+ "rescue_vs_B1": 0,
+ "harm_vs_B1": 0,
+ "delta_acc_vs_B1": 0.0
+}

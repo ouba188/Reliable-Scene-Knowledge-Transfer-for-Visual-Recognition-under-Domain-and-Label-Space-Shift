@@ -1,0 +1,85 @@
+{
+ "vocabulary": {
+  "container_ship": {
+   "Singapore": 17,
+   "Rotterdam": 6,
+   "Antwerp-Bruges": 3,
+   "Qingdao": 142,
+   "Santos": 1,
+   "Jebel Ali": 3,
+   "Sydney Botany": 3,
+   "Ningbo-Zhoushan": 31,
+   "Busan": 2,
+   "Port Klang": 2
+  },
+  "dredger": {
+   "Jebel Ali": 44,
+   "Houston": 1,
+   "Singapore": 141,
+   "Rotterdam": 18,
+   "Qingdao": 64,
+   "New York": 1,
+   "Port Klang": 1,
+   "Ningbo-Zhoushan": 2,
+   "Antwerp-Bruges": 6
+  },
+  "fishing_vessel": {
+   "Singapore": 24,
+   "Antwerp-Bruges": 18,
+   "Qingdao": 2235,
+   "New York": 1,
+   "Sydney Botany": 8,
+   "Rotterdam": 11,
+   "Jebel Ali": 4,
+   "Houston": 13,
+   "Ningbo-Zhoushan": 48,
+   "Busan": 14,
+   "Port Klang": 1,
+   "Santos": 2
+  },
+  "product_chemical_tanker": {
+   "Singapore": 29,
+   "Rotterdam": 15,
+   "Jebel Ali": 30,
+   "Qingdao": 38,
+   "Antwerp-Bruges": 7,
+   "Ningbo-Zhoushan": 13,
+   "Busan": 1,
+   "Sydney Botany": 1,
+   "Santos": 2
+  },
+  "tug_towing": {
+   "Jebel Ali": 268,
+   "Houston": 69,
+   "Singapore": 50,
+   "Rotterdam": 38,
+   "Antwerp-Bruges": 42,
+   "New York": 4,
+   "Qingdao": 35,
+   "Sydney Botany": 5,
+   "Ningbo-Zhoushan": 1,
+   "Port Klang": 7,
+   "Busan": 1,
+   "Callao": 4
+  }
+ },
+ "valid_gate": 0.95,
+ "source_fit_ports": [
+  "Antwerp-Bruges",
+  "Busan",
+  "Callao",
+  "Houston",
+  "Jebel Ali",
+  "Los Angeles",
+  "Melbourne",
+  "New York",
+  "Ningbo-Zhoushan",
+  "Port Klang",
+  "Qingdao",
+  "Rotterdam",
+  "Santos",
+  "Singapore",
+  "Sydney Botany",
+  "Tanger Med"
+ ]
+}
