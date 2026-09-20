@@ -1,0 +1,37 @@
+{
+ "Mombasa": {
+  "products": 11,
+  "instances": 835,
+  "active_cells": 8,
+  "cell_reasons": {
+   "too_few_available_objects": 4,
+   "disabled_by_source_support": 4
+  }
+ },
+ "Santos": {
+  "products": 7,
+  "instances": 2043,
+  "active_cells": 12,
+  "cell_reasons": {
+   "disabled_by_source_support": 4
+  }
+ },
+ "Fujairah": {
+  "products": 6,
+  "instances": 3492,
+  "active_cells": 8,
+  "cell_reasons": {
+   "too_few_available_objects": 4,
+   "disabled_by_source_support": 4
+  }
+ },
+ "Port Said": {
+  "products": 11,
+  "instances": 6208,
+  "active_cells": 8,
+  "cell_reasons": {
+   "too_few_available_objects": 4,
+   "disabled_by_source_support": 4
+  }
+ }
+}

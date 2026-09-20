@@ -1,0 +1,50 @@
+{
+ "vocabulary": {
+  "fishing_vessel": {
+   "Antwerp-Bruges": 18,
+   "New York": 1,
+   "Sydney Botany": 8,
+   "Rotterdam": 11,
+   "Jebel Ali": 4,
+   "Houston": 13,
+   "Newcastle": 2,
+   "Ningbo-Zhoushan": 48,
+   "Busan": 14,
+   "Hamburg": 28,
+   "Port Klang": 1
+  },
+  "tug_towing": {
+   "Jebel Ali": 268,
+   "Houston": 69,
+   "Rotterdam": 38,
+   "Antwerp-Bruges": 42,
+   "New York": 4,
+   "Sydney Botany": 5,
+   "Ningbo-Zhoushan": 1,
+   "Port Klang": 7,
+   "Busan": 1,
+   "Callao": 4,
+   "Hamburg": 24,
+   "Newcastle": 1
+  }
+ },
+ "valid_gate": 0.95,
+ "source_fit_ports": [
+  "Antwerp-Bruges",
+  "Busan",
+  "Callao",
+  "Hamburg",
+  "Houston",
+  "Jebel Ali",
+  "Los Angeles",
+  "Melbourne",
+  "New York",
+  "Newcastle",
+  "Ningbo-Zhoushan",
+  "Port Klang",
+  "Richards Bay",
+  "Rotterdam",
+  "Sydney Botany",
+  "Tanger Med"
+ ]
+}
