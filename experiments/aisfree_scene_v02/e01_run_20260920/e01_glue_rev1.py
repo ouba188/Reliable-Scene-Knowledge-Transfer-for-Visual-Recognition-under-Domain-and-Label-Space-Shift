@@ -215,9 +215,18 @@ def main() -> None:
         json.dump(cal_report, (a.run / 'calibration_ports_report.json').open('w'), indent=1)
         print('calibration_moments: A=%d' % len(obs))
 
+        # fixed task denominator: also record how many instances exist in the target products
+        # regardless of validity, and why the others are excluded
+        def all_in(products):
+            ps = set(products)
+            return int(sum(1 for i in range(len(ids)) if meta.get(ids[i], {}).get('product_id') in ps))
         np.save(a.run / 'eval_probabilities.npy', probs_all[:, eidx, :].astype(np.float32))
         np.save(a.run / 'eval_index.npy', eidx)
-        json.dump({'target_eval_instances': int(len(eidx)), 'target_adapt_instances': int(len(aidx)),
+        json.dump({'target_eval_usable': int(len(eidx)), 'target_adapt_usable': int(len(aidx)),
+                   'target_eval_all_instances': all_in(fold['target_eval_products']),
+                   'target_adapt_all_instances': all_in(fold['target_adapt_products']),
+                   'eval_excluded_io': all_in(fold['target_eval_products']) - int(len(eidx)),
+                   'adapt_excluded_io': all_in(fold['target_adapt_products']) - int(len(aidx)),
                    'B0': b0, 'H': int(probs_all.shape[0]), 'C': len(vocab)}, (a.run / 'glue_prep.json').open('w'), indent=1)
         print('eval_probabilities: %d 实例' % len(eidx))
         return
@@ -242,6 +251,16 @@ def main() -> None:
     y = np.array([ci[y_all[k]] for k in keep])
     pe = np.array([ports[eidx[k]] for k in keep])
     res['evaluable_instances'] = int(len(keep))
+    prep = json.loads((a.run / 'glue_prep.json').read_text()) if (a.run / 'glue_prep.json').exists() else {}
+    res['coverage_fixed_denominator'] = {
+        'target_eval_all_instances': prep.get('target_eval_all_instances'),
+        'target_eval_usable': prep.get('target_eval_usable'),
+        'target_eval_excluded_io': prep.get('eval_excluded_io'),
+        'target_adapt_all_instances': prep.get('target_adapt_all_instances'),
+        'target_adapt_usable': prep.get('target_adapt_usable'),
+        'target_adapt_excluded_io': prep.get('adapt_excluded_io'),
+        'note': 'usable = rev1 chip joint validity >= 0.95; excluded objects stay registered on the '
+                'P0 side (io_coverage_missing) and are never silently dropped'}
     per = {}
     for name, heads in [('B0', [b0]), ('B1', list(range(probs_all.shape[0]))), ('Full', ret)]:
         p = probs_all[heads][:, keep, :].mean(0)

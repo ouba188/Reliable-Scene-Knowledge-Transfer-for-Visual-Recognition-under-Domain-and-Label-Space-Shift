@@ -287,10 +287,12 @@ def main() -> None:
         ps = float(r.get('obb_short_px') or 1) * 10.0
         M[i] = [math.log1p(pl), math.log1p(ps), math.log(max(pl, 1e-3) / max(ps, 1e-3)), float(sh.vjoint[i])]
     tmp = out / 'features.npz.tmp'
-    np.savez(tmp, z=Z, m=M, sample_id=sh.sid.astype('<U128'),
-             product_id=np.array([sh.rows[i][0] for i in range(N)], dtype='<U128'),
-             port=sh.port.astype('<U64'),
-             valid_joint=sh.vjoint.astype(np.float32), status=np.where(gate, 'valid', 'io_coverage_missing'))
+    # np.savez appends .npz to a path lacking that suffix, so write through a file object
+    with open(tmp, 'wb') as fh:
+        np.savez(fh, z=Z, m=M, sample_id=sh.sid.astype('<U128'),
+                 product_id=np.array([sh.rows[i][0] for i in range(N)], dtype='<U128'),
+                 port=sh.port.astype('<U64'),
+                 valid_joint=sh.vjoint.astype(np.float32), status=np.where(gate, 'valid', 'io_coverage_missing'))
     h = hashlib.sha256(tmp.read_bytes()).hexdigest()
     tmp.rename(out / 'features.npz')
     with (out / 'source_fit_labels.csv').open('w', newline='', encoding='utf-8') as fh:
