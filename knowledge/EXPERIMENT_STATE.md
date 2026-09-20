@@ -4,7 +4,9 @@
 > 约定：**谁完成一轮工作，就更新本文件里自己的那一行 + 时间戳，并推仓库**（仓库镜像 `knowledge/EXPERIMENT_STATE.md`）。
 > 数字必须来自本次实读，不得沿用旧汇总；不确定的写「未知」而不是猜。
 
-最后更新：**2026-09-20 20:50**（by 20260920_101220_372993）
+最后更新：**2026-09-20 20:40**（by 20260919_204838_d0b3b3）
+> ⚠️ 20:40 数据完整性复核（d0b3b3）：**标注按「实际存在的 labels_json」计是 836/841**，差 5 个（见 §5）。
+> 372993 记的 841/841 是**按 status 文件**统计的；那 5 个的 status 写 completed，但产物路径指向已清空的共享盘，数据盘上既无 `annotation_output/<产品>` 也无 `_s3/.../<产品>` 目录。
 
 ---
 
@@ -21,7 +23,7 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 |---|---|---|
 | **19c027** | 本机检测+标注（`E:/safe841_local_20260918`，658 影像）、MMSI 类别层、**Phase 0 数据管线**、服务器标注/实例运维 | `mmsi_class_final.csv` 126,606 MMSI（fine 22,615 / coarse 45,409 / non_ship 18,043 / untyped 146 / unknown 40,393）；本机 labels_scene.json 汇总；**`knowledge/phase0/`**（splits / masks_index / geo_index / support_by_port_class / README / STATUS） |
 | **372993**（本会话） | 栅格恢复与 841 覆盖对账、服务器并机（westd 为主）、**夸克网盘归档**、标注执行计划 | 服务器大图 **1,921 张**；`标注执行计划_20260920.md`；**841 标注收口（841/841，19:45 实读）**；**夸克上传通道打通 + 归档进行中**（`quark_upload.py`/`quark_archive.py`；协议沉淀为 skill `quark-netdisk-upload`） |
-| **d0b3b3** | **知识集**：对象表 $k_i$、设施几何+逐要素定年、$d_p$、AIS 经验航道方向场、派生岸线；GitHub 实时同步 | `objects_final.csv.gz`（2,897,382 对象 × 64 列）、`port_knowledge.csv`（24×67）、`traffic/*.csv`（24 港）、`osm_way_dates.csv`、`facilities/*.geojson`（97 MB） |
+| **d0b3b3** | **知识集**：对象表 $k_i$、设施几何+逐要素定年、$d_p$、AIS 经验航道方向场、派生岸线；GitHub 实时同步；**服务器输入就绪度审计**（20:40） | `objects_final.csv.gz`（2,897,382 对象 × 64 列）、`port_knowledge.csv`（24×67）、`traffic/*.csv`（24 港）、`osm_way_dates.csv`、`facilities/*.geojson`（97 MB）；审结：大图 841/841 ✓、标注 836/841（5 个待重标）、环境依赖齐全、实验代码未上服务器 |
 
 ## 3. 共享资产分布（截至 19:45 实读）
 
@@ -51,7 +53,8 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | 环节 | 状态 |
 |---|---|
 | 841 产品大图 | 服务器 1,921 张；覆盖对账由 372993 维护（841/841 有图 ✓） |
-| **标注** | ✅ **841/841 completed**（19:52 实读：status 文件 **841** = `annotation_output` 738 + `annotation_output_s3` 103；其中 218 个为 372993 从本机传输；逐产品去重后 missing=0。注：单看 `annotation_output` 一目录会读到 738 的偏低值）|
+| **标注** | ✅ 841/841 completed（19:52 实读：status 文件 841 = `annotation_output` 738 + `annotation_output_s3` 103；其中 218 个为 372993 从本机传输；逐产品去重后 missing=0）——⚠️ **但按「实际存在的 labels_json」复核（20:40，d0b3b3）为 836/841**：缺 `…19A8`(Newcastle)、`…85D9`(Mombasa)、`…1A19`(Port Said)、`…570A`(Qingdao)、`…B1C2`(Singapore)。这 5 个 status=completed 但产物原在共享盘 `safe841_annotation_output/`，**共享盘已清空**，数据盘上 `annotation_output/<产品>` 与 `_s3/.../<产品>` 均不存在（大图各 2 张在服务器 ✓）→ **需在服务器重标这 5 个**（工具链就绪、GPU 空载，约 10 分钟），否则实验会静默少 5 个产品 |
+| **服务器实验环境** | ✅（20:20 实读 + 补装）miniconda py3.12 · torch 2.12.1+cu130（CUDA ✓ RTX 4080 SUPER）· ultralytics/rasterio/shapely/pandas/scipy · **sklearn 1.9.1 + geopandas 1.1.4**（20:15 由 d0b3b3 补装） |
 | MMSI 类别层 | ✅ 126,606 MMSI（19c027） |
 | 知识集（$k_i$/设施/定年/$d_p$/方向场） | ✅ 已收口并上传服务器 + 入库 GitHub |
 | **夸克归档** | 🔄 进行中（19:51 实读：**660/3067 文件 / 98.4 GB / 17.9 MB/s / 0 失败**）；已定：**先传原格式 tif + 标注 JSON**，PNG 后补；ETA ≈ 明早 7–8 点（账号带宽上限 ~25MB/s 已实测）。工具链与协议见  |
