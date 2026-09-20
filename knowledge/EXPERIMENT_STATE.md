@@ -4,9 +4,8 @@
 > 约定：**谁完成一轮工作，就更新本文件里自己的那一行 + 时间戳，并推仓库**（仓库镜像 `knowledge/EXPERIMENT_STATE.md`）。
 > 数字必须来自本次实读，不得沿用旧汇总；不确定的写「未知」而不是猜。
 
-最后更新：**2026-09-20 20:40**（by 20260919_204838_d0b3b3）
-> ⚠️ 20:40 数据完整性复核（d0b3b3）：**标注按「实际存在的 labels_json」计是 836/841**，差 5 个（见 §5）。
-> 372993 记的 841/841 是**按 status 文件**统计的；那 5 个的 status 写 completed，但产物路径指向已清空的共享盘，数据盘上既无 `annotation_output/<产品>` 也无 `_s3/.../<产品>` 目录。
+最后更新：**2026-09-20 20:45**（by 20260919_204838_d0b3b3）
+> ✅ 20:45 复核（d0b3b3）：标注 **841/841 实打实**（此前 5 个缺口已重标修复，见 §5）；E00 审计件已产出（`next_experiment_v03/e00/`，含 feature_permissions.yaml / id 碰撞 207 万行 / 距离截断统计）。
 
 ---
 
@@ -53,7 +52,7 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | 环节 | 状态 |
 |---|---|
 | 841 产品大图 | 服务器 1,921 张；覆盖对账由 372993 维护（841/841 有图 ✓） |
-| **标注** | ✅ 841/841 completed（19:52 实读：status 文件 841 = `annotation_output` 738 + `annotation_output_s3` 103；其中 218 个为 372993 从本机传输；逐产品去重后 missing=0）——⚠️ **但按「实际存在的 labels_json」复核（20:40，d0b3b3）为 836/841**：缺 `…19A8`(Newcastle)、`…85D9`(Mombasa)、`…1A19`(Port Said)、`…570A`(Qingdao)、`…B1C2`(Singapore)。这 5 个 status=completed 但产物原在共享盘 `safe841_annotation_output/`，**共享盘已清空**，数据盘上 `annotation_output/<产品>` 与 `_s3/.../<产品>` 均不存在（大图各 2 张在服务器 ✓）→ **需在服务器重标这 5 个**（工具链就绪、GPU 空载，约 10 分钟），否则实验会静默少 5 个产品 |
+| **标注** | ✅ **841/841 实打实**（20:42，d0b3b3 逐产品复核 labs_json 存在性）：status 文件 841（`annotation_output` 738 + `annotation_output_s3` 103）。**20:36–20:42 已修复**此前发现的 5 个缺口（`…19A8` Newcastle、`…85D9` Mombasa、`…1A19` Port Said、`…570A` Qingdao、`…B1C2` Singapore）——它们的产物原在共享盘（已清空），本次用 `annotation_bundle_s3` 的资产在服务器重跑，5/5 全部 rc=0 且 VV+VH 的 labels_json 各 2 个；队列与日志在 `knowledge_841_20260920/recover5/` |
 | **服务器实验环境** | ✅（20:20 实读 + 补装）miniconda py3.12 · torch 2.12.1+cu130（CUDA ✓ RTX 4080 SUPER）· ultralytics/rasterio/shapely/pandas/scipy · **sklearn 1.9.1 + geopandas 1.1.4**（20:15 由 d0b3b3 补装） |
 | MMSI 类别层 | ✅ 126,606 MMSI（19c027） |
 | 知识集（$k_i$/设施/定年/$d_p$/方向场） | ✅ 已收口并上传服务器 + 入库 GitHub |

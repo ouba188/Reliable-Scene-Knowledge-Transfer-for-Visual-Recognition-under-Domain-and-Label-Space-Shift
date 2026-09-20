@@ -1,0 +1,11 @@
+﻿class_level,source,confidence,objects
+coarse,myshiptracking_label,coarse,22978
+coarse,coarse_type_code,coarse,22689
+fine,myshiptracking_label,high,12273
+fine,bundle_ais_type_code,high,6217
+fine,rule_validated,medium,6071
+non_ship,mmsi_structure,certain,3386
+untyped,vesselfinder_imo,registry,1458
+fine,vesselfinder_imo,registry,532
+fine,myshiptracking_label,medium,443
+fine,bundle_ais_type_code,low,2

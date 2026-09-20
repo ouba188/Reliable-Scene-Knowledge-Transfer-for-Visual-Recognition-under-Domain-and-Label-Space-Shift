@@ -1,0 +1,10 @@
+{
+ "rows": 2897382,
+ "same_product_same_world_point": 301,
+ "cross_polarisation_pairs": "not separable in this table: VV/VH share world coordinates only within a few metres",
+ "polarisation_rows": {
+  "VH": 1201220,
+  "VV": 1696162
+ },
+ "action": "rebuild density / nearest-neighbour / heading statistics after merging VV+VH and overlapping tiles"
+}

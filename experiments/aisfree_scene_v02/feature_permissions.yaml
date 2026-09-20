@@ -1,0 +1,362 @@
+protocol: P0 AIS-free (next_experiment_v03)
+source_supervision:
+- matched_mmsi
+- candidate_mmsi
+- prelabel_class
+- ais_final_class
+- ais_class_level
+- ais_class_confidence
+- ais_class_source
+- fine_class
+- fine_class_source
+evaluator_only:
+- match_status
+- candidate_mmsi
+- candidate_distance_m
+- matched_mmsi
+- prelabel_class
+- ais_final_class
+- ais_class_level
+- ais_class_confidence
+- ais_class_source
+- fine_class
+- fine_class_source
+- ais_unique_match
+- fine_class_resolved
+forbidden_as_target_input:
+- support_i
+- support_missing
+evidence_only:
+- facility_edit_ts
+- facility_temporal_valid
+columns:
+- column: object_id
+  role: identifier
+  source: derived
+  p0_usable: true
+  note: tile-local id; collision audit reported separately
+- column: product_id
+  role: identifier
+  source: SAFE
+  p0_usable: true
+  note: ''
+- column: port
+  role: identifier
+  source: inventory
+  p0_usable: true
+  note: ''
+- column: polarization
+  role: identifier
+  source: SAFE
+  p0_usable: true
+  note: ''
+- column: start_utc
+  role: identifier
+  source: SAFE
+  p0_usable: true
+  note: acquisition time; usable for time-based G protocol splits
+- column: detection_id
+  role: identifier
+  source: detector
+  p0_usable: true
+  note: ''
+- column: roi_origin
+  role: identifier
+  source: tiling
+  p0_usable: true
+  note: tile origin; needed to rebuild a global key
+- column: conf
+  role: feature
+  source: detector
+  p0_usable: true
+  note: detector confidence
+- column: centroid_x
+  role: feature
+  source: detector
+  p0_usable: true
+  note: within-tile pixel coordinate
+- column: centroid_y
+  role: feature
+  source: detector
+  p0_usable: true
+  note: ''
+- column: world_x
+  role: feature
+  source: geocode
+  p0_usable: true
+  note: UTM metres
+- column: world_y
+  role: feature
+  source: geocode
+  p0_usable: true
+  note: ''
+- column: area_px2
+  role: feature
+  source: detector
+  p0_usable: true
+  note: ''
+- column: obb_long_px
+  role: feature
+  source: detector
+  p0_usable: true
+  note: ''
+- column: obb_short_px
+  role: feature
+  source: detector
+  p0_usable: true
+  note: ''
+- column: obb_long_deg
+  role: feature
+  source: detector
+  p0_usable: true
+  note: axial orientation mod pi; not a heading
+- column: screen_status
+  role: audit
+  source: pipeline
+  p0_usable: false
+  note: screening bookkeeping; audit before reuse
+- column: match_status
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: AIS matching state
+- column: candidate_mmsi
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: target AIS identity
+- column: candidate_distance_m
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: matched_mmsi
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: prelabel_class
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: AIS-derived label
+- column: ais_final_class
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: ais_class_level
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: ais_class_confidence
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: ais_class_source
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: fine_class
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: fine_class_source
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: pixel_status
+  role: feature
+  source: SAR validity
+  p0_usable: true
+  note: valid-pixel screening from the imagery itself
+- column: valid_fraction
+  role: feature
+  source: SAR validity
+  p0_usable: true
+  note: ''
+- column: zero_fraction
+  role: feature
+  source: SAR validity
+  p0_usable: true
+  note: ''
+- column: coast_status
+  role: feature
+  source: WorldCover
+  p0_usable: true
+  note: near-shore screening status
+- column: coast_exclusion_m
+  role: feature
+  source: WorldCover
+  p0_usable: true
+  note: distance to coast from the pipeline mask
+- column: facility_kind
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: static map relation
+- column: facility_distance_m
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: capped at 25 m buffer semantics; see distance notes
+- column: facility_osm_id
+  role: identifier
+  source: OSM
+  p0_usable: true
+  note: join key for time evidence
+- column: facility_osm_element
+  role: identifier
+  source: OSM
+  p0_usable: true
+  note: way/node/relation
+- column: facility_edit_ts
+  role: evidence_only
+  source: OSM API
+  p0_usable: true
+  note: last-edit time; NOT construction time, NOT a K-correctness label
+- column: facility_temporal_valid
+  role: evidence_only
+  source: OSM API
+  p0_usable: false
+  note: not wrongK; see temporal_evidence_audit.csv
+- column: d_coast_m
+  role: feature
+  source: OSM/WorldCover
+  p0_usable: true
+  note: capped at 2000 m; distinguish cap from missing layer
+- column: d_quay_m
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: capped at 2000 m
+- column: distance_source
+  role: provenance
+  source: mixed
+  p0_usable: true
+  note: osm_coastline | worldcover_derived | pipeline_worldcover
+- column: d_coast_pipeline_m
+  role: feature
+  source: WorldCover
+  p0_usable: true
+  note: independent of the OSM coastline route
+- column: d_anchorage_m
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: capped at 2000 m
+- column: d_fairway_m
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: capped at 2000 m; sparse outside mapped ports
+- column: on_fairway
+  role: feature
+  source: OSM
+  p0_usable: true
+  note: depends on shallow OSM fairway coverage
+- column: channel_angle_deg
+  role: feature
+  source: mixed
+  p0_usable: split
+  note: 'P0: use only rows with channel_angle_source=osm_fairway; ais_traffic rows
+    are AIS-derived'
+- column: channel_angle_source
+  role: provenance
+  source: mixed
+  p0_usable: true
+  note: osm_fairway | ais_traffic
+- column: local_ships_500m
+  role: feature
+  source: SAR
+  p0_usable: after_dedup
+  note: recompute after tile/polarisation dedup
+- column: local_ships_1km
+  role: feature
+  source: SAR
+  p0_usable: after_dedup
+  note: ''
+- column: nn_distance_m
+  role: feature
+  source: SAR
+  p0_usable: after_dedup
+  note: ''
+- column: heading_consistency_deg
+  role: feature
+  source: SAR
+  p0_usable: after_dedup
+  note: ''
+- column: worldcover_class
+  role: feature
+  source: WorldCover
+  p0_usable: true
+  note: ''
+- column: semantic_area
+  role: feature
+  source: WorldCover
+  p0_usable: true
+  note: water|land|built|nodata
+- column: human_reviewed
+  role: audit
+  source: pipeline
+  p0_usable: false
+  note: all zero in this build
+- column: final_dataset_eligible
+  role: audit
+  source: pipeline
+  p0_usable: false
+  note: audit before reuse
+- column: support_i
+  role: forbidden_as_input
+  source: mixed
+  p0_usable: false
+  note: includes AIS signals; forbidden as target feature or sampling rule
+- column: support_missing
+  role: forbidden_as_input
+  source: mixed
+  p0_usable: false
+  note: same
+- column: ais_unique_match
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: fine_class_resolved
+  role: evaluator_only
+  source: AIS
+  p0_usable: false
+  note: ''
+- column: valid_area_ok
+  role: audit
+  source: derived
+  p0_usable: false
+  note: ''
+- column: coast_known
+  role: audit
+  source: derived
+  p0_usable: false
+  note: ''
+- column: facility_context
+  role: audit
+  source: derived
+  p0_usable: false
+  note: ''
+- column: facility_map_available
+  role: audit
+  source: derived
+  p0_usable: false
+  note: ''
+caveats:
+- 'facility_temporal_valid compares OSM last-edit time with the scene date: not construction
+  time.'
+- distances cap at 2000 m; a capped value is not evidence that the layer exists 2
+  km away.
+- channel_angle_deg falls back to an AIS-derived field; P0 must split on channel_angle_source.
+- local density / nearest neighbour / heading stats were computed before tile and
+  polarisation dedup.
+- support_i mixes AIS signals and must not gate target candidates.

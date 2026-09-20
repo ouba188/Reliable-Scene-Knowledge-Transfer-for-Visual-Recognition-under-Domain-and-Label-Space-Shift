@@ -1,0 +1,7 @@
+{
+ "rows": 2897382,
+ "distinct_object_id": 827100,
+ "collisions": 2070282,
+ "key": "product|polarisation|roi_origin.x|detection_id",
+ "action": "add full roi_origin (x and y) plus candidate index to the key and keep the original"
+}
