@@ -1,0 +1,38 @@
+{
+ "Hamburg": {
+  "products": 8,
+  "instances": 12113,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 4
+  }
+ },
+ "Rotterdam": {
+  "products": 5,
+  "instances": 13949,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 4
+  }
+ },
+ "Sydney Botany": {
+  "products": 11,
+  "instances": 2382,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 4
+  }
+ },
+ "Mombasa": {
+  "products": 11,
+  "instances": 835,
+  "active_cells": 8,
+  "cell_reasons": {
+   "disabled_by_source_support": 4,
+   "too_few_available_objects": 4
+  }
+ }
+}

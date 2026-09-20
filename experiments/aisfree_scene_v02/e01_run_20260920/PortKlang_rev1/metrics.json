@@ -1,0 +1,138 @@
+{
+ "n_eval_instances_used": 3074,
+ "B0": 7,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "vocabulary": [
+  "container_ship",
+  "dredger",
+  "fishing_vessel",
+  "passenger_ship",
+  "product_chemical_tanker",
+  "tug_towing"
+ ],
+ "support": {
+  "p0_offshore_total": 408981,
+  "eval_valid_instances": 3074,
+  "eval_in_vocab_labeled": 9,
+  "eval_out_of_vocab_labeled": 90,
+  "eval_unlabeled": 2975,
+  "note": "IO/coverage-missing objects stay registered on the P0 side and are excluded from this evaluable subset"
+ },
+ "evaluable_instances": 9,
+ "coverage_fixed_denominator": {
+  "target_eval_all_instances": 3074,
+  "target_eval_usable": 3074,
+  "target_eval_excluded_io": 0,
+  "target_adapt_all_instances": 2863,
+  "target_adapt_usable": 2863,
+  "target_adapt_excluded_io": 0,
+  "note": "usable = rev1 chip joint validity >= 0.95; excluded objects stay registered on the P0 side (io_coverage_missing) and are never silently dropped"
+ },
+ "per": {
+  "B0": {
+   "acc": 0.1111111111111111,
+   "ba": 0.041666666666666664,
+   "n": 9,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 0,
+     "recall": null
+    },
+    "fishing_vessel": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.1111111111111111,
+   "ba": 0.041666666666666664,
+   "n": 9,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 0,
+     "recall": null
+    },
+    "fishing_vessel": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.1111111111111111,
+   "ba": 0.041666666666666664,
+   "n": 9,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 0,
+     "recall": null
+    },
+    "fishing_vessel": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "product_chemical_tanker": {
+     "n": 0,
+     "recall": null
+    },
+    "tug_towing": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  }
+ },
+ "rescue_vs_B1": 0,
+ "harm_vs_B1": 0,
+ "delta_acc_vs_B1": 0.0
+}

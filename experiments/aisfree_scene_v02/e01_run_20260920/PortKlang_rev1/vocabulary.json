@@ -1,0 +1,84 @@
+{
+ "vocabulary": {
+  "container_ship": {
+   "Singapore": 17,
+   "Qingdao": 142,
+   "Jebel Ali": 3,
+   "Shanghai": 895,
+   "Ningbo-Zhoushan": 31,
+   "Busan": 2
+  },
+  "dredger": {
+   "Jebel Ali": 44,
+   "Houston": 1,
+   "Singapore": 141,
+   "Qingdao": 64,
+   "New York": 1,
+   "Shanghai": 225,
+   "Ningbo-Zhoushan": 2,
+   "Fujairah": 1
+  },
+  "fishing_vessel": {
+   "Singapore": 24,
+   "Qingdao": 2235,
+   "New York": 1,
+   "Jebel Ali": 4,
+   "Houston": 13,
+   "Newcastle": 2,
+   "Shanghai": 472,
+   "Ningbo-Zhoushan": 48,
+   "Busan": 14,
+   "Fujairah": 2
+  },
+  "passenger_ship": {
+   "Qingdao": 35,
+   "Jebel Ali": 12,
+   "Shanghai": 51,
+   "Singapore": 1,
+   "Newcastle": 1,
+   "Ningbo-Zhoushan": 1
+  },
+  "product_chemical_tanker": {
+   "Singapore": 29,
+   "Fujairah": 2,
+   "Jebel Ali": 30,
+   "Qingdao": 38,
+   "Shanghai": 222,
+   "Ningbo-Zhoushan": 13,
+   "Busan": 1,
+   "Newcastle": 2
+  },
+  "tug_towing": {
+   "Jebel Ali": 268,
+   "Houston": 69,
+   "Singapore": 50,
+   "Fujairah": 9,
+   "New York": 4,
+   "Qingdao": 35,
+   "Shanghai": 259,
+   "Ningbo-Zhoushan": 1,
+   "Busan": 1,
+   "Callao": 4,
+   "Newcastle": 1
+  }
+ },
+ "valid_gate": 0.95,
+ "source_fit_ports": [
+  "Busan",
+  "Callao",
+  "Fujairah",
+  "Houston",
+  "Jebel Ali",
+  "Los Angeles",
+  "Melbourne",
+  "New York",
+  "Newcastle",
+  "Ningbo-Zhoushan",
+  "Port Hedland",
+  "Qingdao",
+  "Richards Bay",
+  "Shanghai",
+  "Singapore",
+  "Tanger Med"
+ ]
+}
