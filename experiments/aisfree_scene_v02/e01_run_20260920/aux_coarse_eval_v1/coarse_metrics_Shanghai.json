@@ -1,0 +1,67 @@
+{
+ "fold": "Shanghai",
+ "run": "/root/autodl-tmp/e01_runs/Shanghai_rev1",
+ "vocabulary_hash": "c1eb8754f6b0f8ff",
+ "predictions_hash": "1c7ab5e869ad86f3",
+ "features_sha256": "a1d142433b8aa8f3",
+ "mapping_version": "coarse_parent_v1",
+ "coarse_parents_of_vocabulary": [
+  "fishing",
+  "tug"
+ ],
+ "coverage": {
+  "eval_instances": 26653,
+  "eval_labelled_any": 8011,
+  "coarse_supported": 443,
+  "outside_vocab_parents": 7568,
+  "unlabelled": 18642
+ },
+ "metrics": {
+  "B0": {
+   "n_coarse_supported": 443,
+   "acc": 0.7155756207674944,
+   "ba": 0.6988841159334419,
+   "per_coarse_class": {
+    "fishing": {
+     "n": 314,
+     "recall": 0.7388535031847133
+    },
+    "tug": {
+     "n": 129,
+     "recall": 0.6589147286821705
+    }
+   }
+  },
+  "B1": {
+   "n_coarse_supported": 443,
+   "acc": 0.7133182844243793,
+   "ba": 0.6972917592455439,
+   "per_coarse_class": {
+    "fishing": {
+     "n": 314,
+     "recall": 0.7356687898089171
+    },
+    "tug": {
+     "n": 129,
+     "recall": 0.6589147286821705
+    }
+   }
+  },
+  "Full": {
+   "n_coarse_supported": 443,
+   "acc": 0.7133182844243793,
+   "ba": 0.6972917592455439,
+   "per_coarse_class": {
+    "fishing": {
+     "n": 314,
+     "recall": 0.7356687898089171
+    },
+    "tug": {
+     "n": 129,
+     "recall": 0.6589147286821705
+    }
+   }
+  }
+ },
+ "note": "single-column auxiliary analysis; never used for training or model selection"
+}

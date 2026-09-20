@@ -1,0 +1,106 @@
+{
+ "fold": "Rotterdam",
+ "run": "/root/autodl-tmp/e01_runs/Rotterdam_rev1",
+ "vocabulary_hash": "5f6ca4b1f9ce3651",
+ "predictions_hash": "0dafecdcbba9fa12",
+ "features_sha256": "0bd21c9edea0af96",
+ "mapping_version": "coarse_parent_v1",
+ "coarse_parents_of_vocabulary": [
+  "cargo",
+  "dredger",
+  "fishing",
+  "tanker",
+  "tug"
+ ],
+ "coverage": {
+  "eval_instances": 13200,
+  "eval_labelled_any": 314,
+  "coarse_supported": 284,
+  "outside_vocab_parents": 30,
+  "unlabelled": 12886
+ },
+ "metrics": {
+  "B0": {
+   "n_coarse_supported": 284,
+   "acc": 0.2640845070422535,
+   "ba": 0.32008320015816266,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 145,
+     "recall": 0.32413793103448274
+    },
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing": {
+     "n": 7,
+     "recall": 0.5714285714285714
+    },
+    "tanker": {
+     "n": 104,
+     "recall": 0.09615384615384616
+    },
+    "tug": {
+     "n": 23,
+     "recall": 0.6086956521739131
+    }
+   }
+  },
+  "B1": {
+   "n_coarse_supported": 284,
+   "acc": 0.2535211267605634,
+   "ba": 0.30240011862200766,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 145,
+     "recall": 0.30344827586206896
+    },
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing": {
+     "n": 7,
+     "recall": 0.5714285714285714
+    },
+    "tanker": {
+     "n": 104,
+     "recall": 0.11538461538461539
+    },
+    "tug": {
+     "n": 23,
+     "recall": 0.5217391304347826
+    }
+   }
+  },
+  "Full": {
+   "n_coarse_supported": 284,
+   "acc": 0.2535211267605634,
+   "ba": 0.30240011862200766,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 145,
+     "recall": 0.30344827586206896
+    },
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing": {
+     "n": 7,
+     "recall": 0.5714285714285714
+    },
+    "tanker": {
+     "n": 104,
+     "recall": 0.11538461538461539
+    },
+    "tug": {
+     "n": 23,
+     "recall": 0.5217391304347826
+    }
+   }
+  }
+ },
+ "note": "single-column auxiliary analysis; never used for training or model selection"
+}

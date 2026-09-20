@@ -1,0 +1,106 @@
+{
+ "fold": "Fujairah",
+ "run": "/root/autodl-tmp/e01_runs/Fujairah_rev1",
+ "vocabulary_hash": "5f6ca4b1f9ce3651",
+ "predictions_hash": "3793513767f9881c",
+ "features_sha256": "46f89df17cff3767",
+ "mapping_version": "coarse_parent_v1",
+ "coarse_parents_of_vocabulary": [
+  "cargo",
+  "dredger",
+  "fishing",
+  "tanker",
+  "tug"
+ ],
+ "coverage": {
+  "eval_instances": 3460,
+  "eval_labelled_any": 145,
+  "coarse_supported": 141,
+  "outside_vocab_parents": 4,
+  "unlabelled": 3315
+ },
+ "metrics": {
+  "B0": {
+   "n_coarse_supported": 141,
+   "acc": 0.06382978723404255,
+   "ba": 0.23230258113979044,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 43,
+     "recall": 0.13953488372093023
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 91,
+     "recall": 0.02197802197802198
+    },
+    "tug": {
+     "n": 4,
+     "recall": 0.0
+    }
+   }
+  },
+  "B1": {
+   "n_coarse_supported": 141,
+   "acc": 0.07092198581560284,
+   "ba": 0.23695374393048813,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 43,
+     "recall": 0.16279069767441862
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 91,
+     "recall": 0.02197802197802198
+    },
+    "tug": {
+     "n": 4,
+     "recall": 0.0
+    }
+   }
+  },
+  "Full": {
+   "n_coarse_supported": 141,
+   "acc": 0.07092198581560284,
+   "ba": 0.23695374393048813,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 43,
+     "recall": 0.16279069767441862
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 91,
+     "recall": 0.02197802197802198
+    },
+    "tug": {
+     "n": 4,
+     "recall": 0.0
+    }
+   }
+  }
+ },
+ "note": "single-column auxiliary analysis; never used for training or model selection"
+}

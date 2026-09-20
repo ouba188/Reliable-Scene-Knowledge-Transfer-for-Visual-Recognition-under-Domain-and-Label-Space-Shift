@@ -1,0 +1,55 @@
+fold,bank,coarse_class,n,recall
+Rotterdam,B0,cargo,145,0.3241
+Rotterdam,B0,dredger,5,0.0
+Rotterdam,B0,fishing,7,0.5714
+Rotterdam,B0,tanker,104,0.0962
+Rotterdam,B0,tug,23,0.6087
+Rotterdam,B1,cargo,145,0.3034
+Rotterdam,B1,dredger,5,0.0
+Rotterdam,B1,fishing,7,0.5714
+Rotterdam,B1,tanker,104,0.1154
+Rotterdam,B1,tug,23,0.5217
+Rotterdam,Full,cargo,145,0.3034
+Rotterdam,Full,dredger,5,0.0
+Rotterdam,Full,fishing,7,0.5714
+Rotterdam,Full,tanker,104,0.1154
+Rotterdam,Full,tug,23,0.5217
+fold,bank,coarse_class,n,recall
+Shanghai,B0,fishing,314,0.7389
+Shanghai,B0,tug,129,0.6589
+Shanghai,B1,fishing,314,0.7357
+Shanghai,B1,tug,129,0.6589
+Shanghai,Full,fishing,314,0.7357
+Shanghai,Full,tug,129,0.6589
+fold,bank,coarse_class,n,recall
+Port Klang,B0,cargo,61,0.1311
+Port Klang,B0,fishing,1,0.0
+Port Klang,B0,passenger,1,0.0
+Port Klang,B0,tanker,30,0.1
+Port Klang,B0,tug,6,0.1667
+Port Klang,B1,cargo,61,0.1803
+Port Klang,B1,fishing,1,0.0
+Port Klang,B1,passenger,1,0.0
+Port Klang,B1,tanker,30,0.0667
+Port Klang,B1,tug,6,0.1667
+Port Klang,Full,cargo,61,0.1803
+Port Klang,Full,fishing,1,0.0
+Port Klang,Full,passenger,1,0.0
+Port Klang,Full,tanker,30,0.0667
+Port Klang,Full,tug,6,0.1667
+fold,bank,coarse_class,n,recall
+Fujairah,B0,cargo,43,0.1395
+Fujairah,B0,dredger,1,1.0
+Fujairah,B0,fishing,2,0.0
+Fujairah,B0,tanker,91,0.022
+Fujairah,B0,tug,4,0.0
+Fujairah,B1,cargo,43,0.1628
+Fujairah,B1,dredger,1,1.0
+Fujairah,B1,fishing,2,0.0
+Fujairah,B1,tanker,91,0.022
+Fujairah,B1,tug,4,0.0
+Fujairah,Full,cargo,43,0.1628
+Fujairah,Full,dredger,1,1.0
+Fujairah,Full,fishing,2,0.0
+Fujairah,Full,tanker,91,0.022
+Fujairah,Full,tug,4,0.0

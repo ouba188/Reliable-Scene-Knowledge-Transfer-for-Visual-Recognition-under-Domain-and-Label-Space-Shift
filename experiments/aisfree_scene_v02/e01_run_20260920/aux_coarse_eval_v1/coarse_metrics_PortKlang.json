@@ -1,0 +1,107 @@
+{
+ "fold": "Port Klang",
+ "run": "/root/autodl-tmp/e01_runs/Port Klang_rev1",
+ "vocabulary_hash": "adf374cb43c9872a",
+ "predictions_hash": "8582e48aab97e0ae",
+ "features_sha256": "a12aaeb2f3f44c11",
+ "mapping_version": "coarse_parent_v1",
+ "coarse_parents_of_vocabulary": [
+  "cargo",
+  "dredger",
+  "fishing",
+  "passenger",
+  "tanker",
+  "tug"
+ ],
+ "coverage": {
+  "eval_instances": 3074,
+  "eval_labelled_any": 99,
+  "coarse_supported": 99,
+  "outside_vocab_parents": 0,
+  "unlabelled": 2975
+ },
+ "metrics": {
+  "B0": {
+   "n_coarse_supported": 99,
+   "acc": 0.12121212121212122,
+   "ba": 0.07956284153005463,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 61,
+     "recall": 0.13114754098360656
+    },
+    "fishing": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 30,
+     "recall": 0.1
+    },
+    "tug": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  },
+  "B1": {
+   "n_coarse_supported": 99,
+   "acc": 0.1414141414141414,
+   "ba": 0.08273224043715847,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 61,
+     "recall": 0.18032786885245902
+    },
+    "fishing": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 30,
+     "recall": 0.06666666666666667
+    },
+    "tug": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  },
+  "Full": {
+   "n_coarse_supported": 99,
+   "acc": 0.1414141414141414,
+   "ba": 0.08273224043715847,
+   "per_coarse_class": {
+    "cargo": {
+     "n": 61,
+     "recall": 0.18032786885245902
+    },
+    "fishing": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 30,
+     "recall": 0.06666666666666667
+    },
+    "tug": {
+     "n": 6,
+     "recall": 0.16666666666666666
+    }
+   }
+  }
+ },
+ "note": "single-column auxiliary analysis; never used for training or model selection"
+}
