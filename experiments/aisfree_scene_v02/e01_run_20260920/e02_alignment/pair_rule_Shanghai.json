@@ -1,0 +1,102 @@
+{
+ "fold": "Shanghai",
+ "threshold": 0.960708,
+ "source_development": [
+  {
+   "port": "Antwerp-Bruges",
+   "n_eval": 60,
+   "signal": 1.0705186198005876,
+   "cross_acc": 0.7333333333333333,
+   "cross_ba": 0.6349206349206349,
+   "mean_acc": 0.7666666666666667,
+   "mean_ba": 0.7063492063492063
+  },
+  {
+   "port": "Houston",
+   "n_eval": 82,
+   "signal": 2.71510230410365,
+   "cross_acc": 0.9512195121951219,
+   "cross_ba": 0.8773690078037905,
+   "mean_acc": 0.9390243902439024,
+   "mean_ba": 0.838907469342252
+  },
+  {
+   "port": "Jebel Ali",
+   "n_eval": 272,
+   "signal": 0.9607077104363854,
+   "cross_acc": 0.8492647058823529,
+   "cross_ba": 0.9235074626865671,
+   "mean_acc": 0.8272058823529411,
+   "mean_ba": 0.9123134328358209
+  }
+ ],
+ "source_development_gain": {
+  "cross_acc": 0.8446058504702694,
+  "mean_acc": 0.8442989797545034,
+  "rule_acc": 0.851651920930974
+ },
+ "applied": [
+  {
+   "fold": "Shanghai",
+   "pseudo_target_port": "Qingdao",
+   "pseudo_target_role": "meta",
+   "n_fit": "612",
+   "n_adapt": "24919",
+   "n_eval": "1451",
+   "adapt_products": "12",
+   "eval_products": "13",
+   "adapt_dates": "12",
+   "eval_dates": "13",
+   "cov_residual_t2s": "6.186393086865967e-16",
+   "ridge": "0.001",
+   "classes_in_eval": "fishing_vessel|tug_towing",
+   "cross_acc": "0.3907649896623019",
+   "cross_ba": "0.5602599814298979",
+   "mean_only_acc": "0.35975189524465884",
+   "mean_only_ba": "0.5775766016713092",
+   "coral_t2s_acc": "0.4066161268090972",
+   "coral_t2s_ba": "0.5682683379758589",
+   "coral_s2t_acc": "0.40523776705720194",
+   "coral_s2t_ba": "0.5675719591457753",
+   "in_ref_acc": "0.9896623018607856",
+   "in_ref_ba": "0.5",
+   "signal": 2.941051252027836,
+   "rule_choice": "mean_only",
+   "rule_acc": "0.35975189524465884",
+   "rule_ba": "0.5775766016713092",
+   "best_of_cross_mean_acc": 0.3907649896623019,
+   "oracle_acc": 0.4066161268090972
+  },
+  {
+   "fold": "Shanghai",
+   "pseudo_target_port": "Singapore",
+   "pseudo_target_role": "meta",
+   "n_fit": "612",
+   "n_adapt": "24883",
+   "n_eval": "34",
+   "adapt_products": "12",
+   "eval_products": "12",
+   "adapt_dates": "12",
+   "eval_dates": "12",
+   "cov_residual_t2s": "5.798023199030566e-16",
+   "ridge": "0.001",
+   "classes_in_eval": "fishing_vessel|tug_towing",
+   "cross_acc": "0.6176470588235294",
+   "cross_ba": "0.5357142857142857",
+   "mean_only_acc": "0.6176470588235294",
+   "mean_only_ba": "0.5357142857142857",
+   "coral_t2s_acc": "0.5882352941176471",
+   "coral_t2s_ba": "0.5107142857142857",
+   "coral_s2t_acc": "0.5882352941176471",
+   "coral_s2t_ba": "0.5107142857142857",
+   "in_ref_acc": "0.6176470588235294",
+   "in_ref_ba": "0.5357142857142857",
+   "signal": 2.896033115338816,
+   "rule_choice": "mean_only",
+   "rule_acc": "0.6176470588235294",
+   "rule_ba": "0.5357142857142857",
+   "best_of_cross_mean_acc": 0.6176470588235294,
+   "oracle_acc": 0.6176470588235294
+  }
+ ]
+}

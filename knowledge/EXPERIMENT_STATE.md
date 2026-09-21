@@ -175,3 +175,40 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 ### 交付件
 `e02_alignment/`：`E02_ALIGNMENT_v1.md`、`DECISION_NEXT.md`、`coral_regression_*.csv` 与 `_meta.json`、
 `role_lineage.csv`、`source_pseudo_target_splits_*.json`、`cross_mean_coral_corrected.csv`、两个脚本 + 参考包（含 9 项单测）。
+
+## E02 唯一干预结果：配对感知校正 —— 预登记证伪，判失败（2026-09-21 16:10）
+
+**干预**：只用无标签统计（`s = ||μ(D_fit) − μ(U_q)|| / scale`，在 source-fit 上拟合的 PCA-64 坐标内），
+在 `cross` 与 `mean_only` 间逐对选择；阈值由**源港留一**搜索；目标标签只在评价器内读取。
+
+### 源端留一（规则拟合处）
+| 折 | 阈值 | src Cross | src Mean | src RULE |
+|---|---:|---|---|---|
+| Rotterdam | 4.431 | .618 | .457 | **.618** |
+| Shanghai | 0.961 | .845 | .844 | **.852** |
+| Port Klang | 2.085 | .571 | .529 | **.572** |
+| Fujairah | 4.311 | .661 | .549 | .652 |
+| Jebel Ali | 7.723 | .794 | .620 | .667 |
+| Port Said | 5.276 | .623 | .518 | **.623** |
+
+### 迁移到 5 个可判定伪目标（Acc）
+| 折 | q | n | s | 选择 | Cross | Mean | T2S | RULE | oracle |
+|---|---|---:|---:|---|---|---|---|---|---|
+| Rotterdam | Qingdao | 1588 | 5.27 | mean | .240 | .315 | .311 | **.315（+7.5）** | .315 |
+| Shanghai | Qingdao | 1451 | 2.94 | mean | .391 | .360 | .407 | .360（−3.1） | .407 |
+| Fujairah | Shanghai | 1094 | 3.89 | cross | **.419** | .397 | .398 | **.419（0.0）** | .419 |
+| Port Said | Shanghai | 1094 | 4.65 | cross | .404 | .424 | .396 | .404（−2.0） | .424 |
+| Jebel Ali | Shanghai | 865 | 7.88 | mean | **.572** | .535 | .420 | .535（−3.7） | .572 |
+
+**RULE − cross 平均 −0.26 点；RULE − mean_only −0.10 点；2 胜 3 负** ⇒ 未超过 cross/mean_only 的较好者
+⇒ 按预登记标准**判该干预失败**，不进入下一版。
+
+**附带观察**：信号大小与校正收益无单调关系（s=7.88/2.94 均负、s=3.89 时 cross 已最优，唯一正收益在 s=5.27）
+⇒ 一阶均值偏移量**不是**可迁移的判据；候选信号应改为**按类/按结构**的量。
+
+### 下一版范围（按失败分支）
+回到**表示层**，此时才考虑**编码器级留一**（为某 fit 港另建排除该港的 encoder）；候选信号改为按类或结构化的偏移量。
+本轮不动 encoder、词表、筛选、E01 主表。
+
+### 交付件
+`e02_alignment/PAIR_RULE_v1.md` + `pair_rule_<fold>.json`（阈值、源端留出明细、逐伪目标信号/选择/四列指标/逐对 oracle）+ `e02_pair_rule.py`。
