@@ -1,0 +1,82 @@
+{
+ "evaluation": "leave-one-source-fold-out",
+ "n_pairs": 52,
+ "folds": [
+  "Fujairah",
+  "JebelAli",
+  "PortKlang",
+  "PortSaid",
+  "Rotterdam",
+  "Shanghai"
+ ],
+ "per_statistic": {
+  "stat_shift_norm": {
+   "rule_acc": 0.3066595539340856,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 5,
+   "n": 52
+  },
+  "stat_energy_dist": {
+   "rule_acc": 0.30113753119966324,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 6,
+   "n": 52
+  },
+  "stat_entropy_before": {
+   "rule_acc": 0.31913410361147115,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 6,
+   "n": 52
+  },
+  "stat_entropy_after": {
+   "rule_acc": 0.3166297100495834,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 4,
+   "n": 52
+  },
+  "stat_delta_entropy": {
+   "rule_acc": 0.3137240599510438,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 8,
+   "n": 52
+  },
+  "stat_conf_before": {
+   "rule_acc": 0.31906042250330735,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 5,
+   "n": 52
+  },
+  "stat_conf_after": {
+   "rule_acc": 0.310188809154391,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 6,
+   "n": 52
+  },
+  "stat_delta_conf": {
+   "rule_acc": 0.3169057110039686,
+   "always_cross": 0.3147696426358386,
+   "always_mean": 0.22085696296766694,
+   "oracle": 0.3278700000713148,
+   "picked_mean_only": 6,
+   "n": 52
+  }
+ },
+ "best_statistic": "stat_entropy_before",
+ "best_gain_over_always_cross": 0.004364460975632534,
+ "always_cross_acc": 0.3147696426358386,
+ "oracle_acc": 0.3278700000713148
+}

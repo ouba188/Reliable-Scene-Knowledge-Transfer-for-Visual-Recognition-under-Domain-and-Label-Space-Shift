@@ -1,0 +1,49 @@
+{
+ "n_pairs": 52,
+ "positive_pairs": 8,
+ "delta_acc_mean": -0.09391267966817166,
+ "delta_acc_min": -0.6213206046141606,
+ "delta_acc_max": 0.23508353221957037,
+ "statistics": {
+  "stat_shift_norm": {
+   "spearman": -0.1428784871512842,
+   "auc": 0.3465909090909091,
+   "auc_oriented": 0.6534090909090908
+  },
+  "stat_energy_dist": {
+   "spearman": -0.24814838536313572,
+   "auc": 0.34375,
+   "auc_oriented": 0.65625
+  },
+  "stat_entropy_before": {
+   "spearman": 0.12695566799758567,
+   "auc": 0.8295454545454546,
+   "auc_oriented": 0.8295454545454546
+  },
+  "stat_entropy_after": {
+   "spearman": 0.19760517389402293,
+   "auc": 0.9147727272727273,
+   "auc_oriented": 0.9147727272727273
+  },
+  "stat_delta_entropy": {
+   "spearman": 0.2242001238477875,
+   "auc": 0.9232954545454546,
+   "auc_oriented": 0.9232954545454546
+  },
+  "stat_conf_before": {
+   "spearman": -0.11782032403272914,
+   "auc": 0.1590909090909091,
+   "auc_oriented": 0.8409090909090909
+  },
+  "stat_conf_after": {
+   "spearman": -0.17907835482510825,
+   "auc": 0.07954545454545454,
+   "auc_oriented": 0.9204545454545454
+  },
+  "stat_delta_conf": {
+   "spearman": -0.21651618967173994,
+   "auc": 0.10227272727272728,
+   "auc_oriented": 0.8977272727272727
+  }
+ }
+}
