@@ -1,0 +1,62 @@
+{
+ "Rotterdam": {
+  "fold": "Rotterdam",
+  "encoder_frozen": "Rotterdam_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 3366 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 5,
+  "fit_products": 188,
+  "distinct_added_products": 79
+ },
+ "Shanghai": {
+  "fold": "Shanghai",
+  "encoder_frozen": "Shanghai_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 493 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 2,
+  "fit_products": 180,
+  "distinct_added_products": 56
+ },
+ "PortKlang": {
+  "fold": "PortKlang",
+  "encoder_frozen": "Port Klang_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 3439 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 6,
+  "fit_products": 190,
+  "distinct_added_products": 69
+ },
+ "Fujairah": {
+  "fold": "Fujairah",
+  "encoder_frozen": "Fujairah_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 114 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 5,
+  "fit_products": 188,
+  "distinct_added_products": 17
+ },
+ "JebelAli": {
+  "fold": "JebelAli",
+  "encoder_frozen": "Jebel Ali_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 71 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 3,
+  "fit_products": 193,
+  "distinct_added_products": 15
+ },
+ "PortSaid": {
+  "fold": "PortSaid",
+  "encoder_frozen": "Port Said_rev1",
+  "M0_labels": "frozen object-table labels on fit products (current source-fit)",
+  "M1_labels": "M0 + 677 whitelisted boost_v2 rows on the SAME products",
+  "M2_labels": "same as M1 but encoder retrained (GPU) and PCA refit",
+  "vocab": 5,
+  "fit_products": 203,
+  "distinct_added_products": 59
+ }
+}

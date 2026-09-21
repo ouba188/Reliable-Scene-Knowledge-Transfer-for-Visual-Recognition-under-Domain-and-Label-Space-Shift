@@ -1,0 +1,44 @@
+{
+ "Rotterdam": {
+  "fit_products": 188,
+  "forbidden_role_products": 141,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ },
+ "Shanghai": {
+  "fit_products": 180,
+  "forbidden_role_products": 149,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ },
+ "PortKlang": {
+  "fit_products": 190,
+  "forbidden_role_products": 139,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ },
+ "Fujairah": {
+  "fit_products": 188,
+  "forbidden_role_products": 141,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ },
+ "JebelAli": {
+  "fit_products": 193,
+  "forbidden_role_products": 136,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ },
+ "PortSaid": {
+  "fit_products": 203,
+  "forbidden_role_products": 126,
+  "products_shared_between_fit_and_forbidden": 0,
+  "added_rows_from_non_fit_products": 0,
+  "violation": false
+ }
+}
