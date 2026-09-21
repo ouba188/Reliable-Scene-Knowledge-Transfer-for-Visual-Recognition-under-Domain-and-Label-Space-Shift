@@ -1,0 +1,24 @@
+{
+ "fold": "Shanghai",
+ "ridge": 0.001,
+ "pca_dims": 64,
+ "pca_fit_scope": "whole source pool (OLD exploratory protocol)",
+ "mapping_direction": "target->source (source classifier frozen)",
+ "protocol_note": "old protocol: PCA and random CV are NOT strict generalization",
+ "ports": [
+  {
+   "port": "Jebel Ali",
+   "n_target_adapt": 272,
+   "n_source_reference": 2699,
+   "ridge": 0.001,
+   "classes": 2
+  },
+  {
+   "port": "Qingdao",
+   "n_target_adapt": 2270,
+   "n_source_reference": 701,
+   "ridge": 0.001,
+   "classes": 2
+  }
+ ]
+}

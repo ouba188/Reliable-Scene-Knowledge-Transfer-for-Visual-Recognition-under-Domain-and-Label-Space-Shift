@@ -1,0 +1,42 @@
+{
+  "version": "E02_alignment_protocol_correction_v1",
+  "basis_commit": "76331f1c4a6c16efcecfa997b9cebb59c95d8e17",
+  "priority": "a_adaptation_with_corrected_baselines",
+  "not_authorized_this_batch": [
+    "new_router_training",
+    "target_truth_for_parameter_selection",
+    "overwrite_E01_main_table",
+    "blindly_expand_all_folds"
+  ],
+  "baseline_defaults": {
+    "pca_dim": 64,
+    "pca_fit_scope": "source_fit_only",
+    "logistic_C": 1.0,
+    "logistic_max_iter": 3000,
+    "logistic_class_weight": null,
+    "ridge": 1e-06,
+    "seed": 20260920
+  },
+  "required_roles": [
+    "source_fit",
+    "pseudo_target_adapt_unlabeled",
+    "pseudo_target_eval_evaluator_only"
+  ],
+  "calibration_role": "excluded_from_new_training_and_selection",
+  "reuse_encoder_condition": "pseudo_target_not_used_in_encoder_supervised_fit",
+  "comparisons": [
+    "cross_source_only",
+    "mean_only_t2s",
+    "CORAL_T2S_corrected"
+  ],
+  "optional_comparison": "CORAL_S2T_with_source_classifier_refit",
+  "validation": [
+    "identity_equal_domain",
+    "regularized_covariance_transport",
+    "no_eval_refit",
+    "shared_eval_rows",
+    "split_and_lineage_hashes"
+  ],
+  "objective": "paired_eval_BA_gain_over_cross_with_Acc_and_per_class_recall_not_gap_only",
+  "status": "reference_and_protocol_only_not_run_on_server"
+}

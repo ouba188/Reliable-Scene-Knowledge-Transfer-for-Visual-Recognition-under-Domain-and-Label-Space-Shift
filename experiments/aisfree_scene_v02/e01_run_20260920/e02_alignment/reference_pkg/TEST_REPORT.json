@@ -1,0 +1,10 @@
+{
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "data": "synthetic_only",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "real_SAR_recomputed": false,
+  "remote_modified": false
+}

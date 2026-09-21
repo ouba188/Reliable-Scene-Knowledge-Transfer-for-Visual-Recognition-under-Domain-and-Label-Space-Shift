@@ -1,0 +1,161 @@
+{
+ "fold": "Port Said",
+ "ridge": 0.001,
+ "pca_dims": 64,
+ "pca_fit_scope": "source_fit only",
+ "classifier": "LogisticRegression(C=1, max_iter=3000)",
+ "label_policy": "labels read only by the evaluator; U_q^adapt is unlabelled",
+ "pseudo_targets": [
+  {
+   "port": "Fujairah",
+   "assessable": false,
+   "reason": "insufficient unlabelled adapt or labelled eval",
+   "n_adapt": 3492,
+   "n_eval_labeled": 7,
+   "adapt_products": 6,
+   "eval_products": 6
+  },
+  {
+   "port": "Hamburg",
+   "assessable": true,
+   "n_fit": 3527,
+   "n_adapt": 12113,
+   "role": "meta",
+   "n_eval_labeled": 32,
+   "adapt_products": [
+    "S1A_IW_GRDH_1SDV_20251017T054129_20251017T054154_061461_07AC2A_79B6",
+    "S1A_IW_GRDH_1SDV_20251029T054128_20251029T054153_061636_07B333_88A6",
+    "S1C_IW_GRDH_1SDV_20250824T054027_20250824T054052_003810_0079A1_4DF0",
+    "S1C_IW_GRDH_1SDV_20250905T054027_20250905T054052_003985_007ED9_EA5D",
+    "S1C_IW_GRDH_1SDV_20250917T054028_20250917T054053_004160_00842D_7E1A",
+    "S1C_IW_GRDH_1SDV_20250929T054028_20250929T054053_004335_008987_A32B",
+    "S1C_IW_GRDH_1SDV_20251011T054028_20251011T054053_004510_008ED9_EBA7",
+    "S1C_IW_GRDH_1SDV_20251023T054028_20251023T054053_004685_009421_38F8"
+   ],
+   "eval_products": [
+    "S1A_IW_GRDH_1SDV_20251122T054127_20251122T054152_061986_07C0D6_F7BE",
+    "S1A_IW_GRDH_1SDV_20251204T054126_20251204T054151_062161_07C7AC_F97F",
+    "S1A_IW_GRDH_1SDV_20251216T054125_20251216T054150_062336_07CE83_4CC7",
+    "S1A_IW_GRDH_1SDV_20251228T054123_20251228T054148_062511_07D550_B09A",
+    "S1C_IW_GRDH_1SDV_20251104T054028_20251104T054053_004860_0099AE_A2F9",
+    "S1C_IW_GRDH_1SDV_20251116T054027_20251116T054052_005035_009F87_5F14",
+    "S1C_IW_GRDH_1SDV_20251128T054027_20251128T054052_005210_00A568_4CE6",
+    "S1C_IW_GRDH_1SDV_20251210T054026_20251210T054051_005385_00AB6C_2021",
+    "S1C_IW_GRDH_1SDV_20251222T054026_20251222T054051_005560_00B165_BF35"
+   ],
+   "adapt_dates": [
+    "20250824",
+    "20250905",
+    "20250917",
+    "20250929",
+    "20251011",
+    "20251017",
+    "20251023",
+    "20251029"
+   ],
+   "eval_dates": [
+    "20251104",
+    "20251116",
+    "20251122",
+    "20251128",
+    "20251204",
+    "20251210",
+    "20251216",
+    "20251222",
+    "20251228"
+   ]
+  },
+  {
+   "port": "Mombasa",
+   "assessable": false,
+   "reason": "insufficient unlabelled adapt or labelled eval",
+   "n_adapt": 835,
+   "n_eval_labeled": 1,
+   "adapt_products": 11,
+   "eval_products": 12
+  },
+  {
+   "port": "Newcastle",
+   "assessable": false,
+   "reason": "insufficient unlabelled adapt or labelled eval",
+   "n_adapt": 499,
+   "n_eval_labeled": 3,
+   "adapt_products": 6,
+   "eval_products": 6
+  },
+  {
+   "port": "Port Hedland",
+   "assessable": false,
+   "reason": "insufficient unlabelled adapt or labelled eval",
+   "n_adapt": 812,
+   "n_eval_labeled": 0,
+   "adapt_products": 4,
+   "eval_products": 4
+  },
+  {
+   "port": "Richards Bay",
+   "assessable": false,
+   "reason": "insufficient unlabelled adapt or labelled eval",
+   "n_adapt": 457,
+   "n_eval_labeled": 0,
+   "adapt_products": 6,
+   "eval_products": 6
+  },
+  {
+   "port": "Shanghai",
+   "assessable": true,
+   "n_fit": 3527,
+   "n_adapt": 32980,
+   "role": "meta",
+   "n_eval_labeled": 1094,
+   "adapt_products": [
+    "S1A_IW_GRDH_1SDV_20250422T095504_20250422T095529_058868_074BDE_2A15",
+    "S1A_IW_GRDH_1SDV_20250504T095504_20250504T095529_059043_0752E1_E126",
+    "S1A_IW_GRDH_1SDV_20250516T095504_20250516T095529_059218_07592B_0FC8",
+    "S1A_IW_GRDH_1SDV_20250528T095503_20250528T095528_059393_075F43_DC80",
+    "S1A_IW_GRDH_1SDV_20250609T095503_20250609T095528_059568_07653B_1E66",
+    "S1A_IW_GRDH_1SDV_20250621T095502_20250621T095527_059743_076B46_2434",
+    "S1A_IW_GRDH_1SDV_20250715T095501_20250715T095526_060093_077760_4889",
+    "S1A_IW_GRDH_1SDV_20250727T095501_20250727T095526_060268_077D68_FED2",
+    "S1A_IW_GRDH_1SDV_20250808T095500_20250808T095525_060443_078391_5813",
+    "S1A_IW_GRDH_1SDV_20250820T095500_20250820T095525_060618_078A74_9040"
+   ],
+   "eval_products": [
+    "S1A_IW_GRDH_1SDV_20250913T095501_20250913T095526_060968_07985B_0B8B",
+    "S1A_IW_GRDH_1SDV_20250925T095501_20250925T095526_061143_079F62_43F4",
+    "S1A_IW_GRDH_1SDV_20251007T095502_20251007T095527_061318_07A66F_9734",
+    "S1A_IW_GRDH_1SDV_20251019T095501_20251019T095526_061493_07AD75_C893",
+    "S1A_IW_GRDH_1SDV_20251031T095501_20251031T095526_061668_07B482_E582",
+    "S1A_IW_GRDH_1SDV_20251112T095500_20251112T095525_061843_07BB43_791B",
+    "S1A_IW_GRDH_1SDV_20251124T095500_20251124T095525_062018_07C214_828E",
+    "S1A_IW_GRDH_1SDV_20251206T095458_20251206T095523_062193_07C8EB_18F6",
+    "S1A_IW_GRDH_1SDV_20251218T095457_20251218T095522_062368_07CFBE_85B2",
+    "S1A_IW_GRDH_1SDV_20251230T095456_20251230T095521_062543_07D685_E32F"
+   ],
+   "adapt_dates": [
+    "20250422",
+    "20250504",
+    "20250516",
+    "20250528",
+    "20250609",
+    "20250621",
+    "20250715",
+    "20250727",
+    "20250808",
+    "20250820"
+   ],
+   "eval_dates": [
+    "20250913",
+    "20250925",
+    "20251007",
+    "20251019",
+    "20251031",
+    "20251112",
+    "20251124",
+    "20251206",
+    "20251218",
+    "20251230"
+   ]
+  }
+ ]
+}
