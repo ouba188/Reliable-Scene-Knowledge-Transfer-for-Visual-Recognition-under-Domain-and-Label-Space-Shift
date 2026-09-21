@@ -1,0 +1,83 @@
+{
+ "fold": "Port Said",
+ "H": 8,
+ "B0_head": 0,
+ "views": {
+  "fine": {
+   "n": 4,
+   "n_classes": 3,
+   "source": {
+    "n": 5678,
+    "B1": 0.6204649524480451,
+    "FIX": 0.6467065868263473,
+    "FIX_size": 3,
+    "STK": 0.6854526241634379
+   },
+   "fixed_subset_bits": 13,
+   "fixed_subset_size": 3,
+   "policies": {
+    "B0": {
+     "acc": 0.25,
+     "ba": 0.16666666666666666
+    },
+    "B1": {
+     "acc": 0.25,
+     "ba": 0.16666666666666666
+    },
+    "FIX": {
+     "acc": 0.25,
+     "ba": 0.16666666666666666
+    },
+    "STK": {
+     "acc": 0.25,
+     "ba": 0.16666666666666666
+    }
+   },
+   "OBJ_oracle": {
+    "acc": 0.5,
+    "deployable": false
+   },
+   "B1_errors": 3,
+   "B1_errors_stk_fixes": 0,
+   "B1_errors_stk_breaks": 0
+  },
+  "coarse": {
+   "n": 189,
+   "n_classes": 4,
+   "source": {
+    "n": 5678,
+    "B1": 0.6204649524480451,
+    "FIX": 0.6467065868263473,
+    "FIX_size": 3,
+    "STK": 0.6854526241634379
+   },
+   "fixed_subset_bits": 13,
+   "fixed_subset_size": 3,
+   "policies": {
+    "B0": {
+     "acc": 0.20105820105820105,
+     "ba": 0.22616323417238748
+    },
+    "B1": {
+     "acc": 0.25925925925925924,
+     "ba": 0.2545766590389016
+    },
+    "FIX": {
+     "acc": 0.21693121693121692,
+     "ba": 0.2341723874904653
+    },
+    "STK": {
+     "acc": 0.25925925925925924,
+     "ba": 0.2488558352402746
+    }
+   },
+   "OBJ_oracle": {
+    "acc": 0.4126984126984127,
+    "deployable": false
+   },
+   "B1_errors": 140,
+   "B1_errors_stk_fixes": 11,
+   "B1_errors_stk_breaks": 11
+  }
+ }
+}

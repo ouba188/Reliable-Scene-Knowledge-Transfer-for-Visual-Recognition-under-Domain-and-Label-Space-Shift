@@ -1,0 +1,28 @@
+{
+ "fold": "Jebel Ali",
+ "source_n": 4537,
+ "ports": [
+  {
+   "port": "Qingdao",
+   "n": 2412,
+   "classes": 3,
+   "cross_acc": 0.574212271973466,
+   "in_acc": 0.9801001692396245,
+   "coral_acc": 0.2325870646766169,
+   "gap_in_minus_cross": 0.4058878972661585,
+   "coral_recovery": -0.3416252072968491
+  },
+  {
+   "port": "Shanghai",
+   "n": 1626,
+   "classes": 3,
+   "cross_acc": 0.488929889298893,
+   "in_acc": 0.8597885795186408,
+   "coral_acc": 0.3167281672816728,
+   "gap_in_minus_cross": 0.3708586902197479,
+   "coral_recovery": -0.17220172201722017
+  }
+ ],
+ "mean_gap": 0.38837329374295315,
+ "mean_coral_recovery": -0.25691346465703463
+}

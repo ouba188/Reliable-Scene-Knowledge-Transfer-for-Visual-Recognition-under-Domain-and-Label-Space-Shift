@@ -1,0 +1,48 @@
+{
+ "fold": "Fujairah",
+ "source_n": 5669,
+ "ports": [
+  {
+   "port": "Jebel Ali",
+   "n": 349,
+   "classes": 5,
+   "cross_acc": 0.1833810888252149,
+   "in_acc": 0.8280282935455349,
+   "coral_acc": 0.11461318051575932,
+   "gap_in_minus_cross": 0.64464720472032,
+   "coral_recovery": -0.06876790830945557
+  },
+  {
+   "port": "Qingdao",
+   "n": 2514,
+   "classes": 5,
+   "cross_acc": 0.294351630867144,
+   "in_acc": 0.9562457921791957,
+   "coral_acc": 0.24741447891805887,
+   "gap_in_minus_cross": 0.6618941613120517,
+   "coral_recovery": -0.046937151949085126
+  },
+  {
+   "port": "Shanghai",
+   "n": 2073,
+   "classes": 5,
+   "cross_acc": 0.3651712493970092,
+   "in_acc": 0.7395238926721379,
+   "coral_acc": 0.18137964302942594,
+   "gap_in_minus_cross": 0.37435264327512874,
+   "coral_recovery": -0.18379160636758324
+  },
+  {
+   "port": "Singapore",
+   "n": 261,
+   "classes": 5,
+   "cross_acc": 0.23371647509578544,
+   "in_acc": 0.7242380261248186,
+   "coral_acc": 0.1111111111111111,
+   "gap_in_minus_cross": 0.49052155102903316,
+   "coral_recovery": -0.12260536398467434
+  }
+ ],
+ "mean_gap": 0.5428538900841334,
+ "mean_coral_recovery": -0.10552550765269958
+}

@@ -72,8 +72,9 @@ def main() -> None:
     np.savez_compressed(npz, p=p.astype(np.float32), y=y, sample_id=ids.astype('<U128'),
                         class_names=np.array(vocab, dtype='<U64'),
                         product_id=np.array(prods, dtype='<U128'),
-                        b1_pred=p.mean(0).argmax(-1).astype(np.int64))
-    del feats
+                        b1_pred=p.mean(0).argmax(-1).astype(np.int64),
+                        z=feats['z'][idx].astype(np.float32), m=feats['m'][idx].astype(np.float32),
+                        port=feats['port'][idx].astype('<U64'))
 
     audit_dir = OUT / (a.fold.replace(' ', '') + '_source_audit')   # tool requires a non-existent out dir
     r = subprocess.run([sys.executable, str(TOOL), '--input', str(npz), '--view', 'source', '--out', str(audit_dir)],
