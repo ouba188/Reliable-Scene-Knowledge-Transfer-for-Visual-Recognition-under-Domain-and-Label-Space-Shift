@@ -1,0 +1,11 @@
+{
+ "source": "/root/autodl-tmp/e01_runs/relations/relations.npz",
+ "dims": {
+  "0": "D0 density proxy",
+  "1": "D1 anchorage layer",
+  "2": "D2 fairway layer",
+  "3": "D3 coastline context"
+ },
+ "imputation": "training-source per-dim mean",
+ "available_mask": "relations.npz available"
+}

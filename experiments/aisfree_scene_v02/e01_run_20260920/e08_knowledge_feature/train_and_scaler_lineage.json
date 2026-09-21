@@ -1,0 +1,72 @@
+{
+ "Rotterdam": {
+  "encoder": "Rotterdam_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "n_fit": 2918
+ },
+ "Shanghai": {
+  "encoder": "Shanghai_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   1,
+   3
+  ],
+  "n_fit": 612
+ },
+ "PortKlang": {
+  "encoder": "Port Klang_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   2,
+   3
+  ],
+  "n_fit": 5523
+ },
+ "Fujairah": {
+  "encoder": "Fujairah_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "n_fit": 3131
+ },
+ "JebelAli": {
+  "encoder": "Jebel Ali_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "n_fit": 2713
+ },
+ "PortSaid": {
+  "encoder": "Port Said_rev1",
+  "pca_fit_on": "source-fit labelled features only",
+  "knowledge_imputation_mean_std_fit_on": "source-fit only",
+  "enabled_dims": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "n_fit": 3527
+ }
+}

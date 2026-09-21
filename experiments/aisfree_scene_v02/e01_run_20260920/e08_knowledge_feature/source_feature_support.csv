@@ -1,0 +1,25 @@
+fold,n_valid,n_ports,variance,enabled,dim,name
+Rotterdam,2918,11,0.13982199683279764,True,0,D0 density proxy
+Rotterdam,354,2,0.08235703892488967,True,1,D1 anchorage layer
+Rotterdam,344,2,0.14916187544048934,True,2,D2 fairway layer
+Rotterdam,2918,11,0.04146454019433136,True,3,D3 coastline context
+Shanghai,612,12,0.06813161768674662,True,0,D0 density proxy
+Shanghai,345,3,0.04589548626432022,True,1,D1 anchorage layer
+Shanghai,82,1,0.15883456677258712,False,2,D2 fairway layer
+Shanghai,612,12,0.02331342992241997,True,3,D3 coastline context
+PortKlang,5523,11,0.17451567742617863,True,0,D0 density proxy
+PortKlang,361,1,0.08081294996100977,False,1,D1 anchorage layer
+PortKlang,2894,3,0.029297405151088352,True,2,D2 fairway layer
+PortKlang,5523,11,0.03372123587315817,True,3,D3 coastline context
+Fujairah,3131,12,0.18858673154498373,True,0,D0 density proxy
+Fujairah,81,2,0.002699225640246788,True,1,D1 anchorage layer
+Fujairah,2780,3,0.011966019071564263,True,2,D2 fairway layer
+Fujairah,3131,12,0.024567234365805823,True,3,D3 coastline context
+JebelAli,2713,12,0.18847486851402265,True,0,D0 density proxy
+JebelAli,82,3,0.017657351109319618,True,1,D1 anchorage layer
+JebelAli,2415,2,0.004016781194473355,True,2,D2 fairway layer
+JebelAli,2713,12,0.021642080893123142,True,3,D3 coastline context
+PortSaid,3527,13,0.18373333216103743,True,0,D0 density proxy
+PortSaid,447,4,0.06945379124378669,True,1,D1 anchorage layer
+PortSaid,2858,3,0.028760018062952034,True,2,D2 fairway layer
+PortSaid,3527,13,0.02466250995614459,True,3,D3 coastline context
