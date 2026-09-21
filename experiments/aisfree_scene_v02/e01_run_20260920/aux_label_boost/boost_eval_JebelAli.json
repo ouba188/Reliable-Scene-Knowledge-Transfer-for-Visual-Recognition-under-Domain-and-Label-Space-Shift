@@ -1,0 +1,125 @@
+{
+ "fold": "Jebel Ali",
+ "run": "/root/autodl-tmp/e01_runs/Jebel Ali_rev1",
+ "vocabulary": [
+  "container_ship",
+  "fishing_vessel",
+  "tug_towing"
+ ],
+ "B0": 2,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "mapping_version": "boost_t1_t2_v1",
+ "predictions_hash": "9972a0b67fccf09b",
+ "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
+ "t1": {
+  "n": 127,
+  "coverage_of_eval": 0.0033957219251336897,
+  "B0": {
+   "acc": 0.5669291338582677,
+   "ba": 0.78,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 125,
+     "recall": 0.56
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.5984251968503937,
+   "ba": 0.796,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 125,
+     "recall": 0.592
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.5984251968503937,
+   "ba": 0.796,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 2,
+     "recall": 1.0
+    },
+    "tug_towing": {
+     "n": 125,
+     "recall": 0.592
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 91,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ },
+ "t2": {
+  "n": 241,
+  "coverage_of_eval": 0.006443850267379679,
+  "B0": {
+   "acc": 0.5850622406639004,
+   "ba": 0.5436170212765957,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 6,
+     "recall": 0.5
+    },
+    "tug_towing": {
+     "n": 235,
+     "recall": 0.5872340425531914
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.6182572614107884,
+   "ba": 0.5606382978723404,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 6,
+     "recall": 0.5
+    },
+    "tug_towing": {
+     "n": 235,
+     "recall": 0.6212765957446809
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.6182572614107884,
+   "ba": 0.5606382978723404,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 6,
+     "recall": 0.5
+    },
+    "tug_towing": {
+     "n": 235,
+     "recall": 0.6212765957446809
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 127,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "fold": "Shanghai",
+ "run": "/root/autodl-tmp/e01_runs/Shanghai_rev1",
+ "vocabulary": [
+  "fishing_vessel",
+  "tug_towing"
+ ],
+ "B0": 4,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "mapping_version": "boost_t1_t2_v1",
+ "predictions_hash": "1c7ab5e869ad86f3",
+ "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
+ "t1": {
+  "n": 449,
+  "coverage_of_eval": 0.01684613364349229,
+  "B0": {
+   "acc": 0.688195991091314,
+   "ba": 0.6911536176242059,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 306,
+     "recall": 0.6830065359477124
+    },
+    "tug_towing": {
+     "n": 143,
+     "recall": 0.6993006993006993
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.6859688195991092,
+   "ba": 0.6895196306961013,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 306,
+     "recall": 0.6797385620915033
+    },
+    "tug_towing": {
+     "n": 143,
+     "recall": 0.6993006993006993
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.6859688195991092,
+   "ba": 0.6895196306961013,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 306,
+     "recall": 0.6797385620915033
+    },
+    "tug_towing": {
+     "n": 143,
+     "recall": 0.6993006993006993
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 364,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ },
+ "t2": {
+  "n": 641,
+  "coverage_of_eval": 0.02404982553558699,
+  "B0": {
+   "acc": 0.6864274570982839,
+   "ba": 0.683278365802526,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 477,
+     "recall": 0.689727463312369
+    },
+    "tug_towing": {
+     "n": 164,
+     "recall": 0.676829268292683
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.6848673946957878,
+   "ba": 0.6822301477731758,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 477,
+     "recall": 0.6876310272536688
+    },
+    "tug_towing": {
+     "n": 164,
+     "recall": 0.676829268292683
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.6848673946957878,
+   "ba": 0.6822301477731758,
+   "per_class": {
+    "fishing_vessel": {
+     "n": 477,
+     "recall": 0.6876310272536688
+    },
+    "tug_towing": {
+     "n": 164,
+     "recall": 0.676829268292683
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 409,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ }
+}

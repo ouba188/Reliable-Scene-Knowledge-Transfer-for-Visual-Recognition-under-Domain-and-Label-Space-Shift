@@ -1,0 +1,187 @@
+{
+ "fold": "Rotterdam",
+ "run": "/root/autodl-tmp/e01_runs/Rotterdam_rev1",
+ "vocabulary": [
+  "container_ship",
+  "dredger",
+  "fishing_vessel",
+  "product_chemical_tanker",
+  "tug_towing"
+ ],
+ "B0": 0,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "mapping_version": "boost_t1_t2_v1",
+ "predictions_hash": "0dafecdcbba9fa12",
+ "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
+ "t1": {
+  "n": 41,
+  "coverage_of_eval": 0.003106060606060606,
+  "B0": {
+   "acc": 0.4634146341463415,
+   "ba": 0.39255952380952375,
+   "per_class": {
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 5,
+     "recall": 0.6
+    },
+    "product_chemical_tanker": {
+     "n": 7,
+     "recall": 0.42857142857142855
+    },
+    "tug_towing": {
+     "n": 24,
+     "recall": 0.5416666666666666
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.43902439024390244,
+   "ba": 0.3821428571428571,
+   "per_class": {
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 5,
+     "recall": 0.6
+    },
+    "product_chemical_tanker": {
+     "n": 7,
+     "recall": 0.42857142857142855
+    },
+    "tug_towing": {
+     "n": 24,
+     "recall": 0.5
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.43902439024390244,
+   "ba": 0.3821428571428571,
+   "per_class": {
+    "dredger": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 5,
+     "recall": 0.6
+    },
+    "product_chemical_tanker": {
+     "n": 7,
+     "recall": 0.42857142857142855
+    },
+    "tug_towing": {
+     "n": 24,
+     "recall": 0.5
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 37,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ },
+ "t2": {
+  "n": 52,
+  "coverage_of_eval": 0.00393939393939394,
+  "B0": {
+   "acc": 0.4807692307692308,
+   "ba": 0.48531746031746026,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "dredger": {
+     "n": 6,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 9,
+     "recall": 0.4444444444444444
+    },
+    "product_chemical_tanker": {
+     "n": 8,
+     "recall": 0.375
+    },
+    "tug_towing": {
+     "n": 28,
+     "recall": 0.6071428571428571
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.4423076923076923,
+   "ba": 0.471031746031746,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "dredger": {
+     "n": 6,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 9,
+     "recall": 0.4444444444444444
+    },
+    "product_chemical_tanker": {
+     "n": 8,
+     "recall": 0.375
+    },
+    "tug_towing": {
+     "n": 28,
+     "recall": 0.5357142857142857
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.4423076923076923,
+   "ba": 0.471031746031746,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 1.0
+    },
+    "dredger": {
+     "n": 6,
+     "recall": 0.0
+    },
+    "fishing_vessel": {
+     "n": 9,
+     "recall": 0.4444444444444444
+    },
+    "product_chemical_tanker": {
+     "n": 8,
+     "recall": 0.375
+    },
+    "tug_towing": {
+     "n": 28,
+     "recall": 0.5357142857142857
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 44,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ }
+}

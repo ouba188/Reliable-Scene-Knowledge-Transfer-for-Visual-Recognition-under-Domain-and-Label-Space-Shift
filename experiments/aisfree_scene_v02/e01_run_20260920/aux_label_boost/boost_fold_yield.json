@@ -1,0 +1,74 @@
+{
+ "Shanghai": {
+  "target_eval": {
+   "instances": 26653,
+   "t1": 7930,
+   "t2": 9738
+  },
+  "target_adapt": {
+   "instances": 32980,
+   "t1": 9773,
+   "t2": 12306
+  }
+ },
+ "Rotterdam": {
+  "target_eval": {
+   "instances": 13200,
+   "t1": 249,
+   "t2": 364
+  },
+  "target_adapt": {
+   "instances": 13949,
+   "t1": 268,
+   "t2": 497
+  }
+ },
+ "Port Klang": {
+  "target_eval": {
+   "instances": 3074,
+   "t1": 114,
+   "t2": 190
+  },
+  "target_adapt": {
+   "instances": 2863,
+   "t1": 108,
+   "t2": 180
+  }
+ },
+ "Fujairah": {
+  "target_eval": {
+   "instances": 3460,
+   "t1": 67,
+   "t2": 210
+  },
+  "target_adapt": {
+   "instances": 3492,
+   "t1": 77,
+   "t2": 249
+  }
+ },
+ "Jebel Ali": {
+  "target_eval": {
+   "instances": 34760,
+   "t1": 864,
+   "t2": 1404
+  },
+  "target_adapt": {
+   "instances": 31484,
+   "t1": 798,
+   "t2": 1338
+  }
+ },
+ "Port Said": {
+  "target_eval": {
+   "instances": 5756,
+   "t1": 133,
+   "t2": 190
+  },
+  "target_adapt": {
+   "instances": 6208,
+   "t1": 128,
+   "t2": 182
+  }
+ }
+}

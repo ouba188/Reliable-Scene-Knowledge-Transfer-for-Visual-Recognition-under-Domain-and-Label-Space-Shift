@@ -1,0 +1,139 @@
+{
+ "fold": "Port Said",
+ "run": "/root/autodl-tmp/e01_runs/Port Said_rev1",
+ "vocabulary": [
+  "container_ship",
+  "dredger",
+  "fishing_vessel",
+  "product_chemical_tanker",
+  "tug_towing"
+ ],
+ "B0": 0,
+ "retained": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "mapping_version": "boost_t1_t2_v1",
+ "predictions_hash": "dd39a81134bcfea3",
+ "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
+ "t1": {
+  "n": 2,
+  "coverage_of_eval": 0.00034746351633078526,
+  "B0": {
+   "acc": 0.0,
+   "ba": 0.0,
+   "per_class": {
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.0,
+   "ba": 0.0,
+   "per_class": {
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.0,
+   "ba": 0.0,
+   "per_class": {
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 2,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ },
+ "t2": {
+  "n": 7,
+  "coverage_of_eval": 0.0012161223071577485,
+  "B0": {
+   "acc": 0.14285714285714285,
+   "ba": 0.16666666666666666,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.14285714285714285,
+   "ba": 0.16666666666666666,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.14285714285714285,
+   "ba": 0.16666666666666666,
+   "per_class": {
+    "container_ship": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tug_towing": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "agreement_with_frozen": {
+   "n": 4,
+   "exact": 1.0,
+   "coarse": 1.0
+  }
+ }
+}
