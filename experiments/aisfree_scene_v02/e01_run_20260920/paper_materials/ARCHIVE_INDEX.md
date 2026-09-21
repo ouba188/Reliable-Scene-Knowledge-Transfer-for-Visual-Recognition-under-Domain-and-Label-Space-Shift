@@ -29,8 +29,8 @@
 | 路径 | 体积 | 内容 | 备注 |
 |---|---:|---|---|
 | `e01_chips_rev1/` | 9.3 GB | 329 分片 / 408,981 芯片（修正版） | **唯一有效芯片集** |
-| `e01_chips/` | 7.5 GB | rev0 芯片（行列转置 bug 版） | **已作废，可删（等确认）** |
-| `e01_runs/*_rev1`（6 折）+ `Rotterdam/`、`Shanghai/`（rev0 pilot） | 1.4 GB × 8 | features/probabilities/retention/heads | rev0 两折保留作 pilot |
+| `e01_chips/` | — | rev0 芯片（行列转置 bug 版） | **已删除 2026-09-21**（清单 `/root/rev0_delete_manifest.txt`，385 文件） |
+| `e01_runs/Rotterdam`、`e01_runs/Shanghai`（rev0 pilot） | — | rev0 pilot 运行目录 | **已删除 2026-09-21**（结论以 `RESULT_Rotterdam.md` 文字留档） |
 | `e01_runs/aux_candidate_ceiling_v1/` | 1.7 MB | 上界诊断输入 NPZ + 报告 + rescue 计数 | 已入库（报告） |
 | `e01_runs/{aux_p1,aux_p3,aux_coarse_eval_v1}` | <100 KB | 前几轮辅助分析 | 已入库 |
 | `e01_label_boost_v2/` | 2.6 MB | 114 产品辅助标签（分档证据） | 留服务器 |
@@ -52,12 +52,10 @@
 | `E:/Hermes/scripts/` | 全部执行脚本 + `chatgpt_web.py`/`chatgpt_download2.py`（网页端 GPT 驱动） |
 | `E:/safe841_local_20260918/` | 另一会话的本地标注批次，**勿动** |
 
-## 四、可删候选（**等确认，不自行删除**）
+## 四、可删候选（rev0 两项已删除，其余等确认）
 
 | 项 | 体积 | 理由 | 风险 |
 |---|---:|---|---|
-| `e01_chips/`（rev0 芯片） | 7.5 GB | 行列序 bug 版，rev1 已替代 | 低（rev0 结果已归档为 pilot 说明） |
-| `e01_runs/{Rotterdam,Shanghai}`（rev0 pilot 运行目录） | 2.8 GB | 同上 | 低（结论以文字留档） |
 | `asf_download_v2_tmp/` | 待测 | 下载临时区 | 需先核对无未合并产物 |
 | `redl_work/`、`redl_zips/` | 待测 | 重下工作区 | 需先核对 |
 
