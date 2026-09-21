@@ -5,6 +5,10 @@
   "fishing_vessel",
   "tug_towing"
  ],
+ "vocabulary_coarse": [
+  "fishing",
+  "tug"
+ ],
  "B0": 4,
  "retained": [
   0,
@@ -16,12 +20,16 @@
   6,
   7
  ],
- "mapping_version": "boost_t1_t2_v1",
+ "mapping_version": "coarse_parent_v1",
  "predictions_hash": "1c7ab5e869ad86f3",
- "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
- "t1": {
+ "note": "auxiliary evaluation only (boost labels + coarse projection); never used for training or model selection; option (A) approved by the reviewer",
+ "fine_t1": {
   "n": 449,
   "coverage_of_eval": 0.01684613364349229,
+  "classes": [
+   "fishing_vessel",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.688195991091314,
    "ba": 0.6911536176242059,
@@ -64,15 +72,21 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 364,
    "exact": 1.0,
    "coarse": 1.0
   }
  },
- "t2": {
+ "fine_t2": {
   "n": 641,
   "coverage_of_eval": 0.02404982553558699,
+  "classes": [
+   "fishing_vessel",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.6864274570982839,
    "ba": 0.683278365802526,
@@ -115,10 +129,116 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 409,
    "exact": 1.0,
    "coarse": 1.0
   }
+ },
+ "coarse_t1": {
+  "n": 464,
+  "coverage_of_eval": 0.01740892207256219,
+  "classes": [
+   "fishing",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.6982758620689655,
+   "ba": 0.7054273186067677,
+   "per_class": {
+    "fishing": {
+     "n": 306,
+     "recall": 0.6830065359477124
+    },
+    "tug": {
+     "n": 158,
+     "recall": 0.7278481012658228
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.6961206896551724,
+   "ba": 0.7037933316786631,
+   "per_class": {
+    "fishing": {
+     "n": 306,
+     "recall": 0.6797385620915033
+    },
+    "tug": {
+     "n": 158,
+     "recall": 0.7278481012658228
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.6961206896551724,
+   "ba": 0.7037933316786631,
+   "per_class": {
+    "fishing": {
+     "n": 306,
+     "recall": 0.6797385620915033
+    },
+    "tug": {
+     "n": 158,
+     "recall": 0.7278481012658228
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
+ },
+ "coarse_t2": {
+  "n": 660,
+  "coverage_of_eval": 0.024762690879075525,
+  "classes": [
+   "fishing",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.693939393939394,
+   "ba": 0.6973227480496271,
+   "per_class": {
+    "fishing": {
+     "n": 477,
+     "recall": 0.689727463312369
+    },
+    "tug": {
+     "n": 183,
+     "recall": 0.7049180327868853
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.6924242424242424,
+   "ba": 0.6962745300202771,
+   "per_class": {
+    "fishing": {
+     "n": 477,
+     "recall": 0.6876310272536688
+    },
+    "tug": {
+     "n": 183,
+     "recall": 0.7049180327868853
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.6924242424242424,
+   "ba": 0.6962745300202771,
+   "per_class": {
+    "fishing": {
+     "n": 477,
+     "recall": 0.6876310272536688
+    },
+    "tug": {
+     "n": 183,
+     "recall": 0.7049180327868853
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
  }
 }

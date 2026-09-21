@@ -8,6 +8,13 @@
   "product_chemical_tanker",
   "tug_towing"
  ],
+ "vocabulary_coarse": [
+  "cargo",
+  "dredger",
+  "fishing",
+  "tanker",
+  "tug"
+ ],
  "B0": 0,
  "retained": [
   0,
@@ -19,12 +26,19 @@
   6,
   7
  ],
- "mapping_version": "boost_t1_t2_v1",
+ "mapping_version": "coarse_parent_v1",
  "predictions_hash": "dd39a81134bcfea3",
- "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
- "t1": {
+ "note": "auxiliary evaluation only (boost labels + coarse projection); never used for training or model selection; option (A) approved by the reviewer",
+ "fine_t1": {
   "n": 2,
   "coverage_of_eval": 0.00034746351633078526,
+  "classes": [
+   "container_ship",
+   "dredger",
+   "fishing_vessel",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.0,
    "ba": 0.0,
@@ -67,15 +81,24 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 2,
    "exact": 1.0,
    "coarse": 1.0
   }
  },
- "t2": {
+ "fine_t2": {
   "n": 7,
   "coverage_of_eval": 0.0012161223071577485,
+  "classes": [
+   "container_ship",
+   "dredger",
+   "fishing_vessel",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.14285714285714285,
    "ba": 0.16666666666666666,
@@ -130,10 +153,170 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 4,
    "exact": 1.0,
    "coarse": 1.0
   }
+ },
+ "coarse_t1": {
+  "n": 133,
+  "coverage_of_eval": 0.02310632383599722,
+  "classes": [
+   "cargo",
+   "dredger",
+   "fishing",
+   "tanker",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.24060150375939848,
+   "ba": 0.12363095238095237,
+   "per_class": {
+    "cargo": {
+     "n": 75,
+     "recall": 0.22666666666666666
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 56,
+     "recall": 0.26785714285714285
+    },
+    "tug": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.3082706766917293,
+   "ba": 0.15589285714285714,
+   "per_class": {
+    "cargo": {
+     "n": 75,
+     "recall": 0.32
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 56,
+     "recall": 0.30357142857142855
+    },
+    "tug": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.3082706766917293,
+   "ba": 0.15589285714285714,
+   "per_class": {
+    "cargo": {
+     "n": 75,
+     "recall": 0.32
+    },
+    "dredger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 56,
+     "recall": 0.30357142857142855
+    },
+    "tug": {
+     "n": 1,
+     "recall": 0.0
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
+ },
+ "coarse_t2": {
+  "n": 190,
+  "coverage_of_eval": 0.0330090340514246,
+  "classes": [
+   "cargo",
+   "dredger",
+   "fishing",
+   "tanker",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.20526315789473684,
+   "ba": 0.22901002506265664,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.20175438596491227
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 70,
+     "recall": 0.21428571428571427
+    },
+    "tug": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.2631578947368421,
+   "ba": 0.25726817042606515,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.2719298245614035
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 70,
+     "recall": 0.2571428571428571
+    },
+    "tug": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.2631578947368421,
+   "ba": 0.25726817042606515,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.2719298245614035
+    },
+    "dredger": {
+     "n": 4,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 70,
+     "recall": 0.2571428571428571
+    },
+    "tug": {
+     "n": 2,
+     "recall": 0.5
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
  }
 }

@@ -9,6 +9,14 @@
   "product_chemical_tanker",
   "tug_towing"
  ],
+ "vocabulary_coarse": [
+  "cargo",
+  "dredger",
+  "fishing",
+  "passenger",
+  "tanker",
+  "tug"
+ ],
  "B0": 7,
  "retained": [
   0,
@@ -20,12 +28,20 @@
   6,
   7
  ],
- "mapping_version": "boost_t1_t2_v1",
+ "mapping_version": "coarse_parent_v1",
  "predictions_hash": "8582e48aab97e0ae",
- "note": "single-column auxiliary evaluation on boost labels; never used for training or model selection; boost tier is NOT the frozen AIS-match label",
- "t1": {
+ "note": "auxiliary evaluation only (boost labels + coarse projection); never used for training or model selection; option (A) approved by the reviewer",
+ "fine_t1": {
   "n": 11,
   "coverage_of_eval": 0.0035783994795055302,
+  "classes": [
+   "container_ship",
+   "dredger",
+   "fishing_vessel",
+   "passenger_ship",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.18181818181818182,
    "ba": 0.07142857142857142,
@@ -92,15 +108,25 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 8,
    "exact": 1.0,
    "coarse": 1.0
   }
  },
- "t2": {
+ "fine_t2": {
   "n": 20,
   "coverage_of_eval": 0.006506180871828237,
+  "classes": [
+   "container_ship",
+   "dredger",
+   "fishing_vessel",
+   "passenger_ship",
+   "product_chemical_tanker",
+   "tug_towing"
+  ],
   "B0": {
    "acc": 0.3,
    "ba": 0.3680555555555556,
@@ -167,10 +193,196 @@
     }
    }
   },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0,
   "agreement_with_frozen": {
    "n": 9,
    "exact": 1.0,
    "coarse": 1.0
   }
+ },
+ "coarse_t1": {
+  "n": 114,
+  "coverage_of_eval": 0.03708523096942095,
+  "classes": [
+   "cargo",
+   "dredger",
+   "fishing",
+   "passenger",
+   "tanker",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.10526315789473684,
+   "ba": 0.09191159717475507,
+   "per_class": {
+    "cargo": {
+     "n": 66,
+     "recall": 0.12121212121212122
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 38,
+     "recall": 0.05263157894736842
+    },
+    "tug": {
+     "n": 7,
+     "recall": 0.2857142857142857
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.12280701754385964,
+   "ba": 0.09573934837092732,
+   "per_class": {
+    "cargo": {
+     "n": 66,
+     "recall": 0.16666666666666666
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 38,
+     "recall": 0.02631578947368421
+    },
+    "tug": {
+     "n": 7,
+     "recall": 0.2857142857142857
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.12280701754385964,
+   "ba": 0.09573934837092732,
+   "per_class": {
+    "cargo": {
+     "n": 66,
+     "recall": 0.16666666666666666
+    },
+    "fishing": {
+     "n": 2,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 1,
+     "recall": 0.0
+    },
+    "tanker": {
+     "n": 38,
+     "recall": 0.02631578947368421
+    },
+    "tug": {
+     "n": 7,
+     "recall": 0.2857142857142857
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
+ },
+ "coarse_t2": {
+  "n": 190,
+  "coverage_of_eval": 0.06180871828236825,
+  "classes": [
+   "cargo",
+   "dredger",
+   "fishing",
+   "passenger",
+   "tanker",
+   "tug"
+  ],
+  "B0": {
+   "acc": 0.13157894736842105,
+   "ba": 0.18777777777777777,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.16666666666666666
+    },
+    "fishing": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 2,
+     "recall": 0.5
+    },
+    "tanker": {
+     "n": 60,
+     "recall": 0.05
+    },
+    "tug": {
+     "n": 9,
+     "recall": 0.2222222222222222
+    }
+   }
+  },
+  "B1": {
+   "acc": 0.1631578947368421,
+   "ba": 0.19672514619883041,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.22807017543859648
+    },
+    "fishing": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 2,
+     "recall": 0.5
+    },
+    "tanker": {
+     "n": 60,
+     "recall": 0.03333333333333333
+    },
+    "tug": {
+     "n": 9,
+     "recall": 0.2222222222222222
+    }
+   }
+  },
+  "Full": {
+   "acc": 0.1631578947368421,
+   "ba": 0.19672514619883041,
+   "per_class": {
+    "cargo": {
+     "n": 114,
+     "recall": 0.22807017543859648
+    },
+    "fishing": {
+     "n": 5,
+     "recall": 0.0
+    },
+    "passenger": {
+     "n": 2,
+     "recall": 0.5
+    },
+    "tanker": {
+     "n": 60,
+     "recall": 0.03333333333333333
+    },
+    "tug": {
+     "n": 9,
+     "recall": 0.2222222222222222
+    }
+   }
+  },
+  "rescue_vs_B1": 0,
+  "harm_vs_B1": 0
  }
 }
