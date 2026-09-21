@@ -1,0 +1,559 @@
+{
+  "scope": "EVALUATION-ONLY, empirical ceilings on supplied truth; never deploy oracle-selected subsets",
+  "deployable": false,
+  "uses_evaluation_truth": true,
+  "H": 8,
+  "N": 189,
+  "C": 5,
+  "classes": [
+    "cargo",
+    "dredger",
+    "fishing",
+    "tanker",
+    "tug"
+  ],
+  "missing_truth_classes": [
+    "fishing"
+  ],
+  "argmax_tie_rule": "lowest class index; preserve recorded class order",
+  "B1": {
+    "acc": 0.25925925925925924,
+    "ba": 0.2545766590389016,
+    "n": 189,
+    "correct": 49,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 31,
+        "recall": 0.2719298245614035
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 17,
+        "recall": 0.2463768115942029
+      },
+      "tug": {
+        "n": 2,
+        "correct": 1,
+        "recall": 0.5
+      }
+    }
+  },
+  "mean_pairwise_disagreement": 0.2913832199546485,
+  "pairwise_disagreement": [
+    [
+      0.0,
+      0.2222222222222222,
+      0.3544973544973545,
+      0.31216931216931215,
+      0.20634920634920634,
+      0.21164021164021163,
+      0.26455026455026454,
+      0.30687830687830686
+    ],
+    [
+      0.2222222222222222,
+      0.0,
+      0.328042328042328,
+      0.2275132275132275,
+      0.25925925925925924,
+      0.26455026455026454,
+      0.26455026455026454,
+      0.37037037037037035
+    ],
+    [
+      0.3544973544973545,
+      0.328042328042328,
+      0.0,
+      0.2698412698412698,
+      0.4656084656084656,
+      0.48677248677248675,
+      0.455026455026455,
+      0.49206349206349204
+    ],
+    [
+      0.31216931216931215,
+      0.2275132275132275,
+      0.2698412698412698,
+      0.0,
+      0.37037037037037035,
+      0.3862433862433862,
+      0.36507936507936506,
+      0.38095238095238093
+    ],
+    [
+      0.20634920634920634,
+      0.25925925925925924,
+      0.4656084656084656,
+      0.37037037037037035,
+      0.0,
+      0.0582010582010582,
+      0.1111111111111111,
+      0.21693121693121692
+    ],
+    [
+      0.21164021164021163,
+      0.26455026455026454,
+      0.48677248677248675,
+      0.3862433862433862,
+      0.0582010582010582,
+      0.0,
+      0.13227513227513227,
+      0.19576719576719576
+    ],
+    [
+      0.26455026455026454,
+      0.26455026455026454,
+      0.455026455026455,
+      0.36507936507936506,
+      0.1111111111111111,
+      0.13227513227513227,
+      0.0,
+      0.17989417989417988
+    ],
+    [
+      0.30687830687830686,
+      0.37037037037037035,
+      0.49206349206349204,
+      0.38095238095238093,
+      0.21693121693121692,
+      0.19576719576719576,
+      0.17989417989417988,
+      0.0
+    ]
+  ],
+  "pairwise_head_rescue_counts": [
+    [
+      0,
+      14,
+      10,
+      11,
+      18,
+      16,
+      20,
+      11
+    ],
+    [
+      5,
+      0,
+      13,
+      6,
+      16,
+      13,
+      15,
+      9
+    ],
+    [
+      8,
+      20,
+      0,
+      13,
+      24,
+      22,
+      24,
+      10
+    ],
+    [
+      10,
+      14,
+      14,
+      0,
+      23,
+      21,
+      23,
+      8
+    ],
+    [
+      1,
+      8,
+      9,
+      7,
+      0,
+      1,
+      7,
+      5
+    ],
+    [
+      3,
+      9,
+      11,
+      9,
+      5,
+      0,
+      10,
+      6
+    ],
+    [
+      4,
+      8,
+      10,
+      8,
+      8,
+      7,
+      0,
+      3
+    ],
+    [
+      13,
+      20,
+      14,
+      11,
+      24,
+      21,
+      21,
+      0
+    ]
+  ],
+  "all_head_argmax_agreement_fraction": 0.42328042328042326,
+  "B1_error_count": 140,
+  "single_head_ORACLE_acc": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.291005291005291,
+    "ba": 0.2748855835240275,
+    "n": 189,
+    "correct": 55,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 32,
+        "recall": 0.2807017543859649
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 22,
+        "recall": 0.3188405797101449
+      },
+      "tug": {
+        "n": 2,
+        "correct": 1,
+        "recall": 0.5
+      }
+    },
+    "rescue": 11,
+    "harm": 5,
+    "delta_acc": 0.031746031746031744,
+    "delta_ba": 0.02030892448512589
+  },
+  "single_head_ORACLE_ba": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.21164021164021163,
+    "ba": 0.3562166285278413,
+    "n": 189,
+    "correct": 40,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 22,
+        "recall": 0.19298245614035087
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 16,
+        "recall": 0.2318840579710145
+      },
+      "tug": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      }
+    },
+    "rescue": 8,
+    "harm": 17,
+    "delta_acc": -0.047619047619047616,
+    "delta_ba": 0.10163996948893972
+  },
+  "fixed_subset_ORACLE_acc": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.291005291005291,
+    "ba": 0.2748855835240275,
+    "n": 189,
+    "correct": 55,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 32,
+        "recall": 0.2807017543859649
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 22,
+        "recall": 0.3188405797101449
+      },
+      "tug": {
+        "n": 2,
+        "correct": 1,
+        "recall": 0.5
+      }
+    },
+    "rescue": 11,
+    "harm": 5,
+    "delta_acc": 0.031746031746031744,
+    "delta_ba": 0.02030892448512589
+  },
+  "fixed_subset_ORACLE_ba": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.21164021164021163,
+    "ba": 0.3562166285278413,
+    "n": 189,
+    "correct": 40,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 22,
+        "recall": 0.19298245614035087
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 16,
+        "recall": 0.2318840579710145
+      },
+      "tug": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      }
+    },
+    "rescue": 8,
+    "harm": 17,
+    "delta_acc": -0.047619047619047616,
+    "delta_ba": 0.10163996948893972
+  },
+  "samplewise_head_union": {
+    "acc": 0.4126984126984127,
+    "ba": 0.4638634630053394,
+    "n": 189,
+    "correct": 78,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 43,
+        "recall": 0.37719298245614036
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 33,
+        "recall": 0.4782608695652174
+      },
+      "tug": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      }
+    }
+  },
+  "samplewise_H_plus_B1_ORACLE": {
+    "acc": 0.4126984126984127,
+    "ba": 0.4638634630053394,
+    "n": 189,
+    "correct": 78,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 43,
+        "recall": 0.37719298245614036
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 33,
+        "recall": 0.4782608695652174
+      },
+      "tug": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      }
+    }
+  },
+  "samplewise_subset_ORACLE": {
+    "acc": 0.4126984126984127,
+    "ba": 0.4638634630053394,
+    "n": 189,
+    "correct": 78,
+    "per_class": {
+      "cargo": {
+        "n": 114,
+        "correct": 43,
+        "recall": 0.37719298245614036
+      },
+      "dredger": {
+        "n": 4,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tanker": {
+        "n": 69,
+        "correct": 33,
+        "recall": 0.4782608695652174
+      },
+      "tug": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      }
+    }
+  },
+  "B1_errors_rescuable_by_any_single_head": 29,
+  "B1_errors_rescuable_by_any_subset": 29,
+  "B1_errors_unrescuable_by_equal_weight_subsets": 111,
+  "B1_correct_while_every_single_head_wrong": 0,
+  "subset_can_recover_while_every_single_head_wrong": 0,
+  "maximum_rescue_with_zero_harm_fixed_subset": 3,
+  "n_enumerated_subsets": 255,
+  "score_prefix_ORACLE": {
+    "frozen_adapt_scores": [
+      0.24482640624046326,
+      0.244493305683136,
+      0.2435341328382492,
+      0.24240760505199432,
+      0.24807849526405334,
+      0.24769504368305206,
+      0.2488400936126709,
+      0.24671955406665802
+    ],
+    "n_distinct_returned_sets": 8,
+    "acc_best": {
+      "subset_mask": 255,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "size": 8,
+      "acc": 0.25925925925925924,
+      "ba": 0.2545766590389016,
+      "n": 189,
+      "correct": 49,
+      "per_class": {
+        "cargo": {
+          "n": 114,
+          "correct": 31,
+          "recall": 0.2719298245614035
+        },
+        "dredger": {
+          "n": 4,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "tanker": {
+          "n": 69,
+          "correct": 17,
+          "recall": 0.2463768115942029
+        },
+        "tug": {
+          "n": 2,
+          "correct": 1,
+          "recall": 0.5
+        }
+      },
+      "rescue": 0,
+      "harm": 0,
+      "delta_acc": 0.0,
+      "delta_ba": 0.0
+    },
+    "ba_best": {
+      "subset_mask": 255,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "size": 8,
+      "acc": 0.25925925925925924,
+      "ba": 0.2545766590389016,
+      "n": 189,
+      "correct": 49,
+      "per_class": {
+        "cargo": {
+          "n": 114,
+          "correct": 31,
+          "recall": 0.2719298245614035
+        },
+        "dredger": {
+          "n": 4,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "tanker": {
+          "n": 69,
+          "correct": 17,
+          "recall": 0.2463768115942029
+        },
+        "tug": {
+          "n": 2,
+          "correct": 1,
+          "recall": 0.5
+        }
+      },
+      "rescue": 0,
+      "harm": 0,
+      "delta_acc": 0.0,
+      "delta_ba": 0.0
+    },
+    "note": "Hindsight policy-family diagnostic. Does not recommend a tau; no target-label tuning."
+  },
+  "original_B1_prediction_verified": true,
+  "n_distinct_products": 11,
+  "view": "coarse_t1plusT2",
+  "input_file_sha256": "fa0a0c28c7ee5c631c8dbc0fa1464113f372659e802a12d482bf62af97bd72a1"
+}

@@ -1,0 +1,561 @@
+{
+  "scope": "EVALUATION-ONLY, empirical ceilings on supplied truth; never deploy oracle-selected subsets",
+  "deployable": false,
+  "uses_evaluation_truth": true,
+  "H": 8,
+  "N": 11,
+  "C": 6,
+  "classes": [
+    "container_ship",
+    "dredger",
+    "fishing_vessel",
+    "passenger_ship",
+    "product_chemical_tanker",
+    "tug_towing"
+  ],
+  "missing_truth_classes": [
+    "dredger",
+    "product_chemical_tanker"
+  ],
+  "argmax_tie_rule": "lowest class index; preserve recorded class order",
+  "B1": {
+    "acc": 0.18181818181818182,
+    "ba": 0.07142857142857142,
+    "n": 11,
+    "correct": 2,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    }
+  },
+  "mean_pairwise_disagreement": 0.1396103896103896,
+  "pairwise_disagreement": [
+    [
+      0.0,
+      0.09090909090909091,
+      0.18181818181818182,
+      0.0,
+      0.09090909090909091,
+      0.09090909090909091,
+      0.18181818181818182,
+      0.09090909090909091
+    ],
+    [
+      0.09090909090909091,
+      0.0,
+      0.18181818181818182,
+      0.09090909090909091,
+      0.18181818181818182,
+      0.18181818181818182,
+      0.2727272727272727,
+      0.18181818181818182
+    ],
+    [
+      0.18181818181818182,
+      0.18181818181818182,
+      0.0,
+      0.18181818181818182,
+      0.2727272727272727,
+      0.2727272727272727,
+      0.36363636363636365,
+      0.2727272727272727
+    ],
+    [
+      0.0,
+      0.09090909090909091,
+      0.18181818181818182,
+      0.0,
+      0.09090909090909091,
+      0.09090909090909091,
+      0.18181818181818182,
+      0.09090909090909091
+    ],
+    [
+      0.09090909090909091,
+      0.18181818181818182,
+      0.2727272727272727,
+      0.09090909090909091,
+      0.0,
+      0.0,
+      0.09090909090909091,
+      0.0
+    ],
+    [
+      0.09090909090909091,
+      0.18181818181818182,
+      0.2727272727272727,
+      0.09090909090909091,
+      0.0,
+      0.0,
+      0.09090909090909091,
+      0.0
+    ],
+    [
+      0.18181818181818182,
+      0.2727272727272727,
+      0.36363636363636365,
+      0.18181818181818182,
+      0.09090909090909091,
+      0.09090909090909091,
+      0.0,
+      0.09090909090909091
+    ],
+    [
+      0.09090909090909091,
+      0.18181818181818182,
+      0.2727272727272727,
+      0.09090909090909091,
+      0.0,
+      0.0,
+      0.09090909090909091,
+      0.0
+    ]
+  ],
+  "pairwise_head_rescue_counts": [
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "all_head_argmax_agreement_fraction": 0.6363636363636364,
+  "B1_error_count": 9,
+  "single_head_ORACLE_acc": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.18181818181818182,
+    "delta_ba": 0.24999999999999997
+  },
+  "single_head_ORACLE_ba": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.18181818181818182,
+    "delta_ba": 0.24999999999999997
+  },
+  "fixed_subset_ORACLE_acc": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.18181818181818182,
+    "delta_ba": 0.24999999999999997
+  },
+  "fixed_subset_ORACLE_ba": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.18181818181818182,
+    "delta_ba": 0.24999999999999997
+  },
+  "samplewise_head_union": {
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    }
+  },
+  "samplewise_H_plus_B1_ORACLE": {
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    }
+  },
+  "samplewise_subset_ORACLE": {
+    "acc": 0.36363636363636365,
+    "ba": 0.3214285714285714,
+    "n": 11,
+    "correct": 4,
+    "per_class": {
+      "container_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 2,
+        "correct": 2,
+        "recall": 1.0
+      },
+      "passenger_ship": {
+        "n": 1,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "tug_towing": {
+        "n": 7,
+        "correct": 2,
+        "recall": 0.2857142857142857
+      }
+    }
+  },
+  "B1_errors_rescuable_by_any_single_head": 2,
+  "B1_errors_rescuable_by_any_subset": 2,
+  "B1_errors_unrescuable_by_equal_weight_subsets": 7,
+  "B1_correct_while_every_single_head_wrong": 0,
+  "subset_can_recover_while_every_single_head_wrong": 0,
+  "maximum_rescue_with_zero_harm_fixed_subset": 2,
+  "n_enumerated_subsets": 255,
+  "score_prefix_ORACLE": {
+    "frozen_adapt_scores": [
+      0.09687390178442001,
+      0.09644097834825516,
+      0.09744907915592194,
+      0.09564480930566788,
+      0.09847299754619598,
+      0.09870558232069016,
+      0.09607899188995361,
+      0.09752638638019562
+    ],
+    "n_distinct_returned_sets": 8,
+    "acc_best": {
+      "subset_mask": 255,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "size": 8,
+      "acc": 0.18181818181818182,
+      "ba": 0.07142857142857142,
+      "n": 11,
+      "correct": 2,
+      "per_class": {
+        "container_ship": {
+          "n": 1,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "fishing_vessel": {
+          "n": 2,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "passenger_ship": {
+          "n": 1,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "tug_towing": {
+          "n": 7,
+          "correct": 2,
+          "recall": 0.2857142857142857
+        }
+      },
+      "rescue": 0,
+      "harm": 0,
+      "delta_acc": 0.0,
+      "delta_ba": 0.0
+    },
+    "ba_best": {
+      "subset_mask": 255,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "size": 8,
+      "acc": 0.18181818181818182,
+      "ba": 0.07142857142857142,
+      "n": 11,
+      "correct": 2,
+      "per_class": {
+        "container_ship": {
+          "n": 1,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "fishing_vessel": {
+          "n": 2,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "passenger_ship": {
+          "n": 1,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "tug_towing": {
+          "n": 7,
+          "correct": 2,
+          "recall": 0.2857142857142857
+        }
+      },
+      "rescue": 0,
+      "harm": 0,
+      "delta_acc": 0.0,
+      "delta_ba": 0.0
+    },
+    "note": "Hindsight policy-family diagnostic. Does not recommend a tau; no target-label tuning."
+  },
+  "original_B1_prediction_verified": true,
+  "n_distinct_products": 5,
+  "view": "fine_t1",
+  "input_file_sha256": "7928e99f1224c39687ccb64f9439b68cc0d8dfc72e1303b8106b35fc9faa74a4"
+}

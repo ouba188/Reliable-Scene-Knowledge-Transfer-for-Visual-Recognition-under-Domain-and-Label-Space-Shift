@@ -1,0 +1,545 @@
+{
+  "scope": "EVALUATION-ONLY, empirical ceilings on supplied truth; never deploy oracle-selected subsets",
+  "deployable": false,
+  "uses_evaluation_truth": true,
+  "H": 8,
+  "N": 41,
+  "C": 5,
+  "classes": [
+    "container_ship",
+    "dredger",
+    "fishing_vessel",
+    "product_chemical_tanker",
+    "tug_towing"
+  ],
+  "missing_truth_classes": [
+    "container_ship"
+  ],
+  "argmax_tie_rule": "lowest class index; preserve recorded class order",
+  "B1": {
+    "acc": 0.43902439024390244,
+    "ba": 0.3821428571428571,
+    "n": 41,
+    "correct": 18,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 12,
+        "recall": 0.5
+      }
+    }
+  },
+  "mean_pairwise_disagreement": 0.07665505226480837,
+  "pairwise_disagreement": [
+    [
+      0.0,
+      0.024390243902439025,
+      0.04878048780487805,
+      0.12195121951219512,
+      0.04878048780487805,
+      0.04878048780487805,
+      0.07317073170731707,
+      0.07317073170731707
+    ],
+    [
+      0.024390243902439025,
+      0.0,
+      0.07317073170731707,
+      0.14634146341463414,
+      0.024390243902439025,
+      0.024390243902439025,
+      0.04878048780487805,
+      0.0975609756097561
+    ],
+    [
+      0.04878048780487805,
+      0.07317073170731707,
+      0.0,
+      0.07317073170731707,
+      0.0975609756097561,
+      0.0975609756097561,
+      0.07317073170731707,
+      0.024390243902439025
+    ],
+    [
+      0.12195121951219512,
+      0.14634146341463414,
+      0.07317073170731707,
+      0.0,
+      0.12195121951219512,
+      0.12195121951219512,
+      0.14634146341463414,
+      0.0975609756097561
+    ],
+    [
+      0.04878048780487805,
+      0.024390243902439025,
+      0.0975609756097561,
+      0.12195121951219512,
+      0.0,
+      0.0,
+      0.07317073170731707,
+      0.12195121951219512
+    ],
+    [
+      0.04878048780487805,
+      0.024390243902439025,
+      0.0975609756097561,
+      0.12195121951219512,
+      0.0,
+      0.0,
+      0.07317073170731707,
+      0.12195121951219512
+    ],
+    [
+      0.07317073170731707,
+      0.04878048780487805,
+      0.07317073170731707,
+      0.14634146341463414,
+      0.07317073170731707,
+      0.07317073170731707,
+      0.0,
+      0.04878048780487805
+    ],
+    [
+      0.07317073170731707,
+      0.0975609756097561,
+      0.024390243902439025,
+      0.0975609756097561,
+      0.12195121951219512,
+      0.12195121951219512,
+      0.04878048780487805,
+      0.0
+    ]
+  ],
+  "pairwise_head_rescue_counts": [
+    [
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      0,
+      3,
+      3,
+      2,
+      0
+    ],
+    [
+      5,
+      6,
+      3,
+      0,
+      5,
+      5,
+      5,
+      3
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      0,
+      3,
+      3,
+      2,
+      0
+    ]
+  ],
+  "all_head_argmax_agreement_fraction": 0.8292682926829268,
+  "B1_error_count": 23,
+  "single_head_ORACLE_acc": {
+    "subset_mask": 2,
+    "heads": [
+      1
+    ],
+    "size": 1,
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.04878048780487804,
+    "delta_ba": 0.02083333333333337
+  },
+  "single_head_ORACLE_ba": {
+    "subset_mask": 2,
+    "heads": [
+      1
+    ],
+    "size": 1,
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.04878048780487804,
+    "delta_ba": 0.02083333333333337
+  },
+  "fixed_subset_ORACLE_acc": {
+    "subset_mask": 2,
+    "heads": [
+      1
+    ],
+    "size": 1,
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.04878048780487804,
+    "delta_ba": 0.02083333333333337
+  },
+  "fixed_subset_ORACLE_ba": {
+    "subset_mask": 2,
+    "heads": [
+      1
+    ],
+    "size": 1,
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    },
+    "rescue": 2,
+    "harm": 0,
+    "delta_acc": 0.04878048780487804,
+    "delta_ba": 0.02083333333333337
+  },
+  "samplewise_head_union": {
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    }
+  },
+  "samplewise_H_plus_B1_ORACLE": {
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    }
+  },
+  "samplewise_subset_ORACLE": {
+    "acc": 0.4878048780487805,
+    "ba": 0.4029761904761905,
+    "n": 41,
+    "correct": 20,
+    "per_class": {
+      "dredger": {
+        "n": 5,
+        "correct": 0,
+        "recall": 0.0
+      },
+      "fishing_vessel": {
+        "n": 5,
+        "correct": 3,
+        "recall": 0.6
+      },
+      "product_chemical_tanker": {
+        "n": 7,
+        "correct": 3,
+        "recall": 0.42857142857142855
+      },
+      "tug_towing": {
+        "n": 24,
+        "correct": 14,
+        "recall": 0.5833333333333334
+      }
+    }
+  },
+  "B1_errors_rescuable_by_any_single_head": 2,
+  "B1_errors_rescuable_by_any_subset": 2,
+  "B1_errors_unrescuable_by_equal_weight_subsets": 21,
+  "B1_correct_while_every_single_head_wrong": 0,
+  "subset_can_recover_while_every_single_head_wrong": 0,
+  "maximum_rescue_with_zero_harm_fixed_subset": 2,
+  "n_enumerated_subsets": 255,
+  "score_prefix_ORACLE": {
+    "frozen_adapt_scores": [
+      0.18647144734859467,
+      0.18741409480571747,
+      0.1862291693687439,
+      0.1863061487674713,
+      0.18497127294540405,
+      0.18496283888816833,
+      0.18489916622638702,
+      0.18575209379196167
+    ],
+    "n_distinct_returned_sets": 8,
+    "acc_best": {
+      "subset_mask": 64,
+      "heads": [
+        6
+      ],
+      "size": 1,
+      "acc": 0.4634146341463415,
+      "ba": 0.39255952380952375,
+      "n": 41,
+      "correct": 19,
+      "per_class": {
+        "dredger": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "fishing_vessel": {
+          "n": 5,
+          "correct": 3,
+          "recall": 0.6
+        },
+        "product_chemical_tanker": {
+          "n": 7,
+          "correct": 3,
+          "recall": 0.42857142857142855
+        },
+        "tug_towing": {
+          "n": 24,
+          "correct": 13,
+          "recall": 0.5416666666666666
+        }
+      },
+      "rescue": 1,
+      "harm": 0,
+      "delta_acc": 0.024390243902439046,
+      "delta_ba": 0.01041666666666663
+    },
+    "ba_best": {
+      "subset_mask": 64,
+      "heads": [
+        6
+      ],
+      "size": 1,
+      "acc": 0.4634146341463415,
+      "ba": 0.39255952380952375,
+      "n": 41,
+      "correct": 19,
+      "per_class": {
+        "dredger": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        },
+        "fishing_vessel": {
+          "n": 5,
+          "correct": 3,
+          "recall": 0.6
+        },
+        "product_chemical_tanker": {
+          "n": 7,
+          "correct": 3,
+          "recall": 0.42857142857142855
+        },
+        "tug_towing": {
+          "n": 24,
+          "correct": 13,
+          "recall": 0.5416666666666666
+        }
+      },
+      "rescue": 1,
+      "harm": 0,
+      "delta_acc": 0.024390243902439046,
+      "delta_ba": 0.01041666666666663
+    },
+    "note": "Hindsight policy-family diagnostic. Does not recommend a tau; no target-label tuning."
+  },
+  "original_B1_prediction_verified": true,
+  "n_distinct_products": 6,
+  "view": "fine_t1",
+  "input_file_sha256": "660102cc8ab94fdcbcb264e0bd2d5200bd8b3ac81785751ae1653fd83c448c37"
+}

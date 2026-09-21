@@ -1,0 +1,375 @@
+{
+  "scope": "EVALUATION-ONLY, empirical ceilings on supplied truth; never deploy oracle-selected subsets",
+  "deployable": false,
+  "uses_evaluation_truth": true,
+  "H": 8,
+  "N": 213,
+  "C": 3,
+  "classes": [
+    "container_ship",
+    "fishing_vessel",
+    "tug_towing"
+  ],
+  "missing_truth_classes": [
+    "container_ship"
+  ],
+  "argmax_tie_rule": "lowest class index; preserve recorded class order",
+  "B1": {
+    "acc": 0.596244131455399,
+    "ba": 0.6716507177033493,
+    "n": 213,
+    "correct": 127,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 124,
+        "recall": 0.5933014354066986
+      }
+    }
+  },
+  "mean_pairwise_disagreement": 0.08735747820254865,
+  "pairwise_disagreement": [
+    [
+      0.0,
+      0.046948356807511735,
+      0.07042253521126761,
+      0.06572769953051644,
+      0.06572769953051644,
+      0.11737089201877934,
+      0.046948356807511735,
+      0.11267605633802817
+    ],
+    [
+      0.046948356807511735,
+      0.0,
+      0.107981220657277,
+      0.06572769953051644,
+      0.046948356807511735,
+      0.07981220657276995,
+      0.056338028169014086,
+      0.07511737089201878
+    ],
+    [
+      0.07042253521126761,
+      0.107981220657277,
+      0.0,
+      0.04225352112676056,
+      0.13145539906103287,
+      0.1784037558685446,
+      0.09859154929577464,
+      0.1267605633802817
+    ],
+    [
+      0.06572769953051644,
+      0.06572769953051644,
+      0.04225352112676056,
+      0.0,
+      0.09859154929577464,
+      0.13615023474178403,
+      0.07511737089201878,
+      0.09389671361502347
+    ],
+    [
+      0.06572769953051644,
+      0.046948356807511735,
+      0.13145539906103287,
+      0.09859154929577464,
+      0.0,
+      0.07981220657276995,
+      0.07511737089201878,
+      0.11737089201877934
+    ],
+    [
+      0.11737089201877934,
+      0.07981220657276995,
+      0.1784037558685446,
+      0.13615023474178403,
+      0.07981220657276995,
+      0.0,
+      0.0892018779342723,
+      0.07981220657276995
+    ],
+    [
+      0.046948356807511735,
+      0.056338028169014086,
+      0.09859154929577464,
+      0.07511737089201878,
+      0.07511737089201878,
+      0.0892018779342723,
+      0.0,
+      0.06572769953051644
+    ],
+    [
+      0.11267605633802817,
+      0.07511737089201878,
+      0.1267605633802817,
+      0.09389671361502347,
+      0.11737089201877934,
+      0.07981220657276995,
+      0.06572769953051644,
+      0.0
+    ]
+  ],
+  "pairwise_head_rescue_counts": [
+    [
+      0,
+      1,
+      0,
+      0,
+      8,
+      6,
+      0,
+      0
+    ],
+    [
+      9,
+      0,
+      8,
+      4,
+      10,
+      6,
+      5,
+      0
+    ],
+    [
+      14,
+      14,
+      0,
+      5,
+      22,
+      19,
+      12,
+      9
+    ],
+    [
+      13,
+      9,
+      4,
+      0,
+      18,
+      14,
+      9,
+      5
+    ],
+    [
+      6,
+      0,
+      6,
+      3,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      18,
+      10,
+      17,
+      13,
+      15,
+      0,
+      10,
+      2
+    ],
+    [
+      10,
+      7,
+      8,
+      6,
+      14,
+      8,
+      0,
+      0
+    ],
+    [
+      23,
+      15,
+      18,
+      15,
+      25,
+      13,
+      13,
+      0
+    ]
+  ],
+  "all_head_argmax_agreement_fraction": 0.7934272300469484,
+  "B1_error_count": 86,
+  "single_head_ORACLE_acc": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.6431924882629108,
+    "ba": 0.6955741626794258,
+    "n": 213,
+    "correct": 137,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 134,
+        "recall": 0.6411483253588517
+      }
+    },
+    "rescue": 11,
+    "harm": 1,
+    "delta_acc": 0.04694835680751175,
+    "delta_ba": 0.02392344497607657
+  },
+  "single_head_ORACLE_ba": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.6431924882629108,
+    "ba": 0.6955741626794258,
+    "n": 213,
+    "correct": 137,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 134,
+        "recall": 0.6411483253588517
+      }
+    },
+    "rescue": 11,
+    "harm": 1,
+    "delta_acc": 0.04694835680751175,
+    "delta_ba": 0.02392344497607657
+  },
+  "fixed_subset_ORACLE_acc": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.6431924882629108,
+    "ba": 0.6955741626794258,
+    "n": 213,
+    "correct": 137,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 134,
+        "recall": 0.6411483253588517
+      }
+    },
+    "rescue": 11,
+    "harm": 1,
+    "delta_acc": 0.04694835680751175,
+    "delta_ba": 0.02392344497607657
+  },
+  "fixed_subset_ORACLE_ba": {
+    "subset_mask": 16,
+    "heads": [
+      4
+    ],
+    "size": 1,
+    "acc": 0.6431924882629108,
+    "ba": 0.6955741626794258,
+    "n": 213,
+    "correct": 137,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 134,
+        "recall": 0.6411483253588517
+      }
+    },
+    "rescue": 11,
+    "harm": 1,
+    "delta_acc": 0.04694835680751175,
+    "delta_ba": 0.02392344497607657
+  },
+  "samplewise_head_union": {
+    "acc": 0.676056338028169,
+    "ba": 0.7123205741626795,
+    "n": 213,
+    "correct": 144,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 141,
+        "recall": 0.6746411483253588
+      }
+    }
+  },
+  "samplewise_H_plus_B1_ORACLE": {
+    "acc": 0.676056338028169,
+    "ba": 0.7123205741626795,
+    "n": 213,
+    "correct": 144,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 141,
+        "recall": 0.6746411483253588
+      }
+    }
+  },
+  "samplewise_subset_ORACLE": {
+    "acc": 0.676056338028169,
+    "ba": 0.7123205741626795,
+    "n": 213,
+    "correct": 144,
+    "per_class": {
+      "fishing_vessel": {
+        "n": 4,
+        "correct": 3,
+        "recall": 0.75
+      },
+      "tug_towing": {
+        "n": 209,
+        "correct": 141,
+        "recall": 0.6746411483253588
+      }
+    }
+  },
+  "B1_errors_rescuable_by_any_single_head": 17,
+  "B1_errors_rescuable_by_any_subset": 17,
+  "B1_errors_unrescuable_by_equal_weight_subsets": 69,
+  "B1_correct_while_every_single_head_wrong": 0,
+  "subset_can_recover_while_every_single_head_wrong": 0,
+  "maximum_rescue_with_zero_harm_fixed_subset": 10,
+  "n_enumerated_subsets": 255,
+  "original_B1_prediction_verified": true,
+  "n_distinct_products": 20,
+  "view": "fine_t1plusT2",
+  "input_file_sha256": "5fb27dcc83e544d8ed1651f76a2881f7c2962266e64e990b8374e630c1f52ad2"
+}
