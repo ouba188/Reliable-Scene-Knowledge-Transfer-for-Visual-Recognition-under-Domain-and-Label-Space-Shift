@@ -226,3 +226,15 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 - 依评审裁定表的剩余分支：下一版做**受源监督约束的小型表示适配模块**（同一 5 个伪目标 + 源港留一评估；
   不同时改知识/路由/词表）；已请 GPT 确认放弃决定与模块输入边界
 - 文件：`e02_alignment/E03_PAIR_RULE.md`、`pair_diagnosis.csv`（52 对）、`rule_loo_eval.json`、两个脚本
+
+### E05 源监督线性表示适配模块：未达标（2026-09-21 17:35，commit 99dd4b1）
+
+- 模块：`L = CE(W z_fit, y_fit) + λ‖Cov(W z_fit)−Cov(z_adapt)‖²_F + μ‖mean(W z_fit)−mean(z_adapt)‖²`，W 初始化为 I（λ=μ=0 正好退化回 Cross）；分类器按冻结设置重训；**超参只在源端留出港 20 个 episode 上选**
+- 源端选择 λ=10/μ=0：源端平均 BA **0.563**（λ=μ=0 为 0.546，**+1.7**）
+- 5 个伪目标：模块 vs Cross BA = **+0.0003**（无增益）；vs 每对最好基线 = **−0.016**；对角版 −0.018
+  （Rotterdam→Qingdao −.063、Port Said→Shanghai −.010 明显更差）
+- **判读：源端增益不迁移，第三次独立复现**（E03 信号幅度可忽略 / E04 规则坍缩为恒选 Cross、二选一 oracle 仅 +0.002 BA / E05 模块增益 0）
+  ⇒ **在冻结表示上做特征空间（一阶/二阶/源监督线性）适配，收益不跨港迁移**
+- 下一步待评审裁定两条分支：**(A) 编码器级**（重建排除留出港的 encoder，GPU，把港级留出做实到表示层）；
+  **(B) 源监督与类别覆盖**（Cross BA 仅 .28–.56 vs in_ref BA .35–.74 / Acc .71–.99）。已发 GPT 请求指定与协议边界
+- 文件：`e02_alignment/E05_LINEAR_MODULE.md`、`linear_adapt_results.csv`、`linear_adapt_summary.json`、`e05_linear_adapt.py`
