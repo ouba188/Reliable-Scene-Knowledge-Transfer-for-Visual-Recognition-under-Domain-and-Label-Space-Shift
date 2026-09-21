@@ -57,7 +57,7 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | **服务器实验环境** | ✅（20:20 实读 + 补装）miniconda py3.12 · torch 2.12.1+cu130（CUDA ✓ RTX 4080 SUPER）· ultralytics/rasterio/shapely/pandas/scipy · **sklearn 1.9.1 + geopandas 1.1.4**（20:15 由 d0b3b3 补装） |
 | MMSI 类别层 | ✅ 126,606 MMSI（19c027） |
 | 知识集（$k_i$/设施/定年/$d_p$/方向场） | ✅ 已收口并上传服务器 + 入库 GitHub |
-| **夸克归档** | ✅ **完成**（09-21 实读：网盘  1682 个/663.3 GB ·  1682 个/5.4 GB ·  1681 个/554.2 GB，合计 ≈1.22 TB，24 港齐全；仅 4 张病理性例外：2 张无本机源 tif、2 张 tif 损坏）。去重已完成（1516 个副本已删）。工具链  |
+| **夸克归档** | ✅ **完成**（09-21 实读：网盘 tif 目录 1682 个/663.3 GB · labels 目录 1682 个/5.4 GB · png 目录 1681 个/554.2 GB，合计 ≈1.22 TB，24 港齐全；仅 4 张病理性例外：2 张无本机源 tif、2 张 tif 损坏）。去重已完成（1516 个副本已删）。工具链 scripts_v2/quark_archive/ |
 | 0917 机制实验（B0→Full） | **未开始**——输入层已就绪（Phase 0 产物 + 知识集 + 841 标注均已完成） |
 | **Phase 0 数据管线**（19c027） | ✅ **20:30 收口**：大景框标注 658 景 / 448,080 框 · 地理回写 24 港 GeoJSON · offshore mask 658 景（离岸 45.4% / 近岸 1.4% / 陆 27.1%）· 采集级 split 24 折 LOPO（全为 partial-set）· 每港每类支撑 79,059 个带类对象；**仅 native-res COG 瓦片未做** |
 | **磁盘 / 清理**（d0b3b3） | ✅ 20:52 执行（用户批准）：复核 jpg **3,845,486 个 / 106.5 GB**（删后剩 0）· 重复 `safe841_batch_s3/annotation_bundle_s3` 4.27 GB · 4 个历史标注包 tgz 1.92 GB · 4 个多余 run 目录 · 同名大图副本按 **md5 相同才删**（保留序：annotation_output > parallel_* > fdrive_import > asf_download_v2_* > sar_download_v1 > safe841_batch_s3；内容不同不删）。**`/root/autodl-tmp` 现 830G 用 / 221G 空**；删除清单 `/root/cleanup_manifest.json`、`cleanup_jpgs.txt`，日志 `E:/Hermes/scripts/out/cleanup_execute.log` |
