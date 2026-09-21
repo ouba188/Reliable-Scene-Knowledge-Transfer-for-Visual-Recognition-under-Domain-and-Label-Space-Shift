@@ -1,0 +1,51 @@
+{
+ "fold": "Rotterdam",
+ "n_source_labeled": 5595,
+ "source_pool_objects": 381832,
+ "H": 8,
+ "C": 5,
+ "n_source_products": 200,
+ "b1_acc": 0.502591599642538,
+ "b1_ba": 0.5691708702796504,
+ "b1_errors": 2783,
+ "head_union_acc": 0.5873100983020554,
+ "errors_rescuable_by_single_head": 474,
+ "errors_no_head_correct": 2309,
+ "best_single_head_acc": 0.49812332439678286,
+ "best_single_head_ba": 0.5795437488385428,
+ "best_single_head_mask": 128,
+ "fixed_subset_acc": 0.508668453976765,
+ "fixed_subset_ba": 0.5756615760042872,
+ "fixed_subset_size": 3,
+ "fixed_subset_mask": 152,
+ "samplewise_acc": 0.587846291331546,
+ "mean_pairwise_disagreement": 0.10950465977275628,
+ "per_port_BA_by_head": null,
+ "per_class": {
+  "container_ship": {
+   "n": 1104,
+   "b1_recall": 0.5579710144927537,
+   "head_union_recall": 0.7255434782608695
+  },
+  "dredger": {
+   "n": 490,
+   "b1_recall": 0.5714285714285714,
+   "head_union_recall": 0.7204081632653061
+  },
+  "fishing_vessel": {
+   "n": 2872,
+   "b1_recall": 0.38231197771587744,
+   "head_union_recall": 0.4195682451253482
+  },
+  "product_chemical_tanker": {
+   "n": 348,
+   "b1_recall": 0.5172413793103449,
+   "head_union_recall": 0.6781609195402298
+  },
+  "tug_towing": {
+   "n": 781,
+   "b1_recall": 0.8169014084507042,
+   "head_union_recall": 0.8847631241997439
+  }
+ }
+}

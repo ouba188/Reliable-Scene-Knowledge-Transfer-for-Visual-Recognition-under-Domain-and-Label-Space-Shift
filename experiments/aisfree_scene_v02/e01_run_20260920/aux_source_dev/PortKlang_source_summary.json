@@ -1,0 +1,56 @@
+{
+ "fold": "Port Klang",
+ "n_source_labeled": 5822,
+ "source_pool_objects": 403044,
+ "H": 8,
+ "C": 6,
+ "n_source_products": 204,
+ "b1_acc": 0.7495705942974923,
+ "b1_ba": 0.6829294564833718,
+ "b1_errors": 1458,
+ "head_union_acc": 0.881827550669873,
+ "errors_rescuable_by_single_head": 770,
+ "errors_no_head_correct": 688,
+ "best_single_head_acc": 0.8000687049124012,
+ "best_single_head_ba": 0.669935791274431,
+ "best_single_head_mask": 8,
+ "fixed_subset_acc": 0.8000687049124012,
+ "fixed_subset_ba": 0.669935791274431,
+ "fixed_subset_size": 1,
+ "fixed_subset_mask": 8,
+ "samplewise_acc": 0.8821710752318791,
+ "mean_pairwise_disagreement": 0.17631398144967367,
+ "per_port_BA_by_head": null,
+ "per_class": {
+  "container_ship": {
+   "n": 1108,
+   "b1_recall": 0.7184115523465704,
+   "head_union_recall": 0.8655234657039711
+  },
+  "dredger": {
+   "n": 507,
+   "b1_recall": 0.5700197238658777,
+   "head_union_recall": 0.7988165680473372
+  },
+  "fishing_vessel": {
+   "n": 2882,
+   "b1_recall": 0.8181818181818182,
+   "head_union_recall": 0.9267869535045108
+  },
+  "passenger_ship": {
+   "n": 150,
+   "b1_recall": 0.58,
+   "head_union_recall": 0.6933333333333334
+  },
+  "product_chemical_tanker": {
+   "n": 363,
+   "b1_recall": 0.6942148760330579,
+   "head_union_recall": 0.8126721763085399
+  },
+  "tug_towing": {
+   "n": 812,
+   "b1_recall": 0.7167487684729064,
+   "head_union_recall": 0.8620689655172413
+  }
+ }
+}

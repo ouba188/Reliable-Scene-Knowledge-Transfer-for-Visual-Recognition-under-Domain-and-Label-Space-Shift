@@ -1,0 +1,36 @@
+{
+ "fold": "Shanghai",
+ "n_source_labeled": 2971,
+ "source_pool_objects": 349348,
+ "H": 8,
+ "C": 2,
+ "n_source_products": 173,
+ "b1_acc": 0.7176035005048805,
+ "b1_ba": 0.7780226047283285,
+ "b1_errors": 839,
+ "head_union_acc": 0.7731403567822283,
+ "errors_rescuable_by_single_head": 165,
+ "errors_no_head_correct": 674,
+ "best_single_head_acc": 0.7441938741164591,
+ "best_single_head_ba": 0.7813818362268176,
+ "best_single_head_mask": 16,
+ "fixed_subset_acc": 0.7441938741164591,
+ "fixed_subset_ba": 0.7813818362268176,
+ "fixed_subset_size": 1,
+ "fixed_subset_mask": 16,
+ "samplewise_acc": 0.7731403567822283,
+ "mean_pairwise_disagreement": 0.05187046208587777,
+ "per_port_BA_by_head": null,
+ "per_class": {
+  "fishing_vessel": {
+   "n": 2411,
+   "b1_recall": 0.681045209456657,
+   "head_union_recall": 0.7411862297801742
+  },
+  "tug_towing": {
+   "n": 560,
+   "b1_recall": 0.875,
+   "head_union_recall": 0.9107142857142857
+  }
+ }
+}

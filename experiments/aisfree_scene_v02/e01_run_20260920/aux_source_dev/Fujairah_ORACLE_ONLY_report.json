@@ -1,0 +1,500 @@
+{
+  "scope": "EVALUATION-ONLY, empirical ceilings on supplied truth; never deploy oracle-selected subsets",
+  "deployable": false,
+  "uses_evaluation_truth": true,
+  "H": 8,
+  "N": 5669,
+  "C": 5,
+  "classes": [
+    "container_ship",
+    "dredger",
+    "fishing_vessel",
+    "product_chemical_tanker",
+    "tug_towing"
+  ],
+  "missing_truth_classes": [],
+  "argmax_tie_rule": "lowest class index; preserve recorded class order",
+  "B1": {
+    "acc": 0.6133356853060504,
+    "ba": 0.4960100470155589,
+    "n": 5669,
+    "correct": 3477,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 382,
+        "recall": 0.3441441441441441
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 241,
+        "recall": 0.47534516765285995
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2350,
+        "recall": 0.8156889968760846
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 145,
+        "recall": 0.40166204986149584
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 359,
+        "recall": 0.44320987654320987
+      }
+    }
+  },
+  "mean_pairwise_disagreement": 0.1369478114053877,
+  "pairwise_disagreement": [
+    [
+      0.0,
+      0.05697653907214676,
+      0.088904568707003,
+      0.11007232316105134,
+      0.13353325101428823,
+      0.145704709825366,
+      0.16299170929617215,
+      0.17604515787616865
+    ],
+    [
+      0.05697653907214676,
+      0.0,
+      0.09878285411889222,
+      0.09754806844240607,
+      0.1455283118715823,
+      0.16016934203563238,
+      0.17339918856941258,
+      0.19227376962427237
+    ],
+    [
+      0.088904568707003,
+      0.09878285411889222,
+      0.0,
+      0.06720762039160345,
+      0.174457576292115,
+      0.18592344328805785,
+      0.17692714764508732,
+      0.1876874228258952
+    ],
+    [
+      0.11007232316105134,
+      0.09754806844240607,
+      0.06720762039160345,
+      0.0,
+      0.17322279061562887,
+      0.1890986064561651,
+      0.17128241312400777,
+      0.1933321573469748
+    ],
+    [
+      0.13353325101428823,
+      0.1455283118715823,
+      0.174457576292115,
+      0.17322279061562887,
+      0.0,
+      0.072852354912683,
+      0.08625859940024695,
+      0.12136179220321044
+    ],
+    [
+      0.145704709825366,
+      0.16016934203563238,
+      0.18592344328805785,
+      0.1890986064561651,
+      0.072852354912683,
+      0.0,
+      0.11165990474510495,
+      0.09754806844240607
+    ],
+    [
+      0.16299170929617215,
+      0.17339918856941258,
+      0.17692714764508732,
+      0.17128241312400777,
+      0.08625859940024695,
+      0.11165990474510495,
+      0.0,
+      0.08378902804727466
+    ],
+    [
+      0.17604515787616865,
+      0.19227376962427237,
+      0.1876874228258952,
+      0.1933321573469748,
+      0.12136179220321044,
+      0.09754806844240607,
+      0.08378902804727466,
+      0.0
+    ]
+  ],
+  "pairwise_head_rescue_counts": [
+    [
+      0,
+      125,
+      199,
+      244,
+      154,
+      113,
+      214,
+      161
+    ],
+    [
+      75,
+      0,
+      189,
+      199,
+      155,
+      116,
+      213,
+      165
+    ],
+    [
+      112,
+      152,
+      0,
+      115,
+      199,
+      152,
+      212,
+      156
+    ],
+    [
+      161,
+      166,
+      119,
+      0,
+      202,
+      161,
+      200,
+      157
+    ],
+    [
+      370,
+      421,
+      502,
+      501,
+      0,
+      86,
+      184,
+      159
+    ],
+    [
+      451,
+      504,
+      577,
+      582,
+      208,
+      0,
+      286,
+      148
+    ],
+    [
+      426,
+      475,
+      511,
+      495,
+      180,
+      160,
+      0,
+      80
+    ],
+    [
+      541,
+      595,
+      623,
+      620,
+      323,
+      190,
+      248,
+      0
+    ]
+  ],
+  "all_head_argmax_agreement_fraction": 0.7027694478744047,
+  "B1_error_count": 2192,
+  "single_head_ORACLE_acc": {
+    "subset_mask": 4,
+    "heads": [
+      2
+    ],
+    "size": 1,
+    "acc": 0.6362674192979362,
+    "ba": 0.49099720119812107,
+    "n": 5669,
+    "correct": 3607,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 395,
+        "recall": 0.35585585585585583
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 237,
+        "recall": 0.46745562130177515
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2518,
+        "recall": 0.8740020826102048
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 126,
+        "recall": 0.3490304709141274
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 331,
+        "recall": 0.408641975308642
+      }
+    },
+    "rescue": 241,
+    "harm": 111,
+    "delta_acc": 0.02293173399188575,
+    "delta_ba": -0.005012845817437828
+  },
+  "single_head_ORACLE_ba": {
+    "subset_mask": 8,
+    "heads": [
+      3
+    ],
+    "size": 1,
+    "acc": 0.6355618274828012,
+    "ba": 0.49868703973578443,
+    "n": 5669,
+    "correct": 3603,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 377,
+        "recall": 0.3396396396396396
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 268,
+        "recall": 0.5285996055226825
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2493,
+        "recall": 0.8653245400902464
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 121,
+        "recall": 0.33518005540166207
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 344,
+        "recall": 0.4246913580246914
+      }
+    },
+    "rescue": 246,
+    "harm": 120,
+    "delta_acc": 0.022226142176750785,
+    "delta_ba": 0.002676992720225535
+  },
+  "fixed_subset_ORACLE_acc": {
+    "subset_mask": 12,
+    "heads": [
+      2,
+      3
+    ],
+    "size": 2,
+    "acc": 0.6385605926971247,
+    "ba": 0.49779431308752287,
+    "n": 5669,
+    "correct": 3620,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 391,
+        "recall": 0.35225225225225226
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 257,
+        "recall": 0.5069033530571992
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2509,
+        "recall": 0.8708781673030198
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 122,
+        "recall": 0.3379501385041551
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 341,
+        "recall": 0.42098765432098767
+      }
+    },
+    "rescue": 242,
+    "harm": 99,
+    "delta_acc": 0.025224907391074303,
+    "delta_ba": 0.0017842660719639691
+  },
+  "fixed_subset_ORACLE_ba": {
+    "subset_mask": 61,
+    "heads": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "size": 5,
+    "acc": 0.6221555829952372,
+    "ba": 0.5013740164020468,
+    "n": 5669,
+    "correct": 3527,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 388,
+        "recall": 0.34954954954954953
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 249,
+        "recall": 0.4911242603550296
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2392,
+        "recall": 0.8302672683096147
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 144,
+        "recall": 0.3988919667590028
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 354,
+        "recall": 0.43703703703703706
+      }
+    },
+    "rescue": 71,
+    "harm": 21,
+    "delta_acc": 0.008819897689186784,
+    "delta_ba": 0.005363969386487921
+  },
+  "samplewise_head_union": {
+    "acc": 0.7055918151349444,
+    "ba": 0.588491014119134,
+    "n": 5669,
+    "correct": 4000,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 434,
+        "recall": 0.390990990990991
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 316,
+        "recall": 0.6232741617357002
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2627,
+        "recall": 0.9118361679972232
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 161,
+        "recall": 0.44598337950138506
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 462,
+        "recall": 0.5703703703703704
+      }
+    }
+  },
+  "samplewise_H_plus_B1_ORACLE": {
+    "acc": 0.7055918151349444,
+    "ba": 0.588491014119134,
+    "n": 5669,
+    "correct": 4000,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 434,
+        "recall": 0.390990990990991
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 316,
+        "recall": 0.6232741617357002
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2627,
+        "recall": 0.9118361679972232
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 161,
+        "recall": 0.44598337950138506
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 462,
+        "recall": 0.5703703703703704
+      }
+    }
+  },
+  "samplewise_subset_ORACLE": {
+    "acc": 0.7057682130887282,
+    "ba": 0.5886711942993141,
+    "n": 5669,
+    "correct": 4001,
+    "per_class": {
+      "container_ship": {
+        "n": 1110,
+        "correct": 435,
+        "recall": 0.3918918918918919
+      },
+      "dredger": {
+        "n": 507,
+        "correct": 316,
+        "recall": 0.6232741617357002
+      },
+      "fishing_vessel": {
+        "n": 2881,
+        "correct": 2627,
+        "recall": 0.9118361679972232
+      },
+      "product_chemical_tanker": {
+        "n": 361,
+        "correct": 161,
+        "recall": 0.44598337950138506
+      },
+      "tug_towing": {
+        "n": 810,
+        "correct": 462,
+        "recall": 0.5703703703703704
+      }
+    }
+  },
+  "B1_errors_rescuable_by_any_single_head": 523,
+  "B1_errors_rescuable_by_any_subset": 524,
+  "B1_errors_unrescuable_by_equal_weight_subsets": 1668,
+  "B1_correct_while_every_single_head_wrong": 0,
+  "subset_can_recover_while_every_single_head_wrong": 1,
+  "maximum_rescue_with_zero_harm_fixed_subset": 0,
+  "n_enumerated_subsets": 255,
+  "original_B1_prediction_verified": true,
+  "n_distinct_products": 202,
+  "view": "source",
+  "input_file_sha256": "e1268805db8debdda128362786cae2e8d3bf1c0e527ead445f205e4f9f28f27d"
+}

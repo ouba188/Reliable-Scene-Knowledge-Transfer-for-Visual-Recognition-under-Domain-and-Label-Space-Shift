@@ -1,0 +1,51 @@
+{
+ "fold": "Port Said",
+ "n_source_labeled": 5678,
+ "source_pool_objects": 397017,
+ "H": 8,
+ "C": 5,
+ "n_source_products": 206,
+ "b1_acc": 0.6204649524480451,
+ "b1_ba": 0.5310845418008293,
+ "b1_errors": 2155,
+ "head_union_acc": 0.7192673476576259,
+ "errors_rescuable_by_single_head": 561,
+ "errors_no_head_correct": 1594,
+ "best_single_head_acc": 0.640366326171187,
+ "best_single_head_ba": 0.5244002445844616,
+ "best_single_head_mask": 4,
+ "fixed_subset_acc": 0.6467065868263473,
+ "fixed_subset_ba": 0.5377064801900808,
+ "fixed_subset_size": 3,
+ "fixed_subset_mask": 13,
+ "samplewise_acc": 0.7203240577668193,
+ "mean_pairwise_disagreement": 0.14325969908921654,
+ "per_port_BA_by_head": null,
+ "per_class": {
+  "container_ship": {
+   "n": 1109,
+   "b1_recall": 0.33002705139765554,
+   "head_union_recall": 0.37781785392245265
+  },
+  "dredger": {
+   "n": 507,
+   "b1_recall": 0.5187376725838264,
+   "head_union_recall": 0.6725838264299803
+  },
+  "fishing_vessel": {
+   "n": 2883,
+   "b1_recall": 0.7721123829344433,
+   "head_union_recall": 0.8744363510232397
+  },
+  "product_chemical_tanker": {
+   "n": 362,
+   "b1_recall": 0.38950276243093923,
+   "head_union_recall": 0.46408839779005523
+  },
+  "tug_towing": {
+   "n": 817,
+   "b1_recall": 0.6450428396572827,
+   "head_union_recall": 0.7772337821297429
+  }
+ }
+}
