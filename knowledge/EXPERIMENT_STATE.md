@@ -140,23 +140,23 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 ### 磁盘
 服务器 848G/930G 已用（83G 可用）；rev0 作废项已删（清单 `/root/rev0_delete_manifest.txt`）。
 
-
 ## E02 对齐修正与源伪目标基线（2026-09-21 14:50，评审裁定后执行）
 
 **边界**：CPU only；不重抽 chip、不重训 encoder/H/J、不动 E01 主表。
 
 ### 勘误（已写入对应 README 顶部）
-1. **旧 CORAL 实现错误**：（无重着色，连恒等性都不满足）→  的 coral 列作废；
-   正确 T2S = （恒等误差 ~1e-14，协方差残差 ~1e-15 vs 旧实现 3–125）
-2. **旧「域间隙 +0.39~+0.58」混入未隔离因素**（全池 PCA、内层留出港可能在 encoder 的 source-fit、随机 CV、只报 Acc）
+1. **旧 CORAL 实现错误**：写成 `Cs^{-1/2} Ct^{-1/2}`（两个逆平方根、无重着色，连恒等性都不满足）
+   → `aux_domain_a` 的 coral 列作废；正确 T2S 为 `(X-μt) Ct^{-1/2} Cs^{1/2} + μs`
+   （恒等误差 ~1e-14，协方差残差 ~1e-15，而旧实现残差 3–125）
+2. **旧「域间隙 +0.39~+0.58」混入未隔离因素**（全池 PCA、内层留出港可能在该 encoder 的 source-fit、随机 CV、只报 Acc）
    → 降级为「港内监督探针优于跨港探针，提示跨港泛化值得优先研究」，不再作算法依据
-3. **(b) 中「OBJ 高于任何可用策略」不成立**（Fujairah coarse STK .201 > OBJ .153）：STK 是新分类器而非选头器，
-   OBJ 只在 255 等权子集内取最优，不是 STK 的上界；STK 亦无港口知识输入、未做交叉拟合
+3. **(b) 中「OBJ 高于任何可用策略」不成立**（Fujairah coarse STK .201 > OBJ .153）：STK 是 `softmax(W[p1..p8]+b)` 的新分类器，
+   而 OBJ 只在 255 个等权子集内取最优，**不是 STK 的上界**；STK 亦无港口知识输入、未做交叉拟合
 
-### 新基线（源伪目标协议；PCA/分类器只在 source_fit 拟合；U_q 无标签；E_q 标签只进评价器）
-5 个可判定伪目标（n=865–1588）Acc/BA：
+### 新基线（源伪目标协议；PCA-64 与分类器只在 source_fit 拟合；U_q 无标签；E_q 标签只进评价器）
+5 个可判定伪目标（n=865–1588），Acc/BA：
 
-| 折 | q | 角色 | n | Cross | Mean-only | CORAL-T2S |
+| 折 | 伪目标 q | 角色 | n | Cross | Mean-only | CORAL-T2S |
 |---|---|---|---:|---|---|---|
 | Rotterdam | Qingdao | cal* | 1588 | .240/.318 | **.315/.385** | **.311/.397** |
 | Shanghai | Qingdao | cal* | 1451 | .391/.560 | .360/.578 | **.407/.568** |
@@ -164,14 +164,14 @@ $\Delta = \log r^{VK} - \log r^{V}$，闭合分解 $1 = \sum_g \beta_g R_{ig} + 
 | Port Said | Shanghai | meta | 1094 | .404/.339 | **.424/.315** | .396/.288 |
 | Jebel Ali | Shanghai | meta | 865 | **.572/.494** | .535/.447 | .420/.371 |
 
-结论：均值平移与正确二阶对齐**都能改善，但配对相关且可严重为负**（Jebel Ali→Shanghai T2S −15.2 Acc）
-→ 三列基线成立（Cross / Mean-only / CORAL-T2S），（用 U_q 标签）达 .71–.99 Acc 说明标签驱动空间极大。
- Qingdao 为 cal 港，仅作伪目标、未并入 D_fit 或任何选择过程（显式披露）。
+结论：均值平移与正确二阶对齐**都能改善，但配对相关且可严重为负**（Jebel Ali→Shanghai 的 T2S 掉 15.2 Acc 点）
+→ 三列基线成立（Cross / Mean-only / CORAL-T2S）；`in_ref`（用 U_q 标签监督，仅参考）达 .71–.99 Acc，
+说明标签驱动的空间极大。`*` Qingdao 属 cal 港，**仅作伪目标、未并入 D_fit 或任何选择过程**（显式披露）。
 
-### 下一版唯一干预（DECISION_NEXT.md）
-**配对感知的观测条件校正**（只用无标签统计，在 cross 与 mean-only 间逐对选择，规则在源港留一上验证）；
-要打败 Cross/Mean-only/CORAL-T2S 并与逐对 oracle 对照。**不**同时改表示/知识/词表/筛选。
+### 下一版唯一干预（见 `DECISION_NEXT.md`）
+**配对感知的观测条件校正**：只用无标签统计，在 cross 与 mean-only 间逐对选择，选择规则在**源港留一**上验证；
+要打败 Cross/Mean-only/CORAL-T2S，并与逐对 oracle 对照。**不**同时改表示/知识/词表/筛选。
 
 ### 交付件
-：、、、
-、、、两个脚本 + 参考包。
+`e02_alignment/`：`E02_ALIGNMENT_v1.md`、`DECISION_NEXT.md`、`coral_regression_*.csv` 与 `_meta.json`、
+`role_lineage.csv`、`source_pseudo_target_splits_*.json`、`cross_mean_coral_corrected.csv`、两个脚本 + 参考包（含 9 项单测）。
