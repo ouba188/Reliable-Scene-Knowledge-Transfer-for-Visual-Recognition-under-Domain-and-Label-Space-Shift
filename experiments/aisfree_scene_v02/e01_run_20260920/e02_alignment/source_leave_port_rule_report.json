@@ -1,0 +1,112 @@
+{
+ "protocol": "leave-one-port-out (whole held-out port, no donor from that port)",
+ "primary_metric": "BA",
+ "n_episodes": 20,
+ "ports": [
+  "Jebel Ali",
+  "Qingdao",
+  "Shanghai",
+  "Singapore"
+ ],
+ "rules": {
+  "stat_shift_norm": {
+   "rule_ba": 0.5650930395825349,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.004350568838889068,
+   "gain_over_mean": 0.09777142360123298,
+   "mean_regret_vs_oracle": 0.006112630049266848,
+   "picked_mean_only": 1,
+   "n_episodes": 20
+  },
+  "stat_energy_dist": {
+   "rule_ba": 0.5650930395825349,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.004350568838889068,
+   "gain_over_mean": 0.09777142360123298,
+   "mean_regret_vs_oracle": 0.006112630049266848,
+   "picked_mean_only": 1,
+   "n_episodes": 20
+  },
+  "stat_entropy_before": {
+   "rule_ba": 0.5573560292395923,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.012087579181831676,
+   "gain_over_mean": 0.09003441325829037,
+   "mean_regret_vs_oracle": 0.013849640392209473,
+   "picked_mean_only": 2,
+   "n_episodes": 20
+  },
+  "stat_entropy_after": {
+   "rule_ba": 0.5700345108425539,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": 0.000590902421129913,
+   "gain_over_mean": 0.10271289486125196,
+   "mean_regret_vs_oracle": 0.0011711587892479114,
+   "picked_mean_only": 1,
+   "n_episodes": 20
+  },
+  "stat_delta_entropy": {
+   "rule_ba": 0.5471706225702717,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.022272985851152227,
+   "gain_over_mean": 0.07984900658896982,
+   "mean_regret_vs_oracle": 0.024035047061530042,
+   "picked_mean_only": 5,
+   "n_episodes": 20
+  },
+  "stat_conf_before": {
+   "rule_ba": 0.5481986890522881,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.021244919369135862,
+   "gain_over_mean": 0.08087707307098618,
+   "mean_regret_vs_oracle": 0.02300698057951363,
+   "picked_mean_only": 4,
+   "n_episodes": 20
+  },
+  "stat_conf_after": {
+   "rule_ba": 0.5700345108425539,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": 0.000590902421129913,
+   "gain_over_mean": 0.10271289486125196,
+   "mean_regret_vs_oracle": 0.0011711587892479114,
+   "picked_mean_only": 1,
+   "n_episodes": 20
+  },
+  "stat_delta_conf": {
+   "rule_ba": 0.5586099831810298,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.010833625240394107,
+   "gain_over_mean": 0.09128836719972794,
+   "mean_regret_vs_oracle": 0.012595686450771812,
+   "picked_mean_only": 3,
+   "n_episodes": 20
+  },
+  "stat_bias_shift_max_abs": {
+   "rule_ba": 0.5650930395825349,
+   "fixed_cross_ba": 0.5694436084214239,
+   "fixed_mean_ba": 0.4673216159813019,
+   "oracle_ba": 0.5712056696318017,
+   "gain_over_cross": -0.004350568838889068,
+   "gain_over_mean": 0.09777142360123298,
+   "mean_regret_vs_oracle": 0.006112630049266848,
+   "picked_mean_only": 1,
+   "n_episodes": 20
+  }
+ }
+}
