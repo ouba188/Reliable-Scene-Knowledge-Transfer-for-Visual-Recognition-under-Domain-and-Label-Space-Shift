@@ -1,0 +1,48 @@
+==============================================================================
+### SND
+  - ty distribution. This is done via a softmax activation with temperature-scaling to ignore samples out- side of the local neighborhood. Once we deﬁne the soft neighborhoods, we can estimate their density by comput- ing the entropy of the distribution. The overall pipeline in Fig. 3 consists of 1) computing the similarity between sam- ples, 2) applying the softmax activation with temperature- scaling (identifying soft neighborhoods), and 3) calculat
+
+  - between sam- ples, 2) applying the softmax activation with temperature- scaling (identifying soft neighborhoods), and 3) calculating soft neighborhood density. Similarity Computation. We ﬁrst compute similarity between target samples, S ∈RNt×Nt, where Nt denotes the number of target samples. Let Sij = f t i , f t j , where f t i denotes a L2 normalized target feature for input xt i. We ignore diagonal elements of S because our goal is to com-
+
+  - between samples into a probabilistic distribution, P, using temperature scaling and the softmax function, Pij = exp(Sij/τ) P j′ exp(Sij′/τ) , (2) where τ is a temperature constant. Note that the tempera- ture scaling and the exponential function have the ability to enlarge the difference between similarity values Sij. There- fore, if a sample j is relatively dissimilar from i, the value of Pij will be very small, which allows us to ignore distant
+
+==============================================================================
+### MixVal
+  - g to instability across various UDA methods. In this paper, we introduce MixVal, a novel target-only method for model selection in UDA. MixVal leverages mixed target samples as validation probes. To achieve this, MixVal employs mixup [33] with unlabeled target samples and their predictions, generating pseudo-labeled mixed samples. These mixed samples are further categorized into two types, depending on whether mixup is performed intra-cluster or inter-clu
+
+  - e empirical evaluations of existing validation baselines. • We introduce MixVal, a novel target-only validation method that directly probes the target structure using mixed samples. MixVal combines the strengths of both SND and Entropy through novel consistency-based probing with inter-cluster and intra-cluster mixed samples. • We conduct extensive experiments to evaluate MixVal’s effectiveness in model selection across various UDA settings, including clo
+
+  - ur extensive evaluation of MixVal. 5 Conclusion In summary, we introduce MixVal, a novel and straightforward target-only method for model selection in unsupervised domain adaptation (UDA). MixVal leverages inference-stage mixup to generate two distinct types of mixed samples, facilitating effective probing of the learned target structure while elegantly considering key assumptions used in previous approaches. Our extensive evaluations encompass diverse UD
+
+==============================================================================
+### EnsV
+  - or Unsupervised Domain Adaptation: An Empirical Study and A Certified Baseline Dapeng Hu1∗ Mi Luo3 Jian Liang4,5† Chuan-Sheng Foo2,1 1Centre for Frontier AI Research, A*STAR, Singapore 2Institute for Infocomm Research, A*STAR, Singapore 3National University of Singapore 4NLPR & MAIS, Institute of Automation, Chinese Academy of Sciences 5School of Artificial Intelligence, University of Chinese Academy of Sciences Abstract Selecting appropriate hy
+
+  - , which we call EnsV, is both theoretically and empirically certified to avoid the worst-case selection, ensuring high reliability. Additionally, EnsV is versatile for various practical but challenging UDA scenarios, including validation of open-partial-set UDA and source-free UDA. Finally, we call for more attention to the reliability of model selection in UDA: avoiding the worst-case is as significant as achieving peak selection performance an
+
+  - UDA with unknown open classes [19]. Despite EnsV not being certified for peak-performance selection, we hope that, as the first to focus on the practical 2 Table 2: Comparisons of unsupervised model selection approaches used for UDA. Method covariate shift label shift w/o source data w/o extra hyperparameter w/o extra training worst-case avoidance SourceRisk [9] ✗ ✗ ✗ ✗ ✓ ✗ IWCV [14] ✓ ✗ ✗ ✗ ✗ ✗ DEV [15] ✓ ✗ ✗ ✗ ✗ ✗ RV [16] ✓ ✗ ✗ ✗ ✗ ✗ Entropy
+
+==============================================================================
+### MODfinity
+  - earning have been 5093 Fine-grained Sample Filtering Modal-Affinity Metric Learning Modal-Affinity Distillation Modal2 Encoder Modal1 Encoder Class Encoder ࣦெைெ௅ ଵ ெࣦெைெ௅ ଶ Labeled Source “Cat” “Truck” “Cat” “Guitar” “Bark” … ݈ܿܽݏݏ Unlabeled Target ܻത௞=“Cat” ഥ݉= 2 Supervised Loss Classifier ࣦ௖ଵ Classifier ࣦ௖ଶ ࣦெை஽ ଵ student teacher Training of affinity measurement Fine-grained sample filtering Modal-affinity distillation Allow loss backp
+
+  - ained Sample Filtering Modal-Affinity Metric Learning Modal-Affinity Distillation Modal2 Encoder Modal1 Encoder Class Encoder ࣦெைெ௅ ଵ ெࣦெைெ௅ ଶ Labeled Source “Cat” “Truck” “Cat” “Guitar” “Bark” … ݈ܿܽݏݏ Unlabeled Target ܻത௞=“Cat” ഥ݉= 2 Supervised Loss Classifier ࣦ௖ଵ Classifier ࣦ௖ଶ ࣦெை஽ ଵ student teacher Training of affinity measurement Fine-grained sample filtering Modal-affinity distillation Allow loss backpropagation Prevent loss backpr
+
+  - ifier ࣦ௖ଵ Classifier ࣦ௖ଶ ࣦெை஽ ଵ student teacher Training of affinity measurement Fine-grained sample filtering Modal-affinity distillation Allow loss backpropagation Prevent loss backpropagation unidirectional unidirectional guide ܨ௧ܨ௧೔ ሺଵሻ ܨ௧ܨ௧೔ ሺଶሻ 0.2 … 0.1 0.1 0.4 0.1 … 0.8 0.0 0.1 Affinity Score: ܮ௄ … ܮଷ ܮଶ ܮଵ c Ȱሺܨ௧೔ ሺ௠ሻǡ ܮ௞ሻ LM ܧ௖ ܧ௠ ܧ௠ Figure 2. Our Modal-Afﬁnity Multimodal Domain Adaptation framework consists of three main stages.
+
+==============================================================================
+### NegTransfer
+  - Characterizing and Avoiding Negative Transfer Zirui Wang, Zihang Dai, Barnab´as P´oczos, Jaime Carbonell Cargenie Mellon University {ziruiw,dzihang,bapoczos,jgc}@cs.cmu.edu Abstract When labeled data is scarce for a speciﬁc target task, transfer learning often offers an effective solution by utiliz- ing data from a related source task. However, when trans- ferring knowledge from a less related source, it may in- versely h
+
+  - versely hurt the target performance, a phenomenon known as negative transfer. Despite its pervasiveness, negative transfer is usually described in an informal manner, lack- ing rigorous deﬁnition, careful analysis, or systematic treat- ment. This paper proposes a formal deﬁnition of nega- tive transfer and analyzes three important aspects thereof. Stemming from this analysis, a novel technique is proposed to circumvent negative transfer by ﬁltering out
+
+  - this analysis, a novel technique is proposed to circumvent negative transfer by ﬁltering out unrelated source data. Based on adversarial networks, the technique is highly generic and can be applied to a wide range of transfer learning algorithms. The proposed approach is evaluated on six state-of-the-art deep transfer methods via experiments on four benchmark datasets with varying lev- els of difﬁculty. Empirically, the proposed method consis- tently i
+
+==============================================================================
+### SENTRY
+  - SENTRY: Selective Entropy Optimization via Committee Consistency for Unsupervised Domain Adaptation Viraj Prabhu Shivam Khare Deeksha Kartik Judy Hoffman Georgia Institute of Technology {virajp,skhare31,dkartik3,judy}@gatech.edu Abstract Many existing approaches for unsupervised domain adap- tation (UDA) focus on adapting under only data distribu- tion shift and offer limited success under additional cross- domain label distribu
+
+  - salignment. We propose Se- lective Entropy Optimization via Committee Consistency (SENTRY), a UDA algorithm that judges the reliability of a target instance based on its predictive consistency un- der a committee of random image transformations. Our algorithm then selectively minimizes predictive entropy to increase confidence on highly consistent target instances, while maximizing predictive entropy to reduce confidence on highly inconsistent o
+
+  - rget instance based on its predictive consistency un- der a committee of random image transformations. Our algorithm then selectively minimizes predictive entropy to increase confidence on highly consistent target instances, while maximizing predictive entropy to reduce confidence on highly inconsistent ones. In combination with pseudolabel- based approximate target class balancing, our approach leads to significant improvements over the state-o
+
