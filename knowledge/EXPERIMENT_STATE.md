@@ -306,3 +306,31 @@ gate −0.48、gate_shuf −0.23、**gate_oracle +0.52 ≈ full +0.55** ⇒ **�
 **文件**：`e21_gate_fixed.py`、`e22_profile_gate.py`、`e23_semantic_profile_gate.py`、`e22_out.txt`、`e23_out.txt`。
 **下一步（已定的方向）**：① 换 2–3 个视觉 backbone 验证 +2.24pp 的稳定性（论文必需）；② 带着这个瓶颈去查"无标签增益估计/负迁移检测/可迁移性度量（LogME/LEEP/NCE/H-score/ETran）"的文献。
 
+### E16c 文献推荐的两种无标签选择器（SND / MixVal）在本任务同样失效（2026-09-22，e24）
+
+文献包 `E:/Docms/无监督域适应/translated/0917/0922_papers/`（四类 + `文献参考.md`）。该笔记的两条关键纠正/建议：
+- **纠错**：LogME / LEEP / NCE / H-score / GBC **都不是严格无标签的**（需目标标签算类条件统计）→ 不能直接用；真正无标签的是 **DEV(ICML19) / SND(ICCV21) / MixVal(NeurIPS23) / EnsV(NeurIPS24)**。
+- **建议的判据**：`Δ_p = BA_p(V+K) − BA_p(V)`，用 `s_p = [SND, MixVal, 视觉—知识分歧, 熵变化, 模态亲和度, 知识覆盖率, 先验差异]` 学 `Ĝ: s_p → Δ_p`；并点出"**能否选择'不使用知识'作为最优候选**"是空位。
+
+**实测 e24**（SND/MixVal 直接在目标港上挑 V 还是 V+K；决策分 8 维上计算，两候选同维可比）：
+
+| arm | mean BA | Δ vs V | 选择正确 |
+|---|---:|---:|---:|
+| V | 0.4395 | — | — |
+| K（全用） | 0.4619 | +2.24 | — |
+| **snd_pick** | 0.4460 | +0.64 | **12/24** |
+| **mix_pick** | 0.4531 | +1.35 | **13/24** |
+| oracle | 0.4733 | +3.38 | 24/24 |
+| rand | 0.4425 | +0.29 | — |
+
+`SND(V) ≈ SND(K)`（如 6.275 vs 6.299）→ **该指标分辨不出两个候选**。
+
+**累计四种无标签判据全部 ≈ 抛硬币**：71 维均值画像 15/24 · 8 维语义画像 15/24 · **SND 12/24** · **MixVal 13/24**。
+⇒ **缺口 +1.14pp（oracle 3.38 − 实得 2.24）在四种判据下均不可达**。
+**caveat**：SND/MixVal 为决策分改造版（V 是 128 维、V+K 是 199 维，特征空间不可比），非论文原版（用倒数第二层特征）；不排除原版实现有差异。
+
+**由此确定的论文定位**（与文献笔记一致）：**Unlabeled Gain-Aware and Harm-Avoiding Knowledge Transfer**——
+指标用 `Rescue = P(V+K对,V错)`、`Harm = P(V+K错,V对)`、`NetGain = Rescue − Harm`；
+门控分两级（港级 g_p / 样本级 g_i），核心贡献是**无标签估计 g 并证明它减少负迁移**。
+**文件**：`e24_snd_mixval_pick.py`、`e24_out.txt`。
+
