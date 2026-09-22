@@ -1,0 +1,16 @@
+新特征 (38091, 2048) 有限值: True
+
+=== 旧编码器（ImageNet ResNet50, 128-d PCA）===
+  V      0.4395
+  K      0.4624
+  gate   0.4629
+  oracle 0.4737
+
+=== 新编码器（SAR-pretrained ResNet50 = S1 MoCo, 128-d PCA）===
+  V      0.3818
+  K      0.4066
+  gate   0.4122
+  oracle 0.4196
+
+Δ(V+K − V):  旧 +0.0228   新 +0.0248
+Δ(gate − V): 旧 +0.0234   新 +0.0304
