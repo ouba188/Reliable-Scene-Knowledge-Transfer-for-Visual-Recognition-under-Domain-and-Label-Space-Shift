@@ -1,0 +1,15 @@
+arm          mean BA     Δ vs V
+-------------------------------
+V             0.4395    +0.0000
+K             0.4619    +0.0224
+global        0.4628    +0.0233
+matchGain     0.4607    +0.0212
+matchDir      0.4604    +0.0209
+gainShuf      0.4566    +0.0171
+oracle        0.4733    +0.0338
+  global      判对 19/24  corr +0.525
+  matchGain   判对 17/24  corr +0.154
+  matchDir    判对 14/24  corr +0.528
+  gainShuf    判对 12/24  corr -0.229
+
+（源港相似度 cos 与该港真实增益的相关，各折均值: -0.039）
