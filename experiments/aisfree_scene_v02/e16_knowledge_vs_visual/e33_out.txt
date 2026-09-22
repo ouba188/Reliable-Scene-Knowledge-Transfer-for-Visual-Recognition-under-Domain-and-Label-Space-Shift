@@ -1,0 +1,19 @@
+=== 置换检验 (1000 次打乱 dK 的类顺序) ===
+  选择正确率: 实际 0.792 (19/24)  对照 mean 0.499  P95 0.667  → p = 0.0030
+  corr(g,gain): 实际 +0.525  对照 mean -0.004  P95 +0.336  → p = 0.0040
+  gate BA:     实际 0.4628  对照 mean 0.4507  P95 0.4602  → p = 0.0170
+
+=== Rescue / Harm / NetGain (V vs V+K, 全部样本) ===
+  Rescue = P(K对, V错) = 2877/38091 = 0.0755
+  Harm   = P(K错, V对) = 3005/38091 = 0.0789
+  NetGain= Rescue − Harm = -0.0034  (命中率净变化 -0.0034)
+
+class                        V rec   K rec        Δ      n
+bulk_carrier                 0.400   0.467   +0.067  11128
+fishing_vessel               0.879   0.887   +0.008   8599
+general_cargo                0.391   0.475   +0.084   5929
+product_chemical_tanker      0.247   0.089   -0.158   5827
+container_ship               0.529   0.445   -0.083   2208
+crude_oil_tanker             0.624   0.415   -0.209   1757
+tug_towing                   0.090   0.340   +0.250   1478
+offshore_supply              0.310   0.019   -0.291   1165

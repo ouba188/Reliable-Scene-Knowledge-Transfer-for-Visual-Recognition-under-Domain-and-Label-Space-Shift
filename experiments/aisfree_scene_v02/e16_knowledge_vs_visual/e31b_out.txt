@@ -1,0 +1,10 @@
+S1b 特征 (38091, 2048) finite: True
+
+=== SAR-pretrained ResNet50 (S1 MoCo), CORRECT S1 preprocessing (dB, 224, S1 stats) ===
+  V      0.4420
+  K      0.4625
+  gate   0.4516
+  oracle 0.4748
+
+Δ(K−V) = +0.0205   Δ(gate−V) = +0.0096
+（对照：ImageNet PCA-128 → V 0.4395 / K 0.4624 / Δ +2.28）
