@@ -493,3 +493,20 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E16i 知识维度审计：无港口指纹泄漏，但 1 维死、20 维近死（2026-09-23 凌晨，e36/e36b）
+
+对 71 维"合法知识"逐维做两个互信息审计（16 箱直方图，按 H(y)/H(port) 归一）：
+- `I(dim; class)` = 类别信息量；`I(dim; port)` = **港口身份性**（高 → 捷径风险，AIS 那次就是这类）。
+
+**结果**：
+- **无港口指纹级维度**：`I/port` 最高 **0.148**（`osm_infra_energy_fuel_proximity`），前 21 名全是 OSM 设施邻近度 —— 合法且预期（港口设施本就标示港口）。`I/port > 0.5` 的维度数 = **0** ⇒ **不存在 AIS 那种捷径泄漏**。
+- 全体平均 `I/class 0.017` / `I/port 0.041`。
+
+**数据质量（影响"71 维知识"的描述）**：
+- **完全退化（sd=0）：1 维** — `osm_seamark_routes_near_vs_route`（support 32.7% 但取值全 0）。
+- **近退化（sd<0.01）：20 维** — 多为 `*_near_vs_route`、`*_relative_evidence`、`osm_dry_chain_*`（低方差、support 仅 2–25%）。
+- 70/71 维至少有两个不同取值（非常数）⇒ **有效维度 ≈ 50**，低支撑那批贡献很小。
+
+⇒ 后续表述应写"**71 维（其中 ~50 维有信息）**"，并说明高支撑维度集中于 OSM 设施邻近度与货链联合体。
+**文件**：`e36_dim_audit.py`、`e36b_degenerate_dims.py`。
+
