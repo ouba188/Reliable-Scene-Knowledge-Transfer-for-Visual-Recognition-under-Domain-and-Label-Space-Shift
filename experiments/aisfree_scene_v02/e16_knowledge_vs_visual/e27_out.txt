@@ -1,0 +1,37 @@
+=== 主判据 alignV ===
+  方向判对 19/24 ; corr(g, gain) = +0.525
+  选 K 的港数: 11 ; 实际净为正的港数: 14
+  gate BA = 0.4628  (V 0.4395 / always-K 0.4619 / oracle 0.4733)
+
+=== 多种子打乱对照（打乱 dK 的类顺序）===
+  seed 0: 判对  8/24  corr -0.111  gate BA 0.4422
+  seed 1: 判对 13/24  corr -0.034  gate BA 0.4505
+  seed 2: 判对 12/24  corr +0.120  gate BA 0.4468
+  seed 3: 判对 16/24  corr +0.288  gate BA 0.4583
+  seed 4: 判对  9/24  corr -0.120  gate BA 0.4440
+
+port                    V      K   g_align   pick   true shiftNorm
+Qingdao             0.752  0.767   +0.0221      K      K     0.355
+Hamburg             0.625  0.677   +0.0191      K      K     0.303
+Rotterdam           0.581  0.653   +0.0184      K      K     0.271
+Antwerp-Bruges      0.557  0.652   +0.0167      K      K     0.232
+Shanghai            0.605  0.655   +0.0159      K      K     0.323
+Melbourne           0.543  0.601   +0.0122      K      K     0.343
+Ningbo-Zhoushan     0.569  0.647   +0.0075      K      K     0.609
+Busan               0.470  0.409   +0.0069      K      V     0.205
+Port Said           0.345  0.372   +0.0045      K      K     0.283
+Mombasa             0.562  0.593   +0.0041      K      K     0.294
+Fujairah            0.340  0.481   +0.0028      K      K     0.273
+Tanger Med          0.387  0.400   -0.0009      V      K     0.296
+New York            0.432  0.474   -0.0044      V      K     0.152
+Sydney Botany       0.418  0.417   -0.0056      V      V     0.350
+Port Klang          0.358  0.340   -0.0068      V      V     0.277
+Jebel Ali           0.381  0.374   -0.0075      V      V     0.249
+Newcastle           0.388  0.461   -0.0080      V      K     0.273
+Houston             0.327  0.299   -0.0093      V      V     0.153
+Richards Bay        0.339  0.338   -0.0102      V      V     0.347
+Callao              0.281  0.344   -0.0123      V      K     0.187
+Santos              0.390  0.360   -0.0126      V      V     0.372
+Singapore           0.360  0.277   -0.0162      V      V     0.258
+Los Angeles         0.364  0.357   -0.0231      V      V     0.332
+Port Hedland        0.174  0.136   -0.0278      V      V     0.462
