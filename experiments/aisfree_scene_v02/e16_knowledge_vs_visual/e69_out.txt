@@ -1,0 +1,23 @@
+H_d(存在定义) 中位 0.816 ｜ H_d(前列四分位) 中位 0.885 ｜ 可用维 61
+可算共享度的 chip: 23039/38091 (60%)  均值 0.782 ｜ 最小 0.728 ｜ 最大 0.804
+非中性 chip: rescued 3504 / harmed 2261
+
+aggregation    AUC(rescue)  AUC(harm) AUC(discrim.)
+mean                0.391      0.609        0.719
+min                 0.413      0.587        0.674
+max                 0.374      0.626        0.752
+
+min: 低共享率四分位(n=1149) 伤害 0.300 救回 0.700 ｜ 高共享率四分位(n=1074) 伤害 0.532 救回 0.468
+mean: 低共享率四分位(n=1131) 伤害 0.239 救回 0.761 ｜ 高共享率四分位(n=1071) 伤害 0.534 救回 0.466
+
+class                       n     share      Vacc     VKacc    dVK(pp)
+bulk_carrier             6053     0.609     0.400     0.555       15.6
+fishing_vessel           2270     0.579     0.879     0.869       -1.0
+general_cargo            3698     0.638     0.391     0.414        2.3
+product_chem_tanker      5444     0.855     0.247     0.196       -5.1
+container_ship           1829     0.875     0.529     0.495       -3.4
+crude_oil_tanker         1462     0.865     0.624     0.484      -13.9
+tug_towing               1198     0.823     0.090     0.158        6.8
+offshore_supply          1085     0.847     0.310     0.288       -2.2
+类别级: 共享度 vs ΔVK  Pearson r=-0.583 (p=0.129)  Spearman ρ=-0.762 (p=0.028)  n=8
+   置换检验 p=0.0344
