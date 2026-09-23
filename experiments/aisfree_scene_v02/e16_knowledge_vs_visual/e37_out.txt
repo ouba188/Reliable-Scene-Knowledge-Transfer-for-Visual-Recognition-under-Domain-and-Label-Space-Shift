@@ -1,0 +1,33 @@
+arm                         mean BA  alpha    Δ vs V
+------------------------------------------------------
+V                            0.4395    0.3         —
+V + prior(source class freq)   0.3919    0.3   -0.0476   (逐港: 8/24 正, worst -26.99)
+V + K_portmean               0.2798   10.0   -0.1597   (逐港: 3/24 正, worst -75.21)
+V + K_portmean_shuffled      0.4395    0.3   +0.0000   (逐港: 0/24 正, worst +0.00)
+K(0-70) standardized         0.4619    0.3   +0.0224   (逐港: 14/24 正, worst -8.27)
+
+port                      V K_portmean K_portmean_s    K std
+Qingdao               0.752    0.000    0.752    0.767
+Mombasa               0.562    0.143    0.562    0.593
+Fujairah              0.340    0.016    0.340    0.481
+Newcastle             0.388    0.143    0.388    0.461
+New York              0.432    0.194    0.432    0.474
+Singapore             0.360    0.125    0.360    0.277
+Houston               0.327    0.125    0.327    0.299
+Richards Bay          0.339    0.138    0.339    0.338
+Hamburg               0.625    0.438    0.625    0.677
+Jebel Ali             0.381    0.202    0.381    0.374
+Tanger Med            0.387    0.210    0.387    0.400
+Port Said             0.345    0.187    0.345    0.372
+Busan                 0.470    0.333    0.470    0.409
+Santos                0.390    0.272    0.390    0.360
+Los Angeles           0.364    0.273    0.364    0.357
+Shanghai              0.605    0.554    0.605    0.655
+Port Klang            0.358    0.314    0.358    0.340
+Callao                0.281    0.240    0.281    0.344
+Antwerp-Bruges        0.557    0.517    0.557    0.652
+Melbourne             0.543    0.525    0.543    0.601
+Port Hedland          0.174    0.173    0.174    0.136
+Sydney Botany         0.418    0.423    0.418    0.417
+Rotterdam             0.581    0.588    0.581    0.653
+Ningbo-Zhoushan       0.569    0.580    0.569    0.647
