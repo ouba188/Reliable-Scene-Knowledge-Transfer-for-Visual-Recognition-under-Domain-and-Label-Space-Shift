@@ -493,6 +493,22 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E17a DINOv2 强编码器基线：不比 ImageNet ResNet50 强，但知识增益完整复现（2026-09-23，e58）
+
+DINOv2 ViT-S/14（timm，`dynamic_img_size=True`，2 通道自动适配，224×224，38,091 片，0 缺失，66 分钟）；逐折 PCA-128 + 同 LOO 协议，四臂与 e57 对齐：
+
+| 臂 | **DINOv2 ViT-S/14** | ImageNet ResNet50 | 差 |
+|---|---:|---:|---:|
+| V_ridge | 0.4124 | 0.4395 | **−0.0271** |
+| VK_pct_ridge | 0.4566 | 0.4735 | −0.0169 |
+| gbm_z | 0.4482 | 0.4531 | −0.0049 |
+| gbm_zk | 0.5161 | 0.5272 | −0.0111 |
+
+**结论**：
+1. **DINOv2 在本任务上没有更强**（ridge 下 −2.7pp）——现代 ViT 基础模型打不过 ImageNet ResNet50。合理成因：128→224 上采样 + SAR↔自然图像域差，其预训练优势未兑现。⇒ **"换更强编码器提基线"这条路到此为止**，编码器侧的墙是**数据规模与域差**，不是模型选型。
+2. **但知识增益完整复现**：**`gbm_zk − gbm_z = +6.79pp，Wilcoxon p=0.0001`**（ImageNet 上 +7.41，p=0.0001）；ridge 侧 +4.41（20/24 正，worst −5.18）⇒ **"强判据下增益翻倍"是编码器无关的结论**，比单编码器证据硬得多。
+**文件**：`extract_strong_features.py`、`e58_dinov2_baseline.py`、`e58_out.txt`、`features_strong/feat_dinov2s.float16.npy`、`strong_dinov2s.log`。
+
 ### E16z 同容量判据对照（e57）：知识在强判据下增益更大；"判据容量"是独立于"基线强度"的第二条轴
 
 e56 的 `joint_gbm` 同时改了模型类与是否用知识 ⇒ 不可归因。e57 用**同容量**补上缺失的对照（逐港 LOO，24 折）：

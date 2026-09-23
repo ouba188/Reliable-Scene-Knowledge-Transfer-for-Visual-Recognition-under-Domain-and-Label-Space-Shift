@@ -1,0 +1,38 @@
+DINOv2 features (38091, 384)
+port                 V_ridge VK_pct_ridge    gbm_z   gbm_zk
+------------------------------------------------------------
+Antwerp-Bruges         0.515       0.646    0.717    0.851
+Busan                  0.429       0.494    0.653    0.671
+Callao                 0.301       0.325    0.208    0.348
+Fujairah               0.280       0.370    0.474    0.630
+Hamburg                0.609       0.697    0.751    0.738
+Houston                0.332       0.290    0.292    0.356
+Jebel Ali              0.346       0.385    0.303    0.356
+Los Angeles            0.368       0.375    0.325    0.283
+Melbourne              0.592       0.630    0.716    0.681
+Mombasa                0.384       0.493    0.380    0.348
+New York               0.452       0.401    0.361    0.397
+Newcastle              0.386       0.399    0.370    0.427
+Ningbo-Zhoushan        0.536       0.609    0.690    0.810
+Port Hedland           0.160       0.180    0.186    0.188
+Port Klang             0.348       0.378    0.299    0.299
+Port Said              0.316       0.306    0.202    0.306
+Qingdao                0.700       0.738    0.770    0.929
+Richards Bay           0.292       0.318    0.348    0.428
+Rotterdam              0.577       0.721    0.784    0.910
+Santos                 0.400       0.445    0.336    0.341
+Shanghai               0.537       0.636    0.681    0.912
+Singapore              0.352       0.327    0.290    0.332
+Sydney Botany          0.328       0.358    0.281    0.412
+Tanger Med             0.359       0.437    0.342    0.431
+
+V_ridge       DINOv2 0.4124   (ImageNet ResNet50 0.4395, 差 -0.0271)
+VK_pct_ridge  DINOv2 0.4566   (ImageNet ResNet50 0.4735, 差 -0.0169)
+gbm_z         DINOv2 0.4482   (ImageNet ResNet50 0.4531, 差 -0.0049)
+gbm_zk        DINOv2 0.5161   (ImageNet ResNet50 0.5272, 差 -0.0111)
+
+VK_pct_ridge  Δ vs V_ridge  +4.41  逐港正 20/24  worst  -5.18
+gbm_z         Δ vs V_ridge  +3.58  逐港正 11/24  worst -11.46
+gbm_zk        Δ vs V_ridge +10.36  逐港正 17/24  worst  -8.54
+
+知识增量（DINOv2）: gbm_zk − gbm_z = +6.79 pp  Wilcoxon p=0.0001   (ImageNet 上为 +7.41, p=0.0001)
