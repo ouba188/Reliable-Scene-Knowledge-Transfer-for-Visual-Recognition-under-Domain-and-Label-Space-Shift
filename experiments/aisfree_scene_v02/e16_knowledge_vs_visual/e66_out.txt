@@ -1,0 +1,47 @@
+网格单元数 143
+  n < 1    的单元:   0 (0%)  其中 n<5 的类别占样本量 0.0%
+  n < 5    的单元:  10 (7%)  其中 n<5 的类别占样本量 0.1%
+  n < 20   的单元:  33 (23%)  其中 n<5 的类别占样本量 0.8%
+  n < 50   的单元:  56 (39%)  其中 n<5 的类别占样本量 2.7%
+  n < 100  的单元:  77 (54%)  其中 n<5 的类别占样本量 6.4%
+
+逐格 n 的分位: p10=7 p25=20 中位=82 p75=311 p90=777
+
+port                   n    类别数     BA Δ    ACC Δ BAΔ(n≥20)       最差类    主类占比
+Los Angeles          583      8    -1.81    -7.03     -1.23 crude_oil     37%
+Santos              1658      8    -0.48   +18.94     +0.88 container     54%
+New York             470      8    +0.64    -1.28     +0.74 crude_oil     42%
+Singapore           5259      8    +0.91    +5.21     +0.91 crude_oil     36%
+Port Hedland         859      6    +1.77   +43.19     +4.93 offshore_     91%
+Newcastle            299      7    +1.77    +9.70     +4.13 general_c     64%
+Sydney Botany        304      8    +2.08   +13.82     +5.82 general_c     64%
+Tanger Med          1266      8    +2.33   +15.80     +8.30 general_c     27%
+Port Said           1895      8    +3.61    +8.92     +4.12 offshore_     30%
+Mombasa              149      7    +3.82   +13.42    +13.36 fishing_v     55%
+Melbourne             64      3    +3.88    +7.81    +11.63 fishing_v     67%
+Port Klang          3425      8    +4.17    +9.34     +4.17 crude_oil     26%
+Richards Bay         744      8    +6.08   +30.78    +12.17 general_c     71%
+Jebel Ali           4602      8    +6.13   +10.43     +6.13 crude_oil     32%
+Houston              804      8    +7.08    +3.61     +7.06 crude_oil     34%
+Hamburg             1619      3   +10.25    -4.82    +10.25 general_c     59%
+Callao               476      8   +10.73   +10.29    +16.41 fishing_v     40%
+Rotterdam            573      3   +15.62   +13.96    +15.62 fishing_v     51%
+Qingdao             1981      3   +15.94   +11.66    +15.94 fishing_v     51%
+Shanghai            2390      3   +20.27   +16.95    +20.27 fishing_v     48%
+Busan                871      3   +21.49   +15.96    +21.49 general_c     40%
+Ningbo-Zhoushan     5756      3   +25.33    +7.04    +25.33 fishing_v     79%
+Antwerp-Bruges       886      3   +27.60   +24.49    +27.60 fishing_v     55%
+Fujairah            1158      3   +32.34   +32.82    +32.34 fishing_v     83%
+
+BA 与 ACC 符号不一致的港: 3 个 -> [('Hamburg', np.float64(10.2), -4.8), ('New York', np.float64(0.6), -1.3), ('Santos', np.float64(-0.5), 18.9)]
+支持过滤(n>=20)后符号翻转的港: 1 个 -> [('Santos', np.float64(-0.5), np.float64(0.9))]
+
+按类别看"在多少个港为正"（gate_old − ridge_V，要求该港该类 n>=20）:
+  bulk_carrier         港数 24  正 24/24  均值 +41.0pp  最差 +11.6  最好 +79.3
+  fishing_vessel       港数 16  正  6/16  均值 +1.8pp  最差 -13.5  最好 +22.8
+  general_cargo        港数 22  正 13/22  均值 +6.2pp  最差 -24.1  最好 +48.8
+  product_chem_tanker  港数 11  正  6/11  均值 +7.5pp  最差 -9.4  最好 +42.5
+  container_ship       港数 11  正  1/11  均值 -6.7pp  最差 -26.2  最好 +3.2
+  crude_oil_tanker     港数  9  正  0/ 9  均值 -16.2pp  最差 -40.5  最好 -1.9
+  tug_towing           港数 11  正  1/11  均值 -2.0pp  最差 -6.6  最好 +5.6
+  offshore_supply      港数  6  正  1/ 6  均值 -8.4pp  最差 -23.8  最好 +7.3
