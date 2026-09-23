@@ -493,6 +493,26 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E16s 物理规范化视觉基线（层一）：弱杠杆，但机制稳健（2026-09-23，e48）
+
+三变体走**同一管线**（同网络、layer4 全局池化、全局 PCA-128、同 LOO），raw 作管线内对照：
+
+| 变体 | V | V+K(港内百分位) | Δ |
+|---|---:|---:|---:|
+| raw（$((v/255)-0.5)/0.25$，legacy 配方） | 0.4420 | 0.4775 | +3.55 |
+| **bg**（逐 chip 局部海面归一化 $z=\frac{v-\mathrm{med}}{1.4826\,\mathrm{MAD}}$，海面≈0） | **0.4525** | 0.4886 | +3.61 |
+| pol（3 通道 = raw VV, raw VH, $(20\log_{10}VV-20\log_{10}VH)/10$） | 0.4400 | 0.4626 | +2.27 |
+
+配对 vs raw（视觉基线逐港）：**bg +1.04pp，12 更好/12 更差，worst −4.71，符号检验 p=1.0 ⇒ 无一致改善**；**pol −0.21pp，9/15，worst −9.03 ⇒ 无用且损害知识增益**。
+
+**结论**：
+1. **管线复现成立**：raw 变体 V=0.4420 vs legacy `visual_projection.npz` 的 0.4395（差 0.25pp）⇒ 变体间对比有效。
+2. **物理规范化是弱杠杆**：最好的（bg）只给不显著的 +1.04pp，远不如港内百分位（+3.40）与实例级闸门（+3.67）。
+3. **正面副产品**：换成 bg 输入后知识仍给 +3.61pp ⇒ **机制对输入归一化稳健**。
+4. **未做**：船轴规范化（manifest 无角度字段，需回到 `labels_json` 的 OBB 点）；入射角条件化（可由 `asf_meta.csv` 的 `centerLat/Lon` 与轨道推算，未做）。
+
+**文件**：`e48_physics_norm.py`、`e48_out.txt`、`features_physnorm/`。
+
 ### E16r 域变化轴审计：港内采集波动 > 港间差异，这解释了为什么"港口级"全失败（2026-09-23，e46/e47）
 
 用 **ASF 官方元数据**（`fetch_asf_meta.py`，841/841 产品免登录取到 `flightDirection`/`platform`/`startTime`/`pathNumber`/`centerLat/Lon`）替代自造反演。先做方差分量估计（**校正抽样噪声**，e47）：
