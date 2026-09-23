@@ -493,6 +493,31 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### 角色分工：源端语义接地 + 目标端实例化（2026-09-23 确立）
+
+$$\text{目标港提供'当前场景事实'（}K_t\text{），源港提供'这些事实应怎样被解释'（}\mathcal M_S\text{）}$$
+
+迁移的载体**不是** $K_s\to K_t$，而是**解释机制** $\mathcal M_s\to\mathcal M_t$：
+$$\ell_t=\ell_V+\rho_t\Delta_t,\qquad \Delta_t=\text{源端学到的关系语义},\ \rho_t=\text{源端学到的适用性}\times\text{目标端当前条件}$$
+
+目标端无标签也能算出 $\rho$ 的**输入**（知识来源、图层覆盖、港口拓扑类型、作业设施组合、目标关系是否在源支持范围内、视觉—知识是否冲突）。
+
+### 与本管线的对应（哪些已有、哪些缺）
+
+| 框架部件 | 本项目对应物 | 状态 |
+|---|---|---|
+| 目标港自行构造 $K_t$ | 71 维知识全部在目标港 OSM/检测上计算 | ✅ 已实现 |
+| 源港提供关系语义 $\Delta$ | 线性 ridge on `[z; r]` | ✅ 已实现（+2.24pp） |
+| Knowledge visibility mask（OPAL CoRL25） | `relations.npz` 的 `support` 掩码 | ✅ 已有（青岛锚地 D1=0 即其失效实例） |
+| 可靠性路由 $\rho$（MODfinity CVPR25 / Selective-TTA ICML25） | 闸门 E21：oracle 0.4616 < 全用 0.4619 | ❌ 已测，可提取空间为空 |
+| **检索/非参数 $\Psi(z,r)$**（RAM CoRL25 affordance memory） | 未实现 | ⬜ **唯一缺口** |
+
+**关键等价**：框架的实例级 $\rho$ **就是** $G_i$ 符号预测器 ⇒ **$G_i$ 可学习性上限实验是这一切的闸门**（AUC≈0.5 ⇒ $\rho$ 不可学，检索式 $\Psi$ 亦无救；AUC>0.6 ⇒ 检索式 $\Psi$ 是其自然实现）。
+
+**已核文献**（摘要与转述一致，直连抓取核对）：ToMo-UDA ICML24（拓扑+形态知识迁移）、MapEX WACV25（minimalist/noisy/outdated 三类已有地图）、OPAL CoRL25（cross-modal visibility mask + adaptive radial fusion）、RAM CoRL25（affordance memory + 检索式迁移）、Selective-TTA ICML25（uni-modal shift 导致负迁移）。另见 NavMapFusion WACV26、Search-TTA CoRL25、AffCorrs、MODfinity CVPR25。
+
+---
+
 ## 研究核心定义（2026-09-23 确立）
 
 跨港口学习的目标**不是**获得完全域不变的视觉表示，**也不是**学习港口知识到类别标签的固定映射，而是学习一种**具有明确适用范围的条件纠错机制**：识别船型相关的稳定视觉证据，估计港口关系在目标场景中的可迁移性，并在无目标标签条件下判断知识修正的**方向、幅度与净收益**，只在预计能减少风险时使用知识，否则回退到视觉基线或保留不确定。
