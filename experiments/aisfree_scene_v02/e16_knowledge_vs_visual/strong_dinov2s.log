@@ -1,0 +1,24 @@
+model vit_small_patch14_dinov2.lvd142m device cuda n 38091
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+dim 384 start 0
+2000/38091 152s 13.2 it/s miss=0
+4000/38091 341s 11.7 it/s miss=0
+6000/38091 559s 10.7 it/s miss=0
+8000/38091 754s 10.6 it/s miss=0
+10000/38091 974s 10.3 it/s miss=0
+12000/38091 1171s 10.2 it/s miss=0
+14000/38091 1402s 10.0 it/s miss=0
+16000/38091 1606s 10.0 it/s miss=0
+18000/38091 1853s 9.7 it/s miss=0
+20000/38091 2054s 9.7 it/s miss=0
+22000/38091 2287s 9.6 it/s miss=0
+24000/38091 2486s 9.7 it/s miss=0
+26000/38091 2713s 9.6 it/s miss=0
+28000/38091 2908s 9.6 it/s miss=0
+30000/38091 3130s 9.6 it/s miss=0
+32000/38091 3323s 9.6 it/s miss=0
+34000/38091 3542s 9.6 it/s miss=0
+36000/38091 3725s 9.7 it/s miss=0
+38000/38091 3938s 9.7 it/s miss=0
+38091/38091 3939s 9.7 it/s miss=0
+DONE E:\临时会话\visual_reliable_baseline\features_strong\feat_dinov2s.float16.npy missing 0
