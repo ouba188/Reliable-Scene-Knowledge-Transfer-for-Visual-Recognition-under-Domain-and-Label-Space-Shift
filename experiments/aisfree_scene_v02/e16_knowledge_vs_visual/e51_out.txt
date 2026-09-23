@@ -1,0 +1,37 @@
+=== 0) 支持度检查：各港百分位知识 vs 源港池的 KS 距离（越大越"超出源支持"）===
+   Melbourne          KS 0.0151 
+   Mombasa            KS 0.0064 
+   Newcastle          KS 0.0031 
+   Sydney Botany      KS 0.0030 
+   New York           KS 0.0018 
+   Callao             KS 0.0018 
+   中位 KS 0.0009 ⇒ Singapore 排名 16/24
+
+=== 1) 逐类召回（Singapore, n=5259, alpha=3.0）===
+class                 n        V    K_pct        Δ
+bulk_carrier       1108    0.475    0.573   +9.838
+fishing_vessel       57    0.263    0.298   +3.509
+general_cargo       415    0.219    0.060  -15.904
+product_chemical_tanker   1905    0.210    0.176   -3.412
+container_ship      446    0.527    0.444   -8.296
+crude_oil_tanker    451    0.639    0.426  -21.286
+tug_towing          467    0.154    0.208   +5.353
+offshore_supply     410    0.393    0.222  -17.073
+BA  V 0.3599  K_pct 0.3008  Δ -5.91
+
+=== 2) 翻转解剖 ===
+   救回 436 片 / 误伤 634 片 / 中性 4189 片（共 5259）
+   误伤的真值类分布: [('product_chemical_tanker', 182), ('crude_oil_tanker', 102), ('offshore_supply', 101), ('general_cargo', 80), ('container_ship', 67), ('bulk_carrier', 61), ('tug_towing', 38), ('fishing_vessel', 3)]
+   误伤的 (真值 → 被推成): [('product_chemical_tanker→offshore_supply', 56), ('product_chemical_tanker→general_cargo', 49), ('offshore_supply→general_cargo', 47), ('general_cargo→bulk_carrier', 34), ('general_cargo→offshore_supply', 33), ('crude_oil_tanker→container_ship', 33)]
+   救回的 (真值 → 原错判 → 推成): [('bulk_carrier|crude_oil_tanker→bulk_carrier', 75), ('product_chemical_tanker|offshore_supply→product_chemical_tanker', 55), ('bulk_carrier|general_cargo→bulk_carrier', 28), ('bulk_carrier|product_chemical_tanker→bulk_carrier', 28), ('bulk_carrier|tug_towing→bulk_carrier', 23), ('product_chemical_tanker|container_ship→product_chemical_tanker', 19)]
+
+=== 3) 闸门在 Singapore 内部的表现 ===
+   港内实例级 AUC = 0.666   （救回片平均 p̂=0.642，误伤片平均 p̂=0.453）
+   τ=0.3: 启用 3373/5259  救回保留 339/436  误伤保留 376/634  ⇒ 净 -37 片
+   τ=0.4: 启用 2892/5259  救回保留 301/436  误伤保留 307/634  ⇒ 净 -6 片
+   τ=0.5: 启用 2527/5259  救回保留 282/436  误伤保留 264/634  ⇒ 净 +18 片
+   τ=0.6: 启用 2239/5259  救回保留 263/436  误伤保留 224/634  ⇒ 净 +39 片
+
+=== 4) 误伤的产品分布（是否集中在少数景）===
+   误伤最多产品的景: [(np.str_('S1A_IW_GRDH_1SDV_20250104T112537_20250104T112602_057293_070C93_D06A'), 70), (np.str_('S1A_IW_GRDH_1SDV_20250809T224807_20250809T224832_060465_078475_18D1'), 67), (np.str_('S1A_IW_GRDH_1SDV_20250913T112533_20250913T112558_060968_079865_EAC9'), 48), (np.str_('S1A_IW_GRDH_1SDV_20250727T112532_20250727T112557_060268_077D6F_342B'), 47), (np.str_('S1A_IW_GRDH_1SDV_20250221T112535_20250221T112600_057993_07287C_987F'), 41)]  共 31 个产品有误伤
+   误伤率最高的产品(≥20片): ['S1A_IW_GRDH_1SDV_20250318T22 24.4%(45)', 'S1A_IW_GRDH_1SDV_20250104T11 20.7%(338)', 'S1A_IW_GRDH_1SDV_20250411T22 18.5%(81)', 'S1A_IW_GRDH_1SDV_20250105T22 18.3%(60)']
