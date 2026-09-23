@@ -1,0 +1,29 @@
+host RAM available: 3.34 GB
+device cuda epochs 3 folds 3
+-- fold Antwerp-Bruges (train 37205 / test 886)
+E:\临时会话\visual_reliable_baseline\e35_finetune_baseline.py:84: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  tot += float(loss) * len(sub)
+    ep1 loss 1.0306
+    ep2 loss 0.9130
+    ep3 loss 0.8619
+   fold Antwerp-Bruges: features saved (303 s)
+-- fold Busan (train 37220 / test 871)
+    ep1 loss 1.0249
+    ep2 loss 0.9062
+    ep3 loss 0.8574
+   fold Busan: features saved (293 s)
+-- fold Callao (train 37615 / test 476)
+    ep1 loss 1.0171
+    ep2 loss 0.8993
+    ep3 loss 0.8460
+   fold Callao: features saved (291 s)
+
+=== fine-tuned baseline (0 folds) ===
+D:\Program_files\anaconda3\Lib\site-packages\numpy\_core\fromnumeric.py:3860: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+D:\Program_files\anaconda3\Lib\site-packages\numpy\_core\_methods.py:144: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+  V nan  K_raw nan (Δ +nan)  K_pct nan (Δ +nan)
+  逐折: K_raw 正 0/0   K_pct 正 0/0
+  总耗时 887 s（每折约 887 s → 全 24 折约 5.9 小时）
