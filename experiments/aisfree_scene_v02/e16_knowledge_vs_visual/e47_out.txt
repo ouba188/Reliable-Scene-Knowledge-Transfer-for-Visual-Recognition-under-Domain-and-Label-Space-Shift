@@ -1,0 +1,35 @@
+port                    n    Δ(pp)       SE
+Antwerp-Bruges        886   +12.08     1.42
+Busan                 871    -4.94     1.14
+Callao                476    +0.63     1.62
+Fujairah             1158    +8.55     1.03
+Hamburg              1619    +5.56     0.89
+Houston               804    +4.85     1.67
+Jebel Ali            4602    -9.50     0.81
+Los Angeles           583    -3.77     1.36
+Melbourne              64    +7.81     3.38
+Mombasa               149   +10.07     2.82
+New York              470    -4.47     1.59
+Newcastle             299    +3.34     1.82
+Ningbo-Zhoushan      5756    +3.27     0.27
+Port Hedland          859    +4.31     0.80
+Port Klang           3425    +0.20     0.63
+Port Said            1895    +0.84     0.78
+Qingdao              1981    -0.05     0.72
+Richards Bay          744    +6.72     0.99
+Rotterdam             573    +9.25     1.78
+Santos               1658    +6.39     0.93
+Shanghai             2390    +3.60     0.60
+Singapore            5259   -11.22     0.70
+Sydney Botany         304    +6.91     1.67
+Tanger Med           1266    +4.50     0.91
+
+港口级：观测 sd 6.00 pp  |  抽样噪声 sd 1.44 pp  |  校正后真实 sd 5.83 pp
+   ⇒ 港口间真实方差占总观测方差的 94%
+
+产品级：观测 sd 13.53 pp  |  抽样噪声 sd 6.99 pp  (n=678 产品)
+   ⇒ 产品级散点有 27% 的方差可由抽样噪声解释
+
+港内（产品间）：观测方差 146.1  噪声方差 50.3  ⇒ 真实港内方差 95.7 (占观测 66%)
+
+结论：港口间真实 sd 5.83 pp；港内真实 sd 9.78 pp
