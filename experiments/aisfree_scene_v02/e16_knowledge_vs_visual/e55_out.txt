@@ -1,0 +1,32 @@
+=== S1 crude+offshore  (未知 = [5, 7]) ===
+scorer      Known-BA  UnknownRecall UnknownFalseAccept
+v_msp         0.4876         0.0472             0.9528
+v_energy      0.4890         0.0494             0.9506
+f_msp         0.5154         0.1060             0.8940
+k_msp         0.4627         0.1529             0.8471
+combo         0.4855         0.0825             0.9175
+
+=== S2 tug+fishing  (未知 = [6, 1]) ===
+scorer      Known-BA  UnknownRecall UnknownFalseAccept
+v_msp         0.4222         0.0368             0.9632
+v_energy      0.4210         0.0396             0.9604
+f_msp         0.4662         0.0537             0.9463
+k_msp         0.4298         0.0174             0.9826
+combo         0.4208         0.0190             0.9810
+
+=== S3 container+chem  (未知 = [4, 3]) ===
+scorer      Known-BA  UnknownRecall UnknownFalseAccept
+v_msp         0.4686         0.0992             0.9008
+v_energy      0.4654         0.0837             0.9163
+f_msp         0.4942         0.1103             0.8897
+k_msp         0.4506         0.1275             0.8725
+combo         0.4692         0.0922             0.9078
+
+=== S4 bulk+gcargo  (未知 = [0, 2]) ===
+scorer      Known-BA  UnknownRecall UnknownFalseAccept
+v_msp         0.5847         0.0602             0.9398
+v_energy      0.5852         0.0587             0.9413
+f_msp         0.5763         0.0479             0.9521
+k_msp         0.5604         0.0353             0.9647
+combo         0.5814         0.0386             0.9614
+
