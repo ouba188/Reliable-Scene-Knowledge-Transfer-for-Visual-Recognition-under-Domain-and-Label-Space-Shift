@@ -1,0 +1,45 @@
+OUT = e70_preds.pkl | arms ['ridge_V', 'ridge_VK', 'gbm_zk', 'gate_old', 'gate_new', 'gate_share', 'oracle3'] | inner 8 | subs 20000
+port               ridge_V ridge_VK  gbm_zk  gate_old  gate_new gate_share    orac3
+  对齐自检 y|V VK GBM|old new share:
+    0|3 3 3|3 3 3
+    0|0 0 0|0 0 0
+    0|5 5 0|0 0 0
+    0|1 1 0|0 0 0
+    0|0 0 0|0 0 0
+  H_d 可用维 61 中位 0.818
+Antwerp-Bruges       0.557    0.674   0.839     0.833     0.845      0.811    0.905
+Busan                0.470    0.501   0.676     0.689     0.732      0.693    0.807
+Callao               0.281    0.338   0.360     0.391     0.384      0.393    0.503
+Fujairah             0.340    0.402   0.673     0.660     0.641      0.674    0.742
+Hamburg              0.625    0.675   0.724     0.728     0.780      0.779    0.859
+Houston              0.327    0.303   0.389     0.403     0.373      0.400    0.521
+Jebel Ali            0.381    0.411   0.379     0.443     0.386      0.442    0.591
+Los Angeles          0.364    0.381   0.320     0.344     0.330      0.364    0.516
+Melbourne            0.543    0.599   0.716     0.574     0.597      0.613    0.774
+Mombasa              0.562    0.605   0.335     0.597     0.528      0.607    0.676
+New York             0.432    0.404   0.432     0.437     0.460      0.434    0.634
+Newcastle            0.388    0.436   0.526     0.403     0.461      0.408    0.627
+Ningbo-Zhoushan      0.569    0.654   0.823     0.825     0.825      0.823    0.881
+Port Hedland         0.174    0.172   0.195     0.201     0.187      0.186    0.301
+Port Klang           0.358    0.364   0.319     0.397     0.382      0.397    0.521
+Port Said            0.345    0.304   0.335     0.381     0.349      0.349    0.530
+Qingdao              0.752    0.775   0.937     0.897     0.929      0.937    0.973
+Richards Bay         0.339    0.368   0.438     0.389     0.420      0.413    0.517
+Rotterdam            0.581    0.701   0.857     0.739     0.820      0.767    0.895
+Santos               0.390    0.402   0.335     0.379     0.346      0.338    0.512
+Shanghai             0.605    0.706   0.915     0.809     0.906      0.797    0.946
+Singapore            0.360    0.300   0.342     0.368     0.382      0.347    0.565
+Sydney Botany        0.418    0.426   0.423     0.438     0.424      0.435    0.535
+Tanger Med           0.387    0.444   0.394     0.428     0.406      0.421    0.586
+
+ridge_V        mean 0.4395  Δ vs ridge_V  +0.00  逐港正  0/24  worst  +0.00
+ridge_VK       mean 0.4728  Δ vs ridge_V  +3.32  逐港正 19/24  worst  -6.01
+gbm_zk         mean 0.5283  Δ vs ridge_V  +8.88  逐港正 17/24  worst -22.78
+gate_old       mean 0.5314  Δ vs ridge_V  +9.19  逐港正 22/24  worst  -2.02
+gate_new       mean 0.5373  Δ vs ridge_V  +9.78  逐港正 21/24  worst  -4.32
+gate_share     mean 0.5346  Δ vs ridge_V  +9.51  逐港正 21/24  worst  -5.15
+oracle3        mean 0.6632  Δ vs ridge_V +22.36  逐港正 24/24  worst +11.41
+
+配对 gate_share − gate_old:  +0.32 pp  p=0.7257
+配对 gate_share − gate_new:  -0.27 pp  p=0.9441
+配对 gate_old − gate_new:  -0.59 pp  p=0.6231
