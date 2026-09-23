@@ -1,0 +1,33 @@
+port                      reg   V_glob   K_glob    V_reg    K_reg Δ_randcon
+----------------------------------------------------------------------------
+Antwerp-Bruges         Europe    0.557    0.652      nan      nan     2.92
+Busan                  E-Asia    0.470    0.409      nan      nan   -14.97
+Callao                 S-America    0.281    0.344      nan      nan      nan
+Fujairah               MidEast    0.340    0.481      nan      nan    11.14
+Hamburg                Europe    0.625    0.677      nan      nan      nan
+Houston                N-America    0.327    0.299    0.344    0.197    -2.82
+Jebel Ali              MidEast    0.381    0.422      nan      nan    -0.88
+Los Angeles            N-America    0.364    0.357    0.366    0.340     0.38
+Melbourne              Oceania    0.543    0.601    0.543    0.512    -4.49
+Mombasa                Africa    0.562    0.593      nan      nan   -14.48
+New York               N-America    0.432    0.485    0.416    0.423    -5.69
+Newcastle              Oceania    0.388    0.461    0.382    0.244     0.55
+Ningbo-Zhoushan        E-Asia    0.569    0.647      nan      nan    16.74
+Port Hedland           Oceania    0.174    0.136    0.148    0.108     5.59
+Port Klang             SE-Asia    0.358    0.340      nan      nan    -0.29
+Port Said                 Med    0.345    0.372      nan      nan     6.10
+Qingdao                E-Asia    0.752    0.767      nan      nan    13.83
+Richards Bay           Africa    0.339    0.338      nan      nan      nan
+Rotterdam              Europe    0.581    0.653      nan      nan    16.74
+Santos                 S-America    0.390    0.360      nan      nan      nan
+Shanghai               E-Asia    0.605    0.655      nan      nan     4.71
+Singapore              SE-Asia    0.360    0.277      nan      nan      nan
+Sydney Botany          Oceania    0.418    0.417    0.321    0.304    -6.41
+Tanger Med                Med    0.387    0.400      nan      nan   -13.82
+
+Δ(K−V) 全局源港   : +2.48 pp  (15/24 正)
+Δ(K−V) 同区域源港 : -5.61 pp  (1/24 正)
+Δ(K−V) 同规模随机 : +0.78 pp  (10/24 正)
+
+配对比较（7 个港）: 区域 vs 全局 均值差 -7.19 pp，区域更好的港数 0/7
+              区域 vs 随机 均值差 -3.77 pp，区域更好的港数 3/7
