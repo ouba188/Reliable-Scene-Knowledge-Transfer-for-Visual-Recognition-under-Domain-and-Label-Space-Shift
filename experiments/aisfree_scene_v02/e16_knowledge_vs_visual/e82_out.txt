@@ -1,0 +1,70 @@
+known (38091, 2048) 38091 | unknown (12723, 2048) 12723
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.92556e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.176e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.29896e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.89257e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.29793e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.36306e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.29759e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.7043e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.48169e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.31317e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.20657e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.40483e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.25183e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.37732e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.73433e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.35761e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.73196e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.94698e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.2571e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.23152e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.29144e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.33503e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.91115e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.75302e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+
+已知池：均值置信 0.000  准确率 0.461
+未知池：均值置信 0.000
+  已知池置信 0.50 分位 = 0.000 ｜ 未知池超过此值的比例 0.999
+  已知池置信 0.75 分位 = 0.000 ｜ 未知池超过此值的比例 0.687
+  已知池置信 0.90 分位 = 0.000 ｜ 未知池超过此值的比例 0.289
+
+按"已知池 90% 正确率"定的阈值 thr=0.000：
+  已知池接受率 0.862（其中正确率 0.481）
+  未知池越线率 1.000  <-- 高置信误吸收率
+
+unknown class                   n     均值置信        越线率
+dredger                      2367    0.000      1.000
+heavy_load_carrier            771    0.000      1.000
+lpg_lng_tanker               3851    0.000      1.000
+passenger_ship               1618    0.001      1.000
+pilot_port_tender            1341    0.001      1.000
+pleasure_craft                849    0.001      1.000
+reefer_cargo                  199    0.001      1.000
+ro_ro_vehicle_carrier        1215    0.000      1.000
+sailing_vessel                512    0.001      1.000
