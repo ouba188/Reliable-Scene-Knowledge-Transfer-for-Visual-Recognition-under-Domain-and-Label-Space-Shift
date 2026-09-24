@@ -1,0 +1,78 @@
+scanning the object table ...
+保留 83223 条（坐标缺失跳过 0）
+按类: {('Jebel Ali', 'tug_towing'): 1000, ('Jebel Ali', 'container_ship'): 1000, ('Jebel Ali', 'bulk_carrier'): 1000, ('Jebel Ali', 'offshore_supply'): 1000, ('Jebel Ali', 'dredger'): 1000, ('Jebel Ali', 'general_cargo'): 1000, ('Jebel Ali', 'product_chemical_tanker'): 1000, ('Jebel Ali', 'lpg_lng_tanker'): 967}
+  Antwerp-Bruges      8423
+  Busan                539
+  Callao               156
+  Fujairah            4162
+  Hamburg             4839
+  Houston             1240
+  Jebel Ali          11052
+  Los Angeles          124
+  Melbourne             89
+  Mombasa             1229
+  New York             194
+  Newcastle            595
+  Ningbo-Zhoushan     1584
+  Port Hedland        1080
+  Port Klang          4479
+  Port Said           5653
+  Qingdao             7754
+  Richards Bay         782
+  Rotterdam           7204
+  Santos               839
+  Shanghai            9819
+  Singapore          10117
+  Sydney Botany       1076
+  Tanger Med           194
+索引已有 0 组，将跳过
+  Antwerp-Bruges         VV  4074/4074 已写入 Antwerp-Bruges_VV.npy (不可读景累计 0)
+  Antwerp-Bruges         VH  4349/4349 已写入 Antwerp-Bruges_VH.npy (不可读景累计 0)
+  Busan                  VV  252/252 已写入 Busan_VV.npy (不可读景累计 0)
+  Busan                  VH  287/287 已写入 Busan_VH.npy (不可读景累计 0)
+  Callao                 VV  77/77 已写入 Callao_VV.npy (不可读景累计 0)
+  Callao                 VH  79/79 已写入 Callao_VH.npy (不可读景累计 0)
+  Fujairah               VV  2013/2013 已写入 Fujairah_VV.npy (不可读景累计 0)
+  Fujairah               VH  2149/2149 已写入 Fujairah_VH.npy (不可读景累计 0)
+  Hamburg                VV  2377/2377 已写入 Hamburg_VV.npy (不可读景累计 0)
+  Hamburg                VH  2462/2462 已写入 Hamburg_VH.npy (不可读景累计 0)
+  Houston                VV  650/650 已写入 Houston_VV.npy (不可读景累计 0)
+  Houston                VH  551/590 已写入 Houston_VH.npy (不可读景累计 1)
+  Jebel Ali              VV  5341/5341 已写入 Jebel_Ali_VV.npy (不可读景累计 1)
+  Jebel Ali              VH  5711/5711 已写入 Jebel_Ali_VH.npy (不可读景累计 1)
+  Los Angeles            VV  62/62 已写入 Los_Angeles_VV.npy (不可读景累计 1)
+  Los Angeles            VH  62/62 已写入 Los_Angeles_VH.npy (不可读景累计 1)
+  Melbourne              VV  0/43 已写入 Melbourne_VV.npy (不可读景累计 1)
+  Melbourne              VH  0/46 已写入 Melbourne_VH.npy (不可读景累计 1)
+  Mombasa                VV  0/605 已写入 Mombasa_VV.npy (不可读景累计 1)
+  Mombasa                VH  0/624 已写入 Mombasa_VH.npy (不可读景累计 1)
+  New York               VV  0/93 已写入 New_York_VV.npy (不可读景累计 1)
+  New York               VH  0/101 已写入 New_York_VH.npy (不可读景累计 1)
+  Newcastle              VV  0/310 已写入 Newcastle_VV.npy (不可读景累计 1)
+  Newcastle              VH  0/285 已写入 Newcastle_VH.npy (不可读景累计 1)
+  Ningbo-Zhoushan        VV  0/774 已写入 Ningbo-Zhoushan_VV.npy (不可读景累计 1)
+  Ningbo-Zhoushan        VH  0/810 已写入 Ningbo-Zhoushan_VH.npy (不可读景累计 1)
+  Port Hedland           VV  0/533 已写入 Port_Hedland_VV.npy (不可读景累计 1)
+  Port Hedland           VH  0/547 已写入 Port_Hedland_VH.npy (不可读景累计 1)
+  Port Klang             VV  0/2132 已写入 Port_Klang_VV.npy (不可读景累计 1)
+  Port Klang             VH  0/2347 已写入 Port_Klang_VH.npy (不可读景累计 1)
+  Port Said              VV  0/2775 已写入 Port_Said_VV.npy (不可读景累计 1)
+  Port Said              VH  0/2878 已写入 Port_Said_VH.npy (不可读景累计 1)
+  Qingdao                VV  0/3782 已写入 Qingdao_VV.npy (不可读景累计 1)
+  Qingdao                VH  0/3972 已写入 Qingdao_VH.npy (不可读景累计 1)
+  Richards Bay           VV  0/394 已写入 Richards_Bay_VV.npy (不可读景累计 1)
+  Richards Bay           VH  0/388 已写入 Richards_Bay_VH.npy (不可读景累计 1)
+  Rotterdam              VV  0/3542 已写入 Rotterdam_VV.npy (不可读景累计 1)
+  Rotterdam              VH  0/3662 已写入 Rotterdam_VH.npy (不可读景累计 1)
+  Santos                 VV  0/409 已写入 Santos_VV.npy (不可读景累计 1)
+  Santos                 VH  0/430 已写入 Santos_VH.npy (不可读景累计 1)
+  Shanghai               VV  0/4570 已写入 Shanghai_VV.npy (不可读景累计 1)
+  Shanghai               VH  0/5249 已写入 Shanghai_VH.npy (不可读景累计 1)
+  Singapore              VV  0/4957 已写入 Singapore_VV.npy (不可读景累计 1)
+  Singapore              VH  0/5160 已写入 Singapore_VH.npy (不可读景累计 1)
+  Sydney Botany          VV  0/519 已写入 Sydney_Botany_VV.npy (不可读景累计 1)
+  Sydney Botany          VH  0/557 已写入 Sydney_Botany_VH.npy (不可读景累计 1)
+  Tanger Med             VV  0/96 已写入 Tanger_Med_VV.npy (不可读景累计 1)
+  Tanger Med             VH  0/98 已写入 Tanger_Med_VH.npy (不可读景累计 1)
+index.csv 行数 30496 | 不可读景累计 1
+按类总计: {'product_chemical_tanker': 3647, 'container_ship': 3159, 'general_cargo': 3004, 'bulk_carrier': 2888, 'crude_oil_tanker': 2606, 'tug_towing': 2534, 'lpg_lng_tanker': 2387, 'offshore_supply': 2120, 'dredger': 1923, 'fishing_vessel': 1806, 'ro_ro_vehicle_carrier': 1291, 'passenger_ship': 1240, 'pleasure_craft': 781, 'pilot_port_tender': 392, 'heavy_load_carrier': 370, 'sailing_vessel': 302, 'reefer_cargo': 46}

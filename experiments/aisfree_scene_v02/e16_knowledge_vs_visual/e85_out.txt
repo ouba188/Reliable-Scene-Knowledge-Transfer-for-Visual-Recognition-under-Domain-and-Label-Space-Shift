@@ -1,0 +1,24 @@
+三港 VV chips 9477
+按类: {'general_cargo': 978, 'product_chemical_tanker': 959, 'container_ship': 945, 'bulk_carrier': 881, 'lpg_lng_tanker': 865, 'dredger': 760, 'crude_oil_tanker': 725, 'offshore_supply': 724, 'tug_towing': 657, 'ro_ro_vehicle_carrier': 514, 'passenger_ship': 364, 'fishing_vessel': 350, 'pleasure_craft': 340, 'heavy_load_carrier': 162, 'sailing_vessel': 121, 'pilot_port_tender': 115, 'reefer_cargo': 17}
+UTM 命中 3143/3143
+  Antwerp-Bruges   liquid  3443  dry   472
+  Jebel Ali        liquid  1199  dry   149
+  Los Angeles      liquid  2533  dry     6
+D:\Program_documents\Anaconda_envs\envs\ClearSAR\Lib\site-packages\osgeo\osr.py:424: FutureWarning: Neither osr.UseExceptions() nor osr.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+  Antwerp-Bruges   UTM zone from centroid (4.33, 51.28)
+  Jebel Ali        UTM zone from centroid (55.16, 25.14)
+  Los Angeles      UTM zone from centroid (-118.29, 33.83)
+geo 经纬度条目 22024
+芯片地理命中 9371 / 未命中 106
+
+unknown class             n      液近(m)      干近(m)        液/干
+lpg_lng_tanker          864      19359      31716       0.61
+dredger                 755      16274      24781       0.66
+ro_ro_vehicle_carrier    512      16888      28210       0.60
+passenger_ship          347      17841      29998       0.59
+pleasure_craft          321      15203      22762       0.67
+heavy_load_carrier      162      14463      18859       0.77
+sailing_vessel          118      14659      22871       0.64
+pilot_port_tender       115      44542      48871       0.91
+reefer_cargo             17      86609      89788       0.96

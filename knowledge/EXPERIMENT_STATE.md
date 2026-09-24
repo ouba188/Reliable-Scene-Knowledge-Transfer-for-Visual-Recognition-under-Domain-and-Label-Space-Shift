@@ -493,6 +493,40 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E17s 数据集建成（e84）+ 知识半边的坐标对不齐（e85）—— 可界定待解项
+
+**(1) e84：224 px 数据集建成 ✓**（对象表 UTM → 场景裁剪 → memmap + 索引）：
+- 保留 83,223 对象（每 (港,类) 上限 1000）⇒ **实际产出 30,496 片**（成品率 37% ✗，多数是"坐标落景外"的静默跳过，损失在各港各类间平摊，无整类丢失 ✓）；
+- **覆盖 8 港**（因 F: 拷贝仅完成部分港）：Jebel Ali 11,052 / Antwerp-Bruges 8,423 / Hamburg 4,839 / Fujairah 4,162 / Houston 1,201 / Busan 539 / Callao 156 / LA 124；
+- **17 类齐全**：pchem 3647 / container 3159 / general_cargo 3004 / bulk 2888 / crude 2606 / tug 2534 / **lpg_lng 2387** / offshore 2120 / **dredger 1923** / fishing 1806 / ro_ro 1291 / passenger 1240 / pleasure 781 / pilot 392 / heavy_load 370 / sailing 302 / reefer 46；
+- 索引含三档标签（ais/prelabel/fine）+ level + source + confidence ⇒ 分析可按档分层 ✓。
+
+**(2) e85：知识半边受阻 —— 更正：坐标系其实一致 ✓，真正卡点是设施层密度 ✗**。
+
+**我先前的结论是错的** ✗：我曾判定"对象/场景帧与设施经纬度相差 50–90 km"✗，判别性诊断推翻了它 ✓：
+- **最近设施距离的最小值 = 7 m（Jebel Ali）/ 345 m（Antwerp）/ 612 m（LA）** ✓✓ ⇒ **两套坐标同源、无系统偏移** ✓；
+- 中位数之所以是 10–100 km，是因为**我的 chip 集混入大量港外对象**（geo 要素的经度跨度达 3–4 度 ≈ 300 km，是**区域**范围而非港区）✗；
+- 加"≤3 km 有设施"的港内过滤后，液货邻近度回落到合理的 **~2.3 km** ✓。
+
+**但过滤后暴露了真正的问题** ✗：**设施层密度不足，邻近度无区分度**——
+| class | n(港内) | 液近中位 | 干近中位 |
+|---|---:|---:|---:|
+| lpg_lng_tanker | 35 | 2288 | 1710 |
+| crude_oil_tanker | 29 | 2288 | 1581 |
+| bulk_carrier | 36 | 2305 | 1710 |
+| container_ship | 34 | 2493 | 3736 |
+| …（各类均在 2.3–2.5 km） | | | |
+
+⇒ 本地 `facilities/<港>.geojson` 是**区域级 OSM 抽取**（Antwerp 5,362 way 覆盖 4 度 ⇒ 港区局部极稀 ✗），"最近的液货设施"对**所有类**都只是区域平均间距 ⇒ **无判别力** ✗。
+
+**修正后的待办**（可界定、本地可做）：
+1. **从本地 OSM pbf 重抽设施（港区局部 bbox）** ✓ —— `osm_pbf/` 已有 11 港（含 Antwerp/Jebel Ali/LA ✓）+ `osmconf_facilities.ini` ✓ ⇒ gdal/ogr 直接抽，~30 min；
+2. 用重抽后的设施重算港内邻近度 ⇒ 再出"语义梯度"（lpg 贴液货泊位、dredger 无关）✓；
+3. 港内样本量偏小（每类 21–44 ✗）⇒ 重抽时同时放宽港区半径（3 → 8 km ✓）。
+
+**已确证且不受影响** ✓：视觉半边的高置信误吸收（E17q：已知 0.233 / 未知 0.238 / 越线率 0.855 ✓）；对象/场景 UTM 映射可用（E17r ✓，224 px 数据集即其产物 ✓，8 港 30,496 片 17 类 ✓）。
+**文件**：`e84_build_224.py`、`dataset244/`、`e85_knowledge_nar.py`、`e85_out.txt`。
+
 ### E17r 【解封】UTM 映射打通（e83）：对象表直接给坐标，224 px 与知识构建同时可行
 
 **关键发现**：`objects_classed.csv.gz` 的 `object_id` 完整形式为 **`<完整product>|<POL>|<对象序号>|<det>`**（此前被我 `[:34]` 截断显示导致误判 ✗），且该表**直接携带 `world_x/world_y`（UTM 东/北坐标）** ✓ ⇒ **不再需要任何 manifest/tile/crop 字段的 join**，之前四次失败(R1–R4)全部源于经由坏链条取坐标。
