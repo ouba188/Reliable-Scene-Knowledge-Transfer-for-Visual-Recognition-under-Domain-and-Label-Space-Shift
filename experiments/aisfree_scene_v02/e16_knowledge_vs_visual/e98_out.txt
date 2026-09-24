@@ -1,0 +1,24 @@
+Antwerp-Bruges   已知  5816 未知  2607 | BA 视觉 0.227 无门控 0.224 oracle 0.224 | 未知液货族 视觉 0.211 无门控 0.176 oracle 0.211 反向oracle 0.176
+Busan            已知   476 未知    63 | BA 视觉 0.202 无门控 0.193 oracle 0.193 | 未知液货族 视觉 0.270 无门控 0.397 oracle 0.270 反向oracle 0.397
+Callao           已知   140 未知    16 | BA 视觉 0.110 无门控 0.119 oracle 0.119 | 未知液货族 视觉 0.062 无门控 0.062 oracle 0.062 反向oracle 0.062
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.08621e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.36194e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Fujairah         已知  3586 未知   576 | BA 视觉 0.161 无门控 0.159 oracle 0.159 | 未知液货族 视觉 0.335 无门控 0.380 oracle 0.335 反向oracle 0.380
+Hamburg          已知  3528 未知  1311 | BA 视觉 0.210 无门控 0.212 oracle 0.212 | 未知液货族 视觉 0.151 无门控 0.122 oracle 0.151 反向oracle 0.122
+Houston          已知  1102 未知    99 | BA 视觉 0.209 无门控 0.216 oracle 0.216 | 未知液货族 视觉 0.242 无门控 0.303 oracle 0.242 反向oracle 0.303
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.19026e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.57625e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Jebel Ali        已知  6999 未知  4053 | BA 视觉 0.201 无门控 0.199 oracle 0.199 | 未知液货族 视觉 0.344 无门控 0.293 oracle 0.344 反向oracle 0.293
+Los Angeles      已知   117 未知     7 | BA 视觉 0.336 无门控 0.313 oracle 0.313 | 未知液货族 视觉 0.429 无门控 0.429 oracle 0.429 反向oracle 0.429
+
+arm                已知类 BA        未知液货族占比
+visual             0.2070         0.2555
+no_gate            0.2042         0.2702
+oracle             0.2042         0.2555
+oracle_inv         0.2070         0.2702
+
+判据：oracle 的液货族占比应显著低于 no_gate；若不然，耦合律即使有完美 ν 也无值可采 ✗
