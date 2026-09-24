@@ -1,0 +1,15 @@
+Antwerp-Bruges: 有坐标且有类的检测 15014
+按类（前 12）: {'product_chemical_tanker': 2914, 'cargo_coarse': 2083, 'general_cargo': 1877, 'container_ship': 1416, 'tanker_coarse': 1299, 'lpg_lng_tanker': 814, 'bulk_carrier': 775, 'fishing_vessel': 691, 'crude_oil_tanker': 576, 'dredger': 549, 'ro_ro_vehicle_carrier': 488, 'offshore_supply': 464}
+命中场景 6 个
+[0] ro_ro_vehicle_carrier  VH 7280A_D019 px=(1866,8762) 景 29014x21414 内=True mean 92.6 p99 170 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_00_Antwerp-Bruges_ro_ro_vehicle_carrier.png
+[1] ro_ro_vehicle_carrier  VV 7280A_D019 px=(1864,8760) 景 29014x21414 内=True mean 128.5 p99 230 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_01_Antwerp-Bruges_ro_ro_vehicle_carrier.png
+[2] general_cargo          VH 7CF5C_3556 px=(2156,5931) 景 29017x21413 内=True mean 91.5 p99 147 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_02_Antwerp-Bruges_general_cargo.png
+[3] general_cargo          VV 7CF5C_3556 px=(2156,5935) 景 29017x21413 内=True mean 152.0 p99 252 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_03_Antwerp-Bruges_general_cargo.png
+[4] general_cargo          VH 07385_F130 px=(1920,14625) 景 29195x21039 内=True mean 38.7 p99 64 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_04_Antwerp-Bruges_general_cargo.png
+[5] tanker_coarse          VV 07385_F130 px=(1976,11795) 景 29195x21039 内=True mean 32.6 p99 59 max 255
+    -> E:\临时会话\visual_reliable_baseline\chips224\e83_05_Antwerp-Bruges_tanker_coarse.png
