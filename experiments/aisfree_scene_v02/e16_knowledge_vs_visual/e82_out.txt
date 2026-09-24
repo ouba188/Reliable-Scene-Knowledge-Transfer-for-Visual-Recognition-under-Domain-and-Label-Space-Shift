@@ -48,23 +48,23 @@ D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWar
 D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.75302e-10): result may not be accurate.
   return f(*arrays, *other_args, **kwargs)
 
-已知池：均值置信 0.000  准确率 0.461
-未知池：均值置信 0.000
-  已知池置信 0.50 分位 = 0.000 ｜ 未知池超过此值的比例 0.999
-  已知池置信 0.75 分位 = 0.000 ｜ 未知池超过此值的比例 0.687
-  已知池置信 0.90 分位 = 0.000 ｜ 未知池超过此值的比例 0.289
+已知池：均值置信 0.233  准确率 0.461
+未知池：均值置信 0.238
+  已知池置信 0.50 分位 = 0.210 ｜ 未知池超过此值的比例 0.569
+  已知池置信 0.75 分位 = 0.260 ｜ 未知池超过此值的比例 0.279
+  已知池置信 0.90 分位 = 0.333 ｜ 未知池超过此值的比例 0.097
 
-按"已知池 90% 正确率"定的阈值 thr=0.000：
-  已知池接受率 0.862（其中正确率 0.481）
-  未知池越线率 1.000  <-- 高置信误吸收率
+按"已知池 90% 正确率"定的阈值 thr=0.176：
+  已知池接受率 0.811（其中正确率 0.511）
+  未知池越线率 0.855  <-- 高置信误吸收率
 
 unknown class                   n     均值置信        越线率
-dredger                      2367    0.000      1.000
-heavy_load_carrier            771    0.000      1.000
-lpg_lng_tanker               3851    0.000      1.000
-passenger_ship               1618    0.001      1.000
-pilot_port_tender            1341    0.001      1.000
-pleasure_craft                849    0.001      1.000
-reefer_cargo                  199    0.001      1.000
-ro_ro_vehicle_carrier        1215    0.000      1.000
-sailing_vessel                512    0.001      1.000
+dredger                      2367    0.241      0.870
+heavy_load_carrier            771    0.205      0.755
+lpg_lng_tanker               3851    0.222      0.813
+passenger_ship               1618    0.249      0.896
+pilot_port_tender            1341    0.265      0.879
+pleasure_craft                849    0.267      0.929
+reefer_cargo                  199    0.224      0.804
+ro_ro_vehicle_carrier        1215    0.222      0.864
+sailing_vessel                512    0.280      0.926
