@@ -1,0 +1,16 @@
+[0] Antwerp-Bruges   58_07130D_51CB             VV  整景 29016x21413  chip坐标(12228,572) 框内=True  mean 0.0 p99 0 max 0
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_00_Antwerp-Bruges.png
+[1] Antwerp-Bruges   83_07280A_D019             VV  整景 29014x21414  chip坐标(6540,2438) 框内=True  mean 0.0 p99 0 max 0
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_01_Antwerp-Bruges.png
+[2] Antwerp-Bruges   08_0758CD_0F9D             VV  整景 29009x21411  chip坐标(406,860) 框内=True  mean 0.0 p99 0 max 0
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_02_Antwerp-Bruges.png
+[3] Antwerp-Bruges   06_0088A6_843A             VV  整景 29197x21039  chip坐标(4024,860) 框内=True  mean 20.4 p99 34 max 46
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_03_Antwerp-Bruges.png
+[4] Antwerp-Bruges   07_007F7E_D39D             VV  整景 29165x21480  chip坐标(11888,7160) 框内=True  mean 47.3 p99 78 max 149
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_04_Antwerp-Bruges.png
+[5] Antwerp-Bruges   31_008359_AA20             VV  整景 29196x21040  chip坐标(7382,10190) 框内=True  mean 100.8 p99 178 max 255
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_05_Antwerp-Bruges.png
+[6] Antwerp-Bruges   06_0088A6_843A             VV  整景 29197x21039  chip坐标(10992,2412) 框内=True  mean 31.9 p99 53 max 71
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_06_Antwerp-Bruges.png
+[7] Antwerp-Bruges   58_072F3A_33A2             VV  整景 29012x21413  chip坐标(14412,2710) 框内=True  mean 60.4 p99 95 max 132
+     -> E:\临时会话\visual_reliable_baseline\chips224\e79_07_Antwerp-Bruges.png
