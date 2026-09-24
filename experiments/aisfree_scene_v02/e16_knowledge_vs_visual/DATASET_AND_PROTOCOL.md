@@ -74,9 +74,12 @@ verified end to end (a crop centred on its ship, and a same-object VV/VH pair la
 3. **The physical-adjacency form of the mechanism does not hold**: after density normalisation only a partial
    class ordering survives (crude 2/16, lpg 6/16, bulk 11/16, container 13/16, fishing 16/16). The discriminating
    quantity is the feature-level contrast, not physical proximity.
-4. **The coupling law is unverified.** Both a trained sigmoid novelty head and training-free OOD scores fail to
-   identify novel chips; §5's convergence argument (novelty must come from knowledge-side unexplainability) is an
-   argument, not yet a result.
+4. **The coupling law is unverified, and now for a measured reason.** Three novelty signals were tried: a trained
+   sigmoid head (nu ~ 0.21 on unknowns), training-free visual OOD (energy + Mahalanobis, AUC 0.493), and the
+   knowledge-side unexplainability designed after the OOD failure (per-class Gaussian in the knowledge space, AUC
+   median 0.509). None separates unknown from known chips, because the unseen types are ordinary ships at ordinary
+   berths. The coupling law cannot be validated until some novelty signal exists; that is a DATA condition (a new
+   input axis: AIS temporal dynamics, multi-scale port layout, hull size/geometry), not an architecture defect.
 5. **8 ports of 24.** The other sixteen await the ongoing scene-copy onto `F:`; `e84_build_224.py` resumes and
    fills them automatically because its resume key is the index, and zero-row ports are retried.
 

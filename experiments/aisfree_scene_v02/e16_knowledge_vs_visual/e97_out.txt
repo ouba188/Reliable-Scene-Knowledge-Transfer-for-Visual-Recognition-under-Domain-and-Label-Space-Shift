@@ -1,0 +1,21 @@
+chips 30496 | known 21764 | unknown 8732 | knowledge 10 dims
+Antwerp-Bruges   已知  5816 未知  2607 | 知识侧 ν: 已知均值 0.447 未知均值 0.462 | BA 视觉 0.227 耦合 0.224 无门控 0.223 | 未知液货族 视觉 0.211 耦合 0.191 无门控 0.176
+Busan            已知   476 未知    63 | 知识侧 ν: 已知均值 0.818 未知均值 0.813 | BA 视觉 0.202 耦合 0.191 无门控 0.193 | 未知液货族 视觉 0.270 耦合 0.302 无门控 0.397
+Callao           已知   140 未知    16 | 知识侧 ν: 已知均值 0.679 未知均值 0.684 | BA 视觉 0.110 耦合 0.106 无门控 0.119 | 未知液货族 视觉 0.062 耦合 0.062 无门控 0.062
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.08621e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.36192e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Fujairah         已知  3586 未知   576 | 知识侧 ν: 已知均值 0.702 未知均值 0.703 | BA 视觉 0.161 耦合 0.162 无门控 0.157 | 未知液货族 视觉 0.335 耦合 0.349 无门控 0.389
+Hamburg          已知  3528 未知  1311 | 知识侧 ν: 已知均值 0.429 未知均值 0.435 | BA 视觉 0.210 耦合 0.213 无门控 0.212 | 未知液货族 视觉 0.151 耦合 0.137 无门控 0.121
+Houston          已知  1102 未知    99 | 知识侧 ν: 已知均值 0.701 未知均值 0.750 | BA 视觉 0.209 耦合 0.213 无门控 0.216 | 未知液货族 视觉 0.242 耦合 0.242 无门控 0.303
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.19026e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.57633e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Jebel Ali        已知  6999 未知  4053 | 知识侧 ν: 已知均值 0.578 未知均值 0.585 | BA 视觉 0.201 耦合 0.200 无门控 0.199 | 未知液货族 视觉 0.344 耦合 0.324 无门控 0.288
+Los Angeles      已知   117 未知     7 | 知识侧 ν: 已知均值 0.752 未知均值 0.918 | BA 视觉 0.336 耦合 0.336 无门控 0.313 | 未知液货族 视觉 0.429 耦合 0.429 无门控 0.429
+
+★ 知识侧 ν 对"已知 vs 未知"的 AUC: 中位 0.509 均值 0.553   （视觉 OOD 为 0.493 ✗）
+已知类 BA: 视觉 0.2070 | 耦合 0.2055 | 无门控 0.2040
+未知片液货族占比: 视觉 0.2555 | 耦合 0.2545 | 无门控 0.2707   （机制预测：耦合 < 无门控）
