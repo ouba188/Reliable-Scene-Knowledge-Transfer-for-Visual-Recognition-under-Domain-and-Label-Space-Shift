@@ -1,0 +1,9 @@
+WARNING Ultralytics settings updated to the latest schema. Existing values were preserved where possible. 
+View Ultralytics Settings with 'yolo settings' or at 'C:\Users\25791\AppData\Roaming\Ultralytics\settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings.
+模型就绪 {0: 'Ship'}
+  窗口0 检出 8 个  conf中位 0.132
+  窗口1 检出 7 个  conf中位 0.131
+  窗口2 检出 2 个  conf中位 0.128
+合计 17 个目标 => 检测器可用 ✓✓
+exit=0
