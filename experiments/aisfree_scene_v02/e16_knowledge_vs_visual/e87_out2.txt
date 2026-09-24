@@ -1,0 +1,17 @@
+geo 经纬度条目 22024
+Antwerp-Bruges   设施 11512(液3919/干769)  港内芯片 176
+Jebel Ali        设施 2185(液309/干175)  港内芯片 84
+Los Angeles      设施 5380(液468/干0)  港内芯片 6
+
+class                      n(港内)        液近中位        干近中位       到设施中位       液/干
+crude_oil_tanker              19        1513        1121         341      1.35
+bulk_carrier                  26        1609        2179         274      0.74
+lpg_lng_tanker                24        1651        1130         240      1.46
+dredger                       22        2603        3682         287      0.71
+container_ship                18        4309        8338         815      0.52
+general_cargo                 27        4596        6932         714      0.66
+passenger_ship                15        5358        8086        1858      0.66
+product_chemical_tanker       31        6297        9370        1938      0.67
+ro_ro_vehicle_carrier         16        6577       10215        2017      0.64
+pleasure_craft                19        7184        7861        4073      0.91
+tug_towing                    19        8712       10986        4078      0.79

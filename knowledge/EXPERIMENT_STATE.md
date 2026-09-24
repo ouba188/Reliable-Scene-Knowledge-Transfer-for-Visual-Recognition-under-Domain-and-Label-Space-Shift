@@ -493,6 +493,39 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E17t 港区设施重抽（e86/e87）：密货邻近度出现**方向正确的语义梯度**（初步证据，n 偏小）
+
+**问题回顾**（E17s）：本地 `facilities/` 是区域级抽取（Antwerp 5,362 way 铺 4 度 ✗）⇒ 最近液货设施对所有类都是 ~2.3 km ⇒ 无判别力 ✗。
+
+**修复（e86）**：从本地 `osm_pbf/`（Antwerp / Jebel_Ali / Los_Angeles ✓）按**港区 bbox** 重抽设施，两处关键修正：
+1. **`OGR_INTERLEAVED_READING=YES`** ✓ —— 否则 OSM 驱动的 lines/multipolygons 报 "Too many features have accumulated" 并**静默丢大部分设施** ✗；
+2. **港心取"区域设施层的最密 0.02° 格"** ✓（用芯片中位数会落到内陆 ✗ —— Jebel Ali 曾抽到 river/wadi/dam ✗）。
+
+| 港 | 港心（设施最密格） | 设施点 | 液货 | 干散 |
+|---|---|---:|---:|---:|
+| Antwerp-Bruges | (4.300, 51.320) ✓ | **11,512** | 3,919（storage_tank 3564 + pipeline 353） | 769（silo 647） |
+| Jebel Ali | (55.140, 25.080) ✓（修正前落到内陆 56.05 ✗） | 2,185 | 309 | 175 |
+| Los Angeles | (−118.440, 33.980) ✓ | 5,380 | 468 | 0 |
+
+**结果（e87，港内 ≤10 km，n≈19–31/类）**：芯片到设施距离从 2.3 km 降到 **200–300 m** ✓，梯度方向出现 ✓：
+
+| class | n | 液近中位 | 干近中位 | 液/干 |
+|---|---:|---:|---:|---:|
+| **lpg_lng_tanker** | 24 | 1651 | 1130 | **1.46** ✓ |
+| **crude_oil_tanker** | 19 | 1513 | 1121 | **1.35** ✓ |
+| tug_towing | 19 | 8712 | 10986 | 0.79 |
+| bulk_carrier | 26 | 1609 | 2179 | 0.74 |
+| dredger | 22 | 2603 | 3682 | 0.71 |
+| general_cargo | 27 | 4596 | 6932 | 0.66 |
+| product_chem_tanker | 31 | 6297 | 9370 | 0.67 ✗（破例） |
+| container_ship | 18 | 4309 | 8338 | 0.52 |
+
+**判决**：
+1. **仅两个液货油轮类（lpg 1.46 / crude 1.35）的液/干 > 1** ✓ —— 与"液货船停在液货设施旁"一致 ✓；
+2. **但 pchem 0.67 破例** ✗、**n 仅 19–31** ✗（港区芯片占比 ~1.5%，因对象表的港口归属是区域级 ✗）⇒ **初步证据，非定论** ✓；
+3. **加强路径**：F: 拷贝完成后重跑 e84（自动补 16 港 ✓）⇒ 港区芯片量级提升；并放宽港区定义（anchorage/lane 对象也应计入 ✓）。
+**文件**：`e86_port_facilities.py`、`facilities_port/`、`e87_gradient.py`、`e87_out.txt`、`e87_out2.txt`。
+
 ### E17s 数据集建成（e84）+ 知识半边的坐标对不齐（e85）—— 可界定待解项
 
 **(1) e84：224 px 数据集建成 ✓**（对象表 UTM → 场景裁剪 → memmap + 索引）：
