@@ -1,0 +1,27 @@
+质量字段命中 9206 / 26556
+screen_status 分布: {'pending': 3580, 'excluded': 2877, 'passed': 2749}
+筛选后保留 6018 / 26556
+
+=== A: 质量过滤的效果 ===
+  全部       n(港)=8  视觉 0.1915  +AIS 0.2102  (Δ +1.87, 逐港升 8/8)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.57448e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.57439e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.36858e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.36781e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.61084e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.60923e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.43533e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.43681e-08): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+  筛选后      n(港)=4  视觉 0.1316  +AIS 0.1397  (Δ +0.81, 逐港升 4/4)
+
+=== 参考 ===
+  旧数据集(dataset244, 混合档) 视觉 0.2070 | 老池子(同档) ~0.44 | 判据：筛选后是否接近 0.44
+  AIS 长度配对检验(全部): Δ +1.87 pp  Wilcoxon p=0.0078
