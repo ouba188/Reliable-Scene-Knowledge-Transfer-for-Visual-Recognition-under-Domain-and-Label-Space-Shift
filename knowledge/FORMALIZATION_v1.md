@@ -72,9 +72,15 @@ Measured on 25,893 known-class instances (rescue 617 / harm 313 / neutral 24,963
 Two consequences, both non-obvious:
 - **A perfect selector is not needed**: because harm is rare ($1.2\%$), AUC $0.80$ saturates the ceiling.
 - **AUC is not sufficient**: the deployed gate has $a \approx 0.72$–$0.75$, which the curve maps to $67$–$86\%$, yet it
-  realises $37\%$. **[open]** The missing link is *tail* judgement, and it is not fixable by thresholding: the
-  correct decision label $(L_K \ge L_V)$ *is* the argmax boundary, so post-hoc calibration provably cannot move it
-  (Platt arm $\equiv$ the visual arm, "choose $K$" fires with probability $0.000$). **[proved]** + **[measured]**
+  realises $37\%$. **[open]** The missing link is *tail* judgement. Two candidate fixes are ruled out by experiment:
+  (i) **thresholding/calibration** — the correct decision label $(L_K \ge L_V)$ *is* the argmax boundary, so post-hoc
+  calibration provably cannot move it (Platt arm $\equiv$ the visual arm, "choose $K$" fires with probability
+  $0.000$); **[proved]** + **[measured]**
+  (ii) **the objective** — training a single score on the decision label with measured asymmetric costs and
+  class-prior reweighting, thresholded by a source-side minimax criterion, captures $27\%$ versus the proxy's $25\%$
+  (noise), and *worse* than deferring always ($37\%$). **[measured]**
+  ⇒ what remains is the expert arm's own sparsity: the ceiling is $+2.91$ pp and the feature-level resolution in the
+  tail is insufficient. A method contribution therefore requires a **new input axis**, not a new head.
 
 ---
 
@@ -107,9 +113,10 @@ The method is the triple:
 | P2 label-free sign estimation | measured, $a \approx 0.72$ |
 | P3 identifiability wall / domain rules confounded | measured (5 independent negative families) |
 | selectivity–regret curve | measured |
-| reaching the curve at a given $a$ | **open** — tail judgement; thresholding proved insufficient |
+| reaching the curve at a given $a$ | **open** — tail judgement; both post-hoc thresholding and a decision-risk objective are ruled out, so it needs a new input axis |
 | any gain from deeper models | **refuted** (3 independent negative results) |
 | open-set novelty | **absent in this data** (unseen types are ordinary ships: visual AUC 0.493, knowledge-side 0.509, size 0.474) |
+| the one surviving algorithmic path | multi-temporal: the same MMSI observed across acquisitions gives a sequence inductive bias *and* new information; the scenes (430, spanning dates) and the per-product AIS are both local |
 
 **What the paper claims**: a mechanism-level, falsifiable account of *when auxiliary scene knowledge transfers*, with
 a protocol and a benchmark, and explicit negative evidence on capacity, on domain-level allocation, and on open-set

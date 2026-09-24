@@ -1,0 +1,41 @@
+实例 26556 | 已知 17978
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.08638e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.06516e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.19528e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.16022e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Antwerp-Bruges   已知  4865 | V 0.221 全K 0.230 代理argmax 0.231 代理thr 0.228 决策 0.228 | 阈值 0.10/0.37 选K比例 0.81
+Busan            已知   379 | V 0.186 全K 0.203 代理argmax 0.196 代理thr 0.192 决策 0.197 | 阈值 0.10/0.37 选K比例 0.59
+Callao           已知   129 | V 0.266 全K 0.293 代理argmax 0.293 代理thr 0.293 决策 0.289 | 阈值 -0.05/0.40 选K比例 0.64
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.08638e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.06516e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Fujairah         已知  2964 | V 0.156 全K 0.170 代理argmax 0.166 代理thr 0.166 决策 0.162 | 阈值 0.00/0.35 选K比例 0.74
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.19528e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.16022e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Hamburg          已知  3282 | V 0.265 全K 0.264 代理argmax 0.270 代理thr 0.265 决策 0.267 | 阈值 -0.05/0.17 选K比例 0.89
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.55559e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.55169e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Houston          已知   677 | V 0.230 全K 0.243 代理argmax 0.228 代理thr 0.231 决策 0.235 | 阈值 0.10/0.32 选K比例 0.68
+Jebel Ali        已知  5566 | V 0.171 全K 0.178 代理argmax 0.178 代理thr 0.178 决策 0.175 | 阈值 0.00/0.50 选K比例 0.56
+Los Angeles      已知   116 | V 0.283 全K 0.282 代理argmax 0.274 代理thr 0.282 决策 0.286 | 阈值 -0.05/0.35 选K比例 0.56
+
+arm                    已知类BA       天花板达成   最差港Δ(pp)
+V                     0.2222          0%       0.00
+VK                    0.2329         37%      -0.11
+proxy_argmax          0.2295         25%      -0.87
+proxy_thr             0.2294         25%      -0.11
+decision_w            0.2300         27%       0.25
+oracle                0.2513        100%       1.43
+
+预注册判据：决策目标臂的捕获率 >= 67%% 且最差港不恶化 ⇒ 方法向成立
+（对照：代理 argmax 捕获率 25%）
+exit=0
