@@ -1,0 +1,44 @@
+chips 26556 | known 18462 | unknown 8094
+  已扫 200 个 AIS 文件，MMSI 63420
+  已扫 400 个 AIS 文件，MMSI 94574
+  已扫 600 个 AIS 文件，MMSI 114390
+  已扫 800 个 AIS 文件，MMSI 128206
+  已扫 1000 个 AIS 文件，MMSI 147670
+  已扫 1200 个 AIS 文件，MMSI 169343
+  已扫 1400 个 AIS 文件，MMSI 179536
+AIS 文件 1541 个 | MMSI 尺寸 182983 个
+unique 关联命中 9206 / 9206
+尺寸覆盖 25893 / 26556 (98%)
+
+自检：各类的 AIS 登记长度（L=[14]+[15]，米）
+class                         n       中位      p25      p75
+product_chemical_tanker    2903      129       75      212
+container_ship             2676      155       77      257
+bulk_carrier               2634      168       88      232
+general_cargo              2530      110       77      195
+crude_oil_tanker           2270      141       78      257
+lpg_lng_tanker             2137      132       80      215
+offshore_supply            1720       87       53      134
+tug_towing                 1673       56       38      129
+dredger                    1644      102       60      195
+fishing_vessel             1572       58       31      156
+ro_ro_vehicle_carrier      1266      126       73      215
+passenger_ship             1122       95       53      198
+pleasure_craft              755       59       31      110
+heavy_load_carrier          365       88       60      139
+pilot_port_tender           343       96       38      146
+sailing_vessel              237       59       27      101
+reefer_cargo                 46      120       61      177
+
+已知 n=17978 中位 114 m | 未知 n=7915 中位 104 m
+★ 长度对"已知 vs 未知"的 AUC: 0.474   （此前最好 0.549）
+  逐未知类中位长度:
+    dredger                  n= 1644 中位    102 m
+    heavy_load_carrier       n=  365 中位     88 m
+    lpg_lng_tanker           n= 2137 中位    132 m
+    passenger_ship           n= 1122 中位     95 m
+    pilot_port_tender        n=  343 中位     96 m
+    pleasure_craft           n=  755 中位     59 m
+    reefer_cargo             n=   46 中位    120 m
+    ro_ro_vehicle_carrier    n= 1266 中位    126 m
+    sailing_vessel           n=  237 中位     59 m
