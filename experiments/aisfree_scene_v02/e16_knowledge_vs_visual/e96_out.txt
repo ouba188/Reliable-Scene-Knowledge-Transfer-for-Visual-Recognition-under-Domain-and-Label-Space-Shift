@@ -1,0 +1,34 @@
+chips 30496 | known 21764 | unknown 8732 | knowledge dims 10
+E:\临时会话\visual_reliable_baseline\e96_ood_gate.py:95: RuntimeWarning: overflow encountered in exp
+  nu = 1.0 / (1.0 + np.exp((E - thr) / scale))        # high energy -> in-distribution -> nu small
+Antwerp-Bruges   已知  5816 未知  2607 | BA 视觉 0.227 耦合 0.223 无门控 0.224 | 未知液货族 视觉 0.211 耦合 0.178 无门控 0.176 | OOD AUC 0.474
+E:\临时会话\visual_reliable_baseline\e96_ood_gate.py:95: RuntimeWarning: overflow encountered in exp
+  nu = 1.0 / (1.0 + np.exp((E - thr) / scale))        # high energy -> in-distribution -> nu small
+Busan            已知   476 未知    63 | BA 视觉 0.208 耦合 0.199 无门控 0.200 | 未知液货族 视觉 0.286 耦合 0.333 无门控 0.349 | OOD AUC 0.487
+Callao           已知   140 未知    16 | BA 视觉 0.132 耦合 0.132 无门控 0.135 | 未知液货族 视觉 0.062 耦合 0.062 无门控 0.062 | OOD AUC 0.440
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.08621e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=4.36194e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Fujairah         已知  3586 未知   576 | BA 视觉 0.161 耦合 0.161 无门控 0.159 | 未知液货族 视觉 0.335 耦合 0.378 无门控 0.380 | OOD AUC 0.503
+Hamburg          已知  3528 未知  1311 | BA 视觉 0.210 耦合 0.213 无门控 0.212 | 未知液货族 视觉 0.151 耦合 0.130 无门控 0.122 | OOD AUC 0.499
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.67275e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Houston          已知  1102 未知    99 | BA 视觉 0.213 耦合 0.216 无门控 0.217 | 未知液货族 视觉 0.242 耦合 0.293 无门控 0.293 | OOD AUC 0.592
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.19026e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.57625e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=7.95565e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+E:\临时会话\visual_reliable_baseline\e96_ood_gate.py:95: RuntimeWarning: overflow encountered in exp
+  nu = 1.0 / (1.0 + np.exp((E - thr) / scale))        # high energy -> in-distribution -> nu small
+Jebel Ali        已知  6999 未知  4053 | BA 视觉 0.201 耦合 0.200 无门控 0.199 | 未知液货族 视觉 0.344 耦合 0.294 无门控 0.293 | OOD AUC 0.505
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=3.28706e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Los Angeles      已知   117 未知     7 | BA 视觉 0.321 耦合 0.307 无门控 0.299 | 未知液货族 视觉 0.429 耦合 0.286 无门控 0.286 | OOD AUC 0.443
+
+已知类 BA: 视觉 0.2091 | 耦合 0.2062 | 无门控 0.2056
+未知片液货族占比: 视觉 0.2575 | 耦合 0.2443 | 无门控 0.2451
+训练-free OOD 分数对"已知 vs 未知"的 AUC: 中位 0.493 均值 0.493
+机制预测：耦合/无门控 的未知液货族占比应低于视觉（知识被抑制）
