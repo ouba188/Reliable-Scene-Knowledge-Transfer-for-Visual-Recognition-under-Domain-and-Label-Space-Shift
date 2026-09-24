@@ -1,0 +1,44 @@
+device cuda | arms ['ridge_V', 'ridge_VK', 'gate_old', 'visual_only', 'joint_ce', 'joint_aux']
+port                ridge_V ridge_VK  gate_old vis_only  jointCE jointAUX
+  [对齐自检] y | ridge_V ridge_VK gate_old | jointCE jointAUX
+    0 | 3 3 3 | 3 3
+    0 | 0 0 0 | 0 0
+    0 | 5 5 0 | 0 0
+    0 | 1 1 0 | 1 1
+    0 | 0 0 0 | 0 0
+  aux 正例率 0.035
+Antwerp-Bruges        0.557    0.674     0.833    0.561    0.762    0.737
+Busan                 0.470    0.501     0.689    0.465    0.685    0.660
+Callao                0.281    0.338     0.391    0.279    0.310    0.291
+Fujairah              0.340    0.402     0.660    0.332    0.482    0.491
+Hamburg               0.625    0.675     0.728    0.620    0.778    0.777
+Houston               0.327    0.303     0.403    0.333    0.372    0.387
+Jebel Ali             0.381    0.411     0.443    0.378    0.360    0.358
+Los Angeles           0.364    0.381     0.344    0.368    0.362    0.365
+Melbourne             0.543    0.599     0.574    0.568    0.656    0.654
+Mombasa               0.562    0.605     0.597    0.551    0.479    0.407
+New York              0.432    0.404     0.437    0.489    0.384    0.361
+Newcastle             0.388    0.436     0.403    0.423    0.451    0.443
+Ningbo-Zhoushan       0.569    0.654     0.825    0.576    0.764    0.753
+Port Hedland          0.174    0.172     0.201    0.150    0.189    0.203
+Port Klang            0.358    0.364     0.397    0.355    0.355    0.376
+Port Said             0.345    0.304     0.381    0.346    0.349    0.340
+Qingdao               0.752    0.775     0.897    0.754    0.817    0.794
+Richards Bay          0.339    0.368     0.389    0.366    0.372    0.381
+Rotterdam             0.581    0.701     0.739    0.589    0.796    0.778
+Santos                0.390    0.402     0.379    0.390    0.369    0.388
+Shanghai              0.605    0.706     0.809    0.599    0.745    0.744
+Singapore             0.360    0.300     0.368    0.355    0.357    0.348
+Sydney Botany         0.418    0.426     0.438    0.413    0.294    0.316
+Tanger Med            0.387    0.444     0.428    0.386    0.412    0.403
+
+ridge_V      mean 0.4395  Δ vs ridge_V  +0.00  逐港正  0/24  worst  +0.00
+ridge_VK     mean 0.4728  Δ vs ridge_V  +3.32  逐港正 19/24  worst  -6.01
+gate_old     mean 0.5314  Δ vs ridge_V  +9.19  逐港正 22/24  worst  -2.02
+visual_only  mean 0.4436  Δ vs ridge_V  +0.41  逐港正 12/24  worst  -2.43
+joint_ce     mean 0.4958  Δ vs ridge_V  +5.62  逐港正 16/24  worst -12.41
+joint_aux    mean 0.4898  Δ vs ridge_V  +5.02  逐港正 17/24  worst -15.50
+
+配对 joint_ce − gate_old:  -3.56 pp  p=0.0126
+配对 joint_aux − gate_old:  -4.16 pp  p=0.0096
+配对 joint_aux − joint_ce:  -0.60 pp  p=0.1875
