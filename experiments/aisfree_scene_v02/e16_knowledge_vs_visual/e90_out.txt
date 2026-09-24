@@ -1,0 +1,30 @@
+chips 30496 | known 21764 | unknown 8732 | device cuda
+      [train] 末轮 CE 1.3415
+      [train] 末轮 CE 1.3396
+Antwerp-Bruges   known n= 5816 未知 n= 2607 | 视觉 0.186  KOSR 0.198  无门控 0.202
+      [train] 末轮 CE 1.3918
+      [train] 末轮 CE 1.4097
+Busan            known n=  476 未知 n=   63 | 视觉 0.167  KOSR 0.214  无门控 0.211
+      [train] 末轮 CE 1.4104
+      [train] 末轮 CE 1.4130
+Callao           known n=  140 未知 n=   16 | 视觉 0.135  KOSR 0.219  无门控 0.242
+      [train] 末轮 CE 1.3904
+      [train] 末轮 CE 1.3904
+Fujairah         known n= 3586 未知 n=  576 | 视觉 0.164  KOSR 0.171  无门控 0.170
+      [train] 末轮 CE 1.3784
+      [train] 末轮 CE 1.3815
+Hamburg          known n= 3528 未知 n= 1311 | 视觉 0.203  KOSR 0.205  无门控 0.199
+      [train] 末轮 CE 1.4092
+      [train] 末轮 CE 1.4178
+Houston          known n= 1102 未知 n=   99 | 视觉 0.174  KOSR 0.190  无门控 0.183
+      [train] 末轮 CE 1.3099
+      [train] 末轮 CE 1.3073
+Jebel Ali        known n= 6999 未知 n= 4053 | 视觉 0.209  KOSR 0.204  无门控 0.218
+      [train] 末轮 CE 1.4108
+      [train] 末轮 CE 1.4139
+Los Angeles      known n=  117 未知 n=    7 | 视觉 0.223  KOSR 0.176  无门控 0.151
+
+（视觉列 = 同一网络的 head_v 路径，非 ridge；ridge 同特征参考 0.215）
+visual       已知类 BA 均值 0.1827  未知片液货族占比 0.3283
+kosr         已知类 BA 均值 0.1973  未知片液货族占比 0.2898
+kosr_nogate  已知类 BA 均值 0.1970  未知片液货族占比 0.2296
