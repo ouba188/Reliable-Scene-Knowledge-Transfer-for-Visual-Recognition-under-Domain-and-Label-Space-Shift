@@ -1,0 +1,54 @@
+manifest 38091
+  Antwerp-Bruges     geo feats  43966  offsets   9765
+  Busan              geo feats   1834  offsets    224
+  Callao             geo feats   2728  offsets   1350
+  Fujairah           geo feats   9763  offsets   2516
+  Hamburg            geo feats  28928  offsets   6062
+  Houston            geo feats   2035  offsets    621
+  Jebel Ali          geo feats  86271  offsets  12159
+  Los Angeles        geo feats    338  offsets    100
+  Melbourne          geo feats   1496  offsets    524
+  Mombasa            geo feats   1710  offsets    458
+  New York           geo feats   1229  offsets    233
+  Newcastle          geo feats   1583  offsets    640
+  Ningbo-Zhoushan    geo feats   4631  offsets    681
+  Port Hedland       geo feats   1464  offsets    511
+  Port Klang         geo feats   7888  offsets   1808
+  Port Said          geo feats  13723  offsets   2794
+  Qingdao            geo feats  57654  offsets   5615
+  Richards Bay       geo feats   1543  offsets    389
+  Rotterdam          geo feats  32425  offsets   4969
+  Santos             geo feats   5117  offsets   1641
+  Shanghai           geo feats  76492  offsets   7086
+  Singapore          geo feats  60765  offsets  14284
+  Sydney Botany      geo feats   4017  offsets    721
+  Tanger Med         geo feats    480  offsets     69
+
+[0] Port Said 跳过：裁剪字段缺失
+
+[1] Hamburg _008ED9_EBA7 pol=VV det= offset=(26624, 6144)  abs=(35996,12308)
+   scene 29389x21428  window mean 0.0  p99 0.0  max 0
+   -> E:\临时会话\visual_reliable_baseline\chips224\check_01_Hamburg.png
+
+[2] Antwerp-Bruges _0758CD_0F9D pol=VV det= offset=None  abs=(7468,2232)
+   scene 29009x21411  window mean 0.0  p99 0.0  max 0
+   -> E:\临时会话\visual_reliable_baseline\chips224\check_02_Antwerp-Bruges.png
+
+[3] Port Hedland _00AC3F_40F8 pol=VV det= offset=(6144, 10240)  abs=(19072,13272)
+   scene missing: F:\SAR_0922\Port Hedland\VV\S1C_IW_GRDH_1SDV_20251211T213053_20251211T213122_005409_00AC3F_40F8_VV_UTM_8bit.tif
+
+[4] Shanghai _07653B_1E66 pol=VV det= offset=(26624, 14336)  abs=(27348,18376)
+   scene missing: F:\SAR_0922\Shanghai\VV\S1A_IW_GRDH_1SDV_20250609T095503_20250609T095528_059568_07653B_1E66_VV_UTM_8bit.tif
+
+[5] Qingdao _079158_54A8 pol=VV det= offset=(26624, 16384)  abs=(27356,21616)
+   scene missing: F:\SAR_0922\Qingdao\VV\S1A_IW_GRDH_1SDV_20250901T095616_20250901T095641_060793_079158_54A8_VV_UTM_8bit.tif
+
+[6] Busan _0785D8_D733 pol=VV det= offset=(24576, 16384)  abs=(31460,26902)
+   scene 28405x23816  window mean 0.0  p99 0.0  max 0
+   -> E:\临时会话\visual_reliable_baseline\chips224\check_06_Busan.png
+
+[7] Santos _07A8C1_C8F3 pol=VV det=a7ccb6fce3ae115d offset=None  abs=(10308,10124)
+   scene 29221x25477  window mean 147.6  p99 255.0  max 255
+   -> E:\临时会话\visual_reliable_baseline\chips224\check_07_Santos.png
+
+写出 4 张自检图

@@ -1,0 +1,14 @@
+Antwerp-Bruges   ship_untyped             VV 坐标越界
+Antwerp-Bruges   ship_untyped             VH 坐标越界
+Jebel Ali        ship_untyped             VH 坐标越界
+Jebel Ali        general_cargo            VV 坐标越界
+Singapore        bulk_carrier             VV 场景缺失
+Singapore        ship_untyped             VV 场景缺失
+Hamburg          ship_untyped             VV 坐标越界
+Hamburg          ship_untyped             VH 坐标越界
+Santos           ship_untyped             VV 场景缺失
+Santos           ship_untyped             VH 场景缺失
+Shanghai         ship_untyped             VV 场景缺失
+Shanghai         offshore_supply          VH 场景缺失
+
+写出 0 张

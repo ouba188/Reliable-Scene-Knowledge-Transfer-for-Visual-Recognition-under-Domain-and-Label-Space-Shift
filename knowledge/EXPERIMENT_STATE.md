@@ -493,6 +493,26 @@ torchgeo S1 权重的期望输入（源码 `resnet.py`）：**dB 域、224×224�
 **结论**：**无标签条件下无法保证不出现负增益；即使给 oracle 逐类掩码也不能**——这是信号结构决定的，不是实现问题。
 **文件**：`e31b_sar_correct.py`、`e34_perclass_mask.py`、`scripts/extract_s1b_features.py`、`features_s1b/` 及各自 `_out.txt`。
 
+### E17o 224 px 路线受阻（e76/e76b/e77/e78）：F: 整景与现有 chips 不属同一批次 ⇒ 需重下或改走 ③'
+
+**目标**：把 128 px chips 重建为 224 px，抬绝对精度（"模型够强吗"这条线）。
+
+**四次映射尝试全部失败** ✗：
+1. `tile` 偏移（geo 的 `x00000_y04096` + manifest 的 `crop_left/top`）⇒ 抽检窗口**全黑**（坐标落在数据外）；
+2. `obj_uid_{pol}` 连接 geo 的 `det` ⇒ manifest 该列**大量为空**；
+3. `source_object_index_{pol}` → `det_%05d` ⇒ **0/6 命中**；
+4. geo 多边形 **lon/lat → 场景 CRS+geotransform 反算像元** ⇒ 全部**坐标越界**或**场景缺失**。
+
+**根因不是公式，是数据批次不匹配** ✗：`F:/SAR_0922/<港>/{VV,VH}/<product>_POL_UTM_8bit.tif`
+- 覆盖：manifest 需 841 个 (port, product)，F: 命中 **626（74%）**（Qingdao 0/25、Rotterdam 0/11、Shanghai 9/29）；9 个港 100%；
+- 且抽检中凡"命中"的，坐标也不落在场景内 ⇒ F: 的这批与 geo/manifest 的几何基准不同源。
+
+**结论与路线修正**：
+1. **②（重裁 224）本地不可行** ✗ —— 要么**从 ASF 重下**（841 元数据 + Earthdata token + 已有脚本管线在本机 ✓，纯网络任务，估 1–3 天，需你点头），要么**改走 ③'**；
+2. **③'（推荐，今天可做）**：**在现有 128 px chips 上做正经微调** ✓ —— 提分辨率的收益暂缺，但"全参数 + 20–50 epoch + 强增广 + ENT/AdaBN + 跨港早停"这套配方从未真正试过（e35 那次配方有误 ✗），这一步**不需要新数据**，且是 e75 之后唯一还没试的"变强"杠杆；
+3. **e75 结论不受影响** ✓：维度余地 = 0（128 维已取尽）；逐折源港内 PCA 与出厂全局 PCA 同值（0.4422 vs 0.4395）⇒ 既有结论未被污染。
+**文件**：`e76_rebuild_224.py`、`e76b_georef_check.py`、`e77_scene_coverage.py`、`e78_geo_crops.py` 及各自 `_check/_out.txt`。
+
 ### E17n 表征余地为 0（e75）+ 整景盘点到 F: ⇒ ② 解封、③ 可行
 
 **(1) e75：维度不是瓶颈，且悬案解决。** 四档表征，PCA **逐折只在训练源港上拟合**（顺带修正"出厂 PCA 全局拟合"的缺口）：

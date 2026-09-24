@@ -1,0 +1,8 @@
+manifest 38091
+geo 索引条目 75220
+[0] Jebel Ali 09F37_985E VV 未命中 geo 键
+[0] Jebel Ali 09F37_985E VH 未命中 geo 键
+[2] Singapore 7B48D_2778 VV 未命中 geo 键
+[2] Singapore 7B48D_2778 VH 未命中 geo 键
+
+写出 0 张自检图
