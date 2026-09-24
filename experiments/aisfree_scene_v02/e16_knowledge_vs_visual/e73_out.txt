@@ -1,0 +1,11 @@
+非中性 chip 5765（救回 3504 / 误伤 2261）
+
+block                           可用维  AUC(harm)         含义
+facility_prox(0-13)              14      0.515   n=3004
+facility_contrast(14-41)         12      0.590   n=1109
+chains(42-59)                    13      0.523   n=1919
+detection(60-70)                 11      0.433   n=1408
+LEGAL_all(0-70)                  50      0.609   n=4135
+ais_field(71-81)                 11      0.493   n=2742
+
+（AUC>0.5 ⇒ 该块的"共享度"越高越容易被伤害；LEGAL_all 应复现 e69 的 ~0.61）

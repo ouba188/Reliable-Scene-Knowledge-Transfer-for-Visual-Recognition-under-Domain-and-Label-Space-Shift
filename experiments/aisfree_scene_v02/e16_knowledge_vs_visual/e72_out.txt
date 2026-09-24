@@ -1,0 +1,27 @@
+非中性 chip 5765（救回 3504 / 误伤 2261）
+
+score              AUC(rescue)  AUC(harm) AUC(discrim.)
+liquid_chain            0.635      0.365        0.230
+dry_chain               0.629      0.371        0.241
+general_logistics       0.629      0.371        0.242
+liquid_industrial       0.626      0.374        0.248
+nav_interface           0.608      0.392        0.283
+liquid_minus_dry        0.459      0.541        0.581
+
+最干（liquid-dry 最低四分位）         n=1444  误伤率 0.407  救回率 0.593
+最液（最高四分位）                    n=1445  误伤率 0.473  救回率 0.527
+
+逐类 sanity（该类的 liquid_chain / dry_chain 平均分位）:
+  bulk    n=11128  liquid 0.621  dry 0.636  Δ=-0.015 ｜ ΔVK +15.6pp
+  fish    n= 8599  liquid 0.492  dry 0.498  Δ=-0.006 ｜ ΔVK  -1.0pp
+  gcargo  n= 5929  liquid 0.470  dry 0.476  Δ=-0.007 ｜ ΔVK  +2.3pp
+  pchem   n= 5827  liquid 0.405  dry 0.385  Δ=0.020 ｜ ΔVK  -5.1pp
+  cont    n= 2208  liquid 0.395  dry 0.387  Δ=0.008 ｜ ΔVK  -3.4pp
+  crude   n= 1757  liquid 0.412  dry 0.397  Δ=0.015 ｜ ΔVK -13.9pp
+  tug     n= 1478  liquid 0.456  dry 0.412  Δ=0.044 ｜ ΔVK  +6.8pp
+  offsh   n= 1165  liquid 0.420  dry 0.390  Δ=0.030 ｜ ΔVK  -2.2pp
+
+机制导出的简单规则（不用闸门、不训练）:
+  d=0.5 干才用      平均 0.4727  Δ  +3.32  逐港正 19/24  worst  -6.09
+  d=0.0 干才用      平均 0.4611  Δ  +2.16  逐港正 13/24  worst  -3.42
+  d=-0.5 干才用     平均 0.4395  Δ  +0.00  逐港正  0/24  worst  +0.00
