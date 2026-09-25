@@ -1,0 +1,36 @@
+=== P1 rank invariance (real scores) ===
+top-20% 集合在单调变换下的对称差: [0]（期望 {0} ✓）
+固定分位阈值的不一致判定数: 中位 0 ⇒ 阈值不具单调不变性 ✓
+Antwerp-Bruges   增益 +0.0952 ｜ 门控 AUC(benefit) 0.944 ｜ R_gate +0.80 R_oracle +1.29
+Busan            增益 -0.0628 ｜ 门控 AUC(benefit) 0.921 ｜ R_gate +0.78 R_oracle -0.60
+Callao           增益 +0.0531 ｜ 门控 AUC(benefit) 0.834 ｜ R_gate -1.50 R_oracle +15.00
+Fujairah         增益 +0.1304 ｜ 门控 AUC(benefit) 0.938 ｜ R_gate +0.96 R_oracle +1.27
+Hamburg          增益 +0.0516 ｜ 门控 AUC(benefit) 0.958 ｜ R_gate +1.00 R_oracle +1.70
+Houston          增益 -0.0308 ｜ 门控 AUC(benefit) 0.843 ｜ R_gate +0.44 R_oracle +2.97
+Jebel Ali        增益 +0.0086 ｜ 门控 AUC(benefit) 0.608 ｜ R_gate +0.44 R_oracle -1.33
+Los Angeles      增益 -0.0082 ｜ 门控 AUC(benefit) 0.899 ｜ R_gate +0.95 R_oracle -1.05
+Melbourne        增益 +0.0408 ｜ 门控 AUC(benefit) 0.992 ｜ R_gate +1.00 R_oracle +1.00
+Mombasa          增益 +0.0311 ｜ 门控 AUC(benefit) 0.974 ｜ R_gate +1.00 R_oracle +1.13
+New York         增益 +0.0530 ｜ 门控 AUC(benefit) 0.799 ｜ R_gate +0.57 R_oracle -0.86
+Newcastle        增益 +0.0731 ｜ 门控 AUC(benefit) 0.983 ｜ R_gate +1.00 R_oracle +2.00
+Ningbo-Zhoushan  增益 +0.0762 ｜ 门控 AUC(benefit) 0.988 ｜ R_gate +1.00 R_oracle +1.17
+Port Hedland     增益 -0.0380 ｜ 门控 AUC(benefit) 0.989 ｜ R_gate +1.00 R_oracle +1.16
+Port Klang       增益 -0.0180 ｜ 门控 AUC(benefit) 0.871 ｜ R_gate +1.50 R_oracle +28.25
+Port Said        增益 +0.0290 ｜ 门控 AUC(benefit) 0.947 ｜ R_gate +1.14 R_oracle +5.57
+Qingdao          增益 +0.0153 ｜ 门控 AUC(benefit) 0.965 ｜ R_gate +1.00 R_oracle -101.00
+Richards Bay     增益 -0.0017 ｜ 门控 AUC(benefit) 0.969 ｜ R_gate +1.00 R_oracle +1.08
+Rotterdam        增益 +0.0723 ｜ 门控 AUC(benefit) 0.962 ｜ R_gate +0.98 R_oracle +1.53
+Santos           增益 -0.0290 ｜ 门控 AUC(benefit) 0.936 ｜ R_gate +1.04 R_oracle +1.63
+Shanghai         增益 +0.0472 ｜ 门控 AUC(benefit) 0.969 ｜ R_gate +1.00 R_oracle +1.76
+Singapore        增益 -0.0810 ｜ 门控 AUC(benefit) 0.675 ｜ R_gate +0.41 R_oracle -0.70
+Sydney Botany    增益 -0.0013 ｜ 门控 AUC(benefit) 0.979 ｜ R_gate +1.00 R_oracle +1.14
+Tanger Med       增益 +0.0120 ｜ 门控 AUC(benefit) 0.947 ｜ R_gate +1.00 R_oracle +1.72
+
+=== M: 门控质量 vs 预算收复 ===
+门控 AUC(benefit) 中位 0.947 ｜ R_gate 中位 +1.00 ｜ R_oracle 中位 +1.22
+Spearman(AUC, R_gate) rho=+0.592 p=0.0023
+
+=== B: 条件分布被破坏后（保留先验）===
+类内全置换      秩选择中位 -0.0032 ｜ 随机中位 +0.0049 ｜ 优势保留 9/24 港
+跨类置换       秩选择中位 +0.0264 ｜ 随机中位 +0.0544 ｜ 优势保留 7/24 港
+exit=0
