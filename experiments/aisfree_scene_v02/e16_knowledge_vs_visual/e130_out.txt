@@ -1,0 +1,41 @@
+Antwerp-Bruges   done (1)
+Busan            done (2)
+Callao           done (3)
+Fujairah         done (4)
+Hamburg          done (5)
+Houston          done (6)
+Jebel Ali        done (7)
+Los Angeles      done (8)
+Melbourne        done (9)
+Mombasa          done (10)
+New York         done (11)
+Newcastle        done (12)
+Ningbo-Zhoushan  done (13)
+Port Hedland     done (14)
+Port Klang       done (15)
+Port Said        done (16)
+Qingdao          done (17)
+Richards Bay     done (18)
+Rotterdam        done (19)
+Santos           done (20)
+Shanghai         done (21)
+Singapore        done (22)
+Sydney Botany    done (23)
+Tanger Med       done (24)
+
+#   quantity (detection_* / ais_*)      det ΔBA(pp)  ais ΔBA(pp)      corr     AIS p
+0   q0                                        +0.12        +0.16    -0.017    0.0691
+1   q1                                        +0.05        -0.04    -0.017    0.7151
+2   q2                                        -0.02        +0.07     0.002    0.2015
+3   q3                                        +0.05        +0.13    -0.020    0.1154
+4   q4                                        +0.22        +1.12    -0.163    0.0028
+5   q5                                        +0.30        +2.20    -0.187    0.0007
+6   q6                                        +0.29        +1.49    -0.175    0.0011
+7   q7                                        +0.08        +2.21    -0.220    0.0039
+8   q8                                        +0.20        +3.04    -0.224    0.0014
+9   q9                                        +0.01        +0.05     0.023    0.9058
+10  q10                                       -0.04        +0.00     0.008    0.9547
+
+检测版最强 q5 (+0.30pp) ｜ AIS 版最强 q8 (+3.04pp)
+⇒ AIS 的价值在于"场覆盖"而非单个量精度 ✓（检测版同名量都很弱 ✓）
+exit=0
