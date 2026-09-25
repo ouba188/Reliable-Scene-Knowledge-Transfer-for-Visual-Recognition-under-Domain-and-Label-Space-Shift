@@ -1,0 +1,52 @@
+Antwerp-Bruges   n=  886 准确率 0.629
+Busan            n=  871 准确率 0.450
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=2.
+  warnings.warn(
+Callao           n=  476 准确率 0.319
+Fujairah         n= 1158 准确率 0.402
+Hamburg          n= 1619 准确率 0.655
+Houston          n=  804 准确率 0.540
+Jebel Ali        n= 4602 准确率 0.258
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=3.
+  warnings.warn(
+Los Angeles      n=  583 准确率 0.398
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+  warnings.warn(
+Melbourne        n=   64 准确率 0.438
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+  warnings.warn(
+Mombasa          n=  149 准确率 0.497
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=2.
+  warnings.warn(
+New York         n=  470 准确率 0.326
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=2.
+  warnings.warn(
+Newcastle        n=  299 准确率 0.395
+Ningbo-Zhoushan  n= 5756 准确率 0.830
+Port Hedland     n=  859 准确率 0.246
+Port Klang       n= 3425 准确率 0.367
+Port Said        n= 1895 准确率 0.420
+Qingdao          n= 1981 准确率 0.808
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=3.
+  warnings.warn(
+Richards Bay     n=  744 准确率 0.374
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=3.
+  warnings.warn(
+Rotterdam        n=  573 准确率 0.600
+Santos           n= 1658 准确率 0.441
+Shanghai         n= 2390 准确率 0.720
+Singapore        n= 5259 准确率 0.229
+D:\Program_files\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1419: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=2.
+  warnings.warn(
+Sydney Botany    n=  304 准确率 0.484
+Tanger Med       n= 1266 准确率 0.420
+
+key                  AURC  Δ vs global         收复
+global             0.4065      +0.0000      -0.0%
+predclass          0.3571      -0.0494     -56.4%
+confbucket         0.4100      +0.0034       3.9%
+targetcluster      0.5432      +0.1367     156.2%
+trueclass          0.4941      +0.0875     100.0%
+
+预注册判据（某无标签键收复 >=60%）: 成立 ✓ ⇒ H1：键太粗，可用 targetcluster 改善 ✓✓
+exit=0
