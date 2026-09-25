@@ -1,0 +1,44 @@
+特征齐备: AIS 69600 | 知识 26556 | 交集 25841 / 71801
+Antwerp-Bruges   已知  4859 | c64 0.470  +AIS 0.469  +知识 0.463  +两者 0.465
+Busan            已知   379 | c64 0.347  +AIS 0.348  +知识 0.334  +两者 0.333
+Callao           已知   129 | c64 0.249  +AIS 0.268  +知识 0.234  +两者 0.183
+Fujairah         已知  2947 | c64 0.294  +AIS 0.303  +知识 0.297  +两者 0.302
+Hamburg          已知  3282 | c64 0.487  +AIS 0.487  +知识 0.478  +两者 0.478
+Houston          已知   677 | c64 0.367  +AIS 0.369  +知识 0.370  +两者 0.365
+Jebel Ali        已知  5546 | c64 0.322  +AIS 0.325  +知识 0.325  +两者 0.328
+Los Angeles      已知   116 | c64 0.344  +AIS 0.359  +知识 0.372  +两者 0.380
+Melbourne        已知    68 | c64 0.634  +AIS 0.634  +知识 0.634  +两者 0.634
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=8.15519e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=8.22238e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=8.22228e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=8.22177e-10): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Mombasa          已知  1144 | c64 0.285  +AIS 0.289  +知识 0.296  +两者 0.302
+New York         已知   125 | c64 0.368  +AIS 0.370  +知识 0.368  +两者 0.370
+Newcastle        已知   477 | c64 0.287  +AIS 0.274  +知识 0.285  +两者 0.283
+Ningbo-Zhoushan  已知  1122 | c64 0.385  +AIS 0.394  +知识 0.382  +两者 0.388
+Port Hedland     已知   917 | c64 0.240  +AIS 0.233  +知识 0.238  +两者 0.246
+Port Klang       已知  3475 | c64 0.302  +AIS 0.301  +知识 0.310  +两者 0.307
+Port Said        已知  4422 | c64 0.314  +AIS 0.315  +知识 0.309  +两者 0.311
+Qingdao          已知  5698 | c64 0.399  +AIS 0.402  +知识 0.397  +两者 0.398
+Richards Bay     已知   724 | c64 0.171  +AIS 0.176  +知识 0.178  +两者 0.197
+Rotterdam        已知  4542 | c64 0.493  +AIS 0.491  +知识 0.489  +两者 0.489
+Santos           已知   799 | c64 0.383  +AIS 0.371  +知识 0.370  +两者 0.373
+Shanghai         已知  5699 | c64 0.394  +AIS 0.389  +知识 0.393  +两者 0.395
+Singapore        已知  5285 | c64 0.411  +AIS 0.413  +知识 0.412  +两者 0.413
+Sydney Botany    已知   778 | c64 0.390  +AIS 0.392  +知识 0.389  +两者 0.390
+Tanger Med       已知   160 | c64 0.351  +AIS 0.348  +知识 0.348  +两者 0.348
+
+arm          已知类 BA
+c64          0.3619
++ais         0.3633
++know        0.3612
++both        0.3616
+
+配对 +ais   − c64:  +0.15 pp  Wilcoxon p=0.2604  逐港升 14/24
+配对 +know  − c64:  -0.06 pp  Wilcoxon p=0.3548  逐港升 8/24
+配对 +both  − c64:  -0.03 pp  Wilcoxon p=0.8314  逐港升 12/24
+exit=0

@@ -1,0 +1,55 @@
+扫描对象表（AIS 匹配档）...
+候选对象 141880
+上限 800 后保留 71822
+按港: {'Jebel Ali': 9328, 'Shanghai': 8181, 'Singapore': 8023, 'Antwerp-Bruges': 7424, 'Qingdao': 6609, 'Rotterdam': 6331, 'Port Said': 5025, 'Hamburg': 4573, 'Port Klang': 4025, 'Fujairah': 3703, 'Ningbo-Zhoushan': 1332, 'Mombasa': 1216, 'Port Hedland': 941, 'Sydney Botany': 929, 'Santos': 829, 'Houston': 795, 'Richards Bay': 782, 'Newcastle': 561, 'Busan': 479, 'Tanger Med': 194, 'New York': 178, 'Callao': 151, 'Los Angeles': 124, 'Melbourne': 89}
+其中场景可用 71822 (100%)
+  Antwerp-Bruges     VV  3643/ 3643
+  Antwerp-Bruges     VH  3781/ 3781
+  Busan              VV   227/  227
+  Busan              VH   252/  252
+  Callao             VV    74/   74
+  Callao             VH    77/   77
+  Fujairah           VV  1842/ 1842
+  Fujairah           VH  1861/ 1861
+  Hamburg            VV  2259/ 2259
+  Hamburg            VH  2314/ 2314
+  Houston            VV   409/  409
+  Houston            VH   365/  386
+  Jebel Ali          VV  4573/ 4573
+  Jebel Ali          VH  4755/ 4755
+  Los Angeles        VV    62/   62
+  Los Angeles        VH    62/   62
+  Melbourne          VV    43/   43
+  Melbourne          VH    46/   46
+  Mombasa            VV   600/  600
+  Mombasa            VH   616/  616
+  New York           VV    84/   84
+  New York           VH    94/   94
+  Newcastle          VV   290/  290
+  Newcastle          VH   271/  271
+  Ningbo-Zhoushan    VV   652/  652
+  Ningbo-Zhoushan    VH   680/  680
+  Port Hedland       VV   465/  465
+  Port Hedland       VH   476/  476
+  Port Klang         VV  1967/ 1967
+  Port Klang         VH  2058/ 2058
+  Port Said          VV  2501/ 2501
+  Port Said          VH  2524/ 2524
+  Qingdao            VV  3239/ 3239
+  Qingdao            VH  3370/ 3370
+  Richards Bay       VV   394/  394
+  Richards Bay       VH   388/  388
+  Rotterdam          VV  3137/ 3137
+  Rotterdam          VH  3194/ 3194
+  Santos             VV   404/  404
+  Santos             VH   425/  425
+  Shanghai           VV  3927/ 3927
+  Shanghai           VH  4254/ 4254
+  Singapore          VV  4035/ 4035
+  Singapore          VH  3988/ 3988
+  Sydney Botany      VV   450/  450
+  Sydney Botany      VH   479/  479
+  Tanger Med         VV    96/   96
+  Tanger Med         VH    98/   98
+DONE -> E:\临时会话\visual_reliable_baseline\dataset_all
+exit=0
