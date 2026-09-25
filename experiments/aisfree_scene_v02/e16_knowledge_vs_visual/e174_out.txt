@@ -1,0 +1,37 @@
+Antwerp-Bruges   n=  886 全量 0.5575
+Busan            n=  871 全量 0.4703
+Callao           n=  476 全量 0.2812
+Fujairah         n= 1158 全量 0.3396
+Hamburg          n= 1619 全量 0.6248
+Houston          n=  804 全量 0.3267
+Jebel Ali        n= 4602 全量 0.3807
+Los Angeles      n=  583 全量 0.3641
+Melbourne        n=   64 全量 0.5430
+Mombasa          n=  149 全量 0.5624
+New York         n=  470 全量 0.4318
+Newcastle        n=  299 全量 0.3882
+Ningbo-Zhoushan  n= 5756 全量 0.5691
+Port Hedland     n=  859 全量 0.1740
+Port Klang       n= 3425 全量 0.3583
+Port Said        n= 1895 全量 0.3448
+Qingdao          n= 1981 全量 0.7521
+Richards Bay     n=  744 全量 0.3390
+Rotterdam        n=  573 全量 0.5805
+Santos           n= 1658 全量 0.3896
+Shanghai         n= 2390 全量 0.6053
+Singapore        n= 5259 全量 0.3599
+Sydney Botany    n=  304 全量 0.4181
+Tanger Med       n= 1266 全量 0.3874
+
+budget   ranked fine BA random fine BA      delta   paired p
+10%              0.5521         0.4216    +0.1305     0.0000
+20%              0.5067         0.4292    +0.0775     0.0005
+50%              0.4959         0.4360    +0.0599     0.0000
+100%             0.4395         0.4395    +0.0000     0.6124
+
+  预算 10% 细类 BA 0.5521 ⇒ 相对全量 125.6%
+  预算 20% 细类 BA 0.5067 ⇒ 相对全量 115.3%
+  预算 50% 细类 BA 0.4959 ⇒ 相对全量 112.8%
+
+预注册判据（某个 k 上 排序 > 随机 且 p<0.05）: 成立 ✓✓ —— 细类半边可用「序+预算」做成可部署 ✓
+exit=0
