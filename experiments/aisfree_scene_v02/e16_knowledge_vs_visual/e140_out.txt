@@ -1,0 +1,36 @@
+=== P1 rank invariance (checked on real scores) ===
+top-20% 集合在单调变换下变化的元素数: {0}（应为 0 ✓）
+固定分位阈值下的不一致判定数: 中位 0（非零 ⇒ 阈值不具单调不变性 ✗）
+Antwerp-Bruges   增益 +0.0952 ｜ AUC(benefit) 0.295 ｜ R_gate -0.02 R_oracle 1.29
+Busan            增益 -0.0628 ｜ AUC(benefit) 0.287 ｜ R_gate 0.20 R_oracle -0.60
+Callao           增益 +0.0531 ｜ AUC(benefit) 0.188 ｜ R_gate -2.00 R_oracle 15.00
+Fujairah         增益 +0.1304 ｜ AUC(benefit) 0.248 ｜ R_gate 0.01 R_oracle 1.27
+Hamburg          增益 +0.0516 ｜ AUC(benefit) 0.159 ｜ R_gate 0.00 R_oracle 1.70
+Houston          增益 -0.0308 ｜ AUC(benefit) 0.478 ｜ R_gate 0.42 R_oracle 2.97
+Jebel Ali        增益 +0.0086 ｜ AUC(benefit) 0.408 ｜ R_gate -0.04 R_oracle -1.33
+Los Angeles      增益 -0.0082 ｜ AUC(benefit) 0.230 ｜ R_gate -0.00 R_oracle -1.05
+Melbourne        增益 +0.0408 ｜ AUC(benefit) 0.188 ｜ R_gate 0.00 R_oracle 1.00
+Mombasa          增益 +0.0311 ｜ AUC(benefit) 0.287 ｜ R_gate 0.07 R_oracle 1.13
+New York         增益 +0.0530 ｜ AUC(benefit) 0.253 ｜ R_gate -0.00 R_oracle -0.86
+Newcastle        增益 +0.0731 ｜ AUC(benefit) 0.201 ｜ R_gate 0.00 R_oracle 2.00
+Ningbo-Zhoushan  增益 +0.0762 ｜ AUC(benefit) 0.076 ｜ R_gate 0.00 R_oracle 1.17
+Port Hedland     增益 -0.0380 ｜ AUC(benefit) 0.250 ｜ R_gate 0.00 R_oracle 1.16
+Port Klang       增益 -0.0180 ｜ AUC(benefit) 0.274 ｜ R_gate 0.25 R_oracle 28.25
+Port Said        增益 +0.0290 ｜ AUC(benefit) 0.346 ｜ R_gate 0.19 R_oracle 5.57
+Qingdao          增益 +0.0153 ｜ AUC(benefit) 0.168 ｜ R_gate 4.00 R_oracle -101.00
+Richards Bay     增益 -0.0017 ｜ AUC(benefit) 0.273 ｜ R_gate 0.04 R_oracle 1.08
+Rotterdam        增益 +0.0723 ｜ AUC(benefit) 0.283 ｜ R_gate 0.00 R_oracle 1.53
+Santos           增益 -0.0290 ｜ AUC(benefit) 0.248 ｜ R_gate 0.02 R_oracle 1.63
+Shanghai         增益 +0.0472 ｜ AUC(benefit) 0.132 ｜ R_gate 0.00 R_oracle 1.76
+Singapore        增益 -0.0810 ｜ AUC(benefit) 0.497 ｜ R_gate 0.11 R_oracle -0.70
+Sydney Botany    增益 -0.0013 ｜ AUC(benefit) 0.189 ｜ R_gate 0.00 R_oracle 1.14
+Tanger Med       增益 +0.0120 ｜ AUC(benefit) 0.203 ｜ R_gate 0.00 R_oracle 1.72
+
+=== M: 预算策略 vs oracle-分位策略 随排序质量 ===
+AUC 中位 0.249 ｜ R_gate 中位 0.00 ｜ R_oracle 中位 1.22 ｜ 平均缺口 1.32
+相关（AUC vs R_gate）rho=+0.319 p=0.1285
+
+=== B: 破坏条件分布后（类内特征置换 50%%）===
+秩选择增益 中位 +0.0105 ｜ 随机臂 中位 +0.0050 ｜ 配对优势保留 18/24 港
+⇒ 优势仍在 ⇒ 破坏不够，需更强干预 ⚠
+exit=0

@@ -1,0 +1,36 @@
+Antwerp-Bruges   ΔBA +0.0952 ｜ TV_pred 0.353 不一致 0.254 源增益 -0.0760
+Busan            ΔBA -0.0628 ｜ TV_pred 0.313 不一致 0.230 源增益 +0.0925
+Callao           ΔBA +0.0531 ｜ TV_pred 0.325 不一致 0.292 源增益 +0.1004
+Fujairah         ΔBA +0.1304 ｜ TV_pred 0.325 不一致 0.206 源增益 +0.0910
+Hamburg          ΔBA +0.0516 ｜ TV_pred 0.446 不一致 0.177 源增益 +0.0825
+Houston          ΔBA -0.0308 ｜ TV_pred 0.365 不一致 0.394 源增益 +0.1036
+Jebel Ali        ΔBA +0.0086 ｜ TV_pred 0.594 不一致 0.688 源增益 +0.0937
+Los Angeles      ΔBA -0.0082 ｜ TV_pred 0.396 不一致 0.208 源增益 +0.1029
+Melbourne        ΔBA +0.0408 ｜ TV_pred 0.292 不一致 0.078 源增益 +0.0946
+Mombasa          ΔBA +0.0311 ｜ TV_pred 0.322 不一致 0.174 源增益 +0.0982
+New York         ΔBA +0.0530 ｜ TV_pred 0.487 不一致 0.372 源增益 +0.0939
+Newcastle        ΔBA +0.0731 ｜ TV_pred 0.314 不一致 0.110 源增益 +0.0974
+Ningbo-Zhoushan  ΔBA +0.0762 ｜ TV_pred 0.612 不一致 0.064 源增益 +0.0979
+Port Hedland     ΔBA -0.0380 ｜ TV_pred 0.578 不一致 0.084 源增益 +0.1032
+Port Klang       ΔBA -0.0180 ｜ TV_pred 0.332 不一致 0.303 源增益 +0.1101
+Port Said        ΔBA +0.0290 ｜ TV_pred 0.404 不一致 0.206 源增益 +0.1024
+Qingdao          ΔBA +0.0153 ｜ TV_pred 0.317 不一致 0.129 源增益 +0.0820
+Richards Bay     ΔBA -0.0017 ｜ TV_pred 0.408 不一致 0.147 源增益 +0.1025
+Rotterdam        ΔBA +0.0723 ｜ TV_pred 0.352 不一致 0.227 源增益 +0.0981
+Santos           ΔBA -0.0290 ｜ TV_pred 0.473 不一致 0.236 源增益 +0.1102
+Shanghai         ΔBA +0.0472 ｜ TV_pred 0.303 不一致 0.120 源增益 +0.0993
+Singapore        ΔBA -0.0810 ｜ TV_pred 0.640 不一致 0.608 源增益 +0.1457
+Sydney Botany    ΔBA -0.0013 ｜ TV_pred 0.472 不一致 0.138 源增益 +0.0957
+Tanger Med       ΔBA +0.0120 ｜ TV_pred 0.455 不一致 0.182 源增益 +0.0845
+
+正增益港 15/24
+留一符号预测正确 13/24 = 54.2%
+二项检验 p=0.4194
+
+  prior_tv_pred  与符号相关 r=-0.225 p=0.2905
+  disagree       与符号相关 r=-0.135 p=0.5284
+  margin_spread  与符号相关 r=+0.175 p=0.4136
+  src_gain       与符号相关 r=-0.323 p=0.1235
+
+预注册判据（≥70% 且 p<0.05）: 未成立 ✗
+exit=0
