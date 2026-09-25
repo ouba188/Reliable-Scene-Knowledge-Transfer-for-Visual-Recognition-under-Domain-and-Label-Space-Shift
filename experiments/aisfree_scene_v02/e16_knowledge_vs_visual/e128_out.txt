@@ -1,0 +1,37 @@
+合规知识 71 维（P0 AIS-free ✓）| 内层 6 ｜ 重抽 50
+  ridge_legal Antwerp-Bruges   n=  886
+  ridge_legal Busan            n=  871
+  ridge_legal Callao           n=  476
+  ridge_legal Fujairah         n= 1158
+  ridge_legal Hamburg          n= 1619
+  ridge_legal Houston          n=  804
+  ridge_legal Jebel Ali        n= 4602
+  ridge_legal Los Angeles      n=  583
+  ridge_legal Melbourne        n=   64
+  ridge_legal Mombasa          n=  149
+  ridge_legal New York         n=  470
+  ridge_legal Newcastle        n=  299
+  ridge_legal Ningbo-Zhoushan  n= 5756
+  ridge_legal Port Hedland     n=  859
+  ridge_legal Port Klang       n= 3425
+  ridge_legal Port Said        n= 1895
+  ridge_legal Qingdao          n= 1981
+  ridge_legal Richards Bay     n=  744
+  ridge_legal Rotterdam        n=  573
+  ridge_legal Santos           n= 1658
+  ridge_legal Shanghai         n= 2390
+  ridge_legal Singapore        n= 5259
+  ridge_legal Sydney Botany    n=  304
+  ridge_legal Tanger Med       n= 1266
+
+=== 专家 ridge_legal ｜ 全专家增益 +0.0216（合规 ✓）===
+预算          秩−随机 (95% CI)          p           收复    CI 排除 0
+5%      +0.0076 [+0.0005,+0.0156]     0.1600        41.4%          ✓
+10%     +0.0149 [+0.0050,+0.0254]     0.0269        80.5%          ✓
+20%     +0.0192 [+0.0062,+0.0328]     0.0194       106.8%          ✓
+50%     +0.0113 [+0.0019,+0.0209]     0.0457       103.0%          ✓
+100%                    —
+  20% 判据（CI 排除 0 且 收复 >=50%）: CI [+0.0064,+0.0334] ｜ 收复 106.8% ⇒ 成立 ✓✓
+
+  gbm_legal   Antwerp-Bruges   n=  886
+  gbm_legal   Busan            n=  871
