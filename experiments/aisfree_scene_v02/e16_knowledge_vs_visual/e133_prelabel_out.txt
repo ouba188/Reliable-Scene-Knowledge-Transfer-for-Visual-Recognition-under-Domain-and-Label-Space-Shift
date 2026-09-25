@@ -1,0 +1,36 @@
+标签列 prelabel_class
+已知 8 类对象 123790 ｜ 港 24 ｜ 产品 327
+KD 树：港 24 ｜ 产品 327
+  Antwerp-Bruges     n=  8734
+  Busan              n=   420
+  Callao             n=   135
+  Fujairah           n=  6365
+  Hamburg            n=  3323
+  Houston            n=   698
+  Jebel Ali          n= 25253
+  Los Angeles        n=   117
+  Melbourne          n=    68
+  Mombasa            n=  1160
+  New York           n=   125
+  Newcastle          n=   482
+  Ningbo-Zhoushan    n=  1153
+  Port Hedland       n=  1061
+  Port Klang         n=  4137
+  Port Said          n=  7653
+  Qingdao            n=  9862
+  Richards Bay       n=   734
+  Rotterdam          n=  7029
+  Santos             n=   807
+  Shanghai           n= 10475
+  Singapore          n= 33055
+  Sydney Botany      n=   784
+  Tanger Med         n=   160
+
+arm                     BA        港数
+场(全港池化)             0.1756        24
+场(本景池化)             0.1762        24
+两者                  0.1677        24
+
+配对 全港 − 本景: -0.0006 (-0.06pp)  p=0.8996 ｜ 正港 12/24
+预注册判据（全港 > 本景 且 p<0.05）: 未成立 ✗
+exit=0

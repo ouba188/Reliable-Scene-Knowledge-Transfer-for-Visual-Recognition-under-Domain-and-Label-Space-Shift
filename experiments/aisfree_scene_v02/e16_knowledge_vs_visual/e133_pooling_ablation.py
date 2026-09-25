@@ -19,6 +19,8 @@ import gzip
 from collections import defaultdict
 from pathlib import Path
 
+import os
+
 import numpy as np
 from scipy import stats
 from scipy.spatial import cKDTree
@@ -28,13 +30,14 @@ OBJ = Path(r'E:/临时会话/knowledge_set_841/objects/objects_classed.csv.gz')
 KNOWN8 = ['bulk_carrier', 'container_ship', 'crude_oil_tanker', 'fishing_vessel',
           'general_cargo', 'offshore_supply', 'product_chemical_tanker', 'tug_towing']
 POOL_POL = 'VH'
+LABEL = os.environ.get('LABEL_COL', 'prelabel_class')   # fine_class covers only 11,450 rows in the 8 known classes; prelabel_class covers 123,790
 R5, R10 = 5000.0, 10000.0
 
 rows = []
 with gzip.open(OBJ, 'rt', encoding='utf-8-sig', errors='replace') as f:
     rd = csv.DictReader(f)
     for r in rd:
-        c = (r.get('fine_class') or '').strip()
+        c = (r.get(LABEL) or '').strip()
         if c not in KNOWN8:
             continue
         try:
@@ -45,7 +48,7 @@ with gzip.open(OBJ, 'rt', encoding='utf-8-sig', errors='replace') as f:
         q = float(r['d_quay_m']) if (r.get('d_quay_m') or '').strip() else float('nan')
         rows.append((r.get('port') or '?', (r.get('polarization') or '').upper(), r.get('product_id') or '',
                      x, y, h, q, KNOWN8.index(c)))
-print('已知 8 类对象 %d ｜ 港 %d ｜ 产品 %d' % (len(rows), len({r[0] for r in rows}), len({r[2] for r in rows})), flush=True)
+print('标签列 %s' % LABEL); print('已知 8 类对象 %d ｜ 港 %d ｜ 产品 %d' % (len(rows), len({r[0] for r in rows}), len({r[2] for r in rows})), flush=True)
 
 port = np.array([r[0] for r in rows]); pol = np.array([r[1] for r in rows])
 prod = np.array([r[2] for r in rows]); y = np.array([r[7] for r in rows])
