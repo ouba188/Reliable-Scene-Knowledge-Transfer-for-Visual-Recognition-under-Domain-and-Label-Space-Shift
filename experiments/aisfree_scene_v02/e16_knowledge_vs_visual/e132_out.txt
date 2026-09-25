@@ -1,0 +1,34 @@
+chips 38091 | 港 24 | cell 池化极化 VH
+对象 2897382 ｜ 键 658 ｜ 池化港 24
+  Jebel Ali            238266 检测（VH）
+  Callao                28926 检测（VH）
+  Sydney Botany          8620 检测（VH）
+  Mombasa               26382 检测（VH）
+  Fujairah              18108 检测（VH）
+  Qingdao               62879 检测（VH）
+  Santos                16733 检测（VH）
+  Melbourne             16010 检测（VH）
+  Antwerp-Bruges       110139 检测（VH）
+  Rotterdam             90222 检测（VH）
+  Richards Bay           8446 检测（VH）
+  Port Said             37985 检测（VH）
+  Shanghai             135602 检测（VH）
+  Port Klang            77936 检测（VH）
+  Houston               35228 检测（VH）
+  Singapore            121449 检测（VH）
+  Hamburg               90800 检测（VH）
+  Port Hedland          20436 检测（VH）
+  Los Angeles            6293 检测（VH）
+  Busan                  3020 检测（VH）
+  New York               2684 检测（VH）
+  Tanger Med             1159 检测（VH）
+  Ningbo-Zhoushan        8399 检测（VH）
+  Newcastle             35498 检测（VH）
+join 校验（前 800 chip）：类别一致 0/0 = 0.0%
+field ✓ sar_field_244.npz ｜ 未命中 38091
+
+V                  0.4395
+V+SAR 场           0.4395   Δ +0.00pp   正港 0/24
+配对 p=nan
+AIS 块对照 +4.23pp（违规）｜ 判据 ΔBA >= +2.96pp ⇒ 未成立 ✗
+exit=0

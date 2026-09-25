@@ -1,0 +1,30 @@
+已知 8 类对象 11450 ｜ 港 19 ｜ 产品 222
+KD 树：港 19 ｜ 产品 218
+  Antwerp-Bruges     n=   289
+  Busan              n=    56
+  Callao             n=     5
+  Fujairah           n=    65
+  Hamburg            n=   205
+  Houston            n=   443
+  Jebel Ali          n=   716
+  Mombasa            n=     8
+  New York           n=    11
+  Newcastle          n=    12
+  Ningbo-Zhoushan    n=   224
+  Port Klang         n=    38
+  Port Said          n=    34
+  Qingdao            n=  4954
+  Rotterdam          n=   195
+  Santos             n=    10
+  Shanghai           n=  3845
+  Singapore          n=   281
+  Sydney Botany      n=    59
+
+arm                     BA        港数
+场(全港池化)             0.1097        12
+场(本景池化)             0.0637        12
+两者                  0.1194        12
+
+配对 全港 − 本景: +0.0461 (4.61pp)  p=0.1763 ｜ 正港 8/12
+预注册判据（全港 > 本景 且 p<0.05）: 未成立 ✗
+exit=0
