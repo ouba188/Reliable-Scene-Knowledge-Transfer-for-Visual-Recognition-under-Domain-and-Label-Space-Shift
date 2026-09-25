@@ -1,0 +1,39 @@
+Antwerp-Bruges   n= 7424
+Busan            n=  479
+Callao           n=  151
+Fujairah         n= 3703
+Hamburg          n= 4573
+Houston          n=  774
+Jebel Ali        n= 9328
+Los Angeles      n=  124
+Melbourne        n=   89
+Mombasa          n= 1216
+New York         n=  178
+Newcastle        n=  561
+Ningbo-Zhoushan  n= 1332
+Port Hedland     n=  941
+Port Klang       n= 4025
+Port Said        n= 5025
+Qingdao          n= 6609
+Richards Bay     n=  782
+Rotterdam        n= 6331
+Santos           n=  829
+Shanghai         n= 8181
+Singapore        n= 8023
+Sydney Botany    n=  929
+Tanger Med       n=  194
+
+rule          BA@10%   known rate
+margin        0.3935        0.907
+novelty       0.2812        0.878
+sum           0.4195        0.908
+and           0.4195        0.908
+random        0.2355        0.820
+
+sum vs margin  : ΔBA +0.0261 (p=0.0641) ｜ Δknown +0.001 (p=0.0980) ⇒ 支配 ✓
+sum vs novelty : ΔBA +0.1384 (p=0.0008) ｜ Δknown +0.030 (p=0.0495) ⇒ 支配 ✓
+and vs margin  : ΔBA +0.0261 (p=0.0641) ｜ Δknown +0.001 (p=0.0980) ⇒ 支配 ✓
+and vs novelty : ΔBA +0.1384 (p=0.0008) ｜ Δknown +0.030 (p=0.0495) ⇒ 支配 ✓
+
+预注册判据（某联合规则同时不差于两个单分数且至少一项更优）: 见上表 ✓/✗
+exit=0
