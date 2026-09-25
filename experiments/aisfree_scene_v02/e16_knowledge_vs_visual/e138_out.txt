@@ -1,0 +1,16 @@
+视觉基线 BA 0.4395（24 港）
+
+subset         clf             BA    ΔBA(pp)        正港      配对 p
+faci           ridge       0.4373      -0.22        11    0.5457
+faci           gbm         0.4611      +2.16        13    0.4908
+chai           ridge       0.4407      +0.12        15    0.4061
+chai           gbm         0.4489      +0.93        10    0.8334
+dete           ridge       0.4432      +0.37        13    0.8553
+dete           gbm         0.4627      +2.32        12    0.3165
+faci+chai      ridge       0.4627      +2.32        14    0.0787
+faci+chai      gbm         0.4598      +2.02        13    0.5838
+faci+dete      ridge       0.4445      +0.49        14    0.3902
+faci+dete      gbm         0.4547      +1.51        12    0.7683
+chai+dete      ridge       0.4445      +0.50        14    0.1688
+chai+dete      gbm         0.4516      +1.20        11    0.7257
+faci+chai+dete ridge       0.4611      +2.16        15    0.0604
