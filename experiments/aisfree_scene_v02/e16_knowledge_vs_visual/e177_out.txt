@@ -1,0 +1,40 @@
+新池 71801 片 ｜ 已知 55102 / 未知 16699 ｜ 未知类 9
+Antwerp-Bruges   已知  4956 未知  2468
+Busan            已知   420 未知    59
+Callao           已知   135 未知    16
+Fujairah         已知  3129 未知   574
+Hamburg          已知  3307 未知  1266
+Houston          已知   677 未知    97
+Jebel Ali        已知  5721 未知  3607
+Los Angeles      已知   117 未知     7
+Melbourne        已知    68 未知    21
+Mombasa          已知  1160 未知    56
+New York         已知   125 未知    53
+Newcastle        已知   482 未知    79
+Ningbo-Zhoushan  已知  1153 未知   179
+Port Hedland     已知   926 未知    15
+Port Klang       已知  3510 未知   515
+Port Said        已知  4653 未知   372
+Qingdao          已知  5863 未知   746
+Richards Bay     已知   734 未知    48
+Rotterdam        已知  4663 未知  1668
+Santos           已知   807 未知    22
+Shanghai         已知  5755 未知  2426
+Singapore        已知  5797 未知  2226
+Sydney Botany    已知   784 未知   145
+Tanger Med       已知   160 未知    34
+
+unknown class                 港数 margin AUC novelty AUC
+dredger                       12      0.471      0.546
+heavy_load_carrier            11      0.412      0.477
+lpg_lng_tanker                17      0.397      0.418
+passenger_ship                19      0.465      0.672
+pilot_port_tender             11      0.515      0.659
+pleasure_craft                15      0.426      0.671
+reefer_cargo                   7      0.340      0.482
+ro_ro_vehicle_carrier         19      0.410      0.482
+sailing_vessel                10      0.494      0.591
+
+跨类均值：margin 0.437 ｜ novelty 0.555 ｜ 差 -0.118
+逐 (港,类) 配对 n=121：Δ -0.1195 ｜ p=0.0000 ⇒ novelty 更优 ✓✓
+exit=0
