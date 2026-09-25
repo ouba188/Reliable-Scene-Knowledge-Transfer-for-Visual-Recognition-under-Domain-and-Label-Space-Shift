@@ -1,0 +1,13 @@
+轴可用性: {'fold_id_cross_port': 3, 'fold_id_spatial': 1, 'fold_id_idsplit': 1}
+样本 1394 ｜ 特征 (1394, 4096) ｜ 类 ['bulk_carrier', 'container_ship', 'tanker']
+  fold_id_cross_port   折 0      n= 191 全量 0.691 ｜ 10%: 0.556 vs 0.700
+  fold_id_cross_port   折 1      n= 156 全量 0.618 ｜ 10%: 0.750 vs 0.628
+  fold_id_cross_port   折 2      n=1047 全量 0.623 ｜ 10%: 0.639 vs 0.623
+  --- fold_id_cross_port 汇总（全量均值 0.644）
+     10%   秩 0.6482 ｜ 随机 0.6500 ｜ Δ -0.0018 ｜ 占优 2/3 ⇒ 未成立 ✗
+     20%   秩 0.7154 ｜ 随机 0.6422 ｜ Δ +0.0732 ｜ 占优 3/3 ⇒ 成立 ✓✓
+     50%   秩 0.7291 ｜ 随机 0.6500 ｜ Δ +0.0791 ｜ 占优 3/3 ⇒ 成立 ✓✓
+
+轴 fold_id_spatial 不可用（唯一值 1）⚠
+轴 fold_id_idsplit 不可用（唯一值 1）⚠
+exit=0
