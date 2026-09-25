@@ -1,0 +1,43 @@
+Antwerp-Bruges   distinctiveness: bulk_c +0.1 contai +0.1 crude_ +0.0 dredge +0.1 fishin -0.2 genera +0.0 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.2 pilot_ +0.2 pleasu +0.2 produc +0.1 reefer -0.0 ro_ro_ +0.4 sailin +0.8 tug_to +0.5
+Fujairah         distinctiveness: bulk_c +0.1 contai -0.1 crude_ -0.0 genera +0.0 lpg_ln +0.1 offsho +0.1 pleasu +0.0 produc +0.1 ro_ro_ +0.1 tug_to +0.2
+Hamburg          distinctiveness: bulk_c -0.0 contai +0.0 crude_ -0.0 dredge +0.1 fishin -0.1 genera +0.1 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.1 pilot_ +0.1 pleasu +0.0 produc +0.2 ro_ro_ +0.2 sailin +0.1 tug_to -0.3
+Houston          distinctiveness: bulk_c -0.1 crude_ -0.1 fishin -0.5 lpg_ln -0.1 passen -0.0 produc -0.0 tug_to +0.0
+Jebel Ali        distinctiveness: bulk_c +0.1 contai +0.1 crude_ +0.1 dredge +0.1 fishin +0.1 genera +0.1 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.1 pilot_ +0.1 pleasu +0.1 produc +0.2 ro_ro_ +0.2 sailin +0.1 tug_to +0.1
+Mombasa          distinctiveness: bulk_c +0.0 contai -0.0 crude_ -0.2 genera -0.0 lpg_ln +0.1 offsho +0.0 passen -0.2 produc +0.3 tug_to -1.4
+Newcastle        distinctiveness: bulk_c -0.4 genera -0.2 offsho -0.6 produc +0.1 sailin -0.1 tug_to +0.0
+Ningbo-Zhoushan  distinctiveness: bulk_c -0.0 contai -0.1 crude_ +0.0 dredge +0.0 fishin +0.1 genera +0.1 lpg_ln +0.1 offsho +0.1 passen +0.1 pilot_ +0.2 produc +0.2 tug_to +0.1
+Port Hedland     distinctiveness: bulk_c -0.4 offsho -0.3 tug_to -0.2
+Port Klang       distinctiveness: bulk_c +0.1 contai +0.1 crude_ -0.0 dredge +0.2 genera +0.1 lpg_ln +0.1 offsho +0.2 passen -0.1 produc +0.1 ro_ro_ +0.1 tug_to +0.1
+Port Said        distinctiveness: bulk_c +0.1 contai +0.1 crude_ -0.0 dredge +0.0 genera +0.1 lpg_ln +0.1 offsho +0.1 passen +0.1 produc +0.1 ro_ro_ +0.0 tug_to +0.1
+Qingdao          distinctiveness: bulk_c +0.1 contai -0.1 crude_ +0.0 dredge +0.1 fishin -0.0 genera +0.1 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.1 pilot_ +0.0 pleasu +0.0 produc +0.1 ro_ro_ +0.0 tug_to +0.2
+Richards Bay     distinctiveness: bulk_c -0.0 contai -0.4 genera -0.0 lpg_ln +0.1 offsho -0.1 produc -0.1 tug_to +0.1
+Rotterdam        distinctiveness: bulk_c +0.1 contai -0.0 crude_ +0.1 dredge +0.2 fishin -0.2 genera +0.0 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.2 pilot_ +0.1 pleasu +0.1 produc +0.1 reefer +0.1 ro_ro_ +0.1 sailin +0.1 tug_to +0.0
+Santos           distinctiveness: bulk_c -0.1 contai -0.1 crude_ -0.2 fishin -0.2 genera +0.1 produc +0.1 tug_to +0.1
+Shanghai         distinctiveness: bulk_c +0.1 contai -0.1 crude_ +0.1 dredge +0.1 fishin +0.0 genera +0.2 heavy_ +0.1 lpg_ln +0.2 offsho +0.2 passen +0.2 pilot_ +0.2 pleasu +0.2 produc +0.2 ro_ro_ +0.2 tug_to -0.2
+Singapore        distinctiveness: bulk_c +0.1 contai +0.1 crude_ -0.0 dredge +0.1 fishin -0.1 genera +0.1 heavy_ +0.1 lpg_ln +0.1 offsho +0.2 passen +0.2 pilot_ +0.1 pleasu +0.2 produc +0.1 ro_ro_ +0.1 tug_to +0.2
+Sydney Botany    distinctiveness: bulk_c +0.0 contai -0.1 crude_ +0.0 fishin -0.3 pleasu -0.1 produc +0.3 ro_ro_ +0.0 sailin +0.0 tug_to +0.1
+
+class                         distinct.    novelty    dVK(pp)
+bulk_carrier                     -0.009          -       15.6
+container_ship                   -0.041          -       -3.4
+crude_oil_tanker                 -0.015          -      -13.9
+dredger                           0.117      0.501          -
+fishing_vessel                   -0.122          -       -1.0
+general_cargo                     0.048          -        2.3
+heavy_load_carrier                0.097      0.485          -
+lpg_lng_tanker                    0.104      0.433          -
+offshore_supply                   0.053          -       -2.2
+passenger_ship                    0.092      0.625          -
+pilot_port_tender                 0.121      0.579          -
+pleasure_craft                    0.070      0.637          -
+product_chemical_tanker           0.120          -       -5.1
+reefer_cargo                      0.019      0.503          -
+ro_ro_vehicle_carrier             0.130      0.565          -
+sailing_vessel                    0.178      0.670          -
+tug_towing                       -0.013          -        6.8
+
+distinctiveness vs novelty AUC (9 unknown)     rho=+0.167 p=0.668 置换 p=0.6764 n=9
+distinctiveness vs dVK (8 known)               rho=+0.000 p=1.000 置换 p=1.0000 n=8
+
+预注册判据（两条 rho 同号为正）：未成立 ✗
+exit=0

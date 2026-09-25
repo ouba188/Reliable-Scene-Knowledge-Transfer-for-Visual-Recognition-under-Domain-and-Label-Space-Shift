@@ -1,0 +1,11 @@
+{
+  "dredger": 0.501,
+  "heavy_load_carrier": 0.485,
+  "lpg_lng_tanker": 0.433,
+  "passenger_ship": 0.625,
+  "pilot_port_tender": 0.579,
+  "pleasure_craft": 0.637,
+  "reefer_cargo": 0.503,
+  "ro_ro_vehicle_carrier": 0.565,
+  "sailing_vessel": 0.670
+}
