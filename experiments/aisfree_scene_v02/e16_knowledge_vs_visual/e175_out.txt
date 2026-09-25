@@ -1,0 +1,32 @@
+Antwerp-Bruges   n=  886 全量 V 0.5575 专家 0.6527
+Busan            n=  871 全量 V 0.4703 专家 0.4075
+Callao           n=  476 全量 V 0.2812 专家 0.3343
+Fujairah         n= 1158 全量 V 0.3396 专家 0.4700
+Hamburg          n= 1619 全量 V 0.6248 专家 0.6764
+Houston          n=  804 全量 V 0.3267 专家 0.2960
+Jebel Ali        n= 4602 全量 V 0.3807 专家 0.3893
+Los Angeles      n=  583 全量 V 0.3641 专家 0.3559
+Melbourne        n=   64 全量 V 0.5430 专家 0.5838
+Mombasa          n=  149 全量 V 0.5624 专家 0.5935
+New York         n=  470 全量 V 0.4318 专家 0.4847
+Newcastle        n=  299 全量 V 0.3882 专家 0.4613
+Ningbo-Zhoushan  n= 5756 全量 V 0.5691 专家 0.6453
+Port Hedland     n=  859 全量 V 0.1740 专家 0.1361
+Port Klang       n= 3425 全量 V 0.3583 专家 0.3404
+Port Said        n= 1895 全量 V 0.3448 专家 0.3738
+Qingdao          n= 1981 全量 V 0.7521 专家 0.7675
+Richards Bay     n=  744 全量 V 0.3390 专家 0.3373
+Rotterdam        n=  573 全量 V 0.5805 专家 0.6529
+Santos           n= 1658 全量 V 0.3896 专家 0.3606
+Shanghai         n= 2390 全量 V 0.6053 专家 0.6525
+Singapore        n= 5259 全量 V 0.3599 专家 0.2790
+Sydney Botany    n=  304 全量 V 0.4181 专家 0.4168
+Tanger Med       n= 1266 全量 V 0.3874 专家 0.3994
+
+budget    fine-margin  gate+expert       random p(fine-exp) p(exp-rand)
+10%            0.5521       0.3561       0.4268     0.0001     0.0425
+20%            0.5067       0.3449       0.4238     0.0001     0.0043
+
+预算 10%：谁更值 ⇒ fine-margin ✓（0.3561 vs 0.5521，Δ -0.1961）
+预算 20%：谁更值 ⇒ fine-margin ✓（0.3449 vs 0.5067，Δ -0.1618）
+exit=0
