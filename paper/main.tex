@@ -1,0 +1,811 @@
+% Cross-port SAR vessel classification with scene knowledge: order transfers, value does not.
+% IEEE journal format (IEEEtran). Compile:  tectonic -X compile main.tex
+% Figures 2 and 3 are produced by figs/make_figs.py from the recorded numbers; Figure 1 is TikZ.
+% Every number in this file is traceable to EXPERIMENT_STATE.md (entries E12--E19e).
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+% ragged-right prose columns: narrow p-columns otherwise get huge inter-word gaps
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\tabcolsep}{4pt}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figs/}}
+
+\begin{document}
+
+\title{Cross-Port SAR Vessel Classification with Scene Knowledge:\\
+Order Transfers, Value Does Not}
+
+% ponytail: placeholder author block -- the authorship of a public repository manuscript is the
+% authors' decision, so nothing is invented here.
+\author{Draft manuscript --- author block to be completed}
+
+\maketitle
+
+\begin{abstract}
+Vessel classifiers trained in one port are deployed in another, and the scene knowledge practitioners
+add to steady that transfer --- facility layers, quay proximity, traffic context --- is known to help
+sometimes and hurt others. We build a 24-port Sentinel-1 benchmark with an AIS-free protocol (38,091
+and 71,801 chips; leave-one-port-out; matched-rate random and oracle controls) and show that the
+transfer has an asymmetric structure: \emph{the ranking of instances transfers while any quantity
+compared against a fixed level does not}. Three independent measurements agree (AUC 0.72, 0.555 and
+0.679 for ranking; a guarantee met on 22\,\% of ports for the value side), and the failure of
+threshold-, conformal- and surrogate-based gates is structural --- verifying a risk needs the target
+labels the protocol withholds --- with a decision-relevant event rate of 1.2\,\% bounding the whole
+family at $+2.91$\,pp of balanced accuracy. The law implies a different deployment shape: rather than
+transferring a threshold, consult the knowledge-augmented expert for the top-$k$\,\% of the target
+port by a source-trained score. On the compliant expert this reaches 106.8\,\% of full-consultation
+value at a 20\,\% budget ($p = 0.0194$, 95\,\% CI $[+0.0062, +0.0328]$) and holds from 2 to 23 source
+ports. We also price the AIS-free restriction (an AIS-derived context block carries $+4.23$\,pp
+against $+0.37$\,pp for its SAR-derived counterpart, and pooling SAR detections across acquisitions
+rebuilds none of it, $-0.06$\,pp, $p = 0.90$) and show the port-to-port drop is a class-mix effect
+($-12.79$\,pp label-shift component; target conditionals are $+6.54$\,pp better). Eleven further
+routes are reported as measured negatives with their evidence rather than as opinions.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Synthetic aperture radar, ship classification, cross-domain transfer, domain adaptation, label shift,
+conformal prediction, selective classification, negative results.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+Vessel classification in SAR imagery is usually trained in one port and deployed in another, and the
+transfer is rarely clean: the same ship type looks different under a different incidence geometry, a
+different berth, and a different local traffic regime. Practitioners have long added \emph{scene
+knowledge} --- facility layers, distance-to-quay, vessel-density context --- as extra input features,
+and the literature reports the mixed result that everyone recognises: sometimes it helps, sometimes it
+hurts \cite{tuia2016domain,wang2020visualcontext}. What has been missing is not another way to inject
+that knowledge but a quantitative account of \textbf{when the injection is reliable}. That is the
+question this paper answers, and it answers it with a protocol built to be able to say no.
+
+We assemble a 24-port benchmark from Sentinel-1 GRD imagery \cite{torres2012gmes}, AIS-derived vessel
+labels, and OSM facility layers \cite{haklay2008osm}, in two pools: an initial 38{,}091-chip pool
+(128-dimensional visual projection plus 82 knowledge dimensions) and a rebuilt 71{,}801-chip pool
+(224-pixel chips, 17 classes, 24 ports). Both are evaluated leave-one-port-out with an
+\textbf{AIS-free protocol}: target-port AIS identity may never enter the input features, and the
+compliant knowledge block is restricted to its first 71 dimensions --- a restriction we enforce by
+enumerating feature permissions rather than by trusting a description, a step that reversed two of our
+own results mid-study (Section~\ref{sec:violation}).
+
+The central finding is a law with an unusual form, because it is about what transfers rather than
+about what helps:
+
+\begin{quote}
+\textbf{Cross-port transfer preserves the order and destroys the value.} A source-fit model still
+ranks the target port's instances correctly --- three independent measurements put the ranking at AUC
+0.72, 0.555 and 0.679 --- while any quantity that must be compared against a fixed level stops
+transferring: a source-calibrated threshold holds its risk target on 0\,\% of ports, and a source-fit
+error model mis-states the target's risk so badly that it meets its guarantee on 22\,\%.
+\end{quote}
+
+Three consequences follow, and each is measured rather than argued.
+
+\textbf{First, gates built on absolute decisions are a dead end here.} Thresholds, calibrated
+probabilities, conformal risk control, importance-weighted conformal
+\cite{tibshirani2019conformal,angelopoulos2024riskcontrol}, and surrogate-risk control were each
+evaluated and each failed, and the failure is structural rather than implementational: verifying a
+risk requires target labels, which is precisely what the problem withholds. The decision-relevant
+event is also rare --- 1.2\,\% of instances are rescued or harmed by the knowledge --- so the oracle
+ceiling for the whole family is $+2.91$\,pp. Deeper architectures do not escape this: three
+independent capacity comparisons produced zero gain, and six separate ``more structure'' attempts were
+all negative.
+
+\textbf{Second, the deployable form of the same idea is a budget, not a threshold.} If only the order
+transfers, then the policy should consume the order and leave the operating point to the deployment
+cost. Concretely, we consult the knowledge-augmented expert for the top-$k$\,\% of the target port by a
+source-trained gate score --- pure rank, no calibration, no target labels. On the compliant expert, a
+20\,\% budget recovers 106.8\,\% of what consulting the expert everywhere would give
+($p = 0.0194$, 95\,\% bootstrap CI $[+0.0062, +0.0328]$), and the core effect holds from 2 to 23 source
+ports, with the ranked 20\,\% worth $3$--$10\times$ a random 20\,\%.
+
+\textbf{Third, the law also prices the data the protocol forbids.} Restricting the input to be AIS-free
+is not free: an AIS-derived context block carries $+4.23$\,pp where the SAR-detection version of the
+same eleven quantities carries $+0.37$\,pp (paired $p = 0.0096$), the two are essentially uncorrelated
+($-0.16$ to $-0.22$), and pooling SAR detections across acquisitions to rebuild an equivalent port-wide
+field adds nothing ($-0.06$\,pp, $p = 0.90$, over 24 ports and 123{,}790 objects). The AIS advantage is
+not more of the same coverage; it is a different kind of information, and the honest way to report a
+restricted-input result is to quantify what the restriction removed.
+
+We also report an attribution that changes how the transfer problem should be attacked. Decomposing the
+port-to-port accuracy difference under one weighted functional, the entire drop comes from the target
+port's class mix ($-12.79$\,pp label-shift component), while the target port's \emph{conditionals} are
+actually better than the source's ($+6.54$\,pp). The practical reading is that prior correction
+\cite{saerens2002adjusting,lipton2018bbse}, not representation learning, is the first thing to fix ---
+and that our own earlier rejection of prior-correction methods was an estimator problem, not a
+principled limit.
+
+The contributions are therefore:
+\begin{enumerate}
+\item a 24-port SAR vessel benchmark with an AIS-free protocol and per-port leave-one-out evaluation
+(two pools, 38{,}091 and 71{,}801 chips), including matched-rate random and oracle control arms;
+\item the order/value law, established by three independent measurements, plus the identifiability wall
+that explains why guarantee-style gates cannot work without target labels;
+\item budgeted rank allocation, a compliant module that reaches $\ge 100$\,\% of full-consultation
+value at a 20\,\% budget, with its scope conditions and its measured cap;
+\item a measured price for the AIS-free restriction, including the refutation that pooling SAR
+detections can rebuild the AIS field, and the attribution of the drop to label shift;
+\item a negative taxonomy in which every refuted route (capacity, objective, thresholding, eight input
+axes, temporal/identity signals, conformal and surrogate risk control) carries its own measurement
+rather than an opinion.
+\end{enumerate}
+
+\section{Related Work}
+\label{sec:rw}
+
+\textbf{Cross-domain adaptation in remote sensing.} The dominant remedy in this literature is feature
+alignment: adversarial training of a domain-invariant representation \cite{ganin2015dann,ganin2016dann}
+and its sub-domain refinements \cite{zhu2021dsan}, surveyed for remote sensing by
+Tuia \emph{et al.} \cite{tuia2016domain}. These methods assume a shared label space, consume
+(unlabelled) target data during adaptation, and are evaluated by aggregate accuracy. Our setting
+differs on all three counts: the label space is partially novel, the decision rule may not see target
+labels, and the quantity we are asked to transfer is a decision, not a feature extractor. Our
+measurement --- that three capacity comparisons and six structural variants bought nothing
+(Section~\ref{sec:taxonomy}) --- speaks directly to that literature's implicit assumption that
+representation capacity is the binding constraint.
+
+\textbf{Label shift and prior correction.} Adjusting a classifier's outputs to new class priors goes
+back to the EM procedure of Saerens \emph{et al.} \cite{saerens2002adjusting}; Black-Box Shift
+Estimation \cite{lipton2018bbse} made the confusion-matrix version practical, and later work unified
+and regularised the estimators \cite{garg2020unified,azizzadenesheli2019regularized}. All of them
+invert a normalised confusion matrix, which presumes the conditionals are unchanged across domains.
+Our attribution (Section~\ref{sec:attrib}) measures a prior component of $-12.79$\,pp \emph{and}
+target conditionals that are $+6.54$\,pp better than the source's, which is why a stabilised estimator
+does not rescue the problem here; the useful part of the literature's message is nonetheless
+endorsed --- the prior is the first thing to repair.
+
+\textbf{Conformal prediction and risk control under shift.} Weighted conformal prediction gives
+distribution-free intervals when the covariate shift's likelihood ratio is known or estimable
+\cite{tibshirani2019conformal}; adaptive conformal inference tracks a changing exchangeability
+assumption online \cite{gibbs2021adaptive}; conformal risk control extends the guarantee to monotone
+losses \cite{angelopoulos2024riskcontrol}; and the practical machinery is collected in a tutorial
+\cite{angelopoulos2021gentle}. Each of these guarantees is verifiable by the party who controls the
+calibration data. Section~\ref{sec:wall} reports what happens when that party is the target port and
+the protocol forbids using its labels: the source-calibrated construction holds its risk target on
+$0/23$ ports, importance weighting on $2/23$, and a source-fit surrogate risk model on $5/23$.
+
+\textbf{SAR ship datasets, AIS labels, and context.} AIS is the standard source of vessel labels in
+this field, from matched SAR--AIS archives such as FUSAR-Ship \cite{hou2020fusarship} to
+interpretation-oriented collections such as OpenSARShip \cite{huang2018opensarship} and detection
+benchmarks such as SSDD \cite{wang2019ssdd}; AIS and SAR are also combined directly for maritime
+situational awareness \cite{graziano2019integration}, and contextual information around the target is
+an established ingredient of high-resolution ship detectors \cite{wang2020visualcontext}. We take the
+opposite design decision --- AIS is forbidden at inference --- and turn the consequence into a
+measurement: the restriction is priced per quantity and its missing structure is shown not to be
+reconstructible from SAR detections alone (Section~\ref{sec:aisprice}).
+
+\textbf{Selective classification and learning to defer.} Reject-and-abstain decisions were formalised
+by Chow \cite{chow1970optimum}; selective classification made them practical for deep networks by
+setting a target risk on a held-out set \cite{geifman2017selective}; learning-to-defer generalised the
+framework to an external expert \cite{madras2018predict} with consistent estimators
+\cite{mozannar2020consistent}. Our budgeted rank allocation is a deferral rule in which the operating
+point is a consultation \emph{budget} rather than a target risk level, precisely because our
+measurements say a level calibrated in the source port does not hold in the target port
+(Section~\ref{sec:budget}). The risk--coverage vocabulary, and the oracle-quantile comparison, are
+this literature's.
+
+\textbf{Negative results and empirical rigor.} Benchmark conclusions are variance-limited by data
+sampling, initialisation and hyper-parameters \cite{bouthillier2021accounting}; re-benchmarking with
+equalised budgets can overturn apparent progress \cite{musgrave2020metric}; and even a fixed dataset
+does not transfer to a fresh sample of the same distribution \cite{recht2019imagenet}. Our protocol
+follows that line --- pre-registered criteria, bootstrap intervals as the primary instrument, matched
+controls for every arm --- and three of our own intermediate conclusions were withdrawn mid-study
+(Sections~\ref{sec:violation} and \ref{sec:aisprice}). We report them because their withdrawal is what
+bounds the remaining claims.
+
+\section{Data, Protocol, and Arms}
+\label{sec:method}
+
+\subsection{Data and protocol}
+
+\textbf{Pools.} The initial pool has 38{,}091 chips over 24 ports and 8 classes, with a
+128-dimensional PCA projection of ResNet-50 penultimate features and an 82-dimensional scene-knowledge
+vector. The rebuilt pool has 71{,}801 chips over the same 24 ports and 17 classes (8 known, 9
+label-space-novel) at 224\,px, with 64/112/224 field-of-view feature variants; the per-port counts
+range from 89 to 9{,}328 chips. Scene knowledge is derived from OSM facility layers
+\cite{haklay2008osm}, quay/anchorage/fairway distances and detection- and AIS-derived context fields.
+Imagery comes from 430 Sentinel-1 GRD scenes \cite{torres2012gmes}.
+
+\textbf{Feature permissions.} Every input dimension is checked against a written permission table
+before it enters an arm. The protocol is AIS-free, so AIS-derived context is excluded; the compliant
+knowledge block is therefore the first 71 of the 82 dimensions. An explicit enumeration is necessary
+because the forbidden set is not identical to the documented one: the permission table names only two
+explicitly forbidden columns, while the AIS-derivability of the tail dimensions is a property of how
+they were built. Two of our own earlier results were withdrawn on this basis
+(Section~\ref{sec:violation}).
+
+\textbf{Evaluation.} Leave-one-port-out over 24 ports: for target port $p$, source ports are all
+others. Reported quantities are balanced accuracy over the known classes (primary), per-port $\times$
+per-class grids, and paired Wilcoxon tests over the 24 ports. Every policy arm ships with two controls:
+a \textbf{matched-rate random arm} (the same accept/consult rate, drawn at random, averaged over
+20--50 redraws) and an \textbf{oracle arm} for the same decision family, so that a policy is judged by
+its regret against the ceiling rather than by its absolute score.
+
+\textbf{Criteria.} Decision experiments are pre-registered: the criterion is written before the run,
+and the result is reported whether or not it passes. Effect sizes are reported with 24-port bootstrap
+95\,\% intervals; $p$-values alone were found to flip between 0.095 and 0.0194 on identical data purely
+as a function of inner-episode and redraw counts, so intervals are the primary instrument.
+
+\subsection{Arms}
+
+\begin{table}[t]
+\caption{Arms. The expert is the only arm carrying scene knowledge, and it is the object the gate
+decides about.}
+\label{tab:arms}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{1.7cm}L{6.0cm}@{}}
+\toprule
+arm & definition \\
+\midrule
+\textbf{V} & visual only \\
+\textbf{V+K} & visual plus compliant knowledge (the \emph{expert}) \\
+\textbf{gate} & $g(x)\rightarrow$ whether consulting the expert is the right call, \\
+          & trained on source-port episodes only \\
+\textbf{budget policy} & consult the expert for the top-$k$\,\% of the target port by $g$, \\
+          & otherwise use V \\
+oracle (decision) & per-instance ideal call, marked \texttt{ORACLE\_ONLY}, never deployable \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Budgeted rank allocation}
+
+The module is deliberately small, because its point is where the decision is taken, not how much
+capacity it has. Let $s_i = g(x_i)$ be the gate score, computed from source ports only, and let
+$k \in (0, 1]$ be the deployment's consultation budget. Then
+\begin{equation}
+\pi_k(x_i) =
+\begin{cases}
+\text{expert}(x_i), & s_i \ge q_{1-k}(s_{1:n}) \\
+V(x_i), & \text{otherwise}
+\end{cases}
+\end{equation}
+where $q_{1-k}$ is the $(1-k)$-th quantile of the \emph{target port's own} scores. Nothing is
+calibrated: $k$ is an exogenous cost parameter, the quantile is computed within the target port, and no
+target label is used at any point. The corresponding quantity reported throughout is the
+\textbf{recovery}
+\begin{equation}
+R(k) = \frac{\mathrm{BA}(\pi_k) - \mathrm{BA}(V)}{\mathrm{BA}(V{+}K) - \mathrm{BA}(V)},
+\end{equation}
+so $R(k) = 1$ means the budget captures the whole value of consulting the expert on every instance.
+
+\textbf{Gate features.} Per-instance margins and entropies of both arms, their agreement, and --- in
+the sequence probe --- leave-one-out vessel-bag statistics. Training uses nested source-port episodes
+(3--6 held-out source ports) so that no gate ever sees the target port.
+
+\subsection{Compliant expert}
+
+The compliant expert is a ridge classifier on the visual projection concatenated with the first 71
+knowledge dimensions, standardised inside the training split. Its strength bounds the module's
+absolute value, so its limits matter: an exhaustive enumeration of all seven non-empty subsets of the
+three knowledge parts (facility 0:42, chain 42:60, detection 60:71) crossed with two classifier
+families (ridge, gradient-boosted trees) yields a best legal gain of $+2.32$\,pp ($p = 0.32$) against
+the current $+2.16$\,pp ($p = 0.0604$) --- i.e.\ the compliant expert is capped at roughly
+$+2.2$--$2.3$\,pp, and the ridge-on-full-block configuration remains the best deployable choice.
+
+\subsection{What is \emph{not} claimed}
+\label{sec:not-claimed}
+
+The order/value law is supported by controlled interventions in which one factor changes while folds,
+pools and metrics are held fixed; it is not a causal identification. Class-level correlations
+($n = 8$--$9$) are not treated as mechanisms: three such conclusions in this study collapsed under
+direct instance-level measurement, so class-level tables are presented as displays of instance-level
+effects once those exist. Where a construction turned out to be unstable --- per-class thresholds on
+thin calibration cells --- the derived numbers are withdrawn rather than qualified.
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+  box/.style={draw, align=center, inner sep=3pt, rounded corners=1pt, minimum height=7mm},
+  bad/.style={draw, dashed, align=center, inner sep=3pt, minimum height=7mm},
+  ar/.style={-{Latex[length=1.8mm]}, semithick}]
+\node[box] (data) {Sentinel-1 GRD\\ (430 scenes)};
+\node[box, right=6mm of data] (lab) {AIS labels\\ (source ports only)};
+\node[box, right=6mm of lab] (osm) {OSM facility layers,\\ quay/fairway distances};
+\node[box, right=8mm of osm] (pool) {24-port chip pool\\ 38{,}091 / 71{,}801 chips};
+\node[box, right=8mm of pool] (perm) {permission table\\ compliant block $=$ dims 0:71\\ (AIS-free)};
+\draw[ar] (data)--(lab); \draw[ar] (lab)--(osm); \draw[ar] (osm)--(pool); \draw[ar] (pool)--(perm);
+
+\node[box, below=9mm of lab] (src) {source ports ($23$ folds' worth):\\ fit expert $V{+}K$, train gate $g$};
+\node[box, right=10mm of src] (tgt) {target port (held out):\\ rank instances by $g$\\ \emph{no target label is read}};
+\node[box, right=10mm of tgt] (pol) {budget policy $\pi_k$:\\ consult expert on the\\ top-$k$\,\% only};
+\node[bad, below=8mm of tgt] (bad) {fixed thresholds, calibration,\\ conformal, risk control: rejected};
+\node[box, below=8mm of pol] (ctrl) {controls: matched-rate random,\\ oracle-quantile};
+\draw[ar] (perm.south) -- ++(0,-3mm) -| (src.north);
+\draw[ar] (src)--(tgt); \draw[ar] (tgt)--(pol);
+\draw[-{Latex[length=1.8mm]}, semithick, dashed] (tgt)--(bad);
+\draw[ar] (pol)--(ctrl);
+\end{tikzpicture}
+\caption{Protocol and module. The AIS-free boundary is applied by enumerating input dimensions, not by
+trusting a documented column list; the target port contributes its \emph{score distribution} to the
+quantile and nothing else. Dashed box: the decision families this protocol rejects
+(Sections~\ref{sec:wall} and \ref{sec:budget}).}
+\label{fig:protocol}
+\end{figure*}
+
+\section{Theory}
+\label{sec:theory}
+
+The propositions below are the paper's theoretical core. They are deliberately small and provable; the
+part that would need assumptions we cannot verify is stated as a measured relation instead of a
+theorem.
+
+\subsection{The assumption class}
+
+Write the target port's score distribution as related to the source's by
+\begin{equation}
+\begin{aligned}
+&\tilde s(x) = \phi\big(s(x)\big), \quad \phi \text{ strictly increasing},\\
+&\pi_{\text{tgt}} \neq \pi_{\text{src}} \quad \text{(class priors)},
+\end{aligned}
+\end{equation}
+i.e.\ \textbf{monotone recalibration plus class-prior shift}, with the conditionals \emph{not} assumed
+invariant --- the measured setting in this paper is close to exactly this class: the drop decomposes
+into a $-12.79$\,pp prior component, and the target's own conditionals are $+6.54$\,pp \emph{better}
+than the source's rather than identical (Section~\ref{sec:attrib}). Two facts hold in this class, and
+one fails outside it.
+
+\subsection{Proposition 1 (rank invariance)}
+
+\textbf{Statement.} Under any strictly increasing $\phi$, the top-$k$\,\% set of a score vector is
+unchanged, for every $k$. Equivalently: the budget policy $\pi_k$ is \emph{invariant} to monotone
+recalibration.
+
+\textbf{Proof.} $\phi$ strictly increasing gives $s_i \ge s_j \iff \phi(s_i) \ge \phi(s_j)$ for all
+pairs; hence the score-induced total preorder is identical, and so is every top-$k$\,\% prefix (ties
+broken by a fixed rule). \hfill$\blacksquare$
+
+\textbf{Verification on real scores.} For 12 ports, applying $\phi(s)=s^{0.3}$, $s^{2}$ and $s^{7}$ to
+the measured score vector leaves the top-20\,\% set's symmetric difference at exactly \textbf{0} in
+every case.
+
+\textbf{Contrast.} A rule that compares a score against a \emph{fixed absolute} level is not invariant:
+after any $\phi$ the accepted set changes, and if the threshold was calibrated on the source port the
+change is uncontrolled. The empirical counterpart is measured and negative: source-calibrated
+conformal thresholds hold their risk target on $0/23$ ports.
+
+\subsection{Proposition 2 (threshold fragility under prior shift)}
+
+\textbf{Statement.} Let $R$ be the row-normalised confusion matrix (the conditionals) and $\pi$ a
+class prior. The expected error of accepting a set $A$ is
+$\mathrm{Err}_\pi(A) = \sum_y \pi_y \sum_{\hat y \neq y} R_{y\hat y}\,
+\mathbf{1}[A \ni \text{instances of } y]$. For a fixed accepted set determined by a threshold on the
+source distribution,
+\begin{equation}
+\mathrm{Err}_{\pi_{\text{tgt}}} - \mathrm{Err}_{\pi_{\text{src}}}
+= \sum_y \big(\pi_{\text{tgt},y} - \pi_{\text{src},y}\big)\, \rho_y ,
+\end{equation}
+where $\rho_y$ is the class-$y$ contribution to the accepted error. The difference is bounded only by
+$\|\pi_{\text{tgt}} - \pi_{\text{src}}\|_1 \cdot \max_y |\rho_y|$, which can be large: in our ports the
+prior total-variation distance has median \textbf{0.568}.
+
+\textbf{Consequence.} Any guarantee of the form ``the target risk stays within $\alpha$'' that is
+built from source calibration requires the priors to be comparable or the risk to be observable at the
+target --- and observability is exactly what the AIS-free protocol removes. Measured: $0/23$ ports for
+plain conformal, $2/23$ with importance weighting, $5/23$ with a surrogate risk model.
+
+\subsection{The measured regret relation}
+\label{sec:regret}
+
+The natural remaining question is how much of the \emph{oracle-quantile} policy (top-$k$\,\% selected
+by the true per-instance benefit) a practical budget policy attains, and what it depends on. We do not
+claim a tight analytic bound; we measure the relation.
+
+\begin{table}[t]
+\caption{Regret relation, 24 ports. The oracle-quantile policy is the ceiling of the decision family;
+the gate's shortfall against it is governed by ranking quality \cite{chow1970optimum,geifman2017selective}.}
+\label{tab:regret}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{5.4cm}L{1.6cm}@{}}
+\toprule
+quantity & value (24 ports) \\
+\midrule
+gate AUC for ``consulting the expert helps'' & median \textbf{0.947} \\
+$R_{\text{gate}}$ at a 20\,\% budget (consult-everywhere $=1.0$) & median \textbf{+1.00} \\
+$R_{\text{oracle}}$ at the same budget & median $+1.22$ \\
+\textbf{Spearman(gate AUC, $R_{\text{gate}}$)} & $\boldsymbol{\rho = +0.592}$, $p = 0.0023$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+So the regret against the oracle-quantile policy is \emph{governed by ranking quality}, measured rather
+than assumed: with a gate whose benefit-AUC is $\approx 0.95$, the 20\,\% budget already matches
+consulting everywhere. This is the sense in which the module is the right shape for the law --- its
+quality is a function of the one thing that transfers.
+
+\subsection{The failure boundary (falsifiability)}
+\label{sec:boundary}
+
+If the law were vacuous, it would hold under any perturbation. It does not. Destroying the conditionals
+while keeping the priors --- within-class full permutation, and a cross-class permutation --- collapses
+the rank policy's advantage over a matched-rate random arm to chance:
+
+\begin{table}[t]
+\caption{Failure boundary. Permuting labels inside the target port's classes destroys the decision
+value of the order while leaving the class priors intact, as the propositions require.}
+\label{tab:boundary}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.4cm}rrr@{}}
+\toprule
+intervention & rank & random & ports \\
+\midrule
+within-class full permutation & $\mathbf{-0.0032}$ & $+0.0049$ & \textbf{9/24} \\
+across-class permutation & $+0.0264$ & $+0.0544$ & \textbf{7/24} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+So the law's domain is the assumption class of Section~\ref{sec:theory}: monotone distortion plus
+prior shift, where the order is meaningful; break $P(y \mid x)$ and the order stops carrying the
+decision, exactly as the propositions say it should.
+
+\subsection{What this theory does not claim}
+
+\begin{itemize}
+\item It is \textbf{not} a causal identification. The evidence is controlled intervention with matched
+controls, not do-calculus with stated ignorability.
+\item It is \textbf{not} a tight bound: Section~\ref{sec:regret} is a measured relation
+($\rho = 0.592$), not a theorem with a constant. A tight constant would need assumptions on the
+benefit-generating process that this data cannot verify.
+\item The prior-correction corollary of Proposition~2 does \textbf{not} rescue prior-corrected
+classifiers here: the inversion requires the conditionals to be domain-invariant, and they measurably
+are not ($+6.54$\,pp better on the target), which is why a stabilised BBSE estimator
+\cite{lipton2018bbse} still fails outright ($0.4395 \rightarrow 0.2416$, $0/24$ ports). The honest
+statement is that the prior is the main component of the drop \emph{and} the conditionals cannot be
+treated as fixed.
+\end{itemize}
+
+\section{The Order/Value Law}
+\label{sec:law}
+
+Table~\ref{tab:law} collects three tasks, each measured the same way: an arm trained on source ports
+only, evaluated on the target port, judged twice --- once by how well it \emph{ranks}, once by whether
+a \emph{level} transfers.
+
+\begin{table}[t]
+\caption{The same asymmetry in three independent measurements.}
+\label{tab:law}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{2.6cm}L{1.9cm}L{2.7cm}@{}}
+\toprule
+task & ranking ability (transfers) & value / operating point (does not) \\
+\midrule
+knowledge-gain gate & AUC \textbf{0.72} & thresholds and calibrators never transfer \\
+novelty detection (Mahalanobis) & AUC \textbf{0.555} & per-class absolute levels do not port \\
+error prediction & AUC \textbf{0.679} & guarantee met on \textbf{22\,\%} of ports (target: $\ge 80$\,\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Gate experiment.} A gate predicting whether consulting the knowledge expert is the right call
+reaches AUC 0.72 on the target port, yet every threshold and calibrator built on it failed: a
+pre-registered decision-risk objective did not beat a proxy target (0.2300 vs 0.2295, within noise),
+and a per-port calibration analysis showed the decision label is algebraically equivalent to the
+argmax, so calibration cannot move the boundary at all. The gate's own capture of the oracle ceiling
+was 37\,\% against a selectivity curve predicting 67--86\,\% at its AUC
+\cite{geifman2017selective}.
+
+\textbf{Novelty experiment.} Class-conditional Gaussians fitted on source ports separate 9
+label-space-novel classes from the known ones at AUC 0.555 averaged over classes, with an across-class
+standard deviation of 0.0752 against a per-class bootstrap noise of 0.0324 ($2.3\times$), all 24 ports
+and 16{,}699 novel instances. Detectability is a genuine class property. The energy score, by contrast,
+scores 0.429 --- below chance --- and is reported as misleading rather than neutral.
+
+\textbf{Error-prediction experiment.} An error model fitted on source ports and applied to the target
+port ranks the target's errors at AUC 0.679 (p10 0.584, p90 0.774, above 0.65 on 14/23 ports), but the
+guarantee it is meant to support holds on 22\,\% of ports.
+
+\emph{Artifacts: \texttt{e123b\_out.txt} for the error model, \texttt{e117\_out.txt} for novelty,
+\texttt{e121\_out.txt}/\texttt{e112\_out.txt} for the gate and its calibration analysis.}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig2_rank_vs_value.pdf}
+\caption{Rank versus value, from the three measurements of Table~\ref{tab:law}. (a) Ranking transfers:
+the knowledge-gain gate, novelty detection and error prediction all rank the target port's instances
+above chance. (b) Levels do not: a source-calibrated conformal threshold meets its risk target on
+$0/23$ ports and a source-fit error model meets its guarantee on 22\,\% of ports, against the
+guarantee's own $\ge 80$\,\% requirement. Novelty's value side is a measured non-portability of
+per-class absolute levels rather than a rate, so it is not plotted in (b).}
+\label{fig:rankvalue}
+\end{figure}
+
+\subsection{A protocol violation caught mid-study}
+\label{sec:violation}
+
+Two of our earlier results --- a budget curve with $p = 0.0000$--$0.025$ --- were withdrawn after
+enumerating input dimensions against the permission table: the knowledge matrix's tail (dimensions
+71:82) is AIS-derived, so an expert built on all 82 dimensions is not compliant. The permission table
+names only two explicitly forbidden columns, which is why the violation was silent. All results
+reported here use the compliant block (dimensions 0:71), and the compliant numbers are weaker --- a
+fact we report rather than bury, because the gap is itself a measurement of what the restriction costs
+(Section~\ref{sec:aisprice}).
+
+\section{The Identifiability Wall}
+\label{sec:wall}
+
+The sign of the knowledge gain is a class $\times$ instance property, not a domain property: within a
+single port, the same class flips sign between instances, and the discriminating variable correlates
+with the class at $r = 0.771$. At the same time the decision-relevant event is rare --- of 25{,}893
+instances, 617 are rescued and 313 harmed, 1.2\,\% in total --- so the oracle ceiling for any
+per-instance decision rule is $+2.91$\,pp of balanced accuracy. A deeper model cannot manufacture a
+signal that is not there, and three independent capacity comparisons plus six separate ``more
+structure'' attempts produced no gain.
+
+Guarantee-style methods fail for a structural reason: verifying a risk requires target labels, which
+the problem withholds.
+
+\begin{table}[t]
+\caption{Every guarantee construction, and the reason to stop: the risk cannot be \emph{verified}
+without the labels the protocol forbids.}
+\label{tab:guarantee}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.4cm}L{4.3cm}@{}}
+\toprule
+construction & outcome \\
+\midrule
+source-calibrated conformal thresholds \cite{tibshirani2019conformal} & risk target met on \textbf{0/23} ports \\
+density-ratio (importance) weighted conformal \cite{tibshirani2019conformal} & 2/23 ports; median realised risk $0.1705 \rightarrow 0.1235$, $p = 0.0277$ \\
+surrogate-risk control (source-fit error model) \cite{angelopoulos2024riskcontrol} & 5/23 ports \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Budgeted Rank Allocation}
+\label{sec:budget}
+
+Since only the order transfers, the policy consumes the order and leaves the operating point to the
+deployment's consultation cost: consult the expert for the top-$k$\,\% of the target port by the
+source-trained gate score.
+
+\begin{table}[t]
+\caption{Compliant expert (knowledge 0:71), 24 ports, random arm averaged over 50 matched-size
+redraws. The pre-registered criterion (interval excluding zero and recovery $\ge 50$\,\%) is met at
+20\,\%.}
+\label{tab:budget}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{1.1cm}L{3.9cm}rr@{}}
+\toprule
+budget & rank $-$ random (95\,\% CI) & $p$ & recov. \\
+\midrule
+5\,\% & $+0.0076$ $[+0.0005, +0.0156]$ & 0.160 & 41.4\,\% \\
+10\,\% & $+0.0149$ $[+0.0050, +0.0254]$ & 0.0269 & 80.5\,\% \\
+\textbf{20\,\%} & $\boldsymbol{+0.0192}$ $\boldsymbol{[+0.0062, +0.0328]}$ & $\boldsymbol{0.0194}$ & $\boldsymbol{106.8}$\,\% \\
+50\,\% & $+0.0113$ $[+0.0019, +0.0209]$ & 0.0457 & 103.0\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three properties matter as much as the number.
+
+\textbf{Robustness to the source count.} At 2, 4, 8, 16 and 23 source ports the ranked 20\,\% is worth
+$3$--$10\times$ a random 20\,\% (0.415/0.114, 1.048/0.109, 2.881/0.500, 1.469/0.347, 2.211/0.459 in
+$\Delta$BA percentage points). The core effect does not depend on having many sources.
+
+\textbf{Scope conditions.} The criterion does not apply where there is nothing to allocate: the three
+single knowledge parts have gains of $-0.22$, $+0.12$ and $+0.37$\,pp, and one is negative. Below a
+$\sim$10\,\% budget the paired test is underpowered on this data.
+
+\textbf{A measured cap.} The module's absolute value is bounded by the compliant expert's strength, and
+that strength is capped: an exhaustive enumeration of seven knowledge subsets $\times$ two classifier
+families gives a best legal gain of $+2.32$\,pp ($p = 0.32$) against the deployed $+2.16$\,pp
+($p = 0.0604$), with the ridge-on-full-compliant-block configuration remaining both the best and the
+best-powered choice.
+
+\textbf{A note on how this result was nearly missed.} Every earlier gate in this project used an
+absolute threshold; ``top-$k$\,\%'' was never tested, and the reason it works is exactly the
+distinction the law draws: a gate must map a score onto a use/don't-use decision (a value-level
+object), while this policy only needs the relative order of who deserves consultation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig3_budget_and_sources.pdf}
+\caption{Budgeted rank allocation. (a) Ranked top-$k$\,\% against a matched-rate random arm, with
+24-port bootstrap 95\,\% intervals; the labels give the recovery $R(k)$ of (2) against
+consulting everywhere. (b) The same comparison as a function of the number of source ports (one
+source-port draw per level, which is why the level-wise ordering is noisy while every level stays well
+above random).}
+\label{fig:budget}
+\end{figure}
+
+\section{The Price of the AIS-Free Restriction}
+\label{sec:aisprice}
+
+\textbf{Block level.} On identical folds and protocol:
+
+\begin{table}[t]
+\caption{The detection block carries a tenth of the AIS block's value; the two differ at
+$p = 0.0096$.}
+\label{tab:blocks}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.4cm}rrr@{}}
+\toprule
+arm & $\Delta$BA (pp) & ports $>0$ & paired $p$ \\
+\midrule
+V $+$ AIS-derived context (non-compliant) & $\mathbf{+4.23}$ & 17/24 & 0.0022 \\
+V $+$ SAR-detection-derived context (compliant) & $\mathbf{+0.37}$ & 13/24 & 0.86 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Per quantity.} The eleven quantities exist in both versions. The five that carry value are
+heading/queue/density interactions, and for each the detection version carries roughly a tenth of the
+AIS version \emph{and} the two are essentially uncorrelated:
+
+\begin{table}[t]
+\caption{Not a coarse proxy: the same-named quantities are uncorrelated, so they measure different
+things.}
+\label{tab:perquantity}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.2cm}rrr@{}}
+\toprule
+quantity & detection & AIS & corr \\
+\midrule
+heading$^2$ & $+0.22$ & $+1.12$ & $-0.163$ \\
+queue$^2$ & $+0.30$ & $+2.20$ & $-0.187$ \\
+heading$\times$queue & $+0.29$ & $+1.49$ & $-0.175$ \\
+density$\times$heading & $+0.08$ & $+2.21$ & $-0.220$ \\
+density$\times$queue & $+0.20$ & $+3.04$ & $-0.224$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Can SAR rebuild the field?} We pooled SAR detections across acquisitions onto a 2\,km port grid
+and recomputed the same eleven quantities --- feasible (2.9\,M detections, 24 ports, headings
+populated). Measured under adequate power, cross-acquisition pooling and per-scene pooling are
+indistinguishable: 0.1756 vs 0.1762, paired $-0.06$\,pp, $p = 0.90$, over 24 ports and 123{,}790
+objects. The AIS advantage is therefore not wider coverage of the same kind; and the two heading-free
+quantities (\mbox{queue$^2$}, \mbox{density$\times$queue}) carry most of the AIS value, which rules out
+``AIS headings are just more accurate'' as the explanation.
+
+\section{Attribution: The Drop Is the Class Mix}
+\label{sec:attrib}
+
+Decomposing the port-to-port difference under a single weighted functional
+$a = \sum_t \pi_t[t] R[t,t] / \sum_t \pi_t[t]$:
+
+\begin{table}[t]
+\caption{24 ports. Signed components can over-explain a net difference of 6.25\,pp; report the
+components, never a percentage share.}
+\label{tab:attrib}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.4cm}L{1.1cm}L{2.6cm}@{}}
+\toprule
+term & value & reading \\
+\midrule
+source conditionals, source priors & 0.5044 & reference \\
+source conditionals, target priors & 0.3765 & \textbf{label/base-rate component $-12.79$\,pp} \\
+target conditionals, target priors & 0.4418 & \textbf{conditional component $+6.54$\,pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The practical consequence redirects the problem: the target port's conditionals are \emph{better}, so
+prior correction \cite{saerens2002adjusting,lipton2018bbse,garg2020unified} is the first thing to fix,
+and our own earlier rejection of prior-correction methods attributes to their estimator (measured then
+as 0.012 better than the raw prediction histogram) rather than to a principled obstacle.
+
+\section{Negative Taxonomy}
+\label{sec:taxonomy}
+
+Every entry below was measured; none is an opinion, and each carries its artifact in
+\texttt{EXPERIMENT\_STATE.md}.
+
+\begin{table}[t]
+\caption{Negative taxonomy, with the measurement behind each entry.}
+\label{tab:taxonomy}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{3.1cm}L{1.2cm}L{3.3cm}@{}}
+\toprule
+route & verdict & measurement \\
+\midrule
+deeper/wider capacity (3 encoder families, joint training) & refuted & zero gain \\
+decision-risk objective & refuted & within noise of the proxy \\
+threshold/calibration & refuted & algebraically cannot move the boundary \\
+eight alternative input axes & refuted & all negative \\
+multi-temporal consistency signal & refuted & AUC 0.484, coverage 34\,\% \\
+conformal and weighted conformal \cite{tibshirani2019conformal} & refuted & 0/23 and 2/23 ports \\
+surrogate risk control \cite{angelopoulos2024riskcontrol} & refuted & 5/23 ports \\
+SAR-only port field to replace AIS & refuted & $-0.06$\,pp, $p = 0.90$ \\
+oracle-identity vessel bags (sequence) & refuted & gate AUC $0.905 \rightarrow 0.910$, $p = 0.80$ \\
+more source ports & ineffectual & 8 ports ($+2.71$\,pp) $\ge$ 23 ports ($+2.16$\,pp) \\
+stronger compliant expert & capped & best legal $+2.32$\,pp at $p = 0.32$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Positive survivors: the compliant expert ($+2.16$\,pp, $p = 0.0604$), budgeted rank allocation
+(20\,\% $\rightarrow$ 106.8\,\%, $p = 0.0194$), per-class novelty detectability (across-class SD
+$2.3\times$ noise), and the attribution of Section~\ref{sec:attrib}.
+
+\section{Discussion}
+\label{sec:disc}
+
+\textbf{What the law changes in practice.} The usual recipe --- learn a reliability score, calibrate it
+on source data, threshold it --- fails here for a reason that no amount of model capacity addresses:
+the threshold's \emph{position} is a value-level object and values do not cross ports. The operational
+consequence is to stop tuning the threshold and start choosing a budget: how many instances can the
+deployment afford to send to the expensive expert? The answer selects a quantile, not a level, and the
+quantile is computed inside the target port. This is a small change with a large practical difference:
+the module reaches full-consultation value at a fifth of the cost, and its randomised control shows the
+value comes from the ranking and not from dilution.
+
+\textbf{Why guarantees are structurally unavailable here.} Conformal
+\cite{tibshirani2019conformal,gibbs2021adaptive}, weighted conformal and surrogate-risk control
+\cite{angelopoulos2024riskcontrol} all require the realised risk to be observable at the target; the
+AIS-free protocol removes exactly that. Importance weighting narrowed the gap (median realised risk
+$0.1705 \rightarrow 0.1235$, $p = 0.0277$) but could not close it, and the residual is not a tuning
+parameter: it is the exchangeability that cross-port transfer breaks. Reporting such numbers as ``risk
+control'' would be a category error; we report them as calibration heuristics with their measured
+shortfall.
+
+\textbf{The price of a restricted input is a result, not a caveat.} Protocols that forbid a data source
+are usually justified by deployment reality, and the resulting numbers are usually reported without
+quantifying what was given up. Here the forbidding is measurable: an AIS-derived context block is worth
+six times its SAR-derived counterpart, the two are uncorrelated rather than redundant, and
+reconstructing the missing structure from SAR detections across acquisitions fails with adequate power.
+The useful generalisation for practitioners is to report the forbidden channel's \emph{measured}
+contribution, because that number decides whether the restriction is acceptable for the intended use.
+
+\textbf{Where the wall could move.} The wall is a property of the observation, not of the architecture:
+the decision-relevant signal is rare and its sign is a class $\times$ instance property. Two things
+would move it, and both were tested here rather than assumed. Adding sequence or identity information
+does not help --- an oracle-identity probe that groups a vessel's acquisitions by its true MMSI leaves
+the gate unchanged (AUC $0.905 \rightarrow 0.910$, $p = 0.80$) --- which says the deficiency is not
+resolution but information. Adding source ports does not help either (8 ports match 23). What would
+move it is a channel that supplies information the imagery lacks, which is precisely the AIS field we
+are forbidden; the honest formulation of this paper's negative result is therefore that the
+restricted-input setting has a measurable information deficit, not a modelling deficit.
+
+\textbf{On negative results with controls.} Every route we refute carries a measurement, a matched-rate
+random arm and, wherever a decision is involved, an oracle bound for the same family. This discipline
+is what makes it possible to state a cap --- the compliant expert tops out at $+2.3$\,pp --- as a
+boundary of the problem rather than a shortcoming of one attempt. Three of our own intermediate
+conclusions were withdrawn during the study (a protocol violation, an underpowered pooling effect, an
+unstable calibrator), and they are recorded in the artifacts rather than tidied away, because their
+withdrawal is itself what bounds the claims. This is the same lesson the benchmarking literature
+\cite{bouthillier2021accounting} and the re-benchmarking studies \cite{musgrave2020metric,recht2019imagenet}
+have been making for the field as a whole.
+
+\textbf{Limitations.} The pools cover 24 ports and 17 classes; the paired tests over 24 ports are the
+main power limit, and several margins sit between $p = 0.03$ and $p = 0.10$. The 512-dimensional
+projection used for the risk experiments was validated against the raw features (0.4722 vs 0.4735) but
+is a simplification. The attribution in Section~\ref{sec:attrib} rests on source-side conditionals
+assumed stable across the held-out source port, and signed components can over-explain a net
+difference.
+
+\section{Conclusion}
+\label{sec:concl}
+
+We set out to quantify when scene knowledge is reliable across ports, and found a structure simple
+enough to change the recipe and sharp enough to be falsifiable: order transfers, value does not. The
+positive consequence is a budget-based allocation that reaches full-consultation value at a fifth of
+the cost and does not depend on calibration; the negative consequence is that guarantee-style gates
+cannot be built in this setting at all, because verifying a risk requires the labels the protocol
+withholds. Both are measured, both come with controls, and the same law prices the data the protocol
+forbids. The remaining improvement space on this benchmark is exhausted --- every lever we could
+identify is either refuted or capped --- which we take as the appropriate end state for a paper whose
+contribution is as much about what does not work, and why, as about what does.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

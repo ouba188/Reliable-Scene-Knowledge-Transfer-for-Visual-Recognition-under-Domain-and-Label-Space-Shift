@@ -3,6 +3,7 @@
 **更新时刻**：2026-09-25 深夜；本项目当前进度以 `EXPERIMENT_STATE.md`（E12–E19b）为唯一真源。
 
 ## 1. 三条文档（论文主体已成稿）
+- `paper/main.tex` —— **IEEEtran 期刊版（编译通过，9 页，10 表 + 3 图）**；`paper/refs.bib` 26 条真实文献（逐条对 Crossref/NeurIPS/PMLR/JMLR/MLSys/arXiv 页核过，无编造）；`paper/main.pdf`；图由 `paper/figs/make_figs.py` 从记录数字生成。编译：`tectonic -X compile main.tex`。
 - `PAPER_SKELETON.md` —— 骨架 + 主张→产物对照（含 E19 更正）
 - `PAPER_DRAFT.md` —— Abstract + §1 Introduction + §2 Method
 - `PAPER_METHOD_DETAIL.md` —— Method 详细版（数据/协议/臂与模块/诊断/实现/复现清单）
