@@ -1,0 +1,171 @@
+特征 (71801, 512) | 512 维
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.87548e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85274e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.86341e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Antwerp-Bruges   n= 4956 准确率 0.473 | AURC 全局 0.5365 逐预测类 0.4785 逐真类 0.3637
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.87548e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.93526e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.94922e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Busan            n=  420 准确率 0.376 | AURC 全局 0.5704 逐预测类 0.4605 逐真类 0.4130
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85274e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.93526e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.92653e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Callao           n=  135 准确率 0.348 | AURC 全局 0.6185 逐预测类 0.6495 逐真类 0.4528
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.86224e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.91361e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.91229e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Fujairah         n= 3129 准确率 0.375 | AURC 全局 0.6404 逐预测类 0.6203 逐真类 0.6528
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.70427e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.80451e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.79717e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Hamburg          n= 3307 准确率 0.517 | AURC 全局 0.4901 逐预测类 0.3770 逐真类 0.3146
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.77567e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85416e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.84848e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Houston          n=  677 准确率 0.399 | AURC 全局 0.5467 逐预测类 0.5502 逐真类 0.4145
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.79133e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.8659e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85774e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Jebel Ali        n= 5721 准确率 0.345 | AURC 全局 0.6476 逐预测类 0.6370 逐真类 0.6600
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85368e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.94136e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.92999e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Los Angeles      n=  117 准确率 0.538 | AURC 全局 0.5277 逐预测类 0.5535 逐真类 0.3381
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.81882e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.92878e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.91532e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Mombasa          n= 1160 准确率 0.274 | AURC 全局 0.7681 逐预测类 0.6410 逐真类 0.7488
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85998e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.9464e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.93487e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+New York         n=  125 准确率 0.456 | AURC 全局 0.6639 逐预测类 0.5065 逐真类 0.3315
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85704e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.94769e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.93746e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Newcastle        n=  482 准确率 0.266 | AURC 全局 0.7805 逐预测类 0.7887 逐真类 0.7741
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.87752e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.92709e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.92194e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Ningbo-Zhoushan  n= 1153 准确率 0.451 | AURC 全局 0.5918 逐预测类 0.5331 逐真类 0.4400
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.82855e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.91301e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.89813e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Port Hedland     n=  926 准确率 0.038 | AURC 全局 0.9539 逐预测类 0.9783 逐真类 0.9454
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.72506e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.77517e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.76306e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Port Klang       n= 3510 准确率 0.291 | AURC 全局 0.7186 逐预测类 0.6429 逐真类 0.6835
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.60287e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.7996e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.78766e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Port Said        n= 4653 准确率 0.363 | AURC 全局 0.6380 逐预测类 0.6742 逐真类 0.6552
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.51138e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.60521e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.60108e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Qingdao          n= 5863 准确率 0.414 | AURC 全局 0.6047 逐预测类 0.6090 逐真类 0.4690
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.86324e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.95048e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.94047e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Richards Bay     n=  734 准确率 0.268 | AURC 全局 0.7418 逐预测类 0.7227 逐真类 0.7071
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.7409e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.82273e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.81221e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Rotterdam        n= 4663 准确率 0.483 | AURC 全局 0.5330 逐预测类 0.4580 逐真类 0.4146
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.8306e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.90656e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.89675e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Santos           n=  807 准确率 0.439 | AURC 全局 0.5694 逐预测类 0.5384 逐真类 0.4629
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.09467e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.15176e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=2.13195e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Shanghai         n= 5755 准确率 0.400 | AURC 全局 0.6359 逐预测类 0.5508 逐真类 0.4511
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.60599e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.67725e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.66403e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Singapore        n= 5797 准确率 0.376 | AURC 全局 0.6523 逐预测类 0.5930 逐真类 0.6025
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.80163e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.8824e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.87361e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Sydney Botany    n=  784 准确率 0.511 | AURC 全局 0.5719 逐预测类 0.5535 逐真类 0.4869
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.85746e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.94752e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+D:\Program_files\anaconda3\Lib\site-packages\scipy\_lib\_util.py:1233: LinAlgWarning: Ill-conditioned matrix (rcond=1.93535e-09): result may not be accurate.
+  return f(*arrays, *other_args, **kwargs)
+Tanger Med       n=  160 准确率 0.356 | AURC 全局 0.6585 逐预测类 0.3983 逐真类 0.6408
+
+全局           AURC 0.6374   Δ vs 全局 +0.00000
+逐预测类         AURC 0.5876   Δ vs 全局 -0.04979
+逐真类(上界)      AURC 0.5401   Δ vs 全局 -0.09727
+
+配对 逐预测类 − 全局: -0.04979  p=0.0035
+收复比例（全局→真类 差距吃下多少）: 51.2%
+预注册判据（逐预测类 < 全局 且 p<0.05 且 收复 >=50%）: 成立 ✓✓
+exit=0
