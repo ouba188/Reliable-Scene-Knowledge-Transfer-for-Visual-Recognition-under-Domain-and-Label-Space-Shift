@@ -1,0 +1,26 @@
+袋 6738 ｜ 覆盖 chip 20410/38091 (54%)
+Antwerp-Bruges   n_bag=  304 增益 +0.1157
+Callao           n_bag=  279 增益 +0.0434
+Fujairah         n_bag=  652 增益 +0.1630
+Hamburg          n_bag= 1033 增益 +0.0630
+Jebel Ali        n_bag= 3338 增益 +0.0164
+Mombasa          n_bag=   41 增益 +0.0238
+New York         n_bag=  308 增益 +0.1273
+Newcastle        n_bag=   63 增益 +0.0298
+Ningbo-Zhoushan  n_bag= 3347 增益 +0.0776
+Port Klang       n_bag= 1770 增益 +0.0002
+Port Said        n_bag= 1062 增益 +0.0650
+Qingdao          n_bag=  853 增益 +0.0141
+Rotterdam        n_bag=  100 增益 +0.1248
+Shanghai         n_bag= 1015 增益 +0.0467
+Tanger Med       n_bag=  347 增益 +0.0661
+
+臂            收复@20%%        门控 AUC
+单芯片         3.427            0.905
+加袋特征       3.328            0.910
+
+配对 收复: -0.099  p=0.8590
+配对 AUC : +0.005  p=0.8040
+
+预注册判据（袋特征收复更高 且 AUC 提升 p<0.05）: 未成立 ✗（ORACLE_IDENTITY，不可部署 ✓）
+exit=0
