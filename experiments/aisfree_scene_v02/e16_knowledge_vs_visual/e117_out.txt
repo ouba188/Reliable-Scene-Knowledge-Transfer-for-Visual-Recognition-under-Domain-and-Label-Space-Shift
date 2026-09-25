@@ -1,0 +1,43 @@
+chips 71801 | 已知 55102 | 未知 16699 | 未知类 9
+Antwerp-Bruges   已知  4956 未知  2468 | 该港逐类 maha AUC dredge 0.53 heavy_ 0.58 lpg_ln 0.37 passen 0.70 pilot_ 0.63 pleasu 0.73 reefer 0.64 ro_ro_ 0.74 sailin 0.83
+Busan            已知   420 未知    59 | 该港逐类 maha AUC heavy_ 0.44 lpg_ln 0.31 passen 0.85 pilot_ 0.15 pleasu 0.60 reefer 0.46 ro_ro_ 0.50
+Callao           已知   135 未知    16 | 该港逐类 maha AUC lpg_ln 0.20 passen 0.31 pilot_ 0.61
+Fujairah         已知  3129 未知   574 | 该港逐类 maha AUC dredge 0.62 heavy_ 0.48 lpg_ln 0.46 passen 0.52 pilot_ 0.62 pleasu 0.66 ro_ro_ 0.51 sailin 0.46
+Hamburg          已知  3307 未知  1266 | 该港逐类 maha AUC dredge 0.48 heavy_ 0.47 lpg_ln 0.42 passen 0.57 pilot_ 0.53 pleasu 0.61 ro_ro_ 0.58 sailin 0.65
+Houston          已知   677 未知    97 | 该港逐类 maha AUC dredge 0.47 lpg_ln 0.29 passen 0.70 pleasu 0.68 ro_ro_ 0.76 sailin 0.53
+Jebel Ali        已知  5721 未知  3607 | 该港逐类 maha AUC dredge 0.48 heavy_ 0.41 lpg_ln 0.39 passen 0.60 pilot_ 0.52 pleasu 0.63 ro_ro_ 0.50 sailin 0.50
+Los Angeles      已知   117 未知     7 | 该港逐类 maha AUC passen 0.51
+Melbourne        已知    68 未知    21 | 该港逐类 maha AUC passen 0.64 ro_ro_ 0.71 sailin 0.76
+Mombasa          已知  1160 未知    56 | 该港逐类 maha AUC lpg_ln 0.49 passen 0.86 ro_ro_ 0.68
+New York         已知   125 未知    53 | 该港逐类 maha AUC dredge 0.25 passen 0.53 pleasu 0.86
+Newcastle        已知   482 未知    79 | 该港逐类 maha AUC dredge 0.73 lpg_ln 0.68 passen 0.73 pleasu 0.81 ro_ro_ 0.71 sailin 0.80
+Ningbo-Zhoushan  已知  1153 未知   179 | 该港逐类 maha AUC dredge 0.41 heavy_ 0.60 lpg_ln 0.51 passen 0.50 pilot_ 0.57 pleasu 0.39 ro_ro_ 0.32
+Port Hedland     已知   926 未知    15 | 该港逐类 maha AUC pilot_ 0.50
+Port Klang       已知  3510 未知   515 | 该港逐类 maha AUC dredge 0.49 heavy_ 0.38 lpg_ln 0.38 passen 0.77 pleasu 0.48 ro_ro_ 0.53
+Port Said        已知  4653 未知   372 | 该港逐类 maha AUC dredge 0.43 heavy_ 0.54 lpg_ln 0.51 passen 0.47 pleasu 0.72 reefer 0.56 ro_ro_ 0.64 sailin 0.67
+Qingdao          已知  5863 未知   746 | 该港逐类 maha AUC dredge 0.50 heavy_ 0.42 lpg_ln 0.44 passen 0.41 pilot_ 0.52 pleasu 0.35 reefer 0.46 ro_ro_ 0.39
+Richards Bay     已知   734 未知    48 | 该港逐类 maha AUC heavy_ 0.28 lpg_ln 0.51 ro_ro_ 0.30
+Rotterdam        已知  4663 未知  1668 | 该港逐类 maha AUC dredge 0.63 heavy_ 0.58 lpg_ln 0.46 passen 0.69 pilot_ 0.64 pleasu 0.81 reefer 0.44 ro_ro_ 0.74 sailin 0.79
+Santos           已知   807 未知    22 | 该港逐类 maha AUC passen 0.63 pleasu 0.63 ro_ro_ 0.45
+Shanghai         已知  5755 未知  2426 | 该港逐类 maha AUC dredge 0.45 heavy_ 0.46 lpg_ln 0.46 passen 0.63 pilot_ 0.52 pleasu 0.44 reefer 0.50 ro_ro_ 0.48
+Singapore        已知  5797 未知  2226 | 该港逐类 maha AUC dredge 0.52 heavy_ 0.66 lpg_ln 0.44 passen 0.70 pilot_ 0.80 pleasu 0.76 reefer 0.46 ro_ro_ 0.54 sailin 0.51
+Sydney Botany    已知   784 未知   145 | 该港逐类 maha AUC lpg_ln 0.47 passen 0.81 pleasu 0.67 ro_ro_ 0.36 sailin 0.63
+Tanger Med       已知   160 未知    34 | 该港逐类 maha AUC lpg_ln 0.46 passen 0.61 pilot_ 0.92 ro_ro_ 0.86 sailin 0.91
+
+=== 逐未知类（跨港池化）===
+unknown class                  n  maha AUC     95%CI    energy        港数
+dredger                     3700     0.501 [0.44,0.56]     0.417        14
+heavy_load_carrier           842     0.485 [0.43,0.54]     0.367        13
+lpg_lng_tanker              4728     0.433 [0.39,0.48]     0.384        19
+passenger_ship              2199     0.625 [0.57,0.68]     0.438        22
+pilot_port_tender            975     0.579 [0.49,0.67]     0.508        13
+pleasure_craft              1297     0.637 [0.57,0.71]     0.464        17
+reefer_cargo                 123     0.503 [0.46,0.56]     0.351         7
+ro_ro_vehicle_carrier       2413     0.565 [0.50,0.63]     0.408        20
+sailing_vessel               381     0.670 [0.59,0.75]     0.505        12
+
+跨类均值 0.555 ｜ 最好 sailing_vessel 0.670 ｜ 最差 lpg_lng_tanker 0.433 ｜ 极差 0.237
+逐类 bootstrap 噪声 SD 0.0324 ｜ 跨类实测 SD 0.0752 ⇒ 跨类差异显著 ✓
+
+已知 vs 未知 总体（跨港池化）：maha 0.559 ｜ energy 0.429
+exit=0
