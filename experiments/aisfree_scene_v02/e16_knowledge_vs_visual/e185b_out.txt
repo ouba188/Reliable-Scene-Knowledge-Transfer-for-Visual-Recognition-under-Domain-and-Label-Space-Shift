@@ -1,0 +1,33 @@
+Antwerp-Bruges   n=  886 ｜ V 0.557 ｜ CORAL 0.455
+Busan            n=  871 ｜ V 0.470 ｜ CORAL 0.448
+Callao           n=  476 ｜ V 0.281 ｜ CORAL 0.261
+Fujairah         n= 1158 ｜ V 0.340 ｜ CORAL 0.355
+Hamburg          n= 1619 ｜ V 0.625 ｜ CORAL 0.530
+Houston          n=  804 ｜ V 0.327 ｜ CORAL 0.303
+Jebel Ali        n= 4602 ｜ V 0.381 ｜ CORAL 0.332
+Los Angeles      n=  583 ｜ V 0.364 ｜ CORAL 0.312
+Melbourne        n=   64 ｜ V 0.543 ｜ CORAL 0.499
+Mombasa          n=  149 ｜ V 0.562 ｜ CORAL 0.518
+New York         n=  470 ｜ V 0.432 ｜ CORAL 0.415
+Newcastle        n=  299 ｜ V 0.388 ｜ CORAL 0.308
+Ningbo-Zhoushan  n= 5756 ｜ V 0.569 ｜ CORAL 0.391
+Port Hedland     n=  859 ｜ V 0.174 ｜ CORAL 0.172
+Port Klang       n= 3425 ｜ V 0.358 ｜ CORAL 0.320
+Port Said        n= 1895 ｜ V 0.345 ｜ CORAL 0.309
+Qingdao          n= 1981 ｜ V 0.752 ｜ CORAL 0.498
+Richards Bay     n=  744 ｜ V 0.339 ｜ CORAL 0.267
+Rotterdam        n=  573 ｜ V 0.581 ｜ CORAL 0.491
+Santos           n= 1658 ｜ V 0.390 ｜ CORAL 0.329
+Shanghai         n= 2390 ｜ V 0.605 ｜ CORAL 0.508
+Singapore        n= 5259 ｜ V 0.360 ｜ CORAL 0.321
+Sydney Botany    n=  304 ｜ V 0.418 ｜ CORAL 0.374
+Tanger Med       n= 1266 ｜ V 0.387 ｜ CORAL 0.271
+
+预算                V      CORAL   CORAL+预算         随机 p(预算−CORAL)
+10%          0.4395     0.3744     0.4383     0.4328     0.0000
+20%          0.4395     0.3744     0.4339     0.4262     0.0000
+50%          0.4395     0.3744     0.4223     0.4069     0.0000
+
+20% 处：加插件后更好 23/24 港 ｜ Δ +0.0595 ｜ p=0.0000 ｜ 插件是否优于随机地板 ✓
+预注册判据（20% 处 ≥2/3 港占优 且 p<0.05 且 优于随机地板）: 成立 ✓✓ —— 它是 UDA 的可叠加下游插件 ✓
+exit=0
